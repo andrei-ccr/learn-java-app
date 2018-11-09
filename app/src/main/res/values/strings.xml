@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Learn Java</string>
+
+    <string name="title_learn">Learn</string>
+    <string name="title_interview">Interview Questions</string>
+    <string name="title_about">About</string>
+
+    <string name="fa_license">https://fontawesome.com/license</string>
+</resources>
