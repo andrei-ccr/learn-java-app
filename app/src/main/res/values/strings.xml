@@ -5,5 +5,16 @@
     <string name="title_interview">Interview Questions</string>
     <string name="title_about">About</string>
 
+    <string name="box_title_basic">Basic Learning</string>
+    <string name="box_subtitle_basic">FREE  -  Estimated duration: 30min - 1h</string>
+    <string name="box_body_basic">Learn Java from the beginning. Start with the basics and progress to more advanced topics.</string>
+    <string name="box_btn_basic">Start</string>
+
+    <string name="box_title_full">Full Learning</string>
+    <string name="box_subtitle_full">PAID  -  Estimated duration: &gt; 4h</string>
+    <string name="box_body_full">Learn Java from the beginning. Start with the basics and progress to more advanced topics.</string>
+    <string name="box_btn_full">Activate</string>
+
+
     <string name="fa_license">https://fontawesome.com/license</string>
 </resources>

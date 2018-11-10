@@ -38,14 +38,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Basic Learning"
+            android:text="@string/box_title_basic"
             android:textSize="19sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="FREE  -  Estimated duration: 30min - 1h"
+            android:text="@string/box_subtitle_basic"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="12sp" />
 
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="Learn Java from the beginning. Start with the basics and progress to more advanced topics." />
+            android:text="@string/box_body_basic" />
 
         <Button
             android:id="@+id/btn_learn_basic"
@@ -65,7 +65,7 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            android:text="Start"
+            android:text="@string/box_btn_basic"
             android:textColor="#FFFFFFFF" />
     </LinearLayout>
 
@@ -87,14 +87,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Full Learning"
+            android:text="@string/box_title_full"
             android:textSize="19sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PAID  -  Estimated duration: 3h - 6h"
+            android:text="@string/box_subtitle_full"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="12sp" />
 
@@ -102,10 +102,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="Learn Java from the beginning. Start with the basics and progress to more advanced topics." />
+            android:text="@string/box_body_full" />
 
         <Button
-            android:id="@+id/btn_learn_basic"
+            android:id="@+id/btn_learn_full"
             android:layout_width="129dp"
             android:layout_height="34dp"
             android:layout_marginTop="10dp"
@@ -114,7 +114,7 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            android:text="Activate"
+            android:text="@string/box_btn_full"
             android:textColor="#FFFFFFFF" />
     </LinearLayout>
 
