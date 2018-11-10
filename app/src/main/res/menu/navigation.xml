@@ -11,7 +11,8 @@
     <item
         android:id="@+id/navigation_interview"
         android:icon="@drawable/ic_fa_interview"
-        android:title="@string/title_interview" />
+        android:title="@string/title_interview"
+        />
 
     <item
         android:id="@+id/navigation_about"
