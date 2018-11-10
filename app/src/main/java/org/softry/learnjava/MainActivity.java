@@ -1,11 +1,13 @@
 package org.softry.learnjava;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -13,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private LinearLayout mBoxBasic, mBoxFull;
+    private Button mBtnLearn, mBtnActivate;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -52,11 +55,25 @@ public class MainActivity extends AppCompatActivity {
         mTextMessage = findViewById(R.id.message);
         mBoxBasic = findViewById(R.id.box_learn_basic);
         mBoxFull = findViewById(R.id.box_learn_full);
+        mBtnLearn = findViewById(R.id.btn_learn_basic);
+        mBtnActivate = findViewById(R.id.btn_learn_full);
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         mTextMessage.setVisibility(View.INVISIBLE);
+
+        mBtnLearn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent learnIntent = new Intent(v.getContext(), ChaptersActivity.class);
+                startActivity(learnIntent);
+            }
+        });
+
+
+
+
     }
 
 }
