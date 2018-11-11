@@ -15,6 +15,14 @@
     <string name="box_body_full">Learn Java from the beginning. Start with the basics and progress to more advanced topics.</string>
     <string name="box_btn_full">Activate</string>
 
+    <string name="chapter1_title">Chapter I</string>
+    <string name="chapter1_name">Basics</string>
+    <string name="chapter1_desc">Start with the basics. Install Java and everything you need. Learn about variables, conditionals, user input and more. At the end of this chapter, you should be capable of building simple apps.</string>
+    <string name="chapter2_title">Chapter II</string>
+    <string name="chapter2_name">Intermediate</string>
+    <string name="chapter2_desc">No description yet.</string>
 
+    <string name="progress_str">Progress:</string>
+    <string name="chapter_str">Chapter</string>
     <string name="fa_license">https://fontawesome.com/license</string>
 </resources>
