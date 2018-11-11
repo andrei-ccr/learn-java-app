@@ -15,8 +15,8 @@ import java.util.List;
 
 public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.ItemClickListener {
 
+    public static final String SELECTED_CHAPTER = "org.softry.learnjava.TAG.SELECTED_CHAPTER";
     private List<RVA_Chapters.Chapter> mChapters;
-
     private RecyclerView mRecyclerView;
 
     private void SetChapterList() {
@@ -81,11 +81,10 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
 
     @Override
     public void onItemClick(View view, int position) {
-        Log.i("myapp_info", "test");
+        Log.i("myapp_info", "Selected Chapter " + Integer.toString(position+1));
 
-        /*Intent readThisEntry = new Intent(this, ReadJournal.class);
-        String entryUid = rvAdapter.getItemUID(position);
-        readThisEntry.putExtra(ENTRY_UID_KEY, entryUid);
-        startActivity(readThisEntry);*/
+        Intent lessonsActivity = new Intent(this, LessonsActivity.class);
+        lessonsActivity.putExtra(SELECTED_CHAPTER, Integer.toString(position+1));
+        startActivity(lessonsActivity);
     }
 }

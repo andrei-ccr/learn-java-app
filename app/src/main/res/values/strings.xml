@@ -17,15 +17,19 @@
 
     <string name="chapter1_title">Chapter I</string>
     <string name="chapter1_name">Basics</string>
+    <string name="chapter1_short_desc">Install Java and everything you need. Learn about variables, conditionals, user input and more.</string>
     <string name="chapter1_desc">Start with the basics. Install Java and everything you need. Learn about variables, conditionals, user input and more. At the end of this chapter, you should be capable of building simple apps.</string>
     <string name="chapter2_title">Chapter II</string>
     <string name="chapter2_name">Intermediate</string>
+    <string name="chapter2_short_desc">No description yet.</string>
     <string name="chapter2_desc">No description yet.</string>
     <string name="chapter3_title">Chapter III</string>
     <string name="chapter3_name">Object Oriented Programming</string>
+    <string name="chapter3_short_desc">No description yet.</string>
     <string name="chapter3_desc">No description yet.</string>
     <string name="chapter4_title">Chapter IV</string>
     <string name="chapter4_name">Advanced</string>
+    <string name="chapter4_short_desc">No description yet.</string>
     <string name="chapter4_desc">No description yet.</string>
 
     <string name="progress_str">Progress:</string>
