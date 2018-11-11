@@ -1,8 +1,11 @@
 package org.softry.learnjava;
 
 import android.content.Intent;
+import android.icu.util.MeasureUnit;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.internal.BottomNavigationItemView;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -16,7 +19,20 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextMessage;
     private LinearLayout mBoxBasic, mBoxFull;
     private Button mBtnLearn, mBtnActivate;
+	
 
+	private void FixBottomNavigationText() {
+		BottomNavigationView mBottomNavigationView = findViewById(R.id.navigation);
+		BottomNavigationMenuView menuView = (BottomNavigationMenuView) mBottomNavigationView.getChildAt(0);
+		for (int i = 0; i < menuView.getChildCount(); i++) {
+			BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
+			View activeLabel = item.findViewById(R.id.largeLabel);
+			if (activeLabel instanceof TextView) {
+				activeLabel.setPadding(0, 0, 0, 0);
+			}
+		}
+	}
+	
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -60,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        FixBottomNavigationText();
 
         mTextMessage.setVisibility(View.INVISIBLE);
 
