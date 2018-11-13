@@ -49,6 +49,11 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         public LessonBox GetRightLessonBox() {
             return this.lessonBox[1];
         }
+
+        public LessonBox GetLessonBox(int pos) {
+            if(pos % 2 == 0) return this.lessonBox[0]; //If pos is even, selected box is from left
+            else return this.lessonBox[1];
+        }
     }
 
     private List<LessonBoxRow> mLessonBoxRows;
@@ -78,13 +83,12 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
 
         @Override
         public void onClick(View view) {
-            //TODO: URGENT: Fix getting the correct lesson number on lesson box click
             if (mClickListener != null) {
                 int position = getAdapterPosition();
                 if(view.getId() == R.id.leftLessonBox) {
-                   mClickListener.onLeftBoxClick(view, (int)Math.pow(2, position)+1);
+                   mClickListener.onLeftBoxClick(view, 2*position, position);
                 } else if(view.getId() == R.id.rightLessonBox) {
-                    mClickListener.onRightBoxClick(view, (int)Math.pow(2, position)+2);
+                    mClickListener.onRightBoxClick(view, 2*position+1, position);
                 } else {
                     //mClickListener.onItemClick(view, getAdapterPosition());
                 }
@@ -136,8 +140,8 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
     }
 
     public interface ItemClickListener {
-        void onItemClick(View view, int position);
-        void onLeftBoxClick(View view, int position);
-        void onRightBoxClick(View view, int position);
+        //void onItemClick(View view, int position);
+        void onLeftBoxClick(View view, int position, int row_index);
+        void onRightBoxClick(View view, int position, int row_index);
     }
 }

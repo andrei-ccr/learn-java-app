@@ -15,6 +15,7 @@ import java.util.List;
 public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.ItemClickListener {
 
     private List<RVA_Lessons.LessonBoxRow> mLessonsBox;
+    public static final String SELECTED_LESSON = "org.softry.learnjava.TAG.SELECTED_LESSON";
 
     private void SetLessonBoxList(int chapter) {
         mLessonsBox = new ArrayList<>();
@@ -93,26 +94,23 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     }
 
     @Override
-    public void onItemClick(View view, int position) {
-        if(view.getId() == R.id.leftLessonBox) {
-            Log.i("myapp_info", "Selected Lesson " + Double.toString(Math.pow(2, position)+1));
-        } else if(view.getId() == R.id.rightLessonBox) {
-            Log.i("myapp_info", "Selected Lesson " + Double.toString(Math.pow(2, position)+2));
+    public void onLeftBoxClick(View view, int pos, int row_index) {
+        Log.i("myapp_info", "Selected Lesson " + Integer.toString(pos));
+        Log.i("myapp_info", "Row index " + Integer.toString(row_index));
 
-        }
-
-        /*Intent lessonsActivity = new Intent(this, LessonsActivity.class);
-        lessonsActivity.putExtra(SELECTED_CHAPTER, Integer.toString(position+1));
-        startActivity(lessonsActivity);*/
+        /*Intent lessonActivity = new Intent(this, LessonsActivity.class);
+        lessonActivity.putExtra(SELECTED_LESSON, mLessonsBox.get(pos).GetLeftLessonBox().LessonId());
+        startActivity(lessonActivity);*/
     }
 
     @Override
-    public void onLeftBoxClick(View view, int pos) {
+    public void onRightBoxClick(View view, int pos, int row_index) {
         Log.i("myapp_info", "Selected Lesson " + Integer.toString(pos));
-    }
+        Log.i("myapp_info", "Row index " + Integer.toString(row_index));
 
-    @Override
-    public void onRightBoxClick(View view, int pos) {
-        Log.i("myapp_info", "Selected Lesson " + Integer.toString(pos));
+
+        /*Intent lessonActivity = new Intent(this, LessonsActivity.class);
+        lessonActivity.putExtra(SELECTED_LESSON, mLessonsBox.get(pos).GetLeftLessonBox().LessonId());
+        startActivity(lessonActivity);*/
     }
 }

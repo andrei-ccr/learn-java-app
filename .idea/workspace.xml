@@ -41,7 +41,7 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
+            <state relative-caret-position="374">
               <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -65,23 +65,11 @@
       <file leaf-file-name="ChaptersActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/ChaptersActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
+            <state relative-caret-position="918">
               <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#SetChapterList#0;class#ChaptersActivity#0" />
-                <element signature="e#856#905#0" expanded="true" />
-                <element signature="e#923#971#0" expanded="true" />
-                <element signature="e#989#1037#0" expanded="true" />
-                <element signature="e#1089#1138#0" expanded="true" />
-                <element signature="e#1156#1204#0" expanded="true" />
-                <element signature="e#1222#1270#0" expanded="true" />
-                <element signature="e#1322#1371#0" expanded="true" />
-                <element signature="e#1389#1437#0" expanded="true" />
-                <element signature="e#1455#1503#0" expanded="true" />
-                <element signature="e#1555#1604#0" expanded="true" />
-                <element signature="e#1622#1670#0" expanded="true" />
-                <element signature="e#1688#1736#0" expanded="true" />
                 <element signature="method#GetChaptersRVA#0;class#ChaptersActivity#0" />
               </folding>
             </state>
@@ -91,7 +79,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
+            <state relative-caret-position="544">
               <caret line="32" column="61" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
             </state>
           </provider>
@@ -103,7 +91,7 @@
             <state />
           </provider>
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="-814">
+            <state relative-caret-position="34">
               <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
             </state>
           </provider>
@@ -112,10 +100,18 @@
       <file leaf-file-name="LessonsActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/LessonsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+            <state relative-caret-position="49">
+              <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2522#2545#0" expanded="true" />
+                <element signature="e#2586#2614#0" expanded="true" />
+                <element signature="e#2690#2713#0" expanded="true" />
+                <element signature="e#2754#2782#0" expanded="true" />
+                <element signature="e#2858#2881#0" expanded="true" />
+                <element signature="e#2922#2950#0" expanded="true" />
+                <element signature="e#3026#3049#0" expanded="true" />
+                <element signature="e#3090#3118#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,7 +120,7 @@
       <file leaf-file-name="RVA_Chapters.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Chapters.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
+            <state relative-caret-position="19">
               <caret line="86" column="34" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -149,12 +145,11 @@
       <file leaf-file-name="RVA_Lessons.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Lessons.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-780">
-              <caret line="80" column="85" selection-start-line="80" selection-start-column="85" selection-end-line="80" selection-end-column="85" />
+            <state relative-caret-position="121">
+              <caret line="84" column="40" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#LessonBox#0;class#RVA_Lessons#0" />
-                <element signature="class#LessonBoxRow#0;class#RVA_Lessons#0" />
               </folding>
             </state>
           </provider>
@@ -2467,6 +2462,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LearnJava" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LearnJava" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2485,45 +2492,10 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="learnjava" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
-            <path>
-              <item name="LearnJava" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="LearnJava" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="LearnJava" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="LearnJava" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="LearnJava" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LearnJava" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -2674,6 +2646,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32838285" />
@@ -2686,13 +2659,12 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Logcat" order="7" visible="true" weight="0.32838285" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="7" visible="true" weight="0.32838285" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2375189" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49924356" weight="0.23762377" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.28547856" />
@@ -2705,6 +2677,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2761,18 +2734,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#SetChapterList#0;class#ChaptersActivity#0" />
-            <element signature="e#856#905#0" expanded="true" />
-            <element signature="e#923#971#0" expanded="true" />
-            <element signature="e#989#1037#0" expanded="true" />
-            <element signature="e#1089#1138#0" expanded="true" />
-            <element signature="e#1156#1204#0" expanded="true" />
-            <element signature="e#1222#1270#0" expanded="true" />
-            <element signature="e#1322#1371#0" expanded="true" />
-            <element signature="e#1389#1437#0" expanded="true" />
-            <element signature="e#1455#1503#0" expanded="true" />
-            <element signature="e#1555#1604#0" expanded="true" />
-            <element signature="e#1622#1670#0" expanded="true" />
-            <element signature="e#1688#1736#0" expanded="true" />
             <element signature="method#GetChaptersRVA#0;class#ChaptersActivity#0" />
           </folding>
         </state>
@@ -2805,18 +2766,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#SetChapterList#0;class#ChaptersActivity#0" />
-            <element signature="e#856#905#0" expanded="true" />
-            <element signature="e#923#971#0" expanded="true" />
-            <element signature="e#989#1037#0" expanded="true" />
-            <element signature="e#1089#1138#0" expanded="true" />
-            <element signature="e#1156#1204#0" expanded="true" />
-            <element signature="e#1222#1270#0" expanded="true" />
-            <element signature="e#1322#1371#0" expanded="true" />
-            <element signature="e#1389#1437#0" expanded="true" />
-            <element signature="e#1455#1503#0" expanded="true" />
-            <element signature="e#1555#1604#0" expanded="true" />
-            <element signature="e#1622#1670#0" expanded="true" />
-            <element signature="e#1688#1736#0" expanded="true" />
             <element signature="method#GetChaptersRVA#0;class#ChaptersActivity#0" />
           </folding>
         </state>
@@ -3072,7 +3021,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
+        <state relative-caret-position="374">
           <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -3081,13 +3030,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
         </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/white_box.xml">
@@ -3110,45 +3059,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/ChaptersActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#SetChapterList#0;class#ChaptersActivity#0" />
-            <element signature="e#856#905#0" expanded="true" />
-            <element signature="e#923#971#0" expanded="true" />
-            <element signature="e#989#1037#0" expanded="true" />
-            <element signature="e#1089#1138#0" expanded="true" />
-            <element signature="e#1156#1204#0" expanded="true" />
-            <element signature="e#1222#1270#0" expanded="true" />
-            <element signature="e#1322#1371#0" expanded="true" />
-            <element signature="e#1389#1437#0" expanded="true" />
-            <element signature="e#1455#1503#0" expanded="true" />
-            <element signature="e#1555#1604#0" expanded="true" />
-            <element signature="e#1622#1670#0" expanded="true" />
-            <element signature="e#1688#1736#0" expanded="true" />
-            <element signature="method#GetChaptersRVA#0;class#ChaptersActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
+        <state relative-caret-position="544">
           <caret line="32" column="61" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Chapters.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
+        <state relative-caret-position="19">
           <caret line="86" column="34" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Chapter#0;class#RVA_Chapters#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_lesson.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -3162,34 +3097,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_lesson.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-814">
-          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/ChaptersActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#SetChapterList#0;class#ChaptersActivity#0" />
+            <element signature="method#GetChaptersRVA#0;class#ChaptersActivity#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/LessonsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+        <state relative-caret-position="49">
+          <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2522#2545#0" expanded="true" />
+            <element signature="e#2586#2614#0" expanded="true" />
+            <element signature="e#2690#2713#0" expanded="true" />
+            <element signature="e#2754#2782#0" expanded="true" />
+            <element signature="e#2858#2881#0" expanded="true" />
+            <element signature="e#2922#2950#0" expanded="true" />
+            <element signature="e#3026#3049#0" expanded="true" />
+            <element signature="e#3090#3118#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Lessons.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-780">
-          <caret line="80" column="85" selection-start-line="80" selection-start-column="85" selection-end-line="80" selection-end-column="85" />
+        <state relative-caret-position="121">
+          <caret line="84" column="40" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#LessonBox#0;class#RVA_Lessons#0" />
-            <element signature="class#LessonBoxRow#0;class#RVA_Lessons#0" />
           </folding>
         </state>
       </provider>
