@@ -57,8 +57,15 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
 
-        Intent parentActivity = getIntent();
-        int selectedChapter = Integer.parseInt(parentActivity.getStringExtra(ChaptersActivity.SELECTED_CHAPTER));
+
+        //TODO: Don't get selectedChapter when coming back from InLessonActivity
+        int selectedChapter = 1; //This is a temporary fix until the issue is fixed
+        try {
+            Intent parentActivity = getIntent();
+            selectedChapter = Integer.parseInt(parentActivity.getStringExtra(ChaptersActivity.SELECTED_CHAPTER));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
 
@@ -98,9 +105,9 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         Log.i("myapp_info", "Selected Lesson " + Integer.toString(pos));
         Log.i("myapp_info", "Row index " + Integer.toString(row_index));
 
-        /*Intent lessonActivity = new Intent(this, LessonsActivity.class);
+        Intent lessonActivity = new Intent(this, InLessonActivity.class);
         lessonActivity.putExtra(SELECTED_LESSON, mLessonsBox.get(pos).GetLeftLessonBox().LessonId());
-        startActivity(lessonActivity);*/
+        startActivity(lessonActivity);
     }
 
     @Override
@@ -109,8 +116,8 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         Log.i("myapp_info", "Row index " + Integer.toString(row_index));
 
 
-        /*Intent lessonActivity = new Intent(this, LessonsActivity.class);
+        Intent lessonActivity = new Intent(this, InLessonActivity.class);
         lessonActivity.putExtra(SELECTED_LESSON, mLessonsBox.get(pos).GetLeftLessonBox().LessonId());
-        startActivity(lessonActivity);*/
+        startActivity(lessonActivity);
     }
 }

@@ -21,7 +21,18 @@
         <activity
             android:name=".ChaptersActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".LessonsActivity"></activity>
+        <activity
+            android:name=".LessonsActivity"
+            android:parentActivityName=".ChaptersActivity"/>
+        <activity
+            android:name=".InLessonActivity"
+            android:label="@string/title_activity_in_lesson"
+            android:parentActivityName=".LessonsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.softry.learnjava.LessonsActivity" />
+        </activity>
     </application>
 
 </manifest>
