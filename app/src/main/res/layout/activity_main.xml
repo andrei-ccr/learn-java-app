@@ -19,98 +19,162 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/box_learn_basic"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/white_box"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/box_title_basic"
-            android:textSize="19sp"
-            android:textStyle="bold" />
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/box_subtitle_basic"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="12sp" />
+            <LinearLayout
+                android:id="@+id/box_learn_basic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/white_box"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="@string/box_body_basic" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/box_title_basic"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btn_learn_basic"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="129dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_shape"
-            android:text="@string/box_btn_basic"
-            android:textColor="#FFFFFFFF" />
-    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/box_subtitle_basic"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="12sp" />
 
-    <LinearLayout
-        android:id="@+id/box_learn_full"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/white_box"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/box_learn_basic">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="@string/box_body_basic" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/box_title_full"
-            android:textSize="19sp"
-            android:textStyle="bold" />
+                <Button
+                    android:id="@+id/btn_learn_basic"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="129dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_shape"
+                    android:text="@string/box_btn_basic"
+                    android:textColor="#FFFFFFFF" />
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/box_subtitle_full"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="12sp" />
+            <LinearLayout
+                android:id="@+id/box_learn_full"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/white_box"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/box_learn_basic">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="@string/box_body_full" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/box_title_full"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btn_learn_full"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="129dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_shape"
-            android:text="@string/box_btn_full"
-            android:textColor="#FFFFFFFF" />
-    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/box_subtitle_full"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="@string/box_body_full" />
+
+                <Button
+                    android:id="@+id/btn_learn_full"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="129dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_shape"
+                    android:text="@string/box_btn_full"
+                    android:textColor="#FFFFFFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/box_ad_free"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/white_box"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ad free"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Disables ads"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Tired of ads? You can get rid of them!" />
+
+                <Button
+                    android:id="@+id/btn_ad_free"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="129dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_shape"
+                    android:text="Disable Ads"
+                    android:textColor="#FFFFFFFF" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
