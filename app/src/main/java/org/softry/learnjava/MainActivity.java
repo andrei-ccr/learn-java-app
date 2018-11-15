@@ -1,7 +1,6 @@
 package org.softry.learnjava;
 
 import android.content.Intent;
-import android.icu.util.MeasureUnit;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
@@ -11,15 +10,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
-    private LinearLayout mBoxBasic, mBoxFull;
+    private ScrollView containerLearnTab;
     private Button mBtnLearn, mBtnActivate;
-	
 
 	private void FixBottomNavigationText() {
 		BottomNavigationView mBottomNavigationView = findViewById(R.id.navigation);
@@ -41,22 +39,17 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_learn:
                     mTextMessage.setVisibility(View.INVISIBLE);
-
-                    mBoxBasic.setVisibility(View.VISIBLE);
-                    mBoxFull.setVisibility(View.VISIBLE);
-
+                    containerLearnTab.setVisibility(View.VISIBLE);
                     return true;
                 case R.id.navigation_interview:
                     mTextMessage.setVisibility(View.VISIBLE);
-                    mBoxBasic.setVisibility(View.INVISIBLE);
-                    mBoxFull.setVisibility(View.INVISIBLE);
+                    containerLearnTab.setVisibility(View.INVISIBLE);
                     mTextMessage.setText("Work in progress");
                     return true;
                 case R.id.navigation_about:
                     mTextMessage.setVisibility(View.VISIBLE);
-                    mBoxBasic.setVisibility(View.INVISIBLE);
-                    mBoxFull.setVisibility(View.INVISIBLE);
-                    mTextMessage.setText("");
+                    containerLearnTab.setVisibility(View.INVISIBLE);
+                    mTextMessage.setText("Learn JAVA\n\nApplication for learning the Java programming language. Lessons are small and designed for quick learning.");
                     return true;
             }
             return false;
@@ -69,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mTextMessage = findViewById(R.id.message);
-        mBoxBasic = findViewById(R.id.box_learn_basic);
-        mBoxFull = findViewById(R.id.box_learn_full);
+        containerLearnTab = findViewById(R.id.container_learntab);
+
         mBtnLearn = findViewById(R.id.btn_learn_basic);
         mBtnActivate = findViewById(R.id.btn_learn_full);
 
