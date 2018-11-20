@@ -18,7 +18,7 @@
     <string name="chapter1_title">Chapter I</string>
     <string name="chapter1_name">Basics</string>
     <string name="chapter1_short_desc">Install Java and everything you need. Learn about variables, conditionals, user input and more.</string>
-    <string name="chapter1_desc">Start with the basics. Install Java and everything you need. Learn about variables, conditionals, user input and more. At the end of this chapter, you should be capable of building simple apps.</string>
+    <string name="chapter1_desc">Start with the basics. Preparations for programming. Install Java and everything you need. Learn about variables, conditionals, user input and more. At the end of this chapter, you should be capable of building simple apps.</string>
     <string name="chapter2_title">Chapter II</string>
     <string name="chapter2_name">Intermediate</string>
     <string name="chapter2_short_desc">No description yet.</string>
@@ -84,13 +84,21 @@
 
 		<p>Look for the <font color="orange"><i>Download</i></font> button (it's a small orange button). Another page might open and you might have to click the <i>Download</i> button once again. After the setup file has finished downloading, run it.</p>
 
-		<p>After a few seconds (it might take longer if your computer is slow) the EclipseInstaller window appears. Choose the <font color="purple"><big><b>Eclipse IDE for Java Developers</b></big></font>. Afterwards, you can click the <b>INSTALL</b> button.</p>
+		<p>After a few seconds (it might take longer if your computer is slow) the EclipseInstaller window appears. Choose the <font color="purple"><big><b>Eclipse IDE for Java Developers</b></big></font>. Afterwards, you can click the <b>INSTALL</b> button. During installation you might have to click <i>Accept</i> a couple of times.</p>
 	"]]>
 	</string>
 	
-	<string name="lesson_101_5_title">Ready to code!</string>
+	<string name="lesson_101_5_title">Almost ready to code!</string>
 	<string name="lesson101_5"><![CDATA["
-	
+		<p>Everything is now set! You are ready to start programming in Java. In the next lesson you are going to write your first Java program.</p>
+		<p>Before doing that, you should know how to use Eclipse. Go ahead and run Eclipse. You will be asked about providing a <i>workspace</i> directory. You can leave that as it is and click the <b>Launch</b> button.</p>
+
+		<p>Once the Eclipse IDE opens, go to <b>File &gt; New &gt; Java Project</b>. In the window that opens, you have to write a <i>Project Name</i> (eg.: MyFirstProject) and click <b>Finish</b> button.</p>
+
+		<p>Now that you created a <font color="red">Project</font>, you need to create a <font color="green"><i>Class</i></font>. Every project must contain at least one class. For now, your projects will contain only one class. In this class you will write your program code. This might be confusing for now. That's OK.</p>
+
+		<p>To create a class for your project go to <b>File &gt; New &gt; Class</b>. In the window that opens, only provide the <i>Name</i> (eg.: MyFirstProgram) and leave everything else as it is. Click <b>Finish</b>. You have now created a class in which you can write code. In the next lesson, we will write a simple Java program. See you there!</p> 
+
 	"]]>
 	</string>
 </resources>
