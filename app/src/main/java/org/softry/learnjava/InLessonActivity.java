@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,15 +58,19 @@ public class InLessonActivity extends AppCompatActivity {
         }
 
         lessonsList = new ArrayList<>();
-        List<Integer> layouts, containers;
+        List<Integer> strings;
 
         /*** Lesson 101 ***/
-        layouts = new ArrayList<>();
+        /*layouts = new ArrayList<>();
         containers = new ArrayList<>();
         layouts.add(R.layout.lesson_101_1); layouts.add(R.layout.lesson_101_2);
-        containers.add(R.id.container_lesson_101_1); containers.add(R.id.container_lesson_101_2);
+        containers.add(R.id.container_lesson_101_1); containers.add(R.id.container_lesson_101_2);*/
 
-        lessonsList.add(new LessonMap(101, new LessonLayout(layouts,containers), 5));
+        strings = new ArrayList<>();
+        strings.add(R.string.lesson101_1);
+        strings.add(R.string.lesson101_2);
+
+        lessonsList.add(new LessonMap(101, new LessonLayout(strings), 5));
 
         /*** Lesson 102 ***/
         //TODO: Add other pages for 101 and the other lessons
@@ -154,8 +160,9 @@ public class InLessonActivity extends AppCompatActivity {
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             args.putInt(ARG_LESSON_NUMBER, currentLesson);
-            args.putInt("LAYINT", lessonLayout.GetLayoutId(sectionNumber-1));
-            args.putInt("CONINT", lessonLayout.GetContainerId(sectionNumber-1));
+            /*args.putInt("LAYINT", lessonLayout.GetLayoutId(sectionNumber-1));
+            args.putInt("CONINT", lessonLayout.GetContainerId(sectionNumber-1));*/
+            args.putInt("LESSONSTRINT", lessonLayout.GetStringId(sectionNumber-1));
 
             fragment.setArguments(args);
 
@@ -172,18 +179,25 @@ public class InLessonActivity extends AppCompatActivity {
             int currentPage = getArguments().getInt(ARG_SECTION_NUMBER);
             int currentLesson = getArguments().getInt(ARG_LESSON_NUMBER);
 
-            int containerId = getArguments().getInt("CONINT");
-            int layoutId = getArguments().getInt("LAYINT");
+            /*int containerId = getArguments().getInt("CONINT");
+            int layoutId = getArguments().getInt("LAYINT");*/
+            int lessonBodyStringId = getArguments().getInt("LESSONSTRINT");
 
             LinearLayout parentContainer = rootView.findViewById(R.id.constraintLayout);
 
-            if((containerId != -1) && (layoutId != -1)) { //TODO: Handle this error better
+            TextView tvt = rootView.findViewById(R.id.tv_lesson_body);
+            Log.e("myapp", "Returned lesson body string id: " + Integer.toString(lessonBodyStringId));
+            if(lessonBodyStringId != -1) {
+                tvt.setText(Html.fromHtml(getString(lessonBodyStringId)));
+            }
+
+            /*if((containerId != -1) && (layoutId != -1)) { //TODO: Handle this error better
 
                 parentContainer.removeAllViews();
                 View otherLesson = getLayoutInflater().inflate(layoutId, null).findViewById(containerId);
                 ((ViewGroup) otherLesson.getParent()).removeView(otherLesson);
                 parentContainer.addView(otherLesson);
-            }
+            }*/
 
             //textView.setText(getString(R.string.section_format, currentPage) + " " + currentLesson);
             return rootView;
@@ -194,16 +208,21 @@ public class InLessonActivity extends AppCompatActivity {
     public class LessonLayout {
 
         //Order in the list corresponds with the page
-        private List<Integer> mLessonLayout, mLessonLayoutContainer;
+        ///private List<Integer> mLessonLayout, mLessonLayoutContainer;
+        private List<Integer> mLessonBody;
 
         //TODO: Create special Exception class
-        public LessonLayout(List<Integer> mLessonLayout, List<Integer> mLessonLayoutContainer) throws Exception {
+        /*public LessonLayout(List<Integer> mLessonLayout, List<Integer> mLessonLayoutContainer) throws Exception {
             this.mLessonLayout = mLessonLayout;
             this.mLessonLayoutContainer = mLessonLayoutContainer;
 
             if(this.mLessonLayoutContainer.size()!=this.mLessonLayout.size()) {
                 throw new Exception("Layout and Container quantity doesn't match");
             }
+        }*/
+
+        public LessonLayout(List<Integer> mLessonBody) {
+            this.mLessonBody = mLessonBody;
         }
 
         /*public View getContainerView(int page) {
@@ -217,7 +236,7 @@ public class InLessonActivity extends AppCompatActivity {
             return otherLessonContainer;
         }*/
 
-        public int GetLayoutId(int page) {
+        /*public int GetLayoutId(int page) {
             //TODO: Better to throw an exception instead of returning NULL
             if(page >= mLessonLayout.size()) return -1;
             return this.mLessonLayout.get(page);
@@ -226,6 +245,13 @@ public class InLessonActivity extends AppCompatActivity {
         public int GetContainerId(int page) {
             if(page >= mLessonLayout.size()) return -1;
             return this.mLessonLayoutContainer.get(page);
+        }*/
+
+        public int GetStringId(int page) {
+            if(page>= this.mLessonBody.size()) {
+                return -1;
+            }
+            return this.mLessonBody.get(page);
         }
     }
 
@@ -276,7 +302,6 @@ public class InLessonActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
             return this.mMaxPages;
         }
     }
