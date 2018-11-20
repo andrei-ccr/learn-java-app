@@ -40,12 +40,14 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
 
+    <string name="lesson_101_1_title">Getting Started</string>
     <string name="lesson101_1"><![CDATA["<p> To start learning, you'll first have to install Java. For beginners, an IDE is also recommended. This is what you'll do in this lesson: </p>
 <p><a href="goto:101_2"><font color="#123456">1. Download and Install Java</font></a></p>
 <p><a href="goto:101_4"><font color="#123456">2. Download and Install an IDE</font></a></p>
 <p><a href="goto:101_6"><font color="#123456">3. Write your first Java program</font></a></p>
 <p>In the following sections, you will be guided step by step on how to do these. Tap <font color="blue">continue</font> to get started!</p>"]]></string>
 
+    <string name="lesson_101_2_title">Downloading and Installing Java</string>
     <string name="lesson101_2"><![CDATA["<p> ADSTo start learning, you'll first have to install Java. For beginners, an IDE is also recommended. This is what you'll do in this lesson: </p>
 <p><a href="goto:101_2"><font color="#123456">1. Download and Install Java</font></a></p>
 <p><a href="goto:101_4"><font color="#123456">2. Download and Install an IDE</font></a></p>

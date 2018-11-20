@@ -17,7 +17,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -58,19 +57,15 @@ public class InLessonActivity extends AppCompatActivity {
         }
 
         lessonsList = new ArrayList<>();
-        List<Integer> strings;
+        List<Integer> lessonBodyIdList, pageTitleIdList;
 
         /*** Lesson 101 ***/
-        /*layouts = new ArrayList<>();
-        containers = new ArrayList<>();
-        layouts.add(R.layout.lesson_101_1); layouts.add(R.layout.lesson_101_2);
-        containers.add(R.id.container_lesson_101_1); containers.add(R.id.container_lesson_101_2);*/
+        lessonBodyIdList = new ArrayList<>();
+        pageTitleIdList = new ArrayList<>();
+        lessonBodyIdList.add(R.string.lesson101_1); pageTitleIdList.add(R.string.lesson_101_1_title);
+        lessonBodyIdList.add(R.string.lesson101_2); pageTitleIdList.add(R.string.lesson_101_2_title);
 
-        strings = new ArrayList<>();
-        strings.add(R.string.lesson101_1);
-        strings.add(R.string.lesson101_2);
-
-        lessonsList.add(new LessonMap(101, new LessonLayout(strings), 5));
+        lessonsList.add(new LessonMap(101, new LessonLayout(lessonBodyIdList, pageTitleIdList), 5));
 
         /*** Lesson 102 ***/
         //TODO: Add other pages for 101 and the other lessons
@@ -145,6 +140,8 @@ public class InLessonActivity extends AppCompatActivity {
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
         private static final String ARG_LESSON_NUMBER = "lesson_number";
+        private static final String ARG_STR_PAGE_TITLE = "str_page_title";
+        private static final String ARG_STR_LESSON_BODY = "str_lesson_body";
 
         public static int currentPageNum = 1;
 
@@ -158,11 +155,11 @@ public class InLessonActivity extends AppCompatActivity {
         public static PlaceholderFragment newInstance(int sectionNumber, int currentLesson, LessonLayout lessonLayout) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
+
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             args.putInt(ARG_LESSON_NUMBER, currentLesson);
-            /*args.putInt("LAYINT", lessonLayout.GetLayoutId(sectionNumber-1));
-            args.putInt("CONINT", lessonLayout.GetContainerId(sectionNumber-1));*/
-            args.putInt("LESSONSTRINT", lessonLayout.GetStringId(sectionNumber-1));
+            args.putInt(ARG_STR_LESSON_BODY, lessonLayout.GetLessonBodyId(sectionNumber-1));
+            args.putInt(ARG_STR_PAGE_TITLE, lessonLayout.GetPageTitleId(sectionNumber-1));
 
             fragment.setArguments(args);
 
@@ -174,32 +171,20 @@ public class InLessonActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
             View rootView = inflater.inflate(R.layout.fragment_in_lesson, container, false);
-            //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
 
             int currentPage = getArguments().getInt(ARG_SECTION_NUMBER);
             int currentLesson = getArguments().getInt(ARG_LESSON_NUMBER);
+            int lessonBodyStringId = getArguments().getInt(ARG_STR_LESSON_BODY);
+            int pageTitleStringId = getArguments().getInt(ARG_STR_PAGE_TITLE);
 
-            /*int containerId = getArguments().getInt("CONINT");
-            int layoutId = getArguments().getInt("LAYINT");*/
-            int lessonBodyStringId = getArguments().getInt("LESSONSTRINT");
-
-            LinearLayout parentContainer = rootView.findViewById(R.id.constraintLayout);
-
-            TextView tvt = rootView.findViewById(R.id.tv_lesson_body);
+            TextView tvLessonBody = rootView.findViewById(R.id.tv_lesson_body);
+            TextView tvPageTitle = rootView.findViewById(R.id.tv_lesson_page_title);
             Log.e("myapp", "Returned lesson body string id: " + Integer.toString(lessonBodyStringId));
             if(lessonBodyStringId != -1) {
-                tvt.setText(Html.fromHtml(getString(lessonBodyStringId)));
+                tvLessonBody.setText(Html.fromHtml(getString(lessonBodyStringId)));
+                tvPageTitle.setText(pageTitleStringId);
             }
 
-            /*if((containerId != -1) && (layoutId != -1)) { //TODO: Handle this error better
-
-                parentContainer.removeAllViews();
-                View otherLesson = getLayoutInflater().inflate(layoutId, null).findViewById(containerId);
-                ((ViewGroup) otherLesson.getParent()).removeView(otherLesson);
-                parentContainer.addView(otherLesson);
-            }*/
-
-            //textView.setText(getString(R.string.section_format, currentPage) + " " + currentLesson);
             return rootView;
         }
     }
@@ -209,49 +194,30 @@ public class InLessonActivity extends AppCompatActivity {
 
         //Order in the list corresponds with the page
         ///private List<Integer> mLessonLayout, mLessonLayoutContainer;
-        private List<Integer> mLessonBody;
+        private List<Integer> mPageTitle, mLessonBody;
 
-        //TODO: Create special Exception class
-        /*public LessonLayout(List<Integer> mLessonLayout, List<Integer> mLessonLayoutContainer) throws Exception {
-            this.mLessonLayout = mLessonLayout;
-            this.mLessonLayoutContainer = mLessonLayoutContainer;
-
-            if(this.mLessonLayoutContainer.size()!=this.mLessonLayout.size()) {
-                throw new Exception("Layout and Container quantity doesn't match");
-            }
-        }*/
-
-        public LessonLayout(List<Integer> mLessonBody) {
+        public LessonLayout(List<Integer> mLessonBody, List<Integer> mPageTitle) {
             this.mLessonBody = mLessonBody;
+            this.mPageTitle = mPageTitle;
         }
 
-        /*public View getContainerView(int page) {
-
-            if (page < 1) return null;
-            else if(page >= mLessonLayout.size()) return null;
-
-            View otherLessonContainer = getLayoutInflater().inflate(this.mLessonLayout.get(page), null).findViewById(this.mLessonLayoutContainer.get(page));
-            ((ViewGroup)otherLessonContainer.getParent()).removeView(otherLessonContainer);
-
-            return otherLessonContainer;
-        }*/
-
-        /*public int GetLayoutId(int page) {
-            //TODO: Better to throw an exception instead of returning NULL
-            if(page >= mLessonLayout.size()) return -1;
-            return this.mLessonLayout.get(page);
-        }
-
-        public int GetContainerId(int page) {
-            if(page >= mLessonLayout.size()) return -1;
-            return this.mLessonLayoutContainer.get(page);
-        }*/
-
-        public int GetStringId(int page) {
+        public int GetLessonBodyId(int page) {
             if(page>= this.mLessonBody.size()) {
                 return -1;
             }
             return this.mLessonBody.get(page);
+        }
+
+        /**
+         * This returns the title of the page
+         * @param page
+         * @return
+         */
+        public int GetPageTitleId(int page) {
+            if(page >= this.mPageTitle.size()) {
+                return -1;
+            }
+            return this.mPageTitle.get(page);
         }
     }
 
@@ -278,14 +244,8 @@ public class InLessonActivity extends AppCompatActivity {
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
         private int mMaxPages;
         private LessonLayout lessonLayout;
-
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-            this.mMaxPages = 1;
-        }
 
         public SectionsPagerAdapter(FragmentManager fm, LessonLayout lessonLayout, int maxPages) {
             super(fm);
