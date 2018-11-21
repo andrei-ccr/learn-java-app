@@ -1,6 +1,8 @@
 package org.softry.learnjava;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -17,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -43,8 +46,8 @@ public class InLessonActivity extends AppCompatActivity {
     private Map<Integer, Integer> lessonsIndex;
     private static final int NUMBER_OF_LESSONS = 32;
 
-    private void InitialiseLessonList() throws Exception {
-        lessonsIndex = new HashMap<Integer, Integer>();
+    private void InitialiseLessonList() {
+        lessonsIndex = new HashMap<>();
 
         for(int i=0, l=101;i<NUMBER_OF_LESSONS;i++,l++) {
             //Each chapter has 8 lessons. Change the prefix for each chapter.
@@ -59,16 +62,19 @@ public class InLessonActivity extends AppCompatActivity {
         lessonsList = new ArrayList<>();
         List<Integer> lessonBodyIdList, pageTitleIdList;
 
-        /*** Lesson 101 ***/
+        /* ### Lesson 101 ### */
         lessonBodyIdList = new ArrayList<>();
         pageTitleIdList = new ArrayList<>();
         lessonBodyIdList.add(R.string.lesson101_1); pageTitleIdList.add(R.string.lesson_101_1_title);
         lessonBodyIdList.add(R.string.lesson101_2); pageTitleIdList.add(R.string.lesson_101_2_title);
+        lessonBodyIdList.add(R.string.lesson101_3); pageTitleIdList.add(R.string.lesson_101_3_title);
+        lessonBodyIdList.add(R.string.lesson101_4); pageTitleIdList.add(R.string.lesson_101_4_title);
+        lessonBodyIdList.add(R.string.lesson101_5); pageTitleIdList.add(R.string.lesson_101_5_title);
 
         lessonsList.add(new LessonMap(101, new LessonLayout(lessonBodyIdList, pageTitleIdList), 5));
 
-        /*** Lesson 102 ***/
-        //TODO: Add other pages for 101 and the other lessons
+        /* ### Lesson 102 ### */
+        //TODO: Add other lessons
 
     }
     /**
@@ -85,7 +91,7 @@ public class InLessonActivity extends AppCompatActivity {
         Intent parentActivity = getIntent();
         selectedLesson = Integer.parseInt(parentActivity.getStringExtra(LessonsActivity.SELECTED_LESSON));
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -102,8 +108,9 @@ public class InLessonActivity extends AppCompatActivity {
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), lm.GetLayout(), this.maxPages);
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager = findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
 
     }
 
@@ -142,6 +149,7 @@ public class InLessonActivity extends AppCompatActivity {
         private static final String ARG_LESSON_NUMBER = "lesson_number";
         private static final String ARG_STR_PAGE_TITLE = "str_page_title";
         private static final String ARG_STR_LESSON_BODY = "str_lesson_body";
+        private static final String ARG_MAX_PAGES = "max_pages";
 
         public static int currentPageNum = 1;
 
@@ -152,14 +160,15 @@ public class InLessonActivity extends AppCompatActivity {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber, int currentLesson, LessonLayout lessonLayout) {
+        public static PlaceholderFragment newInstance(int sectionNumber, int currentLesson, LessonLayout lessonLayout, int maxPages) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
-
+            //TODO:Make Section number start at 0 instead of 1
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             args.putInt(ARG_LESSON_NUMBER, currentLesson);
             args.putInt(ARG_STR_LESSON_BODY, lessonLayout.GetLessonBodyId(sectionNumber-1));
             args.putInt(ARG_STR_PAGE_TITLE, lessonLayout.GetPageTitleId(sectionNumber-1));
+            args.putInt(ARG_MAX_PAGES, maxPages);
 
             fragment.setArguments(args);
 
@@ -170,30 +179,42 @@ public class InLessonActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-            View rootView = inflater.inflate(R.layout.fragment_in_lesson, container, false);
+            final View rootView = inflater.inflate(R.layout.fragment_in_lesson, container, false);
 
-            int currentPage = getArguments().getInt(ARG_SECTION_NUMBER);
+            final int currentPage = getArguments().getInt(ARG_SECTION_NUMBER);
             int currentLesson = getArguments().getInt(ARG_LESSON_NUMBER);
             int lessonBodyStringId = getArguments().getInt(ARG_STR_LESSON_BODY);
             int pageTitleStringId = getArguments().getInt(ARG_STR_PAGE_TITLE);
+            int maxPages = getArguments().getInt(ARG_MAX_PAGES);
 
             TextView tvLessonBody = rootView.findViewById(R.id.tv_lesson_body);
             TextView tvPageTitle = rootView.findViewById(R.id.tv_lesson_page_title);
-            Log.e("myapp", "Returned lesson body string id: " + Integer.toString(lessonBodyStringId));
+            Button nextBtn = rootView.findViewById(R.id.btn_continue);
+            nextBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ViewPager thisVp = (ViewPager)rootView.getParent();
+                    thisVp.setCurrentItem(currentPage, true); //TODO: Do currentPage+1 after the section number from 0 to do is solved.
+                }
+            });
+
+            Log.v("myapp", "Returned lesson body string id: " + Integer.toString(lessonBodyStringId));
             if(lessonBodyStringId != -1) {
                 tvLessonBody.setText(Html.fromHtml(getString(lessonBodyStringId)));
                 tvPageTitle.setText(pageTitleStringId);
+                if(currentPage == maxPages) {
+                    nextBtn.setText(R.string.btn_next_lesson);
+                }
+                //TODO: Get last page
             }
 
             return rootView;
         }
     }
 
-
     public class LessonLayout {
 
         //Order in the list corresponds with the page
-        ///private List<Integer> mLessonLayout, mLessonLayoutContainer;
         private List<Integer> mPageTitle, mLessonBody;
 
         public LessonLayout(List<Integer> mLessonBody, List<Integer> mPageTitle) {
@@ -209,9 +230,9 @@ public class InLessonActivity extends AppCompatActivity {
         }
 
         /**
-         * This returns the title of the page
-         * @param page
-         * @return
+         * Get the title of the page.
+         * @param page Current page number, starting from 0
+         * @return Returns an int containing the id of the string corresponding to the page.
          */
         public int GetPageTitleId(int page) {
             if(page >= this.mPageTitle.size()) {
@@ -239,6 +260,7 @@ public class InLessonActivity extends AppCompatActivity {
             return this.lessonLayout;
         }
     }
+
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -257,7 +279,7 @@ public class InLessonActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1, selectedLesson, this.lessonLayout);
+            return PlaceholderFragment.newInstance(position + 1, selectedLesson, this.lessonLayout, this.mMaxPages);
         }
 
         @Override

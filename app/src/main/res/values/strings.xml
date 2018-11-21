@@ -39,66 +39,41 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
+    <string name="btn_next">Next</string>
+    <string name="btn_next_lesson">Next Lesson</string>
+    <string name="btn_finish">Finish</string> <!-- Used in the last page of the last lesson -->
+
 	
-	<!-- Lessons Body and Page Title --->
+	<!-- Lessons Body and Page Title -->
 	<!---->
 	
     <string name="lesson_101_1_title">Getting Started</string>
     <string name="lesson101_1"><![CDATA["
-		<p> To start learning, you'll first have to install Java. For beginners, an IDE is also recommended. This is what you'll do in this lesson: </p>
-		<p><a href="goto:101_2"><font color="#123456">1. Download and Install Java</font></a></p>
-		<p><a href="goto:101_4"><font color="#123456">2. Download and Install an IDE</font></a></p>
-		<p><a href="goto:101_6"><font color="#123456">3. Write your first Java program</font></a></p>
-		<p>In the following sections, you will be guided step by step on how to do these. Tap <font color="blue">continue</font> to get started!</p>
+		<p>To start learning, you'll first have to install Java. For beginners, an IDE is also recommended. This is what you'll do in this lesson: </p><p><a href="goto:101_2"><font color="#123456">1. Download and Install Java</font></a></p><p><a href="goto:101_4"><font color="#123456">2. Get an IDE (Eclipse)</font></a></p><p><a href="goto:101_6"><font color="#123456">3. Learn how to create a new Project in Eclipse</font></a></p><p>In the following sections, you will be guided step by step on how to do these. Tap <font color="blue">next</font> to get started!</p>
 	"]]>
 	</string>
 
     <string name="lesson_101_2_title">Downloading and Installing Java</string>
     <string name="lesson101_2"><![CDATA["
-		<p> We'll start by downloading and installing Java. This tutorial applies for computers running <font color="green">Windows x64</font>. You'll download <font color="orange"><b>Java SE Development Kit 8</b></font>. </p>
-		<p>
-			<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">1. Go to the Java download webpage</a><br>
-			2. Select <font color="cyan">Accept License Agreement</font><br>
-			3. Click on the filename <font color="green">jdk-8u191-windows-x64.exe</font> (click the red down arrow)<br>
-			4. Run the downloaded executable and follow the onscreen instructions.<br>
-		</p>
-		
-		<p>Java will now be installed on your computer. After it is done, you are theoretically ready to make Java programs.</p>
-		<p>However, in the next section, you'll also learn how to download and install an IDE. An <b><font color="blue">Integrated Development Environment</font></b> is recommended for beginners. </p>
+		<p>We'll start by downloading and installing Java. This tutorial applies for computers running <font color="green">Windows x64</font>. You'll download <font color="orange"><b>Java SE Development Kit 8</b></font>. </p><p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">1. Go to the Java download webpage</a><br>2. Select <font color="cyan">Accept License Agreement</font><br>3. Click on the filename <font color="green">jdk-8u191-windows-x64.exe</font> (click the red down arrow)<br>4. Run the downloaded executable and follow the onscreen instructions.</p><p>Java will now be installed on your computer. After it is done, you are theoretically ready to make Java programs.</p><p>However, in the next section, you'll also learn how to download and install an IDE. An <b><font color="blue">Integrated Development Environment</font></b> is recommended for beginners. </p>
 	"]]>
 	</string>
 	
-	<string name="lesson_101_3_title">Downloading and Installing an IDE</string>
+	<string name="lesson_101_3_title">Using an IDE</string>
 	<string name="lesson101_3"><![CDATA["
-		<p>An <i>Integrated Development Environment</i> (IDE) is a software that makes writing programs easier. You get syntax highlighting, code <big>suggestions, your code is validated as you type and building and running your program is faster and easier. For beginners, these features are very helpful in the learning process.</p>
-
-		<p>For <i>Java</i> development we are going to use <font color="orange"><b>Eclipse</b></font>. Eclipse is currently one of the most popular IDEs and possibly the most used one at the time of writing this.</p>
-
-		<p>So let's download and install it. Remember, we are downloading the version for <font color="green">Windows x64</font>. Tap next to continue.</p>
+		<p>An <i>Integrated Development Environment</i> (IDE) is a software that makes writing programs easier. You get syntax highlighting, code suggestions, your code is validated as you type and building and running your program is faster and easier. For beginners, these features are very helpful in the learning process.</p><p>For <i>Java</i> development we are going to use <font color="orange"><b>Eclipse</b></font>. Eclipse is currently one of the most popular IDEs and possibly the most used one at the time of writing this.</p><p>So let's download and install it. Remember, we are downloading the version for <font color="green">Windows x64</font>. Tap next to continue.</p>
 	"]]>
 	</string>
 	
 	<string name="lesson_101_4_title">Getting Eclipse</string>
 	<string name="lesson101_4"><![CDATA["
-		<p>First, go to the <a href="https://eclipse.org/downloads/">Eclipse download page</a>. You can access the download page by typing <font color="cyan"><i>eclipse.org/downloads</i></font> in your browser's bar.</p>
-
-		<p>Look for the <font color="orange"><i>Download</i></font> button (it's a small orange button). Another page might open and you might have to click the <i>Download</i> button once again. After the setup file has finished downloading, run it.</p>
-
-		<p>After a few seconds (it might take longer if your computer is slow) the EclipseInstaller window appears. Choose the <font color="purple"><big><b>Eclipse IDE for Java Developers</b></big></font>. Afterwards, you can click the <b>INSTALL</b> button. During installation you might have to click <i>Accept</i> a couple of times.</p>
+		<p>First, go to the <a href="https://eclipse.org/downloads/">Eclipse download page</a>. You can access the download page by typing <font color="cyan"><i>eclipse.org/downloads</i></font> in your browser's bar.</p><p>Look for the <font color="orange"><i>Download</i></font> button (it's a small orange button). Another page might open and you might have to click the <i>Download</i> button once again. After the setup file has finished downloading, run it.</p><p>After a few seconds (it might take longer if your computer is slow) the EclipseInstaller window appears. Choose the <font color="purple"><big><b>Eclipse IDE for Java Developers</b></big></font>. Afterwards, you can click the <b>INSTALL</b> button. During installation you might have to click <i>Accept</i> a couple of times.</p>
 	"]]>
 	</string>
 	
 	<string name="lesson_101_5_title">Almost ready to code!</string>
 	<string name="lesson101_5"><![CDATA["
-		<p>Everything is now set! You are ready to start programming in Java. In the next lesson you are going to write your first Java program.</p>
-		<p>Before doing that, you should know how to use Eclipse. Go ahead and run Eclipse. You will be asked about providing a <i>workspace</i> directory. You can leave that as it is and click the <b>Launch</b> button.</p>
-
-		<p>Once the Eclipse IDE opens, go to <b>File &gt; New &gt; Java Project</b>. In the window that opens, you have to write a <i>Project Name</i> (eg.: MyFirstProject) and click <b>Finish</b> button.</p>
-
-		<p>Now that you created a <font color="red">Project</font>, you need to create a <font color="green"><i>Class</i></font>. Every project must contain at least one class. For now, your projects will contain only one class. In this class you will write your program code. This might be confusing for now. That's OK.</p>
-
-		<p>To create a class for your project go to <b>File &gt; New &gt; Class</b>. In the window that opens, only provide the <i>Name</i> (eg.: MyFirstProgram) and leave everything else as it is. Click <b>Finish</b>. You have now created a class in which you can write code. In the next lesson, we will write a simple Java program. See you there!</p> 
-
+		<p>Everything is now set! You are ready to start programming in Java. In the next lesson you are going to write your first Java program.</p><p>Before doing that, you should know how to use Eclipse. Go ahead and run Eclipse. You will be asked about providing a <i>workspace</i> directory. You can leave that as it is and click the <b>Launch</b> button.</p><p>Once the Eclipse IDE opens, go to <b>File &gt; New &gt; Java Project</b>. In the window that opens, you have to write a <i>Project Name</i> (eg.: MyFirstProject) and click <b>Finish</b> button.</p><p>Now that you created a <font color="red">Project</font>, you need to create a <font color="green"><i>Class</i></font>. Every project must contain at least one class. For now, your projects will contain only one class. In this class you will write your program code. This might be confusing for now. That's OK.</p><p>To create a class for your project go to <b>File &gt; New &gt; Class</b>. In the window that opens, only provide the <i>Name</i> (eg.: MyFirstProgram) and leave everything else as it is. Click <b>Finish</b>. You have now created a class in which you can write code. In the next lesson, we will write a simple Java program. See you there!</p>
 	"]]>
 	</string>
 </resources>
