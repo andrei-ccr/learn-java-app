@@ -49,7 +49,7 @@
 	
     <string name="lesson_101_1_title">Getting Started</string>
     <string name="lesson101_1"><![CDATA["
-		<p>To start learning, you'll first have to install Java. For beginners, an IDE is also recommended. This is what you'll do in this lesson: </p><p><a href="goto:101_2"><font color="#123456">1. Download and Install Java</font></a></p><p><a href="goto:101_4"><font color="#123456">2. Get an IDE (Eclipse)</font></a></p><p><a href="goto:101_6"><font color="#123456">3. Learn how to create a new Project in Eclipse</font></a></p><p>In the following sections, you will be guided step by step on how to do these. Tap <font color="blue">next</font> to get started!</p>
+		<p>To start learning, you'll first have to install Java. For beginners, an IDE is also recommended. This is what you'll do in this lesson: </p><p><a href="101_2"><font color="#123456">1. Download and Install Java</font></a></p><p><a href="101_4"><font color="#123456">2. Get an IDE (Eclipse)</font></a></p><p><a href="101_5"><font color="#123456">3. Learn how to create a new Project in Eclipse</font></a></p><p>In the following sections, you will be guided step by step on how to do these. Tap <font color="blue">next</font> to get started!</p>
 	"]]>
 	</string>
 
@@ -73,7 +73,83 @@
 	
 	<string name="lesson_101_5_title">Almost ready to code!</string>
 	<string name="lesson101_5"><![CDATA["
-		<p>Everything is now set! You are ready to start programming in Java. In the next lesson you are going to write your first Java program.</p><p>Before doing that, you should know how to use Eclipse. Go ahead and run Eclipse. You will be asked about providing a <i>workspace</i> directory. You can leave that as it is and click the <b>Launch</b> button.</p><p>Once the Eclipse IDE opens, go to <b>File &gt; New &gt; Java Project</b>. In the window that opens, you have to write a <i>Project Name</i> (eg.: MyFirstProject) and click <b>Finish</b> button.</p><p>Now that you created a <font color="red">Project</font>, you need to create a <font color="green"><i>Class</i></font>. Every project must contain at least one class. For now, your projects will contain only one class. In this class you will write your program code. This might be confusing for now. That's OK.</p><p>To create a class for your project go to <b>File &gt; New &gt; Class</b>. In the window that opens, only provide the <i>Name</i> (eg.: MyFirstProgram) and leave everything else as it is. Click <b>Finish</b>. You have now created a class in which you can write code. In the next lesson, we will write a simple Java program. See you there!</p>
+		<p>Everything is now set! You are ready to start programming in Java. In the next lesson you are going to write your first Java program.</p><p>Before doing that, you should know how to use Eclipse. Go ahead and run Eclipse. You will be asked about providing a <i>workspace</i> directory. You can leave that as it is and click the <b>Launch</b> button.</p><p>Once the Eclipse IDE opens, go to <b>File &gt; New &gt; Java Project</b>. In the window that opens, you have to write a <i>Project Name</i> (eg.: MyProject) and click <b>Finish</b> button.</p><p>Now that you created a <font color="red">Project</font>, you need to create a <font color="green"><i>Class</i></font>. Click next to continue.</p>
 	"]]>
 	</string>
+	
+	<string name="lesson_101_6_title">Creating a class</string>
+	<string name="lesson101_6"><![CDATA["
+		<p>Every project must contain at least one class. For now, your projects will contain only one class. In this class you will write your program code. This might be confusing for now. That's OK.</p><p>To create a class for your project go to <b>File &gt; New &gt; Class</b>. In the window that opens, provide the <i>Name</i> (eg.: MyFirstProgram) and the <i>Source folder</i> which is going to be <font color="gray"><i>MyProject/src</i></font> and leave everything else as it is. Click <b>Finish</b>. You have now created a class in which you can write code.</p><p> In the next lesson, we will write a simple Java program. See you there!</p>
+	"]]>
+	</string>
+	
+	<string name="lesson_102_1_title">Time to code</string>
+	<string name="lesson102_1"><![CDATA["
+	<p>Let's start with the most basic program you can write: the <font bgcolor="green">Hello World</font> program. Create a new project with one class named <font color="#987654"><i>MyFirstApp</i></font>. Don't know how to do that? Check <a href="101_5">lesson 1 on how to create a project</a></p>
+<p>You should now be able to write code inside the <font color="#987654"><em>MyFirstApp</em></font> class. Write the following code:</p>
+<p>
+<font color="#008000">public class</font> <font color="#1aa3ff"><em>MyFirstApp</em></font> { <br>
+	&nbsp;&nbsp;&nbsp;<font color="#008000">public static</font> <font color="#B00040">void</font> <font color="#1aa3ff"><em>main</em></font>(<font color="black">String</font>[] <font color="#a300cc">args</font>) { <br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println( <font color="#a300cc">"Hello World!"</font> ); <br>
+	&nbsp;&nbsp;&nbsp;}<br>
+}
+</p>
+<p>In the next sections we will run the program and then explain what every line does.</p>
+"]]></string>
+
+	<string name="lesson_102_2_title">Run your program</string>
+	<string name="lesson102_2"><![CDATA["
+	<p>In order to run this program just click the green button at the top. Alternatively, you can use the menu at top. Click <b>Run &gt; Run</b> (or press CTRL+F11)</p>
+
+<p>If a dialog appears asking you to save, click <b>OK</b>. The program will now execute. You should see the words <font color="#555">"Hello World!"</font> around the bottom area of Eclipse</p>
+
+<p>If there were <font color="red"><em>errors</em></font> in your code, a dialog will show up, warning you about them. Go <a href="102_1">back</a> and check that you didn't mispelled anything in your code.</p>
+	"]]></string>
+	
+	<string name="lesson_102_3_title">What does it do?</string>
+	<string name="lesson102_3"><![CDATA["
+		<p>Let's see what every line of code does:</p>
+<p>The first line of code: <br><font color="#008000">public class</font> <font color="#1aa3ff"><em>MyFirstApp</em></font></p>
+<p>This line declares a <font color="#008000">class</font> named <font color="#1aa3ff"><em>MyFirstApp</em></font> and makes it <font color="#008000">public</font>.</p>
+<p>
+What is a class and a public class? For now, that is not important. All programs in Java run inside a class so we'll have write them like this. You'll learn about what classes are in <a href="301">Chapter III</a>.</p>
+	"]]></string>
+	
+	<string name="lesson_102_4_title">The main function</string>
+	<string name="lesson102_4"><![CDATA["
+<p>The second line of code was:<br>
+<font color="#008000">public static</font> <font color="#B00040">void</font> <font color="#1aa3ff"><em>main</em></font>(<font color="black">String</font>[] <font color="#a300cc">args</font>)</p>
+
+<p>This line declares a function named <font color="#1aa3ff">main</font>. It also declares this function as <font color="#008000">public</font>, <font color="#008000">static</font>, and <font color="#B00040">void</font>. Inside the parentheses, there's the function's parameter <font color="black">String</font>[] <font color="#a300cc">args</font>. You'll learn about the meaning of all these in <a href="108_1">Lesson 8</a>.</p>
+
+<p>However, it's important to understand that every program starts inside this function. The function name is always <font color="#1aa3ff"><em>main</em></font> and has to be declared exactly like we did above. There can be ONLY ONE <font color="#1aa3ff"><em>main</em></font> function in every program and it is ALWAYS inside a class. When you execute the program, the code inside the <font color="#1aa3ff"><em>main</em></font> function will be executed.</p>
+
+<p>If we don't write anything inside, nothing will happen.</p>
+	"]]></string>
+	
+	<string name="lesson_102_5_title">Saying hello</string>
+	<string name="lesson102_5"><![CDATA["
+<p>The last line of code that needs explaining is this:<br>
+System.out.println( <font color="#a300cc">"Hello World!"</font> ); <br>
+</p>
+
+<p>This line will output/print to the screen the words "Hello World!" (without the quote marks ").</p>
+
+<p>We can print anything to screen using the command function:<br> System.out.println( <font color="#a300cc">"Your message here"</font> );</p>
+
+<p><b>Note</b> the <b>;</b> at the end.</p> 
+
+<p>You can print your own message to screen, or even print more messages by calling the printing function multiple times:<br>
+System.out.println( <font color="#a300cc">"This is a message"</font> );<br>
+System.out.println( <font color="#a300cc">"And this is another message"</font> );</p>
+
+<p>Try it! Print your own messages to the screen. Remember that these must be written inside the <font color="#1aa3ff">main</font> function.</p>
+	"]]></string>
+	
+	<string name="lesson_102_6_title">There's more to it</string>
+	<string name="lesson102_6"><![CDATA["
+<p>Java is a powerful language and there's more to it than just printing messages on the screen. In the next lesson, you are going to learn a very important concept: <font color="blue"><big>variables</big></font>.</p>
+
+<p>Remember: if there is something unclear, you can always go back and reread any part of any lesson. When your ready, proceed to the <a href="301">next lesson: Variables</a></p>
+	"]]></string>
 </resources>
