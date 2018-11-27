@@ -4,7 +4,18 @@
     <color name="colorPrimaryDark">#ffc107</color>
     <color name="_colorPrimaryDark">#c79100</color>
     <color name="colorAccent">#53e0ef</color>
+
     <color name="_holoDarkBlue">#0099cc</color>
     <color name="_lighterBlack">#333333</color>
     <color name="_white">#ffffff</color>
+    <color name="_gray">#777</color>
+    <color name="_progressRed">#b00</color>
+    <color name="_progressOrange">#bb7a00</color>
+    <color name="_progressYellow">#afbb00</color>
+    <color name="_progressGreen">#0b0</color>
+
+    <color name="_chapter1color">#0ae</color>
+    <color name="_chapter2color">#008c44</color>
+    <color name="_chapter3color">#c91dc9</color>
+    <color name="_chapter4color">#0d5ea9</color>
 </resources>

@@ -46,18 +46,18 @@ public class InLessonActivity extends AppCompatActivity {
     private Map<Integer, Integer> lessonsIndex;
     private static final int NUMBER_OF_LESSONS = 32;
 
+
+
     private void InitialiseLessonList() {
         lessonsIndex = new HashMap<>();
+        int[] lessonsOrder = {101, 102, 103, 104, 105, 106, 107, 108,
+                201,202,203,204,205,206,207,208,
+                301,302,303,304,305,306,307,308,
+                401,402,403,404,405,406,407,408};
 
-        for(int i=0, l=101;i<NUMBER_OF_LESSONS;i++,l++) {
-            //TODO: Each chapter will have a different number of chapters. Change this
-            //Each chapter has 8 lessons. Change the prefix for each chapter.
-            if((i%8==0) && (i != 0)) {
-                l += 100;
-                l -= 8;
-            }
-            lessonsIndex.put(l,i);
-            Log.i("myapp", Integer.toString(l) + ", " + Integer.toString(i));
+        for(int i=0;i<lessonsOrder.length;i++) {
+            Log.i("myapp", Integer.toString(lessonsOrder[i]) + ", " + Integer.toString(i));
+            lessonsIndex.put(lessonsOrder[i], i);
         }
 
         lessonsList = new ArrayList<>();

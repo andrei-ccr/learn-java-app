@@ -15,6 +15,26 @@
         <item name="colorPrimaryDark">#0099cc</item>
     </style>
 
+    <style name="AppTheme.ChapterOne">
+        <item name="colorPrimary">@color/_chapter1color</item>
+        <item name="colorPrimaryDark">@color/_chapter1color</item>
+    </style>
+
+    <style name="AppTheme.ChapterTwo">
+        <item name="colorPrimary">@color/_chapter2color</item>
+        <item name="colorPrimaryDark">@color/_chapter2color</item>
+    </style>
+
+    <style name="AppTheme.ChapterThree">
+        <item name="colorPrimary">@color/_chapter3color</item>
+        <item name="colorPrimaryDark">@color/_chapter3color</item>
+    </style>
+
+    <style name="AppTheme.ChapterFour">
+        <item name="colorPrimary">@color/_chapter4color</item>
+        <item name="colorPrimaryDark">@color/_chapter4color</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

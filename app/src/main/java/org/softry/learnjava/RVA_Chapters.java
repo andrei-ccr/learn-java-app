@@ -21,7 +21,7 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
             this.num = num;
             this.name = name;
             this.desc = desc;
-            this.progress = 0;
+            this.progress = -1; // -1 means not started
         }
 
         public String Num(){
@@ -37,7 +37,15 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
         }
 
         public String Progress() {
-            return Integer.toString(this.progress) + "%";
+            if(this.progress == -1) {
+                return "Not started.";
+            } else {
+                return Integer.toString(this.progress) + "%";
+            }
+        }
+
+        public int progressValue() {
+            return this.progress;
         }
     }
 
@@ -85,6 +93,23 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
         holder.chapterName.setText(itemElem.Name());
         holder.chapterDesc.setText(itemElem.Desc());
         holder.chapterProgress.setText(itemElem.Progress());
+        if(itemElem.progressValue() >= 0 && itemElem.progressValue() < 25) {
+            holder.chapterProgress.setTextColor((int)R.color._progressRed);
+        }
+        else if(itemElem.progressValue() >= 25 && itemElem.progressValue() <= 50) {
+            holder.chapterProgress.setTextColor((int)R.color._progressOrange);
+        }
+        else if(itemElem.progressValue() >= 51 && itemElem.progressValue() < 80) {
+            holder.chapterProgress.setTextColor((int)R.color._progressYellow);
+        }
+        else if(itemElem.progressValue() >= 81 && itemElem.progressValue() <= 100) {
+            holder.chapterProgress.setTextColor((int)R.color._progressGreen);
+        }
+        else {
+            holder.chapterProgress.setTextColor((int)R.color._gray);
+        }
+
+
 
     }
 

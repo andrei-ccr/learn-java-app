@@ -5,20 +5,21 @@
     <string name="title_interview">Interview Questions</string>
     <string name="title_about">About</string>
 
+
     <string name="box_title_basic">Basic Learning Package</string>
     <string name="box_subtitle_basic">FREE  ~  Estimated duration: 1h - 4h</string>
-    <string name="box_body_basic">Learn Java from the beginning. Start with the basics and progress to more advanced topics.</string>
+    <string name="box_body_basic">Learn Java from the beginning. This package contains only the basic concepts. Suitable for beginners.</string>
     <string name="box_btn_basic">Start</string>
 
     <string name="box_title_full">Complete Learning Package</string>
     <string name="box_subtitle_full">PAID  ~  Estimated duration: &gt;8h</string>
-    <string name="box_body_full">Learn Java from the beginning. Start with the basics and progress to more advanced topics.</string>
+    <string name="box_body_full">This package gives you access to all lessons and upcoming lessons. Suitable for beginners and advanced.</string>
     <string name="box_btn_full">Activate</string>
 
     <string name="chapter1_title">Chapter I</string>
     <string name="chapter1_name">Basics</string>
     <string name="chapter1_short_desc">Install Java and everything you need. Learn about variables, basic control structures, user input and more.</string>
-    <string name="chapter1_desc">Start with the basics. Preparations for programming in Java. Learn about variables, basic control structures, user input and more. At the end of this chapter, you will be capable of building simple apps.</string>
+    <string name="chapter1_desc">Start with the basics. Learn about variables, basic control structures, user input and more. At the end of this chapter, you will know how to build simple Java apps.</string>
     <string name="chapter2_title">Chapter II</string>
     <string name="chapter2_name">Intermediate</string>
     <string name="chapter2_short_desc">No description yet.</string>

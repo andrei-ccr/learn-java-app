@@ -1,6 +1,7 @@
 package org.softry.learnjava;
 
 import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -98,10 +99,6 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lessons);
-
-
         //TODO: Don't get selectedChapter when coming back from InLessonActivity
         int selectedChapter = 1; //This is a temporary fix until the issue is fixed
         try {
@@ -110,6 +107,31 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        if(selectedChapter == 1) {
+            setTheme(R.style.AppTheme_ChapterOne);
+        } else if(selectedChapter == 2) {
+            setTheme(R.style.AppTheme_ChapterTwo);
+        } else if(selectedChapter == 3) {
+            setTheme(R.style.AppTheme_ChapterThree);
+        } else if(selectedChapter == 4) {
+            setTheme(R.style.AppTheme_ChapterFour);
+        }
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_lessons);
+
+        ConstraintLayout cLayout = findViewById(R.id.cLayout);
+        if(selectedChapter == 1) {
+            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter1color));
+        } else if(selectedChapter == 2) {
+            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter2color));
+        } else if(selectedChapter == 3) {
+            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter3color));
+        } else if(selectedChapter == 4) {
+            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter4color));
+        }
+
 
         TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
 

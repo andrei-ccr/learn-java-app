@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,8 @@ import java.util.List;
 public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.ItemClickListener {
 
     public static final String SELECTED_CHAPTER = "org.softry.learnjava.TAG.SELECTED_CHAPTER";
+    public static final int LAST_CHAPTER = 5;
+
     private List<RVA_Chapters.Chapter> mChapters;
     private RecyclerView mRecyclerView;
 
@@ -81,14 +84,19 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        //Todo: Get progress string and value TextViews and hide them when displaying the "More chapters" option
+
     }
 
     @Override
     public void onItemClick(View view, int position) {
         Log.i("myapp_info", "Selected Chapter " + Integer.toString(position+1));
 
-        Intent lessonsActivity = new Intent(this, LessonsActivity.class);
-        lessonsActivity.putExtra(SELECTED_CHAPTER, Integer.toString(position+1));
-        startActivity(lessonsActivity);
+        if(position+1 != LAST_CHAPTER) {
+            Intent lessonsActivity = new Intent(this, LessonsActivity.class);
+            lessonsActivity.putExtra(SELECTED_CHAPTER, Integer.toString(position + 1));
+            startActivity(lessonsActivity);
+        }
     }
 }
