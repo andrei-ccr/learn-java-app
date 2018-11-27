@@ -24,71 +24,71 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         switch(chapter) {
             case 1:
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("1.\nInstall Java", "Description", 101),
-                        new RVA_Lessons.LessonBox("2.\nFirst Program", "Description", 102)));
+                        new RVA_Lessons.LessonBox("1\nInstall Java", "Description", 101),
+                        new RVA_Lessons.LessonBox("2\nFirst Program", "Description", 102)));
 
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("3.\nVariables", "Description", 103),
-                        new RVA_Lessons.LessonBox("4.\nUser Input", "Description", 104)));
+                        new RVA_Lessons.LessonBox("3\nVariables", "Description", 103),
+                        new RVA_Lessons.LessonBox("4\nUser Input", "Description", 104)));
 
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("5.\nConditionals", "Description", 105),
-                        new RVA_Lessons.LessonBox("6.\nLoops", "Description", 106)));
+                        new RVA_Lessons.LessonBox("5\nConditionals", "Description", 105),
+                        new RVA_Lessons.LessonBox("6\nArrays", "Description", 106)));
 
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("7.\nArrays", "Description", 107),
-                        new RVA_Lessons.LessonBox("8.\nFunctions (Methods)", "Description", 108)));
+                        new RVA_Lessons.LessonBox("7\nLoops", "Description", 107),
+                        new RVA_Lessons.LessonBox("8\nFunctions/Methods", "Description", 108)));
                 break;
             case 2:
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("1.\nTry, Catch, Finally", "Description", 201),
-                        new RVA_Lessons.LessonBox("2.\nBasic File I/O", "Description", 202)));
+                        new RVA_Lessons.LessonBox("1\nTry, Catch, Finally", "Description", 201),
+                        new RVA_Lessons.LessonBox("2\nBasic File I/O", "Description", 202)));
 
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("3.\nGet Date and Time", "Description", 203),
-                        new RVA_Lessons.LessonBox("4.\nRegular Expressions", "Description", 204)));
+                        new RVA_Lessons.LessonBox("3\nGet Date and Time", "Description", 203),
+                        new RVA_Lessons.LessonBox("4\nRegular Expressions", "Description", 204)));
 
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("5.\nAdvanced Functions (Methods)", "Description", 205),
-                        new RVA_Lessons.LessonBox("6.\nProgram Arguments", "Description", 206)));
+                        new RVA_Lessons.LessonBox("5\nAdvanced Functions/Methods", "Description", 205),
+                        new RVA_Lessons.LessonBox("6\nProgram Arguments", "Description", 206)));
 
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("7.\nModifiers", "Description", 207),
-                        new RVA_Lessons.LessonBox("8.\nExceptions", "Description", 208)));
+                        new RVA_Lessons.LessonBox("7\nModifiers", "Description", 207),
+                        new RVA_Lessons.LessonBox("8\nExceptions", "Description", 208)));
                 break;
             case 3:
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("1.\nBasics", "Description", 301),
-                        new RVA_Lessons.LessonBox("2.\nEncapsulation", "Description", 302)));
+                        new RVA_Lessons.LessonBox("1\nBasics", "Description", 301),
+                        new RVA_Lessons.LessonBox("2\nEncapsulation", "Description", 302)));
 
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("3.\nInheritance", "Description", 303),
-                        new RVA_Lessons.LessonBox("4.\nOverriding", "Description", 304)));
+                        new RVA_Lessons.LessonBox("3\nInheritance", "Description", 303),
+                        new RVA_Lessons.LessonBox("4\nOverriding", "Description", 304)));
 
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("5.\nPolymorphism", "Description", 305),
-                        new RVA_Lessons.LessonBox("6.\nAbstraction", "Description", 306)));
+                        new RVA_Lessons.LessonBox("5\nPolymorphism", "Description", 305),
+                        new RVA_Lessons.LessonBox("6\nAbstraction", "Description", 306)));
 
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("7.\nInterfaces", "Description", 307),
-                        new RVA_Lessons.LessonBox("8.\nPackages", "Description", 308)));
+                        new RVA_Lessons.LessonBox("7\nInterfaces", "Description", 307),
+                        new RVA_Lessons.LessonBox("8\nPackages", "Description", 308)));
                 break;
             case 4:
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("1.\nData Structures", "Description", 401),
-                        new RVA_Lessons.LessonBox("2.\nCollections", "Description", 402)));
+                        new RVA_Lessons.LessonBox("1\nData Structures", "Description", 401),
+                        new RVA_Lessons.LessonBox("2\nCollections", "Description", 402)));
 
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("3.\nGenerics", "Description", 403),
-                        new RVA_Lessons.LessonBox("4.\nSerialization", "Description", 404)));
+                        new RVA_Lessons.LessonBox("3\nGenerics", "Description", 403),
+                        new RVA_Lessons.LessonBox("4\nSerialization", "Description", 404)));
 
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("5.\nNetworking and Emails", "Description", 405),
-                        new RVA_Lessons.LessonBox("6.\nMultithreading", "Description", 406)));
+                        new RVA_Lessons.LessonBox("5\nNetworking and Emails", "Description", 405),
+                        new RVA_Lessons.LessonBox("6\nMultithreading", "Description", 406)));
 
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("7.\nApplets", "Description", 407),
-                        new RVA_Lessons.LessonBox("8.\nLambda Expressions", "Description", 408)));
+                        new RVA_Lessons.LessonBox("7\nApplets", "Description", 407),
+                        new RVA_Lessons.LessonBox("8\nLambda Expressions", "Description", 408)));
                 break;
             default:
                 return;

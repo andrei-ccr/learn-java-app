@@ -36,6 +36,10 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
         mChapters.add(new RVA_Chapters.Chapter(getResources().getString(R.string.chapter4_title),
                 getResources().getString(R.string.chapter4_name),
                 getResources().getString(R.string.chapter4_desc)));
+
+        mChapters.add(new RVA_Chapters.Chapter("More chapters",
+                "Coming soon",
+                "Java is a big programming language. There will be always new things to introduce or expand on. Stay tuned for new chapters."));
     }
 
     private RVA_Chapters GetChaptersRVA() {

@@ -6,19 +6,19 @@
     <string name="title_about">About</string>
 
     <string name="box_title_basic">Basic Learning Package</string>
-    <string name="box_subtitle_basic">FREE  ~  Estimated duration: 30min - 1h</string>
+    <string name="box_subtitle_basic">FREE  ~  Estimated duration: 1h - 4h</string>
     <string name="box_body_basic">Learn Java from the beginning. Start with the basics and progress to more advanced topics.</string>
     <string name="box_btn_basic">Start</string>
 
     <string name="box_title_full">Complete Learning Package</string>
-    <string name="box_subtitle_full">PAID  ~  Estimated duration: &gt;4h</string>
+    <string name="box_subtitle_full">PAID  ~  Estimated duration: &gt;8h</string>
     <string name="box_body_full">Learn Java from the beginning. Start with the basics and progress to more advanced topics.</string>
     <string name="box_btn_full">Activate</string>
 
     <string name="chapter1_title">Chapter I</string>
     <string name="chapter1_name">Basics</string>
-    <string name="chapter1_short_desc">Install Java and everything you need. Learn about variables, conditionals, user input and more.</string>
-    <string name="chapter1_desc">Start with the basics. Preparations for programming. Install Java and everything you need. Learn about variables, conditionals, user input and more. At the end of this chapter, you should be capable of building simple apps.</string>
+    <string name="chapter1_short_desc">Install Java and everything you need. Learn about variables, basic control structures, user input and more.</string>
+    <string name="chapter1_desc">Start with the basics. Preparations for programming in Java. Learn about variables, basic control structures, user input and more. At the end of this chapter, you will be capable of building simple apps.</string>
     <string name="chapter2_title">Chapter II</string>
     <string name="chapter2_name">Intermediate</string>
     <string name="chapter2_short_desc">No description yet.</string>
@@ -44,8 +44,8 @@
     <string name="btn_finish">Finish</string> <!-- Used in the last page of the last lesson -->
 
 	
-	<!-- Lessons Body and Page Title -->
-	<!---->
+	<!-- ######################################## Lessons Body and Page Title ######################################## -->
+	<!-- ############################################################################################################# -->
 	
     <string name="lesson_101_1_title">Getting Started</string>
     <string name="lesson101_1"><![CDATA["
@@ -82,6 +82,8 @@
 		<p>Every project must contain at least one class. For now, your projects will contain only one class. In this class you will write your program code. This might be confusing for now. That's OK.</p><p>To create a class for your project go to <b>File &gt; New &gt; Class</b>. In the window that opens, provide the <i>Name</i> (eg.: MyFirstProgram) and the <i>Source folder</i> which is going to be <font color="gray"><i>MyProject/src</i></font> and leave everything else as it is. Click <b>Finish</b>. You have now created a class in which you can write code.</p><p> In the next lesson, we will write a simple Java program. See you there!</p>
 	"]]>
 	</string>
+
+    <!-- ########################################## LESSON 102 ###################################### -->
 	
 	<string name="lesson_102_1_title">Time to code</string>
 	<string name="lesson102_1"><![CDATA["
@@ -146,10 +148,193 @@ System.out.println( <font color="#a300cc">"And this is another message"</font> )
 <p>Try it! Print your own messages to the screen. Remember that these must be written inside the <font color="#1aa3ff">main</font> function.</p>
 	"]]></string>
 	
-	<string name="lesson_102_6_title">There's more to it</string>
+	<string name="lesson_102_6_title">There\'s more to it</string>
 	<string name="lesson102_6"><![CDATA["
 <p>Java is a powerful language and there's more to it than just printing messages on the screen. In the next lesson, you are going to learn a very important concept: <font color="blue"><big>variables</big></font>.</p>
 
 <p>Remember: if there is something unclear, you can always go back and reread any part of any lesson. When your ready, proceed to the <a href="301">next lesson: Variables</a></p>
 	"]]></string>
+
+
+    <!-- ########################################## LESSON 103 ###################################### -->
+
+
+    <string name="lesson_103_1_title">Introduction to variables</string>
+    <string name="lesson103_1"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_103_2_title">Primitive types</string>
+    <string name="lesson103_2"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_103_3_title">Using a variable</string>
+    <string name="lesson103_3"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_103_4_title">Full program</string>
+    <string name="lesson103_4"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_103_5_title">Numbers, Integers</string>
+    <string name="lesson103_5"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_103_6_title">Other primitives</string>
+    <string name="lesson103_6"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_103_7_title">Characters, Strings, Objects</string>
+    <string name="lesson103_7"><![CDATA["
+
+    "]]></string>
+
+
+    <!-- ########################################## LESSON 104 ###################################### -->
+
+
+    <string name="lesson_104_1_title">User input</string>
+    <string name="lesson104_1"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_104_2_title">Using a Scanner</string>
+    <string name="lesson104_2"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_104_3_title">Reading a number</string>
+    <string name="lesson104_3"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_104_4_title">Review</string>
+    <string name="lesson104_4"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_104_5_title">One keyboard Scanner only</string>
+    <string name="lesson104_5"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_104_6_title">Read more</string>
+    <string name="lesson104_6"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_104_7_title">More ways</string>
+    <string name="lesson104_7"><![CDATA["
+
+    "]]></string>
+
+    <!-- ########################################## LESSON 105 ###################################### -->
+
+
+    <string name="lesson_105_1_title">Decisions, decisions</string>
+    <string name="lesson105_1"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_105_2_title">The if statement</string>
+    <string name="lesson105_2"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_105_3_title">What else?</string>
+    <string name="lesson105_3"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_105_4_title">More decisions</string>
+    <string name="lesson105_4"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_105_5_title">Compare numbers</string>
+    <string name="lesson105_5"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_105_6_title">First come, first served</string>
+    <string name="lesson105_6"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_105_7_title">Booleans</string>
+    <string name="lesson105_7"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_105_8_title">Logic makes sense</string>
+    <string name="lesson105_8"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_105_9_title">Same result, different condition</string>
+    <string name="lesson105_9"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_105_10_title">End if</string>
+    <string name="lesson105_10"><![CDATA["
+
+    "]]></string>
+
+    <!-- ########################################## LESSON 106 ###################################### -->
+
+
+    <string name="lesson_106_1_title">Dealing with too much</string>
+    <string name="lesson106_1"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_106_2_title">Array instead of variable</string>
+    <string name="lesson106_2"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_106_3_title">Asigning</string>
+    <string name="lesson106_3"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_106_4_title">Confusing declaration</string>
+    <string name="lesson106_4"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_106_5_title">Accessing</string>
+    <string name="lesson106_5"><![CDATA["
+
+    "]]></string>
+
+    <!-- ########################################## LESSON 107 ###################################### -->
+
+
+    <string name="lesson_107_1_title">Again and again</string>
+    <string name="lesson107_1"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_107_2_title">The while loop</string>
+    <string name="lesson107_2"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_107_3_title">Looping forever</string>
+    <string name="lesson107_3"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_107_4_title">Counting</string>
+    <string name="lesson107_4"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_107_5_title">Program explained</string>
+    <string name="lesson107_5"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_107_6_title">For loop</string>
+    <string name="lesson107_6"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_107_7_title">Printing an array</string>
+    <string name="lesson107_7"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_107_8_title">Printing an array part 2</string>
+    <string name="lesson107_8"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_107_9_title">Get the length</string>
+    <string name="lesson107_9"><![CDATA["
+
+    "]]></string>
+    <string name="lesson_107_10_title">Put a break on it</string>
+    <string name="lesson107_10"><![CDATA["
+
+    "]]></string>
+
+    <string name="lesson_107_11_title">To be continued</string>
+    <string name="lesson107_11"><![CDATA["
+
+    "]]></string>
 </resources>

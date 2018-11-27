@@ -50,6 +50,7 @@ public class InLessonActivity extends AppCompatActivity {
         lessonsIndex = new HashMap<>();
 
         for(int i=0, l=101;i<NUMBER_OF_LESSONS;i++,l++) {
+            //TODO: Each chapter will have a different number of chapters. Change this
             //Each chapter has 8 lessons. Change the prefix for each chapter.
             if((i%8==0) && (i != 0)) {
                 l += 100;
@@ -70,10 +71,91 @@ public class InLessonActivity extends AppCompatActivity {
         lessonBodyIdList.add(R.string.lesson101_3); pageTitleIdList.add(R.string.lesson_101_3_title);
         lessonBodyIdList.add(R.string.lesson101_4); pageTitleIdList.add(R.string.lesson_101_4_title);
         lessonBodyIdList.add(R.string.lesson101_5); pageTitleIdList.add(R.string.lesson_101_5_title);
+        lessonBodyIdList.add(R.string.lesson101_6); pageTitleIdList.add(R.string.lesson_101_6_title);
 
-        lessonsList.add(new LessonMap(101, new LessonLayout(lessonBodyIdList, pageTitleIdList), 5));
+        lessonsList.add(new LessonMap(101, new LessonLayout(lessonBodyIdList, pageTitleIdList), 6));
 
         /* ### Lesson 102 ### */
+        lessonBodyIdList = new ArrayList<>();
+        pageTitleIdList = new ArrayList<>();
+        lessonBodyIdList.add(R.string.lesson102_1); pageTitleIdList.add(R.string.lesson_102_1_title);
+        lessonBodyIdList.add(R.string.lesson102_2); pageTitleIdList.add(R.string.lesson_102_2_title);
+        lessonBodyIdList.add(R.string.lesson102_3); pageTitleIdList.add(R.string.lesson_102_3_title);
+        lessonBodyIdList.add(R.string.lesson102_4); pageTitleIdList.add(R.string.lesson_102_4_title);
+        lessonBodyIdList.add(R.string.lesson102_5); pageTitleIdList.add(R.string.lesson_102_5_title);
+        lessonBodyIdList.add(R.string.lesson102_6); pageTitleIdList.add(R.string.lesson_102_6_title);
+
+        lessonsList.add(new LessonMap(102, new LessonLayout(lessonBodyIdList, pageTitleIdList), 6));
+
+        /* ### Lesson 103 ### */
+        lessonBodyIdList = new ArrayList<>();
+        pageTitleIdList = new ArrayList<>();
+        lessonBodyIdList.add(R.string.lesson103_1); pageTitleIdList.add(R.string.lesson_103_1_title);
+        lessonBodyIdList.add(R.string.lesson103_2); pageTitleIdList.add(R.string.lesson_103_2_title);
+        lessonBodyIdList.add(R.string.lesson103_3); pageTitleIdList.add(R.string.lesson_103_3_title);
+        lessonBodyIdList.add(R.string.lesson103_4); pageTitleIdList.add(R.string.lesson_103_4_title);
+        lessonBodyIdList.add(R.string.lesson103_5); pageTitleIdList.add(R.string.lesson_103_5_title);
+        lessonBodyIdList.add(R.string.lesson103_6); pageTitleIdList.add(R.string.lesson_103_6_title);
+        lessonBodyIdList.add(R.string.lesson103_7); pageTitleIdList.add(R.string.lesson_103_7_title);
+
+        lessonsList.add(new LessonMap(103, new LessonLayout(lessonBodyIdList, pageTitleIdList), 7));
+
+        /* ### Lesson 104 ### */
+        lessonBodyIdList = new ArrayList<>();
+        pageTitleIdList = new ArrayList<>();
+        lessonBodyIdList.add(R.string.lesson104_1); pageTitleIdList.add(R.string.lesson_104_1_title);
+        lessonBodyIdList.add(R.string.lesson104_2); pageTitleIdList.add(R.string.lesson_104_2_title);
+        lessonBodyIdList.add(R.string.lesson104_3); pageTitleIdList.add(R.string.lesson_104_3_title);
+        lessonBodyIdList.add(R.string.lesson104_4); pageTitleIdList.add(R.string.lesson_104_4_title);
+        lessonBodyIdList.add(R.string.lesson104_5); pageTitleIdList.add(R.string.lesson_104_5_title);
+        lessonBodyIdList.add(R.string.lesson104_6); pageTitleIdList.add(R.string.lesson_104_6_title);
+        lessonBodyIdList.add(R.string.lesson104_7); pageTitleIdList.add(R.string.lesson_104_7_title);
+
+        lessonsList.add(new LessonMap(104, new LessonLayout(lessonBodyIdList, pageTitleIdList), 7));
+
+        /* ### Lesson 105 ### */
+        lessonBodyIdList = new ArrayList<>();
+        pageTitleIdList = new ArrayList<>();
+        lessonBodyIdList.add(R.string.lesson105_1); pageTitleIdList.add(R.string.lesson_105_1_title);
+        lessonBodyIdList.add(R.string.lesson105_2); pageTitleIdList.add(R.string.lesson_105_2_title);
+        lessonBodyIdList.add(R.string.lesson105_3); pageTitleIdList.add(R.string.lesson_105_3_title);
+        lessonBodyIdList.add(R.string.lesson105_4); pageTitleIdList.add(R.string.lesson_105_4_title);
+        lessonBodyIdList.add(R.string.lesson105_5); pageTitleIdList.add(R.string.lesson_105_5_title);
+        lessonBodyIdList.add(R.string.lesson105_6); pageTitleIdList.add(R.string.lesson_105_6_title);
+        lessonBodyIdList.add(R.string.lesson105_7); pageTitleIdList.add(R.string.lesson_105_7_title);
+        lessonBodyIdList.add(R.string.lesson105_8); pageTitleIdList.add(R.string.lesson_105_8_title);
+        lessonBodyIdList.add(R.string.lesson105_9); pageTitleIdList.add(R.string.lesson_105_9_title);
+        lessonBodyIdList.add(R.string.lesson105_10); pageTitleIdList.add(R.string.lesson_105_10_title);
+
+        lessonsList.add(new LessonMap(105, new LessonLayout(lessonBodyIdList, pageTitleIdList), 10));
+
+        /* ### Lesson 106 ### */
+        lessonBodyIdList = new ArrayList<>();
+        pageTitleIdList = new ArrayList<>();
+        lessonBodyIdList.add(R.string.lesson106_1); pageTitleIdList.add(R.string.lesson_106_1_title);
+        lessonBodyIdList.add(R.string.lesson106_2); pageTitleIdList.add(R.string.lesson_106_2_title);
+        lessonBodyIdList.add(R.string.lesson106_3); pageTitleIdList.add(R.string.lesson_106_3_title);
+        lessonBodyIdList.add(R.string.lesson106_4); pageTitleIdList.add(R.string.lesson_106_4_title);
+        lessonBodyIdList.add(R.string.lesson106_5); pageTitleIdList.add(R.string.lesson_106_5_title);
+
+        lessonsList.add(new LessonMap(106, new LessonLayout(lessonBodyIdList, pageTitleIdList), 5));
+
+        /* ### Lesson 107 ### */
+        lessonBodyIdList = new ArrayList<>();
+        pageTitleIdList = new ArrayList<>();
+        lessonBodyIdList.add(R.string.lesson107_1); pageTitleIdList.add(R.string.lesson_107_1_title);
+        lessonBodyIdList.add(R.string.lesson107_2); pageTitleIdList.add(R.string.lesson_107_2_title);
+        lessonBodyIdList.add(R.string.lesson107_3); pageTitleIdList.add(R.string.lesson_107_3_title);
+        lessonBodyIdList.add(R.string.lesson107_4); pageTitleIdList.add(R.string.lesson_107_4_title);
+        lessonBodyIdList.add(R.string.lesson107_5); pageTitleIdList.add(R.string.lesson_107_5_title);
+        lessonBodyIdList.add(R.string.lesson107_6); pageTitleIdList.add(R.string.lesson_107_6_title);
+        lessonBodyIdList.add(R.string.lesson107_7); pageTitleIdList.add(R.string.lesson_107_7_title);
+        lessonBodyIdList.add(R.string.lesson107_8); pageTitleIdList.add(R.string.lesson_107_8_title);
+        lessonBodyIdList.add(R.string.lesson107_9); pageTitleIdList.add(R.string.lesson_107_9_title);
+        lessonBodyIdList.add(R.string.lesson107_10); pageTitleIdList.add(R.string.lesson_107_10_title);
+        lessonBodyIdList.add(R.string.lesson107_11); pageTitleIdList.add(R.string.lesson_107_11_title);
+
+        lessonsList.add(new LessonMap(107, new LessonLayout(lessonBodyIdList, pageTitleIdList), 11));
         //TODO: Add other lessons
 
     }
