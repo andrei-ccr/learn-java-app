@@ -6,16 +6,77 @@
     <string name="title_about">About</string>
 
 
+
+    <!-- Boxes -->
     <string name="box_title_basic">Basic Learning Package</string>
     <string name="box_subtitle_basic">FREE  ~  Estimated duration: 1h - 4h</string>
-    <string name="box_body_basic">Learn Java from the beginning. This package contains only the basic concepts. Suitable for beginners.</string>
-    <string name="box_btn_basic">Start</string>
+    <string name="box_desc_basic">Learn Java from the beginning. This package contains only the basic concepts. Suitable for beginners.</string>
+
+    <string name="box_title_ad">Ad free</string>
+    <string name="box_subtitle_ad">Permanently disables ads</string>
+    <string name="box_desc_ad">Tired of ads? You can get rid of them!</string>
 
     <string name="box_title_full">Complete Learning Package</string>
     <string name="box_subtitle_full">PAID  ~  Estimated duration: &gt;8h</string>
-    <string name="box_body_full">This package gives you access to all lessons and upcoming lessons. Suitable for beginners and advanced.</string>
-    <string name="box_btn_full">Activate</string>
+    <string name="box_desc_full">This package gives you access to all lessons and upcoming lessons. Suitable for beginners and advanced.</string>
 
+
+	<string-array name="chapter1">
+		<item name="title">Chapter I</item>
+		<item name="name">Basics</item>
+		<item name="shortDesc">Install Java and everything you need. Learn about variables, basic control structures, user input and more.</item>
+		<item name="description">Start with the basics. You will learn about variables, basic control structures, user input and more. At the end of this chapter, you will know how to build simple Java apps.</item>
+	</string-array>
+	
+	<string-array name="chapter2">
+		<item name="title">Chapter II</item>
+		<item name="name">Basics Plus</item>
+		<item name="shortDesc">Expand your knowledge with more useful concepts. Learn more about functions, loops and arrays.</item>
+		<item name="description">This chapter mainly expands on what you learn in Basics. You will learn more about functions, loops, array as well as working with strings, time, and files</item>
+	</string-array>
+	
+	<string-array name="chapter3">
+		<item name="title">Chapter III</item>
+		<item name="name">Object Oriented Programming (OOP)</item>
+		<item name="shortDesc">Introduction to OOP (Object Oriented Programming). Learn to work with classes and objects.</item>
+		<item name="description">Introduction to the world of Object Oriented Programming. Learn the fundamentals of working with classes and objects.</item>
+	</string-array>
+	
+	<string-array name="chapter4">
+		<item name="title">Chapter IV</item>
+		<item name="name">Data Structures</item>
+		<item name="shortDesc">Organise data with data structures. Learn to use the wide range of data structures available in Java.</item>
+		<item name="description">Learn to use data structures in Java. Properly organising data is especially important in large projects. Use the wide range of data structures available in Java.</item>
+	</string-array>
+	
+	<string-array name="chapter5">
+		<item name="title">Chapter V</item>
+		<item name="name">Advanced OOP</item>
+		<item name="shortDesc"></item>
+		<item name="description"></item>
+	</string-array>
+	
+	<string-array name="chapter6">
+		<item name="title">Chapter VI</item>
+		<item name="name">Advanced OOP</item>
+		<item name="shortDesc"></item>
+		<item name="description"></item>
+	</string-array>
+	
+	<string-array name="chapter7">
+		<item name="title">Chapter VII</item>
+		<item name="name">Threading</item>
+		<item name="shortDesc"></item>
+		<item name="description"></item>
+	</string-array>
+	
+	<string-array name="chapter8">
+		<item name="title">Chapter VIII</item>
+		<item name="name">Java Advanced</item>
+		<item name="shortDesc"></item>
+		<item name="description"></item>
+	</string-array>
+	
     <string name="chapter1_title">Chapter I</string>
     <string name="chapter1_name">Basics</string>
     <string name="chapter1_short_desc">Install Java and everything you need. Learn about variables, basic control structures, user input and more.</string>
@@ -38,11 +99,13 @@
     <string name="fa_license">https://fontawesome.com/license</string>
     <string name="title_activity_in_lesson">InLessonActivity</string>
     <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="btn_next">Next</string>
     <string name="btn_next_lesson">Next Lesson</string>
     <string name="btn_finish">Finish</string> <!-- Used in the last page of the last lesson -->
+    <string name="btn_start">Start</string>
+    <string name="btn_activate">Activate</string>
+    <string name="btn_disable_ads">Disable Ads</string>
 
 	
 	<!-- ######################################## Lessons Body and Page Title ######################################## -->

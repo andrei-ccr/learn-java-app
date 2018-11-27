@@ -1,13 +1,11 @@
 package org.softry.learnjava;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,9 +15,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
-    private ScrollView containerLearnTab;
-    private Button mBtnLearn, mBtnActivate;
+    private TextView tvAbout;
+    private ScrollView containerLearnTab, containerInterviewTab, containerAboutTab;
+    private Button mBtnStart, mBtnActivate;
 
 	private void FixBottomNavigationText() {
 		BottomNavigationView mBottomNavigationView = findViewById(R.id.navigation);
@@ -40,18 +38,19 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_learn:
-                    mTextMessage.setVisibility(View.INVISIBLE);
+                    containerInterviewTab.setVisibility(View.GONE);
+                    containerAboutTab.setVisibility(View.GONE);
                     containerLearnTab.setVisibility(View.VISIBLE);
                     return true;
                 case R.id.navigation_interview:
-                    mTextMessage.setVisibility(View.VISIBLE);
-                    containerLearnTab.setVisibility(View.INVISIBLE);
-                    mTextMessage.setText("Work in progress");
+                    containerInterviewTab.setVisibility(View.VISIBLE);
+                    containerAboutTab.setVisibility(View.GONE);
+                    containerLearnTab.setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_about:
-                    mTextMessage.setVisibility(View.VISIBLE);
-                    containerLearnTab.setVisibility(View.INVISIBLE);
-                    mTextMessage.setText("Learn JAVA\n\nApplication for learning the Java programming language. Lessons are small and designed for quick learning.");
+                    containerInterviewTab.setVisibility(View.GONE);
+                    containerAboutTab.setVisibility(View.VISIBLE);
+                    containerLearnTab.setVisibility(View.GONE);
                     return true;
             }
             return false;
@@ -63,29 +62,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = findViewById(R.id.message);
-        containerLearnTab = findViewById(R.id.container_learntab);
+        //Get the main containers
+        containerLearnTab = findViewById(R.id.container_learnTab);
+        containerInterviewTab = findViewById(R.id.container_interviewTab);
+        containerAboutTab = findViewById(R.id.container_aboutTab);
 
-        mBtnLearn = findViewById(R.id.btn_learn_basic);
+        tvAbout = findViewById(R.id.tvAbout);
+
+        mBtnStart = findViewById(R.id.btn_learn_basic);
         mBtnActivate = findViewById(R.id.btn_learn_full);
+
+        containerInterviewTab.setVisibility(View.GONE);
+        containerAboutTab.setVisibility(View.GONE);
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         FixBottomNavigationText();
 
-        mTextMessage.setVisibility(View.INVISIBLE);
+        tvAbout.setText("Learn Java\n\n" +
+                "Application for learning the Java programming language. Lessons are designed for quick learning.\n\n" +
+                "Suitable for both beginners and advanced programmers.");
 
-        mBtnLearn.setOnClickListener(new View.OnClickListener() {
+
+
+        mBtnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent learnIntent = new Intent(v.getContext(), ChaptersActivity.class);
                 startActivity(learnIntent);
             }
         });
-
-
-
-
     }
 
 }
