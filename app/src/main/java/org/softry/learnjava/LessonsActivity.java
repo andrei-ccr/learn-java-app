@@ -1,6 +1,7 @@
 package org.softry.learnjava;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,84 +22,27 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     private void SetLessonBoxList(int chapter) {
         mLessonsBox = new ArrayList<>();
 
-        //TODO: Move all strings to strings.xml
-        switch(chapter) {
-            case 1:
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("1\nInstall Java", "Description", 101),
-                        new RVA_Lessons.LessonBox("2\nFirst Program", "Description", 102)));
+        TypedArray lessonListByChapter = getResources().obtainTypedArray(R.array.lessonList);
+        String[] lessonDetails = getResources().getStringArray(lessonListByChapter.getResourceId(chapter-1, 0));
 
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("3\nVariables", "Description", 103),
-                        new RVA_Lessons.LessonBox("4\nUser Input", "Description", 104)));
+        int lessonId = (chapter>=10) ? chapter : (chapter*10);
 
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("5\nConditionals", "Description", 105),
-                        new RVA_Lessons.LessonBox("6\nArrays", "Description", 106)));
-
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("7\nLoops", "Description", 107),
-                        new RVA_Lessons.LessonBox("8\nFunctions/Methods", "Description", 108)));
-                break;
-            case 2:
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("1\nTry, Catch, Finally", "Description", 201),
-                        new RVA_Lessons.LessonBox("2\nBasic File I/O", "Description", 202)));
-
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("3\nGet Date and Time", "Description", 203),
-                        new RVA_Lessons.LessonBox("4\nRegular Expressions", "Description", 204)));
-
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("5\nAdvanced Functions/Methods", "Description", 205),
-                        new RVA_Lessons.LessonBox("6\nProgram Arguments", "Description", 206)));
-
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("7\nModifiers", "Description", 207),
-                        new RVA_Lessons.LessonBox("8\nExceptions", "Description", 208)));
-                break;
-            case 3:
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("1\nBasics", "Description", 301),
-                        new RVA_Lessons.LessonBox("2\nEncapsulation", "Description", 302)));
-
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("3\nInheritance", "Description", 303),
-                        new RVA_Lessons.LessonBox("4\nOverriding", "Description", 304)));
-
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("5\nPolymorphism", "Description", 305),
-                        new RVA_Lessons.LessonBox("6\nAbstraction", "Description", 306)));
-
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("7\nInterfaces", "Description", 307),
-                        new RVA_Lessons.LessonBox("8\nPackages", "Description", 308)));
-                break;
-            case 4:
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("1\nData Structures", "Description", 401),
-                        new RVA_Lessons.LessonBox("2\nCollections", "Description", 402)));
-
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("3\nGenerics", "Description", 403),
-                        new RVA_Lessons.LessonBox("4\nSerialization", "Description", 404)));
-
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("5\nNetworking and Emails", "Description", 405),
-                        new RVA_Lessons.LessonBox("6\nMultithreading", "Description", 406)));
-
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox("7\nApplets", "Description", 407),
-                        new RVA_Lessons.LessonBox("8\nLambda Expressions", "Description", 408)));
-                break;
-            default:
-                return;
+        for(int i=0;i<lessonDetails.length-1;i+=2) {
+            mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
+                    new RVA_Lessons.LessonBox(lessonDetails[i], " ", lessonId * 100 + (i+1) ),
+                    new RVA_Lessons.LessonBox(lessonDetails[i+1], " ", lessonId * 100 + (i+2) )
+            ));
         }
 
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        TypedArray chapterList = getResources().obtainTypedArray(R.array.chapterList);
+        TypedArray chapterThemeList = getResources().obtainTypedArray(R.array.ChaptersColor);
+        int chapterCount = chapterList.length();
+
         //TODO: Don't get selectedChapter when coming back from InLessonActivity
         int selectedChapter = 1; //This is a temporary fix until the issue is fixed
         try {
@@ -108,15 +52,9 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
             e.printStackTrace();
         }
 
-        if(selectedChapter == 1) {
-            setTheme(R.style.AppTheme_ChapterOne);
-        } else if(selectedChapter == 2) {
-            setTheme(R.style.AppTheme_ChapterTwo);
-        } else if(selectedChapter == 3) {
-            setTheme(R.style.AppTheme_ChapterThree);
-        } else if(selectedChapter == 4) {
-            setTheme(R.style.AppTheme_ChapterFour);
-        }
+
+        setTheme(chapterThemeList.getResourceId(selectedChapter-1,-1));
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
@@ -135,27 +73,13 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
         TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
 
-        switch(selectedChapter) {
-            case 1:
-                this.setTitle(R.string.chapter1_title);
-                tvChapterDesc.setText(R.string.chapter1_short_desc);
-                break;
-            case 2:
-                this.setTitle(R.string.chapter2_title);
-                tvChapterDesc.setText(R.string.chapter2_short_desc);
-                break;
-            case 3:
-                this.setTitle(R.string.chapter3_title);
-                tvChapterDesc.setText(R.string.chapter3_short_desc);
-                break;
-            case 4:
-                this.setTitle(R.string.chapter4_title);
-                tvChapterDesc.setText(R.string.chapter4_short_desc);
-                break;
-        }
+        String[] selectedChapterDetails = getResources().getStringArray(chapterList.getResourceId(selectedChapter-1, 0));
+        this.setTitle(selectedChapterDetails[1]);
+        tvChapterDesc.setText(selectedChapterDetails[2]);
+
+
 
         SetLessonBoxList(selectedChapter);
-
 
         RVA_Lessons rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
         rvAdapter.setClickListener(this);

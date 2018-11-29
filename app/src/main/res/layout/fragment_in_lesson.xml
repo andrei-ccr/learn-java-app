@@ -61,8 +61,8 @@
                     android:layout_marginStart="60dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="4dp"
-                    android:text="Install Java"
-                    android:textAllCaps="true"
+                    android:text=""
+                    android:textAllCaps="false"
                     android:textSize="15sp"
                     app:fontFamily="sans-serif" />
             </RelativeLayout>
@@ -81,16 +81,16 @@
 
             <Button
                 android:id="@+id/btn_continue"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginStart="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:background="@android:color/holo_blue_dark"
                 android:text="@string/btn_next"
                 android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                android:textSize="15sp" />
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

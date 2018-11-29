@@ -20,6 +20,23 @@
     <string name="box_subtitle_full">PAID  ~  Estimated duration: &gt;8h</string>
     <string name="box_desc_full">This package gives you access to all lessons and upcoming lessons. Suitable for beginners and advanced.</string>
 
+    <array name="chapterList">
+        <item name="chapter1">@array/chapter1</item>
+        <item name="chapter2">@array/chapter2</item>
+        <item name="chapter3">@array/chapter3</item>
+        <item name="chapter4">@array/chapter4</item>
+        <item name="chapter5">@array/chapter5</item>
+        <item name="chapter6">@array/chapter6</item>
+        <item name="chapter7">@array/chapter7</item>
+    </array>
+
+    <array name="lessonList">
+        <item>@array/chapter1Lessons</item>
+        <item>@array/chapter2Lessons</item>
+        <item>@array/chapter3Lessons</item>
+        <item>@array/chapter4Lessons</item>
+
+    </array>
 
 	<string-array name="chapter1">
 		<item name="title">Chapter I</item>
@@ -58,59 +75,87 @@
 	
 	<string-array name="chapter6">
 		<item name="title">Chapter VI</item>
-		<item name="name">Advanced OOP</item>
+		<item name="name">Threading</item>
 		<item name="shortDesc"></item>
 		<item name="description"></item>
 	</string-array>
 	
 	<string-array name="chapter7">
 		<item name="title">Chapter VII</item>
-		<item name="name">Threading</item>
+		<item name="name">Java Advanced Concepts</item>
 		<item name="shortDesc"></item>
 		<item name="description"></item>
 	</string-array>
 	
-	<string-array name="chapter8">
-		<item name="title">Chapter VIII</item>
-		<item name="name">Java Advanced</item>
-		<item name="shortDesc"></item>
-		<item name="description"></item>
+	<string-array name="chapter1Lessons">
+		<item name="lesson1">Installation</item>
+		<item name="lesson2">First Program</item>
+		<item name="lesson3">Variables</item>
+		<item name="lesson4">User Input</item>
+		<item name="lesson5">Conditionals</item>
+		<item name="lesson6">Arrays</item>
+		<item name="lesson7">Loops</item>
+		<item name="lesson8">Functions</item>
 	</string-array>
 	
-    <string name="chapter1_title">Chapter I</string>
-    <string name="chapter1_name">Basics</string>
-    <string name="chapter1_short_desc">Install Java and everything you need. Learn about variables, basic control structures, user input and more.</string>
-    <string name="chapter1_desc">Start with the basics. Learn about variables, basic control structures, user input and more. At the end of this chapter, you will know how to build simple Java apps.</string>
-    <string name="chapter2_title">Chapter II</string>
-    <string name="chapter2_name">Intermediate</string>
-    <string name="chapter2_short_desc">No description yet.</string>
-    <string name="chapter2_desc">No description yet.</string>
-    <string name="chapter3_title">Chapter III</string>
-    <string name="chapter3_name">Object Oriented Programming</string>
-    <string name="chapter3_short_desc">No description yet.</string>
-    <string name="chapter3_desc">No description yet.</string>
-    <string name="chapter4_title">Chapter IV</string>
-    <string name="chapter4_name">Advanced</string>
-    <string name="chapter4_short_desc">No description yet.</string>
-    <string name="chapter4_desc">No description yet.</string>
+	<string-array name="chapter2Lessons">
+		<item name="lesson1">Modifiers</item>
+		<item name="lesson2">Try-Catch</item>
+		<item name="lesson3">Date &amp; Time</item>
+		<item name="lesson4">Basic File I/O</item>
+		<item name="lesson5">Strings &amp; REGEX</item>
+		<item name="lesson6">Switch-Case</item>
+		<item name="lesson7">Random</item>
+		<item name="lesson8">Loops II</item>
+		<item name="lesson9">Program Arguments</item>
+		<item name="lesson10">Functions II</item>
+	</string-array>
+	
+	<string-array name="chapter3Lessons">
+		<item name="lesson1">Classes</item>
+		<item name="lesson2">Encapsulation</item>
+		<item name="lesson3">Constructors &amp; Destructors</item>
+		<item name="lesson4">Static classes</item>
+		<item name="lesson5">Inheritance</item>
+		<item name="lesson6">More examples</item>
+	</string-array>
+	
+	<string-array name="chapter4Lessons">
+		<item name="lesson1">List</item>
+		<item name="lesson2">Stack</item>
+		<item name="lesson3">Set</item>
+		<item name="lesson4">Map</item>
+		<item name="lesson5">Sorting Data</item>
+		<item name="lesson6">More examples</item>
+	</string-array>
 
-    <string name="progress_str">Progress:</string>
-    <string name="chapter_str">Chapter</string>
-    <string name="fa_license">https://fontawesome.com/license</string>
-    <string name="title_activity_in_lesson">InLessonActivity</string>
+
+
+	<!-- Menu options -->
     <string name="action_settings">Settings</string>
 
+	
+	
+	<!-- Buttons -->
     <string name="btn_next">Next</string>
     <string name="btn_next_lesson">Next Lesson</string>
     <string name="btn_finish">Finish</string> <!-- Used in the last page of the last lesson -->
     <string name="btn_start">Start</string>
     <string name="btn_activate">Activate</string>
     <string name="btn_disable_ads">Disable Ads</string>
-
 	
+	
+
+	<!-- Other strings -->
+	<string name="progress_str">Progress:</string>
+    <string name="chapter_str">Chapter</string>
+    <string name="fa_license">https://fontawesome.com/license</string>
+	
+
 	<!-- ######################################## Lessons Body and Page Title ######################################## -->
 	<!-- ############################################################################################################# -->
-	
+
+
     <string name="lesson_101_1_title">Getting Started</string>
     <string name="lesson101_1"><![CDATA["
 		<p>To start learning, you'll first have to install Java. For beginners, an IDE is also recommended. This is what you'll do in this lesson: </p><p><a href="101_2"><font color="#123456">1. Download and Install Java</font></a></p><p><a href="101_4"><font color="#123456">2. Get an IDE (Eclipse)</font></a></p><p><a href="101_5"><font color="#123456">3. Learn how to create a new Project in Eclipse</font></a></p><p>In the following sections, you will be guided step by step on how to do these. Tap <font color="blue">next</font> to get started!</p>
@@ -119,7 +164,7 @@
 
     <string name="lesson_101_2_title">Downloading and Installing Java</string>
     <string name="lesson101_2"><![CDATA["
-		<p>We'll start by downloading and installing Java. This tutorial applies for computers running <font color="green">Windows x64</font>. You'll download <font color="orange"><b>Java SE Development Kit 8</b></font>. </p><p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">1. Go to the Java download webpage</a><br>2. Select <font color="cyan">Accept License Agreement</font><br>3. Click on the filename <font color="green">jdk-8u191-windows-x64.exe</font> (click the red down arrow)<br>4. Run the downloaded executable and follow the onscreen instructions.</p><p>Java will now be installed on your computer. After it is done, you are theoretically ready to make Java programs.</p><p>However, in the next section, you'll also learn how to download and install an IDE. An <b><font color="blue">Integrated Development Environment</font></b> is recommended for beginners. </p>
+		<p>We'll start by downloading and installing Java. This tutorial applies for computers running <font color="#090">Windows x64</font>. You'll download <font color="orange"><b>Java SE Development Kit 8</b></font>. </p><p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">1. Go to the Java download webpage</a><br>2. Select <font color="cyan">Accept License Agreement</font><br>3. Click on the filename <font color="green">jdk-8u191-windows-x64.exe</font> (click the red down arrow)<br>4. Run the downloaded executable and follow the onscreen instructions.</p><p>Java will now be installed on your computer. After it is done, you are theoretically ready to make Java programs.</p><p>However, in the next section, you'll also learn how to download and install an IDE. An <b><font color="123456">Integrated Development Environment</font></b> is recommended for beginners. </p>
 	"]]>
 	</string>
 	

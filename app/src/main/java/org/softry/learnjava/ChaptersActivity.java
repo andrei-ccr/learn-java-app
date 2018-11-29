@@ -1,6 +1,7 @@
 package org.softry.learnjava;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,39 +11,30 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.ItemClickListener {
 
     public static final String SELECTED_CHAPTER = "org.softry.learnjava.TAG.SELECTED_CHAPTER";
-    public static final int LAST_CHAPTER = 5;
 
     private List<RVA_Chapters.Chapter> mChapters;
     private RecyclerView mRecyclerView;
+    private final Integer[] comingSoonChapters = {5,6,7};
 
     private void SetChapterList() {
         mChapters = new ArrayList<>();
-        mChapters.add(new RVA_Chapters.Chapter(getResources().getString(R.string.chapter1_title),
-                getResources().getString(R.string.chapter1_name),
-                getResources().getString(R.string.chapter1_desc)));
 
-        mChapters.add(new RVA_Chapters.Chapter(getResources().getString(R.string.chapter2_title),
-                getResources().getString(R.string.chapter2_name),
-                getResources().getString(R.string.chapter2_desc)));
+        String[] aChapter;
+        TypedArray chapterList = getResources().obtainTypedArray(R.array.chapterList);
 
-        mChapters.add(new RVA_Chapters.Chapter(getResources().getString(R.string.chapter3_title),
-                getResources().getString(R.string.chapter3_name),
-                getResources().getString(R.string.chapter3_desc)));
-
-        mChapters.add(new RVA_Chapters.Chapter(getResources().getString(R.string.chapter4_title),
-                getResources().getString(R.string.chapter4_name),
-                getResources().getString(R.string.chapter4_desc)));
-
-        mChapters.add(new RVA_Chapters.Chapter("More chapters",
-                "Coming soon",
-                "Java is a big programming language. There will be always new things to introduce or expand on. Stay tuned for new chapters."));
+        for(int i=0;i<chapterList.length();i++) {
+            aChapter = getResources().getStringArray(chapterList.getResourceId(i, 0));
+            mChapters.add(new RVA_Chapters.Chapter(aChapter[0], aChapter[1], aChapter[3]));
+        }
     }
 
     private RVA_Chapters GetChaptersRVA() {
@@ -93,10 +85,21 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
     public void onItemClick(View view, int position) {
         Log.i("myapp_info", "Selected Chapter " + Integer.toString(position+1));
 
-        if(position+1 != LAST_CHAPTER) {
+        if( (!InArray(position+1, comingSoonChapters))) {
             Intent lessonsActivity = new Intent(this, LessonsActivity.class);
             lessonsActivity.putExtra(SELECTED_CHAPTER, Integer.toString(position + 1));
             startActivity(lessonsActivity);
+        } else {
+            Toast.makeText(view.getContext(),"Coming soon", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public <E>boolean InArray(E element, E[] array) {
+        for(E arrayElem : array) {
+            if(arrayElem == element) {
+                return true;
+            }
+        }
+        return false;
     }
 }

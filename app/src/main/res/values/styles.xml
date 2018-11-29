@@ -15,6 +15,8 @@
         <item name="colorPrimaryDark">#0099cc</item>
     </style>
 
+
+
     <style name="AppTheme.ChapterOne">
         <item name="colorPrimary">@color/_chapter1color</item>
         <item name="colorPrimaryDark">@color/_chapter1color</item>
@@ -34,6 +36,31 @@
         <item name="colorPrimary">@color/_chapter4color</item>
         <item name="colorPrimaryDark">@color/_chapter4color</item>
     </style>
+
+    <style name="AppTheme.ChapterFive">
+        <item name="colorPrimary">@color/_chapter5color</item>
+        <item name="colorPrimaryDark">@color/_chapter5color</item>
+    </style>
+
+    <style name="AppTheme.ChapterSix">
+        <item name="colorPrimary">@color/_chapter6color</item>
+        <item name="colorPrimaryDark">@color/_chapter6color</item>
+    </style>
+
+    <style name="AppTheme.ChapterSeven">
+        <item name="colorPrimary">@color/_chapter7color</item>
+        <item name="colorPrimaryDark">@color/_chapter7color</item>
+    </style>
+
+    <array name="ChaptersColor">
+        <item>@style/AppTheme.ChapterOne</item>
+        <item>@style/AppTheme.ChapterTwo</item>
+        <item>@style/AppTheme.ChapterThree</item>
+        <item>@style/AppTheme.ChapterFour</item>
+        <item>@style/AppTheme.ChapterFive</item>
+        <item>@style/AppTheme.ChapterSix</item>
+        <item>@style/AppTheme.ChapterSeven</item>
+    </array>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

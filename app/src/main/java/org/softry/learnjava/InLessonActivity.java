@@ -1,6 +1,7 @@
 package org.softry.learnjava;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -44,20 +45,27 @@ public class InLessonActivity extends AppCompatActivity {
 
     private List<LessonMap> lessonsList;
     private Map<Integer, Integer> lessonsIndex;
-    private static final int NUMBER_OF_LESSONS = 32;
 
+    private List<Integer> GetLessonOrder() {
+        List<Integer> lessonOrder = new ArrayList();
+        TypedArray lessonListByChapter = getResources().obtainTypedArray(R.array.lessonList);
 
-
+        for(int i=0;i<lessonListByChapter.length();i++) {
+            int lessonIdPrefix = (i+1>=10) ? i+1 : ((i+1)*10);
+            for(int j=1;j<getResources().getStringArray(lessonListByChapter.getResourceId(i, 0)).length;j++) {
+                int lessonId = lessonIdPrefix * 100 + j;
+                lessonOrder.add(lessonId);
+            }
+        }
+        return lessonOrder;
+    }
     private void InitialiseLessonList() {
         lessonsIndex = new HashMap<>();
-        int[] lessonsOrder = {101, 102, 103, 104, 105, 106, 107, 108,
-                201,202,203,204,205,206,207,208,
-                301,302,303,304,305,306,307,308,
-                401,402,403,404,405,406,407,408};
+        List<Integer> lessonOrder = GetLessonOrder();
 
-        for(int i=0;i<lessonsOrder.length;i++) {
-            Log.i("myapp", Integer.toString(lessonsOrder[i]) + ", " + Integer.toString(i));
-            lessonsIndex.put(lessonsOrder[i], i);
+        for(int i=0;i<lessonOrder.size();i++) {
+            Log.i("myapp", Integer.toString(lessonOrder.get(i)) + ", " + Integer.toString(i));
+            lessonsIndex.put(lessonOrder.get(i), i);
         }
 
         lessonsList = new ArrayList<>();
@@ -271,7 +279,9 @@ public class InLessonActivity extends AppCompatActivity {
 
             TextView tvLessonBody = rootView.findViewById(R.id.tv_lesson_body);
             TextView tvPageTitle = rootView.findViewById(R.id.tv_lesson_page_title);
+            TextView tvLessonTitle = rootView.findViewById(R.id.tv_lesson_title);
             Button nextBtn = rootView.findViewById(R.id.btn_continue);
+
             nextBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

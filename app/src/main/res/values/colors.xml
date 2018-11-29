@@ -9,13 +9,19 @@
     <color name="_lighterBlack">#333333</color>
     <color name="_white">#ffffff</color>
     <color name="_gray">#777</color>
+
+    <!-- Progress Colors -->
     <color name="_progressRed">#b00</color>
     <color name="_progressOrange">#bb7a00</color>
     <color name="_progressYellow">#afbb00</color>
     <color name="_progressGreen">#0b0</color>
 
+    <!-- Chapters Colors -->
     <color name="_chapter1color">#0ae</color>
     <color name="_chapter2color">#008c44</color>
     <color name="_chapter3color">#c91dc9</color>
     <color name="_chapter4color">#0d5ea9</color>
+    <color name="_chapter5color">#99a90d</color>
+    <color name="_chapter6color">#390da9</color>
+    <color name="_chapter7color">#a98f0d</color>
 </resources>
