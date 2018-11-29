@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="lessonImagesOrder">
+        <item>@drawable/install_java</item>
+        <item>@drawable/first_program</item>
+        <item>@drawable/variables</item>
+        <item>@drawable/variables</item>
+        <item>@drawable/decisionals</item>
+        <item>@drawable/arrays</item>
+        <item>@drawable/loops</item>
+        <item>@drawable/functions</item>
+    </array>
+
+</resources>

@@ -23,14 +23,16 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         mLessonsBox = new ArrayList<>();
 
         TypedArray lessonListByChapter = getResources().obtainTypedArray(R.array.lessonList);
+        TypedArray lessonImagesOrder = getResources().obtainTypedArray(R.array.lessonImagesOrder);
         String[] lessonDetails = getResources().getStringArray(lessonListByChapter.getResourceId(chapter-1, 0));
 
         int lessonId = (chapter>=10) ? chapter : (chapter*10);
 
+        //TODO: Allow only one lesson box per row
         for(int i=0;i<lessonDetails.length-1;i+=2) {
             mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                    new RVA_Lessons.LessonBox(lessonDetails[i], " ", lessonId * 100 + (i+1) ),
-                    new RVA_Lessons.LessonBox(lessonDetails[i+1], " ", lessonId * 100 + (i+2) )
+                    new RVA_Lessons.LessonBox(lessonDetails[i], " ", lessonId * 100 + (i+1), getResources().getDrawable(lessonImagesOrder.getResourceId(i,0)) ),
+                    new RVA_Lessons.LessonBox(lessonDetails[i+1], " ", lessonId * 100 + (i+2), getResources().getDrawable(lessonImagesOrder.getResourceId(i+1,0)) )
             ));
         }
 

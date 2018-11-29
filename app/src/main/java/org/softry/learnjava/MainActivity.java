@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //TODO: Load all chapters and lessons objects into static lists here for easier access from anywhere
+
         //Get the main containers
         containerLearnTab = findViewById(R.id.container_learnTab);
         containerInterviewTab = findViewById(R.id.container_interviewTab);

@@ -1,10 +1,12 @@
 package org.softry.learnjava;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -13,14 +15,16 @@ import java.util.List;
 public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
 
     public static class LessonBox {
+        private Drawable img;
         private String name;
         private String desc;
         private int lessonId;
 
-        public LessonBox(String name, String desc, int lessonId) {
+        public LessonBox(String name, String desc, int lessonId, Drawable img) {
             this.name = name;
             this.desc = desc;
             this.lessonId = lessonId;
+            this.img = img;
         }
 
         public String Name() {
@@ -29,6 +33,8 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         public String Desc() {
             return this.desc;
         }
+
+        public Drawable Image() { return this.img; }
 
         public int LessonId() {return this.lessonId; }
     }
@@ -63,14 +69,17 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
 
     public class mViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView lessonTitleL, lessonDescL, lessonTitleR, lessonDescR;
+        ImageView lessonImageL, lessonImageR;
         LinearLayout leftLessonBox, rightLessonBox;
 
         public mViewHolder(View itemView) {
             super(itemView);
             lessonTitleL = itemView.findViewById(R.id.tvLessonTitleL);
             lessonDescL = itemView.findViewById(R.id.tvLessonDescL);
+            lessonImageL = itemView.findViewById(R.id.ivLessonImgL);
             lessonTitleR = itemView.findViewById(R.id.tvLessonTitleR);
             lessonDescR = itemView.findViewById(R.id.tvLessonDescR);
+            lessonImageR = itemView.findViewById(R.id.ivLessonImgR);
 
             leftLessonBox = itemView.findViewById(R.id.leftLessonBox);
             rightLessonBox = itemView.findViewById(R.id.rightLessonBox);
@@ -117,6 +126,9 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
 
         holder.lessonTitleR.setText(itemElem.GetRightLessonBox().Name());
         holder.lessonDescR.setText(itemElem.GetRightLessonBox().Desc());
+
+        holder.lessonImageL.setImageDrawable(itemElem.GetLeftLessonBox().Image());
+        holder.lessonImageR.setImageDrawable(itemElem.GetRightLessonBox().Image());
 
     }
 

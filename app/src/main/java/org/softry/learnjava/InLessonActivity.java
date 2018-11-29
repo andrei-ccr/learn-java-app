@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class InLessonActivity extends AppCompatActivity {
     private int maxPages;
 
     private List<LessonMap> lessonsList;
-    private Map<Integer, Integer> lessonsIndex;
+    private Map<Integer, Integer> lessonsIndex; //Maps lessonId to an index (eg.: 1001 => 0, 1003 => 1 so on...)
 
     private List<Integer> GetLessonOrder() {
         List<Integer> lessonOrder = new ArrayList();
@@ -179,7 +180,7 @@ public class InLessonActivity extends AppCompatActivity {
 
         //Get current lesson
         Intent parentActivity = getIntent();
-        selectedLesson = Integer.parseInt(parentActivity.getStringExtra(LessonsActivity.SELECTED_LESSON));
+        selectedLesson = Integer.parseInt(parentActivity.getStringExtra(LessonsActivity.SELECTED_LESSON)); //Returns lesson id (eg.: 1001)
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -193,9 +194,14 @@ public class InLessonActivity extends AppCompatActivity {
 
         this.maxPages = 1; //Default to one page per lesson
         LessonMap lm = lessonsList.get(lessonsIndex.get(selectedLesson));
+
+        TypedArray lessonImgOrder = getResources().obtainTypedArray(R.array.lessonImagesOrder);
+
+        int lessonImgId = lessonImgOrder.getResourceId(lessonsIndex.get(selectedLesson), 0);
+
         this.maxPages = lm.GetMaxPages();
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), lm.GetLayout(), this.maxPages);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), lm.GetLayout(), this.maxPages, lessonImgId);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = findViewById(R.id.container);
@@ -240,6 +246,7 @@ public class InLessonActivity extends AppCompatActivity {
         private static final String ARG_STR_PAGE_TITLE = "str_page_title";
         private static final String ARG_STR_LESSON_BODY = "str_lesson_body";
         private static final String ARG_MAX_PAGES = "max_pages";
+        private static final String ARG_IMG_ID = "lesson_img_id";
 
         public static int currentPageNum = 1;
 
@@ -250,7 +257,7 @@ public class InLessonActivity extends AppCompatActivity {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber, int currentLesson, LessonLayout lessonLayout, int maxPages) {
+        public static PlaceholderFragment newInstance(int sectionNumber, int currentLesson, LessonLayout lessonLayout, int maxPages, int lessonImgId) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
             //TODO:Make Section number start at 0 instead of 1
@@ -259,6 +266,7 @@ public class InLessonActivity extends AppCompatActivity {
             args.putInt(ARG_STR_LESSON_BODY, lessonLayout.GetLessonBodyId(sectionNumber-1));
             args.putInt(ARG_STR_PAGE_TITLE, lessonLayout.GetPageTitleId(sectionNumber-1));
             args.putInt(ARG_MAX_PAGES, maxPages);
+            args.putInt(ARG_IMG_ID, lessonImgId);
 
             fragment.setArguments(args);
 
@@ -276,10 +284,12 @@ public class InLessonActivity extends AppCompatActivity {
             int lessonBodyStringId = getArguments().getInt(ARG_STR_LESSON_BODY);
             int pageTitleStringId = getArguments().getInt(ARG_STR_PAGE_TITLE);
             int maxPages = getArguments().getInt(ARG_MAX_PAGES);
+            int lessonImgId = getArguments().getInt(ARG_IMG_ID);
 
             TextView tvLessonBody = rootView.findViewById(R.id.tv_lesson_body);
             TextView tvPageTitle = rootView.findViewById(R.id.tv_lesson_page_title);
             TextView tvLessonTitle = rootView.findViewById(R.id.tv_lesson_title);
+            ImageView ivLessonImage = rootView.findViewById(R.id.iv_lesson_icon);
             Button nextBtn = rootView.findViewById(R.id.btn_continue);
 
             nextBtn.setOnClickListener(new View.OnClickListener() {
@@ -294,6 +304,7 @@ public class InLessonActivity extends AppCompatActivity {
             if(lessonBodyStringId != -1) {
                 tvLessonBody.setText(Html.fromHtml(getString(lessonBodyStringId)));
                 tvPageTitle.setText(pageTitleStringId);
+                ivLessonImage.setImageDrawable(getResources().getDrawable(lessonImgId));
                 if(currentPage == maxPages) {
                     nextBtn.setText(R.string.btn_next_lesson);
                 }
@@ -360,18 +371,20 @@ public class InLessonActivity extends AppCompatActivity {
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
         private int mMaxPages;
         private LessonLayout lessonLayout;
+        private int lessonImgId;
 
-        public SectionsPagerAdapter(FragmentManager fm, LessonLayout lessonLayout, int maxPages) {
+        public SectionsPagerAdapter(FragmentManager fm, LessonLayout lessonLayout, int maxPages, int lessonImgId) {
             super(fm);
             this.mMaxPages = maxPages;
             this.lessonLayout = lessonLayout;
+            this.lessonImgId = lessonImgId;
         }
 
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1, selectedLesson, this.lessonLayout, this.mMaxPages);
+            return PlaceholderFragment.newInstance(position + 1, selectedLesson, this.lessonLayout, this.mMaxPages, this.lessonImgId);
         }
 
         @Override
