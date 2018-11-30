@@ -22,18 +22,21 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     private void SetLessonBoxList(int chapter) {
         mLessonsBox = new ArrayList<>();
 
-        TypedArray lessonListByChapter = getResources().obtainTypedArray(R.array.lessonList);
-        TypedArray lessonImagesOrder = getResources().obtainTypedArray(R.array.lessonImagesOrder);
-        String[] lessonDetails = getResources().getStringArray(lessonListByChapter.getResourceId(chapter-1, 0));
+        Integer[] lessonsCurrentChapter = MainActivity.ChapterLessonList.get(chapter);
 
-        int lessonId = (chapter>=10) ? chapter : (chapter*10);
+        for(int i=lessonsCurrentChapter[0];i<lessonsCurrentChapter.length-1;i+=2) {
+            if(ChaptersActivity.InArray(i+1, lessonsCurrentChapter)) {
+                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
+                        new RVA_Lessons.LessonBox(MainActivity.LessonList.get(i), i),
+                        new RVA_Lessons.LessonBox(MainActivity.LessonList.get(i+1), i+1 )
+                ));
+            } else {
+                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
+                        new RVA_Lessons.LessonBox(MainActivity.LessonList.get(i), i),
+                        new RVA_Lessons.LessonBox() )
+                );
+            }
 
-        //TODO: Allow only one lesson box per row
-        for(int i=0;i<lessonDetails.length-1;i+=2) {
-            mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                    new RVA_Lessons.LessonBox(lessonDetails[i], " ", lessonId * 100 + (i+1), getResources().getDrawable(lessonImagesOrder.getResourceId(i,0)) ),
-                    new RVA_Lessons.LessonBox(lessonDetails[i+1], " ", lessonId * 100 + (i+2), getResources().getDrawable(lessonImagesOrder.getResourceId(i+1,0)) )
-            ));
         }
 
     }
@@ -43,10 +46,9 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
         TypedArray chapterList = getResources().obtainTypedArray(R.array.chapterList);
         TypedArray chapterThemeList = getResources().obtainTypedArray(R.array.ChaptersColor);
-        int chapterCount = chapterList.length();
 
         //TODO: Don't get selectedChapter when coming back from InLessonActivity
-        int selectedChapter = 1; //This is a temporary fix until the issue is fixed
+        int selectedChapter = 0; //This is a temporary fix until the issue is fixed
         try {
             Intent parentActivity = getIntent();
             selectedChapter = Integer.parseInt(parentActivity.getStringExtra(ChaptersActivity.SELECTED_CHAPTER));
@@ -54,28 +56,26 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
             e.printStackTrace();
         }
 
-
-        setTheme(chapterThemeList.getResourceId(selectedChapter-1,-1));
-
+        setTheme(chapterThemeList.getResourceId(selectedChapter,-1));
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
 
         ConstraintLayout cLayout = findViewById(R.id.cLayout);
-        if(selectedChapter == 1) {
+        if(selectedChapter == 0) {
             cLayout.setBackgroundColor(getResources().getColor(R.color._chapter1color));
-        } else if(selectedChapter == 2) {
+        } else if(selectedChapter == 1) {
             cLayout.setBackgroundColor(getResources().getColor(R.color._chapter2color));
-        } else if(selectedChapter == 3) {
+        } else if(selectedChapter == 2) {
             cLayout.setBackgroundColor(getResources().getColor(R.color._chapter3color));
-        } else if(selectedChapter == 4) {
+        } else if(selectedChapter == 3) {
             cLayout.setBackgroundColor(getResources().getColor(R.color._chapter4color));
         }
 
 
         TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
 
-        String[] selectedChapterDetails = getResources().getStringArray(chapterList.getResourceId(selectedChapter-1, 0));
+        String[] selectedChapterDetails = getResources().getStringArray(chapterList.getResourceId(selectedChapter, 0));
         this.setTitle(selectedChapterDetails[1]);
         tvChapterDesc.setText(selectedChapterDetails[2]);
 
@@ -98,7 +98,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         Log.i("myapp_info", "Row index " + Integer.toString(row_index));
 
         Intent lessonActivity = new Intent(this, InLessonActivity.class);
-        lessonActivity.putExtra(SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetLeftLessonBox().LessonId()));
+        lessonActivity.putExtra(SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier()));
         startActivity(lessonActivity);
     }
 
@@ -107,9 +107,8 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         Log.i("myapp_info", "Selected Lesson " + Integer.toString(pos));
         Log.i("myapp_info", "Row index " + Integer.toString(row_index));
 
-
         Intent lessonActivity = new Intent(this, InLessonActivity.class);
-        lessonActivity.putExtra(SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetRightLessonBox().LessonId()));
+        lessonActivity.putExtra(SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier()));
         startActivity(lessonActivity);
     }
 }

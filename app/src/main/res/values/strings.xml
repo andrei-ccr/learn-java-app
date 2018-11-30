@@ -30,20 +30,12 @@
         <item name="chapter7">@array/chapter7</item>
     </array>
 
-    <array name="lessonList">
-        <item>@array/chapter1Lessons</item>
-        <item>@array/chapter2Lessons</item>
-        <item>@array/chapter3Lessons</item>
-        <item>@array/chapter4Lessons</item>
-
-    </array>
-
 	<string-array name="chapter1">
 		<item name="title">Chapter I</item>
 		<item name="name">Basics</item>
 		<item name="shortDesc">Install Java and everything you need. Learn about variables, basic control structures, user input and more.</item>
 		<item name="description">Start with the basics. You will learn about variables, basic control structures, user input and more. At the end of this chapter, you will know how to build simple Java apps.</item>
-	</string-array>
+    </string-array>
 	
 	<string-array name="chapter2">
 		<item name="title">Chapter II</item>
@@ -87,7 +79,73 @@
 		<item name="description"></item>
 	</string-array>
 	
-	<string-array name="chapter1Lessons">
+	<string-array name="lessonTitleList">
+		<item name="Chapter1_1">Installation</item>
+		<item name="Chapter1_2">First Program</item>
+		<item name="Chapter1_3">Variables</item>
+		<item name="Chapter1_4">User Input</item>
+		<item name="Chapter1_5">Conditionals</item>
+		<item name="Chapter1_6">Arrays</item>
+		<item name="Chapter1_7">Loops</item>
+		<item name="Chapter1_8">Functions</item>
+		<item name="Chapter2_1">Modifiers</item>
+		<item name="Chapter2_2">Try-Catch</item>
+		<item name="Chapter2_3">Date &amp; Time</item>
+		<item name="Chapter2_4">Basic File I/O</item>
+		<item name="Chapter2_5">Strings &amp; REGEX</item>
+		<item name="Chapter2_6">Switch-Case</item>
+		<item name="Chapter2_7">Random</item>
+		<item name="Chapter2_8">Loops II</item>
+		<item name="Chapter2_9">Program Arguments</item>
+		<item name="Chapter2_10">Functions II</item>
+		<item name="Chapter3_1">Classes</item>
+		<item name="Chapter3_2">Encapsulation</item>
+		<item name="Chapter3_3">Constructors &amp; Destructors</item>
+		<item name="Chapter3_4">Static classes</item>
+		<item name="Chapter3_5">Inheritance</item>
+		<item name="Chapter3_6">More examples</item>
+		<item name="Chapter4_1">List</item>
+		<item name="Chapter4_2">Stack</item>
+		<item name="Chapter4_3">Set</item>
+		<item name="Chapter4_4">Map</item>
+		<item name="Chapter4_5">Sorting Data</item>
+		<item name="Chapter4_6">More examples</item>
+	</string-array>
+	
+	<string-array name="lessonDescriptionList">
+		<item name="Chapter1_1">Installation</item>
+		<item name="Chapter1_2">First Program</item>
+		<item name="Chapter1_3">Variables</item>
+		<item name="Chapter1_4">User Input</item>
+		<item name="Chapter1_5">Conditionals</item>
+		<item name="Chapter1_6">Arrays</item>
+		<item name="Chapter1_7">Loops</item>
+		<item name="Chapter1_8">Functions</item>
+		<item name="Chapter2_1">Modifiers</item>
+		<item name="Chapter2_2">Try-Catch</item>
+		<item name="Chapter2_3">Date &amp; Time</item>
+		<item name="Chapter2_4">Basic File I/O</item>
+		<item name="Chapter2_5">Strings &amp; REGEX</item>
+		<item name="Chapter2_6">Switch-Case</item>
+		<item name="Chapter2_7">Random</item>
+		<item name="Chapter2_8">Loops II</item>
+		<item name="Chapter2_9">Program Arguments</item>
+		<item name="Chapter2_10">Functions II</item>
+		<item name="Chapter3_1">Classes</item>
+		<item name="Chapter3_2">Encapsulation</item>
+		<item name="Chapter3_3">Constructors &amp; Destructors</item>
+		<item name="Chapter3_4">Static classes</item>
+		<item name="Chapter3_5">Inheritance</item>
+		<item name="Chapter3_6">More examples</item>
+		<item name="Chapter4_1">List</item>
+		<item name="Chapter4_2">Stack</item>
+		<item name="Chapter4_3">Set</item>
+		<item name="Chapter4_4">Map</item>
+		<item name="Chapter4_5">Sorting Data</item>
+		<item name="Chapter4_6">More examples</item>
+	</string-array>
+	
+	<!-- TO BE REMOVED<string-array name="chapter1Lessons">
 		<item name="lesson1">Installation</item>
 		<item name="lesson2">First Program</item>
 		<item name="lesson3">Variables</item>
@@ -127,7 +185,7 @@
 		<item name="lesson4">Map</item>
 		<item name="lesson5">Sorting Data</item>
 		<item name="lesson6">More examples</item>
-	</string-array>
+	</string-array>-->
 
 
 

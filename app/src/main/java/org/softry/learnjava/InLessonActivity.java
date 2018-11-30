@@ -1,9 +1,6 @@
 package org.softry.learnjava;
 
 import android.content.Intent;
-import android.content.res.TypedArray;
-import android.os.Build;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -24,11 +21,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class InLessonActivity extends AppCompatActivity {
 
     /**
@@ -42,132 +34,7 @@ public class InLessonActivity extends AppCompatActivity {
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private int selectedLesson;
-    private int maxPages;
 
-    private List<LessonMap> lessonsList;
-    private Map<Integer, Integer> lessonsIndex; //Maps lessonId to an index (eg.: 1001 => 0, 1003 => 1 so on...)
-
-    private List<Integer> GetLessonOrder() {
-        List<Integer> lessonOrder = new ArrayList();
-        TypedArray lessonListByChapter = getResources().obtainTypedArray(R.array.lessonList);
-
-        for(int i=0;i<lessonListByChapter.length();i++) {
-            int lessonIdPrefix = (i+1>=10) ? i+1 : ((i+1)*10);
-            for(int j=1;j<getResources().getStringArray(lessonListByChapter.getResourceId(i, 0)).length;j++) {
-                int lessonId = lessonIdPrefix * 100 + j;
-                lessonOrder.add(lessonId);
-            }
-        }
-        return lessonOrder;
-    }
-    private void InitialiseLessonList() {
-        lessonsIndex = new HashMap<>();
-        List<Integer> lessonOrder = GetLessonOrder();
-
-        for(int i=0;i<lessonOrder.size();i++) {
-            Log.i("myapp", Integer.toString(lessonOrder.get(i)) + ", " + Integer.toString(i));
-            lessonsIndex.put(lessonOrder.get(i), i);
-        }
-
-        lessonsList = new ArrayList<>();
-        List<Integer> lessonBodyIdList, pageTitleIdList;
-
-        /* ### Lesson 101 ### */
-        lessonBodyIdList = new ArrayList<>();
-        pageTitleIdList = new ArrayList<>();
-        lessonBodyIdList.add(R.string.lesson101_1); pageTitleIdList.add(R.string.lesson_101_1_title);
-        lessonBodyIdList.add(R.string.lesson101_2); pageTitleIdList.add(R.string.lesson_101_2_title);
-        lessonBodyIdList.add(R.string.lesson101_3); pageTitleIdList.add(R.string.lesson_101_3_title);
-        lessonBodyIdList.add(R.string.lesson101_4); pageTitleIdList.add(R.string.lesson_101_4_title);
-        lessonBodyIdList.add(R.string.lesson101_5); pageTitleIdList.add(R.string.lesson_101_5_title);
-        lessonBodyIdList.add(R.string.lesson101_6); pageTitleIdList.add(R.string.lesson_101_6_title);
-
-        lessonsList.add(new LessonMap(101, new LessonLayout(lessonBodyIdList, pageTitleIdList), 6));
-
-        /* ### Lesson 102 ### */
-        lessonBodyIdList = new ArrayList<>();
-        pageTitleIdList = new ArrayList<>();
-        lessonBodyIdList.add(R.string.lesson102_1); pageTitleIdList.add(R.string.lesson_102_1_title);
-        lessonBodyIdList.add(R.string.lesson102_2); pageTitleIdList.add(R.string.lesson_102_2_title);
-        lessonBodyIdList.add(R.string.lesson102_3); pageTitleIdList.add(R.string.lesson_102_3_title);
-        lessonBodyIdList.add(R.string.lesson102_4); pageTitleIdList.add(R.string.lesson_102_4_title);
-        lessonBodyIdList.add(R.string.lesson102_5); pageTitleIdList.add(R.string.lesson_102_5_title);
-        lessonBodyIdList.add(R.string.lesson102_6); pageTitleIdList.add(R.string.lesson_102_6_title);
-
-        lessonsList.add(new LessonMap(102, new LessonLayout(lessonBodyIdList, pageTitleIdList), 6));
-
-        /* ### Lesson 103 ### */
-        lessonBodyIdList = new ArrayList<>();
-        pageTitleIdList = new ArrayList<>();
-        lessonBodyIdList.add(R.string.lesson103_1); pageTitleIdList.add(R.string.lesson_103_1_title);
-        lessonBodyIdList.add(R.string.lesson103_2); pageTitleIdList.add(R.string.lesson_103_2_title);
-        lessonBodyIdList.add(R.string.lesson103_3); pageTitleIdList.add(R.string.lesson_103_3_title);
-        lessonBodyIdList.add(R.string.lesson103_4); pageTitleIdList.add(R.string.lesson_103_4_title);
-        lessonBodyIdList.add(R.string.lesson103_5); pageTitleIdList.add(R.string.lesson_103_5_title);
-        lessonBodyIdList.add(R.string.lesson103_6); pageTitleIdList.add(R.string.lesson_103_6_title);
-        lessonBodyIdList.add(R.string.lesson103_7); pageTitleIdList.add(R.string.lesson_103_7_title);
-
-        lessonsList.add(new LessonMap(103, new LessonLayout(lessonBodyIdList, pageTitleIdList), 7));
-
-        /* ### Lesson 104 ### */
-        lessonBodyIdList = new ArrayList<>();
-        pageTitleIdList = new ArrayList<>();
-        lessonBodyIdList.add(R.string.lesson104_1); pageTitleIdList.add(R.string.lesson_104_1_title);
-        lessonBodyIdList.add(R.string.lesson104_2); pageTitleIdList.add(R.string.lesson_104_2_title);
-        lessonBodyIdList.add(R.string.lesson104_3); pageTitleIdList.add(R.string.lesson_104_3_title);
-        lessonBodyIdList.add(R.string.lesson104_4); pageTitleIdList.add(R.string.lesson_104_4_title);
-        lessonBodyIdList.add(R.string.lesson104_5); pageTitleIdList.add(R.string.lesson_104_5_title);
-        lessonBodyIdList.add(R.string.lesson104_6); pageTitleIdList.add(R.string.lesson_104_6_title);
-        lessonBodyIdList.add(R.string.lesson104_7); pageTitleIdList.add(R.string.lesson_104_7_title);
-
-        lessonsList.add(new LessonMap(104, new LessonLayout(lessonBodyIdList, pageTitleIdList), 7));
-
-        /* ### Lesson 105 ### */
-        lessonBodyIdList = new ArrayList<>();
-        pageTitleIdList = new ArrayList<>();
-        lessonBodyIdList.add(R.string.lesson105_1); pageTitleIdList.add(R.string.lesson_105_1_title);
-        lessonBodyIdList.add(R.string.lesson105_2); pageTitleIdList.add(R.string.lesson_105_2_title);
-        lessonBodyIdList.add(R.string.lesson105_3); pageTitleIdList.add(R.string.lesson_105_3_title);
-        lessonBodyIdList.add(R.string.lesson105_4); pageTitleIdList.add(R.string.lesson_105_4_title);
-        lessonBodyIdList.add(R.string.lesson105_5); pageTitleIdList.add(R.string.lesson_105_5_title);
-        lessonBodyIdList.add(R.string.lesson105_6); pageTitleIdList.add(R.string.lesson_105_6_title);
-        lessonBodyIdList.add(R.string.lesson105_7); pageTitleIdList.add(R.string.lesson_105_7_title);
-        lessonBodyIdList.add(R.string.lesson105_8); pageTitleIdList.add(R.string.lesson_105_8_title);
-        lessonBodyIdList.add(R.string.lesson105_9); pageTitleIdList.add(R.string.lesson_105_9_title);
-        lessonBodyIdList.add(R.string.lesson105_10); pageTitleIdList.add(R.string.lesson_105_10_title);
-
-        lessonsList.add(new LessonMap(105, new LessonLayout(lessonBodyIdList, pageTitleIdList), 10));
-
-        /* ### Lesson 106 ### */
-        lessonBodyIdList = new ArrayList<>();
-        pageTitleIdList = new ArrayList<>();
-        lessonBodyIdList.add(R.string.lesson106_1); pageTitleIdList.add(R.string.lesson_106_1_title);
-        lessonBodyIdList.add(R.string.lesson106_2); pageTitleIdList.add(R.string.lesson_106_2_title);
-        lessonBodyIdList.add(R.string.lesson106_3); pageTitleIdList.add(R.string.lesson_106_3_title);
-        lessonBodyIdList.add(R.string.lesson106_4); pageTitleIdList.add(R.string.lesson_106_4_title);
-        lessonBodyIdList.add(R.string.lesson106_5); pageTitleIdList.add(R.string.lesson_106_5_title);
-
-        lessonsList.add(new LessonMap(106, new LessonLayout(lessonBodyIdList, pageTitleIdList), 5));
-
-        /* ### Lesson 107 ### */
-        lessonBodyIdList = new ArrayList<>();
-        pageTitleIdList = new ArrayList<>();
-        lessonBodyIdList.add(R.string.lesson107_1); pageTitleIdList.add(R.string.lesson_107_1_title);
-        lessonBodyIdList.add(R.string.lesson107_2); pageTitleIdList.add(R.string.lesson_107_2_title);
-        lessonBodyIdList.add(R.string.lesson107_3); pageTitleIdList.add(R.string.lesson_107_3_title);
-        lessonBodyIdList.add(R.string.lesson107_4); pageTitleIdList.add(R.string.lesson_107_4_title);
-        lessonBodyIdList.add(R.string.lesson107_5); pageTitleIdList.add(R.string.lesson_107_5_title);
-        lessonBodyIdList.add(R.string.lesson107_6); pageTitleIdList.add(R.string.lesson_107_6_title);
-        lessonBodyIdList.add(R.string.lesson107_7); pageTitleIdList.add(R.string.lesson_107_7_title);
-        lessonBodyIdList.add(R.string.lesson107_8); pageTitleIdList.add(R.string.lesson_107_8_title);
-        lessonBodyIdList.add(R.string.lesson107_9); pageTitleIdList.add(R.string.lesson_107_9_title);
-        lessonBodyIdList.add(R.string.lesson107_10); pageTitleIdList.add(R.string.lesson_107_10_title);
-        lessonBodyIdList.add(R.string.lesson107_11); pageTitleIdList.add(R.string.lesson_107_11_title);
-
-        lessonsList.add(new LessonMap(107, new LessonLayout(lessonBodyIdList, pageTitleIdList), 11));
-        //TODO: Add other lessons
-
-    }
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -180,28 +47,13 @@ public class InLessonActivity extends AppCompatActivity {
 
         //Get current lesson
         Intent parentActivity = getIntent();
-        selectedLesson = Integer.parseInt(parentActivity.getStringExtra(LessonsActivity.SELECTED_LESSON)); //Returns lesson id (eg.: 1001)
+        selectedLesson = Integer.parseInt(parentActivity.getStringExtra(LessonsActivity.SELECTED_LESSON)); //Returns lesson id (eg.: 0, 1 etc)
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        try {
-            InitialiseLessonList();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        this.maxPages = 1; //Default to one page per lesson
-        LessonMap lm = lessonsList.get(lessonsIndex.get(selectedLesson));
-
-        TypedArray lessonImgOrder = getResources().obtainTypedArray(R.array.lessonImagesOrder);
-
-        int lessonImgId = lessonImgOrder.getResourceId(lessonsIndex.get(selectedLesson), 0);
-
-        this.maxPages = lm.GetMaxPages();
-
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), lm.GetLayout(), this.maxPages, lessonImgId);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), MainActivity.LessonContentList.get(selectedLesson).length);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = findViewById(R.id.container);
@@ -238,15 +90,15 @@ public class InLessonActivity extends AppCompatActivity {
      */
     public static class PlaceholderFragment extends Fragment {
         /**
-         * The fragment argument representing the section number for this
-         * fragment.
+         * The fragment arguments.
          */
-        private static final String ARG_SECTION_NUMBER = "section_number";
+        private static final String ARG_SECTION_NUMBER = "section_number"; //Current section/page number
         private static final String ARG_LESSON_NUMBER = "lesson_number";
         private static final String ARG_STR_PAGE_TITLE = "str_page_title";
         private static final String ARG_STR_LESSON_BODY = "str_lesson_body";
         private static final String ARG_MAX_PAGES = "max_pages";
         private static final String ARG_IMG_ID = "lesson_img_id";
+        private static final String ARG_STR_LESSON_TITLE = "str_lesson_title";
 
         public static int currentPageNum = 1;
 
@@ -257,16 +109,18 @@ public class InLessonActivity extends AppCompatActivity {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber, int currentLesson, LessonLayout lessonLayout, int maxPages, int lessonImgId) {
+        public static PlaceholderFragment newInstance(int sectionNumber, int currentLesson) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
-            //TODO:Make Section number start at 0 instead of 1
+
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             args.putInt(ARG_LESSON_NUMBER, currentLesson);
-            args.putInt(ARG_STR_LESSON_BODY, lessonLayout.GetLessonBodyId(sectionNumber-1));
-            args.putInt(ARG_STR_PAGE_TITLE, lessonLayout.GetPageTitleId(sectionNumber-1));
-            args.putInt(ARG_MAX_PAGES, maxPages);
-            args.putInt(ARG_IMG_ID, lessonImgId);
+
+            args.putInt(ARG_STR_LESSON_BODY, MainActivity.LessonContentList.get(currentLesson)[sectionNumber]);
+            args.putInt(ARG_STR_PAGE_TITLE, MainActivity.LessonTitleList.get(currentLesson)[sectionNumber]);
+            args.putInt(ARG_MAX_PAGES, MainActivity.LessonContentList.get(currentLesson).length);
+            args.putInt(ARG_IMG_ID, MainActivity.LessonList.get(currentLesson).GetImageRID());
+            args.putString(ARG_STR_LESSON_TITLE, MainActivity.LessonList.get(currentLesson).GetTitle());
 
             fragment.setArguments(args);
 
@@ -285,6 +139,7 @@ public class InLessonActivity extends AppCompatActivity {
             int pageTitleStringId = getArguments().getInt(ARG_STR_PAGE_TITLE);
             int maxPages = getArguments().getInt(ARG_MAX_PAGES);
             int lessonImgId = getArguments().getInt(ARG_IMG_ID);
+            String lessonTitleString = getArguments().getString(ARG_STR_LESSON_TITLE);
 
             TextView tvLessonBody = rootView.findViewById(R.id.tv_lesson_body);
             TextView tvPageTitle = rootView.findViewById(R.id.tv_lesson_page_title);
@@ -296,7 +151,7 @@ public class InLessonActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ViewPager thisVp = (ViewPager)rootView.getParent();
-                    thisVp.setCurrentItem(currentPage, true); //TODO: Do currentPage+1 after the section number from 0 to do is solved.
+                    thisVp.setCurrentItem(currentPage+1, true);
                 }
             });
 
@@ -304,65 +159,17 @@ public class InLessonActivity extends AppCompatActivity {
             if(lessonBodyStringId != -1) {
                 tvLessonBody.setText(Html.fromHtml(getString(lessonBodyStringId)));
                 tvPageTitle.setText(pageTitleStringId);
+                tvLessonTitle.setText(lessonTitleString);
                 ivLessonImage.setImageDrawable(getResources().getDrawable(lessonImgId));
-                if(currentPage == maxPages) {
+                if(currentPage+1 == maxPages) {
                     nextBtn.setText(R.string.btn_next_lesson);
                 }
-                //TODO: Get last page
             }
 
             return rootView;
         }
     }
 
-    public class LessonLayout {
-
-        //Order in the list corresponds with the page
-        private List<Integer> mPageTitle, mLessonBody;
-
-        public LessonLayout(List<Integer> mLessonBody, List<Integer> mPageTitle) {
-            this.mLessonBody = mLessonBody;
-            this.mPageTitle = mPageTitle;
-        }
-
-        public int GetLessonBodyId(int page) {
-            if(page>= this.mLessonBody.size()) {
-                return -1;
-            }
-            return this.mLessonBody.get(page);
-        }
-
-        /**
-         * Get the title of the page.
-         * @param page Current page number, starting from 0
-         * @return Returns an int containing the id of the string corresponding to the page.
-         */
-        public int GetPageTitleId(int page) {
-            if(page >= this.mPageTitle.size()) {
-                return -1;
-            }
-            return this.mPageTitle.get(page);
-        }
-    }
-
-    public class LessonMap {
-        private int mLessonNumber, mMaxPages;
-        private LessonLayout lessonLayout;
-
-        public LessonMap(int mLessonNumber, LessonLayout lessonLayout, int mMaxPages) {
-            this.mLessonNumber = mLessonNumber;
-            this.lessonLayout = lessonLayout;
-            this.mMaxPages = mMaxPages;
-        }
-
-        public int GetMaxPages() {
-            return this.mMaxPages;
-        }
-
-        public LessonLayout GetLayout() {
-            return this.lessonLayout;
-        }
-    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -370,21 +177,17 @@ public class InLessonActivity extends AppCompatActivity {
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
         private int mMaxPages;
-        private LessonLayout lessonLayout;
-        private int lessonImgId;
 
-        public SectionsPagerAdapter(FragmentManager fm, LessonLayout lessonLayout, int maxPages, int lessonImgId) {
+        public SectionsPagerAdapter(FragmentManager fm, int maxPages) {
             super(fm);
             this.mMaxPages = maxPages;
-            this.lessonLayout = lessonLayout;
-            this.lessonImgId = lessonImgId;
         }
 
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1, selectedLesson, this.lessonLayout, this.mMaxPages, this.lessonImgId);
+            return PlaceholderFragment.newInstance(position, selectedLesson);
         }
 
         @Override

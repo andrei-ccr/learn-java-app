@@ -11,7 +11,7 @@ import java.util.List;
 
 public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder> {
 
-    public static class Chapter {
+    /*public static class Chapter {
         private String num;
         private String name;
         private String desc;
@@ -47,9 +47,9 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
         public int progressValue() {
             return this.progress;
         }
-    }
+    }*/
 
-    private List<Chapter> mChapters;
+    private List<Containers.Chapter> mChapters;
 
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
@@ -74,7 +74,7 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
         }
     }
 
-    RVA_Chapters(Context context, List<Chapter> entryObjList) {
+    RVA_Chapters(Context context, List<Containers.Chapter> entryObjList) {
         this.mInflater = LayoutInflater.from(context);
         this.mChapters = entryObjList;
     }
@@ -87,29 +87,27 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
 
     @Override
     public void onBindViewHolder(mViewHolder holder, int position) {
-        Chapter itemElem = mChapters.get(position);
+        Containers.Chapter itemElem = mChapters.get(position);
 
-        holder.chapterNumber.setText(itemElem.Num());
-        holder.chapterName.setText(itemElem.Name());
-        holder.chapterDesc.setText(itemElem.Desc());
-        holder.chapterProgress.setText(itemElem.Progress());
-        if(itemElem.progressValue() >= 0 && itemElem.progressValue() < 25) {
+        holder.chapterNumber.setText(itemElem.GetNumber());
+        holder.chapterName.setText(itemElem.GetName());
+        holder.chapterDesc.setText(itemElem.GetLongDesc());
+        holder.chapterProgress.setText(itemElem.GetProgressStr());
+        if(itemElem.GetProgressValue() >= 0 && itemElem.GetProgressValue() < 25) {
             holder.chapterProgress.setTextColor((int)R.color._progressRed);
         }
-        else if(itemElem.progressValue() >= 25 && itemElem.progressValue() <= 50) {
+        else if(itemElem.GetProgressValue() >= 25 && itemElem.GetProgressValue() <= 50) {
             holder.chapterProgress.setTextColor((int)R.color._progressOrange);
         }
-        else if(itemElem.progressValue() >= 51 && itemElem.progressValue() < 80) {
+        else if(itemElem.GetProgressValue() >= 51 && itemElem.GetProgressValue() < 80) {
             holder.chapterProgress.setTextColor((int)R.color._progressYellow);
         }
-        else if(itemElem.progressValue() >= 81 && itemElem.progressValue() <= 100) {
+        else if(itemElem.GetProgressValue() >= 81 && itemElem.GetProgressValue() <= 100) {
             holder.chapterProgress.setTextColor((int)R.color._progressGreen);
         }
         else {
             holder.chapterProgress.setTextColor((int)R.color._gray);
         }
-
-
 
     }
 

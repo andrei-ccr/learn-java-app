@@ -15,28 +15,26 @@ import java.util.List;
 public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
 
     public static class LessonBox {
-        private Drawable img;
-        private String name;
-        private String desc;
-        private int lessonId;
+        private Containers.Lesson lesson;
+        private int indentifier;
 
-        public LessonBox(String name, String desc, int lessonId, Drawable img) {
-            this.name = name;
-            this.desc = desc;
-            this.lessonId = lessonId;
-            this.img = img;
+        public LessonBox() {
+            this.lesson = null;
+            this.indentifier = -1;
         }
 
-        public String Name() {
-            return this.name;
-        }
-        public String Desc() {
-            return this.desc;
+        public LessonBox(Containers.Lesson lesson, int identifier) {
+            this.lesson = lesson;
+            this.indentifier = identifier;
         }
 
-        public Drawable Image() { return this.img; }
+        public int GetIdentifier() {
+            return this.indentifier;
+        }
 
-        public int LessonId() {return this.lessonId; }
+        public Containers.Lesson GetLesson() {
+            return this.lesson;
+        }
     }
 
     public static class LessonBoxRow {
@@ -63,7 +61,7 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
     }
 
     private List<LessonBoxRow> mLessonBoxRows;
-
+    private Context context;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
@@ -80,7 +78,6 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             lessonTitleR = itemView.findViewById(R.id.tvLessonTitleR);
             lessonDescR = itemView.findViewById(R.id.tvLessonDescR);
             lessonImageR = itemView.findViewById(R.id.ivLessonImgR);
-
             leftLessonBox = itemView.findViewById(R.id.leftLessonBox);
             rightLessonBox = itemView.findViewById(R.id.rightLessonBox);
 
@@ -98,8 +95,6 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
                    mClickListener.onLeftBoxClick(view, 2*position, position);
                 } else if(view.getId() == R.id.rightLessonBox) {
                     mClickListener.onRightBoxClick(view, 2*position+1, position);
-                } else {
-                    //mClickListener.onItemClick(view, getAdapterPosition());
                 }
 
             }
@@ -109,6 +104,7 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
     RVA_Lessons(Context context, List<LessonBoxRow> entryObjList) {
         this.mInflater = LayoutInflater.from(context);
         this.mLessonBoxRows = entryObjList;
+        this.context = context;
     }
 
     @Override
@@ -121,14 +117,24 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
     public void onBindViewHolder(mViewHolder holder, int position) {
         LessonBoxRow itemElem = mLessonBoxRows.get(position);
 
-        holder.lessonTitleL.setText(itemElem.GetLeftLessonBox().Name());
-        holder.lessonDescL.setText(itemElem.GetLeftLessonBox().Desc());
+        //If right LessonBox is null just hide it
+        if((itemElem.GetRightLessonBox() == null ) || (itemElem.GetRightLessonBox().GetLesson() == null)) {
+            LinearLayout lessonBox = (LinearLayout)holder.lessonTitleR.getParent();
+            lessonBox.setVisibility(View.GONE);
+        } else {
 
-        holder.lessonTitleR.setText(itemElem.GetRightLessonBox().Name());
-        holder.lessonDescR.setText(itemElem.GetRightLessonBox().Desc());
+            //Set title, description and image of right LessonBox
+            holder.lessonTitleR.setText(itemElem.GetRightLessonBox().GetLesson().GetTitle());
+            holder.lessonDescR.setText(itemElem.GetRightLessonBox().GetLesson().GetDesc());
+            holder.lessonImageR.setImageDrawable(context.getResources().getDrawable(itemElem.GetRightLessonBox().GetLesson().GetImageRID()));
+        }
 
-        holder.lessonImageL.setImageDrawable(itemElem.GetLeftLessonBox().Image());
-        holder.lessonImageR.setImageDrawable(itemElem.GetRightLessonBox().Image());
+        //Set title, description and image of left LessonBox
+        holder.lessonTitleL.setText(itemElem.GetLeftLessonBox().GetLesson().GetTitle());
+        holder.lessonDescL.setText(itemElem.GetLeftLessonBox().GetLesson().GetDesc());
+        holder.lessonImageL.setImageDrawable(context.getResources().getDrawable(itemElem.GetLeftLessonBox().GetLesson().GetImageRID()));
+
+
 
     }
 

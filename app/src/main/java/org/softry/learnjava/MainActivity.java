@@ -1,17 +1,24 @@
 package org.softry.learnjava;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,12 +64,139 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+	public static List<Containers.Chapter> ChapterList; //List of chapters in order with chapter's details
+	public static List<Containers.Lesson> LessonList; //List of lessons in order with lesson's details
+	public static Map<Integer, Integer[]> ChapterLessonList; //Map of a chapter to a lesson list
+	public static Map<Integer, Integer[]> LessonContentList; //Map of a lesson to a list of content Strings
+	public static Map<Integer, Integer[]> LessonTitleList; //Map of a lesson to a list of page title Strings
+
+	private void MapLessonsToChapters() {
+		//TODO: This should be immutable/constant/final for security reasons
+		ChapterLessonList = new HashMap<>();
+		ChapterLessonList.put(0, new Integer[]{0, 1, 2, 3, 4, 5, 6, 7}); //Chapter 1
+		ChapterLessonList.put(1, new Integer[]{8, 9, 10, 11 , 12, 13, 14, 15, 16, 17});
+		ChapterLessonList.put(2, new Integer[]{18, 19, 20, 21, 22});
+		ChapterLessonList.put(3, new Integer[]{23, 24, 25, 26, 27});
+		
+	}
+	
+	private void MapContentToLessons() {
+        //TODO: These should be immutable/constant/final for security reasons
+	    LessonContentList = new HashMap<>();
+	    LessonTitleList = new HashMap<>();
+
+		LessonContentList.put(0, new Integer[]{R.string.lesson101_1, R.string.lesson101_2, R.string.lesson101_3,
+								R.string.lesson101_4, R.string.lesson101_5, R.string.lesson101_6});
+								
+		LessonTitleList.put(0, new Integer[]{R.string.lesson_101_1_title, R.string.lesson_101_2_title, R.string.lesson_101_3_title,
+								R.string.lesson_101_4_title,R.string.lesson_101_5_title,R.string.lesson_101_6_title});
+								
+		LessonContentList.put(1, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
+								R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+								
+		LessonTitleList.put(1, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
+								R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+								
+		LessonContentList.put(2, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
+								R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+								
+		LessonTitleList.put(2, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
+								R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+								
+		LessonContentList.put(3, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
+								R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+								
+		LessonTitleList.put(3, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
+								R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+								
+		LessonContentList.put(4, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
+								R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+								
+		LessonTitleList.put(4, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
+								R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+								
+		LessonContentList.put(5, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
+								R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+								
+		LessonTitleList.put(5, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
+								R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+								
+		LessonContentList.put(6, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
+								R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+								
+		LessonTitleList.put(6, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
+								R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+
+        LessonContentList.put(7, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
+                R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+
+        LessonTitleList.put(7, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
+                R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+
+        LessonContentList.put(8, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
+                R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+
+        LessonTitleList.put(8, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
+                R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+
+        LessonContentList.put(9, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
+                R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+
+        LessonTitleList.put(9, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
+                R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+	}
+	
+	private void LoadChapters() {
+	    ChapterList = new ArrayList<>();
+
+        String[] aChapter;
+        TypedArray chapterList = getResources().obtainTypedArray(R.array.chapterList);
+
+        for(int i=0;i<chapterList.length();i++) {
+            aChapter = getResources().getStringArray(chapterList.getResourceId(i, 0));
+			
+            ChapterList.add(
+                    new Containers.Chapter(aChapter[0],
+                            aChapter[1],
+                            aChapter[2],
+                            aChapter[3],
+							ChapterLessonList.get(i)));
+        }
+    }
+	
+	private void LoadLessons() {
+		LessonList = new ArrayList<>();
+		String[] lessonTitleList = getResources().getStringArray(R.array.lessonTitleList);
+		String[] lessonDescList = getResources().getStringArray(R.array.lessonDescriptionList);
+		TypedArray lessonImgList = getResources().obtainTypedArray(R.array.lessonImgList);
+		
+		for(int i=0; i<lessonTitleList.length;i++) {
+			try {
+				LessonList.add(
+					new Containers.Lesson(
+						lessonTitleList[i],
+						lessonDescList[i],
+						lessonImgList.getResourceId(i, 0),
+						new Containers.LessonContent(this, LessonContentList.get(i), LessonTitleList.get(i), new int[LessonContentList.get(i).length])
+					)
+				);
+			} catch (Exception e) {
+				e.printStackTrace();
+				Log.e("myapp", "Error adding lesson " + Integer.toString(i));
+			}
+		}
+	}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //TODO: Load all chapters and lessons objects into static lists here for easier access from anywhere
+		
+		//Load data
+		MapLessonsToChapters();
+		MapContentToLessons();
+		LoadChapters();
+		LoadLessons();
 
         //Get the main containers
         containerLearnTab = findViewById(R.id.container_learnTab);

@@ -21,27 +21,13 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
 
     public static final String SELECTED_CHAPTER = "org.softry.learnjava.TAG.SELECTED_CHAPTER";
 
-    private List<RVA_Chapters.Chapter> mChapters;
     private RecyclerView mRecyclerView;
     private final Integer[] comingSoonChapters = {5,6,7};
 
-    private void SetChapterList() {
-        mChapters = new ArrayList<>();
-
-        String[] aChapter;
-        TypedArray chapterList = getResources().obtainTypedArray(R.array.chapterList);
-
-        for(int i=0;i<chapterList.length();i++) {
-            aChapter = getResources().getStringArray(chapterList.getResourceId(i, 0));
-            mChapters.add(new RVA_Chapters.Chapter(aChapter[0], aChapter[1], aChapter[3]));
-        }
-    }
-
     private RVA_Chapters GetChaptersRVA() {
         RVA_Chapters rvAdapter;
-        if(this.mChapters == null) return null;
 
-        rvAdapter = new RVA_Chapters(this, this.mChapters);
+        rvAdapter = new RVA_Chapters(this, MainActivity.ChapterList);
         rvAdapter.setClickListener(this);
         return rvAdapter;
     }
@@ -69,34 +55,30 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
 
         mRecyclerView = findViewById(R.id.rvChapters);
 
-        SetChapterList();
-
         try {
             InitRV_Chapters();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        //Todo: Get progress string and value TextViews and hide them when displaying the "More chapters" option
-
     }
 
     @Override
     public void onItemClick(View view, int position) {
-        Log.i("myapp_info", "Selected Chapter " + Integer.toString(position+1));
+        Log.i("myapp_info", "Selected Chapter " + Integer.toString(position));
 
         if( (!InArray(position+1, comingSoonChapters))) {
             Intent lessonsActivity = new Intent(this, LessonsActivity.class);
-            lessonsActivity.putExtra(SELECTED_CHAPTER, Integer.toString(position + 1));
+            lessonsActivity.putExtra(SELECTED_CHAPTER, Integer.toString(position));
             startActivity(lessonsActivity);
         } else {
             Toast.makeText(view.getContext(),"Coming soon", Toast.LENGTH_LONG).show();
         }
     }
 
-    public <E>boolean InArray(E element, E[] array) {
+    public static <E>boolean InArray(E element, E[] array) {
         for(E arrayElem : array) {
-            if(arrayElem == element) {
+            if(arrayElem.equals(element)) {
                 return true;
             }
         }
