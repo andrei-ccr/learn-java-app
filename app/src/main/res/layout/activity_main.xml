@@ -63,6 +63,7 @@
                     android:paddingTop="10dp"
                     android:text="@string/box_desc_basic" />
 
+
                 <Button
                     android:id="@+id/btn_learn_basic"
                     style="@style/Widget.AppCompat.Button.Borderless"
@@ -70,8 +71,14 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/button_shape"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="?attr/selectableItemBackgroundBorderless"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:text="@string/btn_start"
                     android:textColor="#FFFFFFFF" />
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -116,6 +123,9 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/button_shape"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:text="@string/btn_activate"
                     android:textColor="#FFFFFFFF" />
             </LinearLayout>
@@ -162,6 +172,9 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/button_shape"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:text="@string/btn_disable_ads"
                     android:textColor="#FFFFFFFF" />
             </LinearLayout>

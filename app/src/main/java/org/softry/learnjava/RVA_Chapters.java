@@ -1,61 +1,29 @@
 package org.softry.learnjava;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
 
 public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder> {
 
-    /*public static class Chapter {
-        private String num;
-        private String name;
-        private String desc;
-        private int progress;
-
-        public Chapter(String num, String name, String desc) {
-            this.num = num;
-            this.name = name;
-            this.desc = desc;
-            this.progress = -1; // -1 means not started
-        }
-
-        public String Num(){
-            return this.num;
-        }
-
-        public String Name() {
-            return this.name;
-        }
-
-        public String Desc() {
-            return this.desc;
-        }
-
-        public String Progress() {
-            if(this.progress == -1) {
-                return "Not started.";
-            } else {
-                return Integer.toString(this.progress) + "%";
-            }
-        }
-
-        public int progressValue() {
-            return this.progress;
-        }
-    }*/
-
     private List<Containers.Chapter> mChapters;
 
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
+    private Context context;
 
     public class mViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView chapterNumber, chapterName, chapterDesc, chapterProgress;
+        LinearLayout container_chapter_images;
 
         public mViewHolder(View itemView) {
             super(itemView);
@@ -63,6 +31,7 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
             chapterName = itemView.findViewById(R.id.tvChapterName);
             chapterDesc = itemView.findViewById(R.id.tvChapterDesc);
             chapterProgress = itemView.findViewById(R.id.tvChapterProgress);
+            container_chapter_images = itemView.findViewById(R.id.container_chapter_images);
             itemView.setOnClickListener(this);
         }
 
@@ -77,6 +46,7 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
     RVA_Chapters(Context context, List<Containers.Chapter> entryObjList) {
         this.mInflater = LayoutInflater.from(context);
         this.mChapters = entryObjList;
+        this.context = context;
     }
 
     @Override
@@ -89,6 +59,22 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
     public void onBindViewHolder(mViewHolder holder, int position) {
         Containers.Chapter itemElem = mChapters.get(position);
 
+        TypedArray images = this.context.getResources().obtainTypedArray(R.array.lessonImgList);
+        Integer[] chapterLessonList = MainActivity.ChapterLessonList.get(position);
+        try {
+            for (int i = chapterLessonList[0]; i < chapterLessonList.length; i++) {
+                ImageView imgView = new ImageView(this.context);
+                imgView.setImageDrawable(this.context.getResources().getDrawable(images.getResourceId(i, R.drawable.first_program)));
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(75, 75);
+                params.setMargins(8, 8, 8, 8);
+                imgView.setLayoutParams(params);
+
+                holder.container_chapter_images.addView(imgView);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.w("myapp", "Chapter " + Integer.toString(position) + " won't have images due to Exception");
+        }
         holder.chapterNumber.setText(itemElem.GetNumber());
         holder.chapterName.setText(itemElem.GetName());
         holder.chapterDesc.setText(itemElem.GetLongDesc());

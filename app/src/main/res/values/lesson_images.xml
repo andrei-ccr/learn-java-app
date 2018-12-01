@@ -4,7 +4,7 @@
         <item name="Chapter1_1">@drawable/install_java</item>
         <item name="Chapter1_2">@drawable/first_program</item>
         <item name="Chapter1_3">@drawable/variables</item>
-        <item name="Chapter1_4">@drawable/variables</item>
+        <item name="Chapter1_4">@drawable/user_input</item>
         <item name="Chapter1_5">@drawable/decisionals</item>
         <item name="Chapter1_6">@drawable/arrays</item>
         <item name="Chapter1_7">@drawable/loops</item>

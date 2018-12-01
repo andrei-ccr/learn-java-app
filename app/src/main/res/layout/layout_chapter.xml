@@ -48,6 +48,17 @@
         android:layout_marginRight="20dp"
         android:text="Start with the basics. Install Java and everything you need. Learn about variables, conditionals, user input and more. At the end of this chapter, you should be capable of building simple apps." />
 
+    <LinearLayout
+        android:id="@+id/container_chapter_images"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

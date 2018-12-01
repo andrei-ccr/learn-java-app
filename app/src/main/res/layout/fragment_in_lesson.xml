@@ -47,7 +47,7 @@
                     android:layout_marginTop="6dp"
                     android:text="Getting Started"
                     android:textColor="@color/_lighterBlack"
-                    android:textSize="17sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:fontFamily="sans-serif" />
 
@@ -63,7 +63,7 @@
                     android:layout_marginTop="4dp"
                     android:text=""
                     android:textAllCaps="false"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     app:fontFamily="sans-serif" />
             </RelativeLayout>
 
@@ -88,6 +88,9 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:background="@android:color/holo_blue_dark"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:text="@string/btn_next"
                 android:textColor="@android:color/white"
                 android:textSize="15sp" />

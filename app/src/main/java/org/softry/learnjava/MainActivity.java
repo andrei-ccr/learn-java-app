@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.andexert.library.RippleView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -220,8 +222,7 @@ public class MainActivity extends AppCompatActivity {
                 "Suitable for both beginners and advanced programmers.");
 
 
-
-        mBtnStart.setOnClickListener(new View.OnClickListener() {
+       mBtnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent learnIntent = new Intent(v.getContext(), ChaptersActivity.class);

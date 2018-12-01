@@ -76,7 +76,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
 
         String[] selectedChapterDetails = getResources().getStringArray(chapterList.getResourceId(selectedChapter, 0));
-        this.setTitle(selectedChapterDetails[1]);
+        this.setTitle(selectedChapterDetails[1] + " - " + getString(R.string.app_name));
         tvChapterDesc.setText(selectedChapterDetails[2]);
 
 

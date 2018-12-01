@@ -3,9 +3,11 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
+        <device id="Nexus 4" />
+        <device id="Nexus 5" />
+        <device id="pixel_2" />
         <device id="pixel" />
         <device id="pixel_xl" />
-        <device id="pixel_2" />
         <device id="Nexus 7" />
         <device id="Nexus 6" />
       </config>
@@ -44,140 +46,141 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
+            <state relative-caret-position="123">
+              <caret line="70" column="55" selection-start-line="70" selection-start-column="55" selection-end-line="70" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#FixBottomNavigationText#0;class#MainActivity#0" />
-                <element signature="e#1531#2613#0" expanded="true" />
-                <element signature="e#2612#2613#0" expanded="true" />
-                <element signature="e#3732#3752#0" expanded="true" />
-                <element signature="e#3754#3774#0" expanded="true" />
-                <element signature="e#3776#3796#0" expanded="true" />
-                <element signature="e#3806#3826#0" expanded="true" />
-                <element signature="e#3828#3848#0" expanded="true" />
-                <element signature="e#3850#3870#0" expanded="true" />
-                <element signature="e#3922#3949#0" expanded="true" />
-                <element signature="e#3951#3978#0" expanded="true" />
-                <element signature="e#3980#4007#0" expanded="true" />
-                <element signature="e#4017#4044#0" expanded="true" />
-                <element signature="e#4045#4072#0" expanded="true" />
-                <element signature="e#4073#4100#0" expanded="true" />
-                <element signature="e#4154#4174#0" expanded="true" />
-                <element signature="e#4176#4196#0" expanded="true" />
-                <element signature="e#4198#4218#0" expanded="true" />
-                <element signature="e#4228#4248#0" expanded="true" />
-                <element signature="e#4250#4270#0" expanded="true" />
-                <element signature="e#4272#4292#0" expanded="true" />
-                <element signature="e#4344#4371#0" expanded="true" />
-                <element signature="e#4373#4400#0" expanded="true" />
-                <element signature="e#4402#4429#0" expanded="true" />
-                <element signature="e#4439#4466#0" expanded="true" />
-                <element signature="e#4467#4494#0" expanded="true" />
-                <element signature="e#4495#4522#0" expanded="true" />
-                <element signature="e#4576#4596#0" expanded="true" />
-                <element signature="e#4598#4618#0" expanded="true" />
-                <element signature="e#4620#4640#0" expanded="true" />
-                <element signature="e#4650#4670#0" expanded="true" />
-                <element signature="e#4672#4692#0" expanded="true" />
-                <element signature="e#4694#4714#0" expanded="true" />
-                <element signature="e#4766#4793#0" expanded="true" />
-                <element signature="e#4795#4822#0" expanded="true" />
-                <element signature="e#4824#4851#0" expanded="true" />
-                <element signature="e#4861#4888#0" expanded="true" />
-                <element signature="e#4889#4916#0" expanded="true" />
-                <element signature="e#4917#4944#0" expanded="true" />
-                <element signature="e#4998#5018#0" expanded="true" />
-                <element signature="e#5020#5040#0" expanded="true" />
-                <element signature="e#5042#5062#0" expanded="true" />
-                <element signature="e#5072#5092#0" expanded="true" />
-                <element signature="e#5094#5114#0" expanded="true" />
-                <element signature="e#5116#5136#0" expanded="true" />
-                <element signature="e#5188#5215#0" expanded="true" />
-                <element signature="e#5217#5244#0" expanded="true" />
-                <element signature="e#5246#5273#0" expanded="true" />
-                <element signature="e#5283#5310#0" expanded="true" />
-                <element signature="e#5311#5338#0" expanded="true" />
-                <element signature="e#5339#5366#0" expanded="true" />
-                <element signature="e#5420#5440#0" expanded="true" />
-                <element signature="e#5442#5462#0" expanded="true" />
-                <element signature="e#5464#5484#0" expanded="true" />
-                <element signature="e#5494#5514#0" expanded="true" />
-                <element signature="e#5516#5536#0" expanded="true" />
-                <element signature="e#5538#5558#0" expanded="true" />
-                <element signature="e#5610#5637#0" expanded="true" />
-                <element signature="e#5639#5666#0" expanded="true" />
-                <element signature="e#5668#5695#0" expanded="true" />
-                <element signature="e#5705#5732#0" expanded="true" />
-                <element signature="e#5733#5760#0" expanded="true" />
-                <element signature="e#5761#5788#0" expanded="true" />
-                <element signature="e#5842#5862#0" expanded="true" />
-                <element signature="e#5864#5884#0" expanded="true" />
-                <element signature="e#5886#5906#0" expanded="true" />
-                <element signature="e#5916#5936#0" expanded="true" />
-                <element signature="e#5938#5958#0" expanded="true" />
-                <element signature="e#5960#5980#0" expanded="true" />
-                <element signature="e#6032#6059#0" expanded="true" />
-                <element signature="e#6061#6088#0" expanded="true" />
-                <element signature="e#6090#6117#0" expanded="true" />
-                <element signature="e#6127#6154#0" expanded="true" />
-                <element signature="e#6155#6182#0" expanded="true" />
-                <element signature="e#6183#6210#0" expanded="true" />
-                <element signature="e#6264#6284#0" expanded="true" />
-                <element signature="e#6286#6306#0" expanded="true" />
-                <element signature="e#6308#6328#0" expanded="true" />
-                <element signature="e#6338#6358#0" expanded="true" />
-                <element signature="e#6360#6380#0" expanded="true" />
-                <element signature="e#6382#6402#0" expanded="true" />
-                <element signature="e#6454#6481#0" expanded="true" />
-                <element signature="e#6483#6510#0" expanded="true" />
-                <element signature="e#6512#6539#0" expanded="true" />
-                <element signature="e#6549#6576#0" expanded="true" />
-                <element signature="e#6577#6604#0" expanded="true" />
-                <element signature="e#6605#6632#0" expanded="true" />
-                <element signature="e#6684#6704#0" expanded="true" />
-                <element signature="e#6706#6726#0" expanded="true" />
-                <element signature="e#6728#6748#0" expanded="true" />
-                <element signature="e#6766#6786#0" expanded="true" />
-                <element signature="e#6788#6808#0" expanded="true" />
-                <element signature="e#6810#6830#0" expanded="true" />
-                <element signature="e#6880#6907#0" expanded="true" />
-                <element signature="e#6909#6936#0" expanded="true" />
-                <element signature="e#6938#6965#0" expanded="true" />
-                <element signature="e#6983#7010#0" expanded="true" />
-                <element signature="e#7011#7038#0" expanded="true" />
-                <element signature="e#7039#7066#0" expanded="true" />
-                <element signature="e#7118#7138#0" expanded="true" />
-                <element signature="e#7140#7160#0" expanded="true" />
-                <element signature="e#7162#7182#0" expanded="true" />
-                <element signature="e#7200#7220#0" expanded="true" />
-                <element signature="e#7222#7242#0" expanded="true" />
-                <element signature="e#7244#7264#0" expanded="true" />
-                <element signature="e#7314#7341#0" expanded="true" />
-                <element signature="e#7343#7370#0" expanded="true" />
-                <element signature="e#7372#7399#0" expanded="true" />
-                <element signature="e#7417#7444#0" expanded="true" />
-                <element signature="e#7445#7472#0" expanded="true" />
-                <element signature="e#7473#7500#0" expanded="true" />
-                <element signature="e#7552#7572#0" expanded="true" />
-                <element signature="e#7574#7594#0" expanded="true" />
-                <element signature="e#7596#7616#0" expanded="true" />
-                <element signature="e#7634#7654#0" expanded="true" />
-                <element signature="e#7656#7676#0" expanded="true" />
-                <element signature="e#7678#7698#0" expanded="true" />
-                <element signature="e#7748#7775#0" expanded="true" />
-                <element signature="e#7777#7804#0" expanded="true" />
-                <element signature="e#7806#7833#0" expanded="true" />
-                <element signature="e#7851#7878#0" expanded="true" />
-                <element signature="e#7879#7906#0" expanded="true" />
-                <element signature="e#7907#7934#0" expanded="true" />
+                <element signature="e#1607#2689#0" expanded="true" />
+                <element signature="e#2688#2689#0" expanded="true" />
+                <element signature="method#MapLessonsToChapters#0;class#MainActivity#0" />
+                <element signature="method#MapContentToLessons#0;class#MainActivity#0" />
+                <element signature="e#3886#3906#0" expanded="true" />
+                <element signature="e#3908#3928#0" expanded="true" />
+                <element signature="e#3930#3950#0" expanded="true" />
+                <element signature="e#3960#3980#0" expanded="true" />
+                <element signature="e#3982#4002#0" expanded="true" />
+                <element signature="e#4004#4024#0" expanded="true" />
+                <element signature="e#4076#4103#0" expanded="true" />
+                <element signature="e#4105#4132#0" expanded="true" />
+                <element signature="e#4134#4161#0" expanded="true" />
+                <element signature="e#4171#4198#0" expanded="true" />
+                <element signature="e#4199#4226#0" expanded="true" />
+                <element signature="e#4227#4254#0" expanded="true" />
+                <element signature="e#4308#4328#0" expanded="true" />
+                <element signature="e#4330#4350#0" expanded="true" />
+                <element signature="e#4352#4372#0" expanded="true" />
+                <element signature="e#4382#4402#0" expanded="true" />
+                <element signature="e#4404#4424#0" expanded="true" />
+                <element signature="e#4426#4446#0" expanded="true" />
+                <element signature="e#4498#4525#0" expanded="true" />
+                <element signature="e#4527#4554#0" expanded="true" />
+                <element signature="e#4556#4583#0" expanded="true" />
+                <element signature="e#4593#4620#0" expanded="true" />
+                <element signature="e#4621#4648#0" expanded="true" />
+                <element signature="e#4649#4676#0" expanded="true" />
+                <element signature="e#4730#4750#0" expanded="true" />
+                <element signature="e#4752#4772#0" expanded="true" />
+                <element signature="e#4774#4794#0" expanded="true" />
+                <element signature="e#4804#4824#0" expanded="true" />
+                <element signature="e#4826#4846#0" expanded="true" />
+                <element signature="e#4848#4868#0" expanded="true" />
+                <element signature="e#4920#4947#0" expanded="true" />
+                <element signature="e#4949#4976#0" expanded="true" />
+                <element signature="e#4978#5005#0" expanded="true" />
+                <element signature="e#5015#5042#0" expanded="true" />
+                <element signature="e#5043#5070#0" expanded="true" />
+                <element signature="e#5071#5098#0" expanded="true" />
+                <element signature="e#5152#5172#0" expanded="true" />
+                <element signature="e#5174#5194#0" expanded="true" />
+                <element signature="e#5196#5216#0" expanded="true" />
+                <element signature="e#5226#5246#0" expanded="true" />
+                <element signature="e#5248#5268#0" expanded="true" />
+                <element signature="e#5270#5290#0" expanded="true" />
+                <element signature="e#5342#5369#0" expanded="true" />
+                <element signature="e#5371#5398#0" expanded="true" />
+                <element signature="e#5400#5427#0" expanded="true" />
+                <element signature="e#5437#5464#0" expanded="true" />
+                <element signature="e#5465#5492#0" expanded="true" />
+                <element signature="e#5493#5520#0" expanded="true" />
+                <element signature="e#5574#5594#0" expanded="true" />
+                <element signature="e#5596#5616#0" expanded="true" />
+                <element signature="e#5618#5638#0" expanded="true" />
+                <element signature="e#5648#5668#0" expanded="true" />
+                <element signature="e#5670#5690#0" expanded="true" />
+                <element signature="e#5692#5712#0" expanded="true" />
+                <element signature="e#5764#5791#0" expanded="true" />
+                <element signature="e#5793#5820#0" expanded="true" />
+                <element signature="e#5822#5849#0" expanded="true" />
+                <element signature="e#5859#5886#0" expanded="true" />
+                <element signature="e#5887#5914#0" expanded="true" />
+                <element signature="e#5915#5942#0" expanded="true" />
+                <element signature="e#5996#6016#0" expanded="true" />
+                <element signature="e#6018#6038#0" expanded="true" />
+                <element signature="e#6040#6060#0" expanded="true" />
+                <element signature="e#6070#6090#0" expanded="true" />
+                <element signature="e#6092#6112#0" expanded="true" />
+                <element signature="e#6114#6134#0" expanded="true" />
+                <element signature="e#6186#6213#0" expanded="true" />
+                <element signature="e#6215#6242#0" expanded="true" />
+                <element signature="e#6244#6271#0" expanded="true" />
+                <element signature="e#6281#6308#0" expanded="true" />
+                <element signature="e#6309#6336#0" expanded="true" />
+                <element signature="e#6337#6364#0" expanded="true" />
+                <element signature="e#6418#6438#0" expanded="true" />
+                <element signature="e#6440#6460#0" expanded="true" />
+                <element signature="e#6462#6482#0" expanded="true" />
+                <element signature="e#6492#6512#0" expanded="true" />
+                <element signature="e#6514#6534#0" expanded="true" />
+                <element signature="e#6536#6556#0" expanded="true" />
+                <element signature="e#6608#6635#0" expanded="true" />
+                <element signature="e#6637#6664#0" expanded="true" />
+                <element signature="e#6666#6693#0" expanded="true" />
+                <element signature="e#6703#6730#0" expanded="true" />
+                <element signature="e#6731#6758#0" expanded="true" />
+                <element signature="e#6759#6786#0" expanded="true" />
+                <element signature="e#6838#6858#0" expanded="true" />
+                <element signature="e#6860#6880#0" expanded="true" />
+                <element signature="e#6882#6902#0" expanded="true" />
+                <element signature="e#6920#6940#0" expanded="true" />
+                <element signature="e#6942#6962#0" expanded="true" />
+                <element signature="e#6964#6984#0" expanded="true" />
+                <element signature="e#7034#7061#0" expanded="true" />
+                <element signature="e#7063#7090#0" expanded="true" />
+                <element signature="e#7092#7119#0" expanded="true" />
+                <element signature="e#7137#7164#0" expanded="true" />
+                <element signature="e#7165#7192#0" expanded="true" />
+                <element signature="e#7193#7220#0" expanded="true" />
+                <element signature="e#7272#7292#0" expanded="true" />
+                <element signature="e#7294#7314#0" expanded="true" />
+                <element signature="e#7316#7336#0" expanded="true" />
+                <element signature="e#7354#7374#0" expanded="true" />
+                <element signature="e#7376#7396#0" expanded="true" />
+                <element signature="e#7398#7418#0" expanded="true" />
+                <element signature="e#7468#7495#0" expanded="true" />
+                <element signature="e#7497#7524#0" expanded="true" />
+                <element signature="e#7526#7553#0" expanded="true" />
+                <element signature="e#7571#7598#0" expanded="true" />
+                <element signature="e#7599#7626#0" expanded="true" />
+                <element signature="e#7627#7654#0" expanded="true" />
+                <element signature="e#7706#7726#0" expanded="true" />
+                <element signature="e#7728#7748#0" expanded="true" />
+                <element signature="e#7750#7770#0" expanded="true" />
+                <element signature="e#7788#7808#0" expanded="true" />
+                <element signature="e#7810#7830#0" expanded="true" />
+                <element signature="e#7832#7852#0" expanded="true" />
+                <element signature="e#7902#7929#0" expanded="true" />
+                <element signature="e#7931#7958#0" expanded="true" />
+                <element signature="e#7960#7987#0" expanded="true" />
+                <element signature="e#8005#8032#0" expanded="true" />
+                <element signature="e#8033#8060#0" expanded="true" />
+                <element signature="e#8061#8088#0" expanded="true" />
                 <element signature="method#LoadChapters#0;class#MainActivity#0" />
-                <element signature="method#LoadLessons#0;class#MainActivity#0" />
-                <element signature="e#10785#11034#0" expanded="true" />
-                <element signature="e#11033#11034#0" expanded="true" />
+                <element signature="e#11147#11396#0" expanded="true" />
+                <element signature="e#11395#11396#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -186,7 +189,7 @@
       <file leaf-file-name="Containers.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Containers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
+            <state relative-caret-position="280">
               <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -197,11 +200,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChaptersActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/ChaptersActivity.java">
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="1190">
+              <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_chapters.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_chapters.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout_chapter.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_chapter.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RVA_Chapters.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Chapters.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+            <state relative-caret-position="101">
+              <caret line="67" column="87" selection-start-line="67" selection-start-column="87" selection-end-line="67" selection-end-column="87" />
+              <folding>
+                <element signature="class#mViewHolder#0;class#RVA_Chapters#0" />
+                <element signature="e#3933#3934#0" expanded="true" />
+                <element signature="e#3972#3973#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -209,10 +253,11 @@
       <file leaf-file-name="LessonsActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/LessonsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="19" column="46" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="46" />
+            <state relative-caret-position="408">
+              <caret line="78" column="88" selection-start-line="78" selection-start-column="88" selection-end-line="78" selection-end-column="88" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3266#3294#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -221,28 +266,13 @@
       <file leaf-file-name="InLessonActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/InLessonActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1076">
+            <state relative-caret-position="17">
               <caret line="102" column="34" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#onCreateOptionsMenu#0;class#InLessonActivity#0" />
                 <element signature="method#onOptionsItemSelected#0;class#InLessonActivity#0" />
-                <element signature="e#6331#6599#0" expanded="true" />
-                <element signature="e#6598#6599#0" expanded="true" />
-                <element signature="e#7118#7142#0" expanded="true" />
                 <element signature="class#SectionsPagerAdapter#0;class#InLessonActivity#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RVA_Lessons.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Lessons.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
-              <folding>
-                <element signature="class#LessonBoxRow#0;class#RVA_Lessons#0" />
               </folding>
             </state>
           </provider>
@@ -251,8 +281,16 @@
       <file leaf-file-name="layout_lesson.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_lesson.xml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="1072">
-              <caret line="67" column="38" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
+            <state relative-caret-position="370">
+              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+              <folding>
+                <element signature="e#1344#1650#0" />
+                <element signature="e#1660#2029#0" />
+                <element signature="e#2039#2361#0" />
+                <element signature="e#2918#3224#0" />
+                <element signature="e#3234#3604#0" />
+                <element signature="e#3614#3947#0" />
+              </folding>
             </state>
           </provider>
           <provider selected="true" editor-type-id="android-designer2">
@@ -260,30 +298,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1649">
-              <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
+      <file leaf-file-name="fragment_in_lesson.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_in_lesson.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="1020">
+              <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lesson_images.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/lesson_images.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="38" selection-start-column="38" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
-            </state>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -2570,27 +2593,27 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_lessons.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_LessonLayout.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/lesson_101_2.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/lesson_101_1.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_in_lesson.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_chapter.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_in_lesson.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/lesson_images.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/lesson_images.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Containers.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Chapters.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_lesson.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Lessons.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/InLessonActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/LessonsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/ChaptersActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/LessonsActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_lesson.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_in_lesson.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_chapter.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Chapters.java" />
       </list>
     </option>
   </component>
@@ -2605,6 +2628,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LearnJava" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LearnJava" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2640,23 +2676,14 @@
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="LearnJava" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LearnJava" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="LearnJava" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2823,21 +2850,21 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5015129" side_tool="true" weight="0.23762377" />
       <window_info anchor="right" id="Preview" order="6" weight="0.24810892" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Logcat" order="10" weight="0.32792208" />
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25416037" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25416037" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49848714" weight="0.24350649" />
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.2840909" />
+      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -3045,32 +3072,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_LessonLayout.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/lesson_101_2.xml" />
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="69" lean-forward="true" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-168" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/lesson_101_1.xml" />
     <entry file="android-dummy://C:/Users/ciucu/AndroidStudioProjects/LearnJava//Theme Editor">
       <provider selected="true" editor-type-id="themeEditor">
         <state theme-name="AppTheme" module-name="app" proportion="0.67" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_chapter.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_in_lesson.xml">
@@ -3093,20 +3098,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_chapters.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/lesson_images.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/lesson_images.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" selection-start-column="38" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/ChaptersActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Lessons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
+          <folding>
+            <element signature="class#LessonBoxRow#0;class#RVA_Lessons#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -3120,11 +3173,42 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/lesson_images.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/InLessonActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="102" column="34" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onCreateOptionsMenu#0;class#InLessonActivity#0" />
+            <element signature="method#onOptionsItemSelected#0;class#InLessonActivity#0" />
+            <element signature="class#SectionsPagerAdapter#0;class#InLessonActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/LessonsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="78" column="88" selection-start-line="78" selection-start-column="88" selection-end-line="78" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3266#3294#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_lesson.xml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="2992">
-          <caret line="176" column="19" selection-start-line="176" selection-start-column="19" selection-end-line="176" selection-end-column="19" />
+        <state relative-caret-position="370">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+          <folding>
+            <element signature="e#1344#1650#0" />
+            <element signature="e#1660#2029#0" />
+            <element signature="e#2039#2361#0" />
+            <element signature="e#2918#3224#0" />
+            <element signature="e#3234#3604#0" />
+            <element signature="e#3614#3947#0" />
+          </folding>
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
@@ -3141,54 +3225,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Chapters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_lesson.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1072">
-          <caret line="67" column="38" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1649">
-          <caret line="92" column="46" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/lesson_images.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Containers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
+        <state relative-caret-position="280">
           <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -3198,182 +3237,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/LessonsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/ChaptersActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
-        </state>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/InLessonActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1076">
-          <caret line="102" column="34" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onCreateOptionsMenu#0;class#InLessonActivity#0" />
-            <element signature="method#onOptionsItemSelected#0;class#InLessonActivity#0" />
-            <element signature="e#6331#6599#0" expanded="true" />
-            <element signature="e#6598#6599#0" expanded="true" />
-            <element signature="e#7118#7142#0" expanded="true" />
-            <element signature="class#SectionsPagerAdapter#0;class#InLessonActivity#0" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_chapters.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Lessons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
-          <folding>
-            <element signature="class#LessonBoxRow#0;class#RVA_Lessons#0" />
-          </folding>
-        </state>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
+        <state relative-caret-position="123">
+          <caret line="70" column="55" selection-start-line="70" selection-start-column="55" selection-end-line="70" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#FixBottomNavigationText#0;class#MainActivity#0" />
-            <element signature="e#1531#2613#0" expanded="true" />
-            <element signature="e#2612#2613#0" expanded="true" />
-            <element signature="e#3732#3752#0" expanded="true" />
-            <element signature="e#3754#3774#0" expanded="true" />
-            <element signature="e#3776#3796#0" expanded="true" />
-            <element signature="e#3806#3826#0" expanded="true" />
-            <element signature="e#3828#3848#0" expanded="true" />
-            <element signature="e#3850#3870#0" expanded="true" />
-            <element signature="e#3922#3949#0" expanded="true" />
-            <element signature="e#3951#3978#0" expanded="true" />
-            <element signature="e#3980#4007#0" expanded="true" />
-            <element signature="e#4017#4044#0" expanded="true" />
-            <element signature="e#4045#4072#0" expanded="true" />
-            <element signature="e#4073#4100#0" expanded="true" />
-            <element signature="e#4154#4174#0" expanded="true" />
-            <element signature="e#4176#4196#0" expanded="true" />
-            <element signature="e#4198#4218#0" expanded="true" />
-            <element signature="e#4228#4248#0" expanded="true" />
-            <element signature="e#4250#4270#0" expanded="true" />
-            <element signature="e#4272#4292#0" expanded="true" />
-            <element signature="e#4344#4371#0" expanded="true" />
-            <element signature="e#4373#4400#0" expanded="true" />
-            <element signature="e#4402#4429#0" expanded="true" />
-            <element signature="e#4439#4466#0" expanded="true" />
-            <element signature="e#4467#4494#0" expanded="true" />
-            <element signature="e#4495#4522#0" expanded="true" />
-            <element signature="e#4576#4596#0" expanded="true" />
-            <element signature="e#4598#4618#0" expanded="true" />
-            <element signature="e#4620#4640#0" expanded="true" />
-            <element signature="e#4650#4670#0" expanded="true" />
-            <element signature="e#4672#4692#0" expanded="true" />
-            <element signature="e#4694#4714#0" expanded="true" />
-            <element signature="e#4766#4793#0" expanded="true" />
-            <element signature="e#4795#4822#0" expanded="true" />
-            <element signature="e#4824#4851#0" expanded="true" />
-            <element signature="e#4861#4888#0" expanded="true" />
-            <element signature="e#4889#4916#0" expanded="true" />
-            <element signature="e#4917#4944#0" expanded="true" />
-            <element signature="e#4998#5018#0" expanded="true" />
-            <element signature="e#5020#5040#0" expanded="true" />
-            <element signature="e#5042#5062#0" expanded="true" />
-            <element signature="e#5072#5092#0" expanded="true" />
-            <element signature="e#5094#5114#0" expanded="true" />
-            <element signature="e#5116#5136#0" expanded="true" />
-            <element signature="e#5188#5215#0" expanded="true" />
-            <element signature="e#5217#5244#0" expanded="true" />
-            <element signature="e#5246#5273#0" expanded="true" />
-            <element signature="e#5283#5310#0" expanded="true" />
-            <element signature="e#5311#5338#0" expanded="true" />
-            <element signature="e#5339#5366#0" expanded="true" />
-            <element signature="e#5420#5440#0" expanded="true" />
-            <element signature="e#5442#5462#0" expanded="true" />
-            <element signature="e#5464#5484#0" expanded="true" />
-            <element signature="e#5494#5514#0" expanded="true" />
-            <element signature="e#5516#5536#0" expanded="true" />
-            <element signature="e#5538#5558#0" expanded="true" />
-            <element signature="e#5610#5637#0" expanded="true" />
-            <element signature="e#5639#5666#0" expanded="true" />
-            <element signature="e#5668#5695#0" expanded="true" />
-            <element signature="e#5705#5732#0" expanded="true" />
-            <element signature="e#5733#5760#0" expanded="true" />
-            <element signature="e#5761#5788#0" expanded="true" />
-            <element signature="e#5842#5862#0" expanded="true" />
-            <element signature="e#5864#5884#0" expanded="true" />
-            <element signature="e#5886#5906#0" expanded="true" />
-            <element signature="e#5916#5936#0" expanded="true" />
-            <element signature="e#5938#5958#0" expanded="true" />
-            <element signature="e#5960#5980#0" expanded="true" />
-            <element signature="e#6032#6059#0" expanded="true" />
-            <element signature="e#6061#6088#0" expanded="true" />
-            <element signature="e#6090#6117#0" expanded="true" />
-            <element signature="e#6127#6154#0" expanded="true" />
-            <element signature="e#6155#6182#0" expanded="true" />
-            <element signature="e#6183#6210#0" expanded="true" />
-            <element signature="e#6264#6284#0" expanded="true" />
-            <element signature="e#6286#6306#0" expanded="true" />
-            <element signature="e#6308#6328#0" expanded="true" />
-            <element signature="e#6338#6358#0" expanded="true" />
-            <element signature="e#6360#6380#0" expanded="true" />
-            <element signature="e#6382#6402#0" expanded="true" />
-            <element signature="e#6454#6481#0" expanded="true" />
-            <element signature="e#6483#6510#0" expanded="true" />
-            <element signature="e#6512#6539#0" expanded="true" />
-            <element signature="e#6549#6576#0" expanded="true" />
-            <element signature="e#6577#6604#0" expanded="true" />
-            <element signature="e#6605#6632#0" expanded="true" />
-            <element signature="e#6684#6704#0" expanded="true" />
-            <element signature="e#6706#6726#0" expanded="true" />
-            <element signature="e#6728#6748#0" expanded="true" />
-            <element signature="e#6766#6786#0" expanded="true" />
-            <element signature="e#6788#6808#0" expanded="true" />
-            <element signature="e#6810#6830#0" expanded="true" />
-            <element signature="e#6880#6907#0" expanded="true" />
-            <element signature="e#6909#6936#0" expanded="true" />
-            <element signature="e#6938#6965#0" expanded="true" />
-            <element signature="e#6983#7010#0" expanded="true" />
-            <element signature="e#7011#7038#0" expanded="true" />
-            <element signature="e#7039#7066#0" expanded="true" />
-            <element signature="e#7118#7138#0" expanded="true" />
-            <element signature="e#7140#7160#0" expanded="true" />
-            <element signature="e#7162#7182#0" expanded="true" />
-            <element signature="e#7200#7220#0" expanded="true" />
-            <element signature="e#7222#7242#0" expanded="true" />
-            <element signature="e#7244#7264#0" expanded="true" />
-            <element signature="e#7314#7341#0" expanded="true" />
-            <element signature="e#7343#7370#0" expanded="true" />
-            <element signature="e#7372#7399#0" expanded="true" />
-            <element signature="e#7417#7444#0" expanded="true" />
-            <element signature="e#7445#7472#0" expanded="true" />
-            <element signature="e#7473#7500#0" expanded="true" />
-            <element signature="e#7552#7572#0" expanded="true" />
-            <element signature="e#7574#7594#0" expanded="true" />
-            <element signature="e#7596#7616#0" expanded="true" />
-            <element signature="e#7634#7654#0" expanded="true" />
-            <element signature="e#7656#7676#0" expanded="true" />
-            <element signature="e#7678#7698#0" expanded="true" />
-            <element signature="e#7748#7775#0" expanded="true" />
-            <element signature="e#7777#7804#0" expanded="true" />
-            <element signature="e#7806#7833#0" expanded="true" />
-            <element signature="e#7851#7878#0" expanded="true" />
-            <element signature="e#7879#7906#0" expanded="true" />
-            <element signature="e#7907#7934#0" expanded="true" />
+            <element signature="e#1607#2689#0" expanded="true" />
+            <element signature="e#2688#2689#0" expanded="true" />
+            <element signature="method#MapLessonsToChapters#0;class#MainActivity#0" />
+            <element signature="method#MapContentToLessons#0;class#MainActivity#0" />
+            <element signature="e#3886#3906#0" expanded="true" />
+            <element signature="e#3908#3928#0" expanded="true" />
+            <element signature="e#3930#3950#0" expanded="true" />
+            <element signature="e#3960#3980#0" expanded="true" />
+            <element signature="e#3982#4002#0" expanded="true" />
+            <element signature="e#4004#4024#0" expanded="true" />
+            <element signature="e#4076#4103#0" expanded="true" />
+            <element signature="e#4105#4132#0" expanded="true" />
+            <element signature="e#4134#4161#0" expanded="true" />
+            <element signature="e#4171#4198#0" expanded="true" />
+            <element signature="e#4199#4226#0" expanded="true" />
+            <element signature="e#4227#4254#0" expanded="true" />
+            <element signature="e#4308#4328#0" expanded="true" />
+            <element signature="e#4330#4350#0" expanded="true" />
+            <element signature="e#4352#4372#0" expanded="true" />
+            <element signature="e#4382#4402#0" expanded="true" />
+            <element signature="e#4404#4424#0" expanded="true" />
+            <element signature="e#4426#4446#0" expanded="true" />
+            <element signature="e#4498#4525#0" expanded="true" />
+            <element signature="e#4527#4554#0" expanded="true" />
+            <element signature="e#4556#4583#0" expanded="true" />
+            <element signature="e#4593#4620#0" expanded="true" />
+            <element signature="e#4621#4648#0" expanded="true" />
+            <element signature="e#4649#4676#0" expanded="true" />
+            <element signature="e#4730#4750#0" expanded="true" />
+            <element signature="e#4752#4772#0" expanded="true" />
+            <element signature="e#4774#4794#0" expanded="true" />
+            <element signature="e#4804#4824#0" expanded="true" />
+            <element signature="e#4826#4846#0" expanded="true" />
+            <element signature="e#4848#4868#0" expanded="true" />
+            <element signature="e#4920#4947#0" expanded="true" />
+            <element signature="e#4949#4976#0" expanded="true" />
+            <element signature="e#4978#5005#0" expanded="true" />
+            <element signature="e#5015#5042#0" expanded="true" />
+            <element signature="e#5043#5070#0" expanded="true" />
+            <element signature="e#5071#5098#0" expanded="true" />
+            <element signature="e#5152#5172#0" expanded="true" />
+            <element signature="e#5174#5194#0" expanded="true" />
+            <element signature="e#5196#5216#0" expanded="true" />
+            <element signature="e#5226#5246#0" expanded="true" />
+            <element signature="e#5248#5268#0" expanded="true" />
+            <element signature="e#5270#5290#0" expanded="true" />
+            <element signature="e#5342#5369#0" expanded="true" />
+            <element signature="e#5371#5398#0" expanded="true" />
+            <element signature="e#5400#5427#0" expanded="true" />
+            <element signature="e#5437#5464#0" expanded="true" />
+            <element signature="e#5465#5492#0" expanded="true" />
+            <element signature="e#5493#5520#0" expanded="true" />
+            <element signature="e#5574#5594#0" expanded="true" />
+            <element signature="e#5596#5616#0" expanded="true" />
+            <element signature="e#5618#5638#0" expanded="true" />
+            <element signature="e#5648#5668#0" expanded="true" />
+            <element signature="e#5670#5690#0" expanded="true" />
+            <element signature="e#5692#5712#0" expanded="true" />
+            <element signature="e#5764#5791#0" expanded="true" />
+            <element signature="e#5793#5820#0" expanded="true" />
+            <element signature="e#5822#5849#0" expanded="true" />
+            <element signature="e#5859#5886#0" expanded="true" />
+            <element signature="e#5887#5914#0" expanded="true" />
+            <element signature="e#5915#5942#0" expanded="true" />
+            <element signature="e#5996#6016#0" expanded="true" />
+            <element signature="e#6018#6038#0" expanded="true" />
+            <element signature="e#6040#6060#0" expanded="true" />
+            <element signature="e#6070#6090#0" expanded="true" />
+            <element signature="e#6092#6112#0" expanded="true" />
+            <element signature="e#6114#6134#0" expanded="true" />
+            <element signature="e#6186#6213#0" expanded="true" />
+            <element signature="e#6215#6242#0" expanded="true" />
+            <element signature="e#6244#6271#0" expanded="true" />
+            <element signature="e#6281#6308#0" expanded="true" />
+            <element signature="e#6309#6336#0" expanded="true" />
+            <element signature="e#6337#6364#0" expanded="true" />
+            <element signature="e#6418#6438#0" expanded="true" />
+            <element signature="e#6440#6460#0" expanded="true" />
+            <element signature="e#6462#6482#0" expanded="true" />
+            <element signature="e#6492#6512#0" expanded="true" />
+            <element signature="e#6514#6534#0" expanded="true" />
+            <element signature="e#6536#6556#0" expanded="true" />
+            <element signature="e#6608#6635#0" expanded="true" />
+            <element signature="e#6637#6664#0" expanded="true" />
+            <element signature="e#6666#6693#0" expanded="true" />
+            <element signature="e#6703#6730#0" expanded="true" />
+            <element signature="e#6731#6758#0" expanded="true" />
+            <element signature="e#6759#6786#0" expanded="true" />
+            <element signature="e#6838#6858#0" expanded="true" />
+            <element signature="e#6860#6880#0" expanded="true" />
+            <element signature="e#6882#6902#0" expanded="true" />
+            <element signature="e#6920#6940#0" expanded="true" />
+            <element signature="e#6942#6962#0" expanded="true" />
+            <element signature="e#6964#6984#0" expanded="true" />
+            <element signature="e#7034#7061#0" expanded="true" />
+            <element signature="e#7063#7090#0" expanded="true" />
+            <element signature="e#7092#7119#0" expanded="true" />
+            <element signature="e#7137#7164#0" expanded="true" />
+            <element signature="e#7165#7192#0" expanded="true" />
+            <element signature="e#7193#7220#0" expanded="true" />
+            <element signature="e#7272#7292#0" expanded="true" />
+            <element signature="e#7294#7314#0" expanded="true" />
+            <element signature="e#7316#7336#0" expanded="true" />
+            <element signature="e#7354#7374#0" expanded="true" />
+            <element signature="e#7376#7396#0" expanded="true" />
+            <element signature="e#7398#7418#0" expanded="true" />
+            <element signature="e#7468#7495#0" expanded="true" />
+            <element signature="e#7497#7524#0" expanded="true" />
+            <element signature="e#7526#7553#0" expanded="true" />
+            <element signature="e#7571#7598#0" expanded="true" />
+            <element signature="e#7599#7626#0" expanded="true" />
+            <element signature="e#7627#7654#0" expanded="true" />
+            <element signature="e#7706#7726#0" expanded="true" />
+            <element signature="e#7728#7748#0" expanded="true" />
+            <element signature="e#7750#7770#0" expanded="true" />
+            <element signature="e#7788#7808#0" expanded="true" />
+            <element signature="e#7810#7830#0" expanded="true" />
+            <element signature="e#7832#7852#0" expanded="true" />
+            <element signature="e#7902#7929#0" expanded="true" />
+            <element signature="e#7931#7958#0" expanded="true" />
+            <element signature="e#7960#7987#0" expanded="true" />
+            <element signature="e#8005#8032#0" expanded="true" />
+            <element signature="e#8033#8060#0" expanded="true" />
+            <element signature="e#8061#8088#0" expanded="true" />
             <element signature="method#LoadChapters#0;class#MainActivity#0" />
-            <element signature="method#LoadLessons#0;class#MainActivity#0" />
-            <element signature="e#10785#11034#0" expanded="true" />
-            <element signature="e#11033#11034#0" expanded="true" />
+            <element signature="e#11147#11396#0" expanded="true" />
+            <element signature="e#11395#11396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_chapter.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Chapters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="67" column="87" selection-start-line="67" selection-start-column="87" selection-end-line="67" selection-end-column="87" />
+          <folding>
+            <element signature="class#mViewHolder#0;class#RVA_Chapters#0" />
+            <element signature="e#3933#3934#0" expanded="true" />
+            <element signature="e#3972#3973#0" expanded="true" />
           </folding>
         </state>
       </provider>

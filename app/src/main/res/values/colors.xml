@@ -3,7 +3,8 @@
     <color name="colorPrimary">#ffc107</color>
     <color name="colorPrimaryDark">#ffc107</color>
     <color name="_colorPrimaryDark">#c79100</color>
-    <color name="colorAccent">#53e0ef</color>
+    <color name="colorAccentOriginal">#53e0ef</color>
+    <color name="colorAccent">#14474d</color>
 
     <color name="_holoDarkBlue">#0099cc</color>
     <color name="_lighterBlack">#333333</color>
