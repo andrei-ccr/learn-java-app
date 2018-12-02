@@ -99,35 +99,34 @@ public class MainActivity extends AppCompatActivity {
 		LessonTitleList.put(1, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
 								R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
 								
-		LessonContentList.put(2, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
-								R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+		LessonContentList.put(2, new Integer[]{R.string.lesson103_1, R.string.lesson103_2, R.string.lesson103_3,
+								R.string.lesson103_4, R.string.lesson103_5, R.string.lesson103_6, R.string.lesson103_7});
 								
-		LessonTitleList.put(2, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
-								R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+		LessonTitleList.put(2, new Integer[]{R.string.lesson_103_1_title, R.string.lesson_103_2_title, R.string.lesson_103_3_title,
+								R.string.lesson_103_4_title,R.string.lesson_103_5_title,R.string.lesson_103_6_title, R.string.lesson_103_7_title});
 								
-		LessonContentList.put(3, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
-								R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+		LessonContentList.put(3, new Integer[]{R.string.lesson104_1, R.string.lesson104_2, R.string.lesson104_3,
+								R.string.lesson104_4, R.string.lesson104_5, R.string.lesson104_6, R.string.lesson104_7});
 								
-		LessonTitleList.put(3, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
-								R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+		LessonTitleList.put(3, new Integer[]{R.string.lesson_104_1_title, R.string.lesson_104_2_title, R.string.lesson_104_3_title, R.string.lesson_104_4_title,R.string.lesson_104_5_title,R.string.lesson_104_6_title, R.string.lesson_104_7_title});
 								
-		LessonContentList.put(4, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
-								R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+		LessonContentList.put(4, new Integer[]{R.string.lesson105_1, R.string.lesson105_2, R.string.lesson105_3,
+								R.string.lesson105_4, R.string.lesson105_5, R.string.lesson105_6, R.string.lesson105_7, R.string.lesson105_8, R.string.lesson105_9, R.string.lesson105_10});
 								
-		LessonTitleList.put(4, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
-								R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+		LessonTitleList.put(4, new Integer[]{R.string.lesson_105_1_title, R.string.lesson_105_2_title, R.string.lesson_105_3_title,
+								R.string.lesson_105_4_title,R.string.lesson_105_5_title,R.string.lesson_105_6_title,R.string.lesson_105_7_title,R.string.lesson_105_8_title,R.string.lesson_105_9_title,R.string.lesson_105_10_title});
 								
-		LessonContentList.put(5, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
-								R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+		LessonContentList.put(5, new Integer[]{R.string.lesson106_1, R.string.lesson106_2, R.string.lesson106_3,
+								R.string.lesson106_4, R.string.lesson106_5});
 								
-		LessonTitleList.put(5, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
-								R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+		LessonTitleList.put(5, new Integer[]{R.string.lesson_106_1_title, R.string.lesson_106_2_title, R.string.lesson_106_3_title,
+								R.string.lesson_106_4_title,R.string.lesson_106_5_title});
 								
-		LessonContentList.put(6, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
-								R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
+		LessonContentList.put(6, new Integer[]{R.string.lesson107_1, R.string.lesson107_2, R.string.lesson107_3,
+								R.string.lesson107_4, R.string.lesson107_5, R.string.lesson107_6, R.string.lesson107_7, R.string.lesson107_8, R.string.lesson107_9, R.string.lesson107_10, R.string.lesson107_11});
 								
-		LessonTitleList.put(6, new Integer[]{R.string.lesson_102_1_title, R.string.lesson_102_2_title, R.string.lesson_102_3_title,
-								R.string.lesson_102_4_title,R.string.lesson_102_5_title,R.string.lesson_102_6_title});
+		LessonTitleList.put(6, new Integer[]{R.string.lesson_107_1_title, R.string.lesson_107_2_title, R.string.lesson_107_3_title,
+								R.string.lesson_107_4_title,R.string.lesson_107_5_title,R.string.lesson_107_6_title,R.string.lesson_107_7_title,R.string.lesson_107_8_title,R.string.lesson_107_9_title,R.string.lesson_107_10_title,R.string.lesson_107_11_title});
 
         LessonContentList.put(7, new Integer[]{R.string.lesson102_1, R.string.lesson102_2, R.string.lesson102_3,
                 R.string.lesson102_4, R.string.lesson102_5, R.string.lesson102_6});
