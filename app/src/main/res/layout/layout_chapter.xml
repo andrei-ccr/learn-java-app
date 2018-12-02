@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="?android:attr/selectableItemBackground"
+    android:layout_margin="16dp"
 
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:background="@drawable/white_box"
     android:clickable="true"
-    android:focusable="auto"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
     android:orientation="vertical"
     android:paddingTop="10dp"
     android:paddingBottom="15dp">
@@ -14,8 +18,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
 
         <TextView
             android:id="@+id/tvChapterNum"
@@ -24,29 +28,21 @@
             android:layout_margin="7dp"
             android:text="Chapter I"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
-            app:fontFamily="serif" />
+            android:textSize="19sp"
+            app:fontFamily="sans-serif" />
 
         <TextView
             android:id="@+id/tvChapterName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/tvChapterNum"
-            android:layout_toRightOf="@+id/tvChapterNum"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="14dp"
             android:layout_marginBottom="0dp"
+            android:layout_toRightOf="@+id/tvChapterNum"
             android:text="Basics"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
     </RelativeLayout>
-
-    <TextView
-        android:id="@+id/tvChapterDesc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:text="Start with the basics. Install Java and everything you need. Learn about variables, conditionals, user input and more. At the end of this chapter, you should be capable of building simple apps." />
 
     <LinearLayout
         android:id="@+id/container_chapter_images"
@@ -59,12 +55,23 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tvChapterDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Start with the basics. Install Java and everything you need. Learn about variables, conditionals, user input and more. At the end of this chapter, you should be capable of building simple apps."
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginRight="8dp">
 
         <TextView
             android:layout_width="match_parent"

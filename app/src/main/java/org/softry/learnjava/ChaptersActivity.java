@@ -44,7 +44,7 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
         divItemDec.setDrawable(ContextCompat.getDrawable(getBaseContext(), R.drawable.rv_divider));
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.addItemDecoration(divItemDec);
+        //mRecyclerView.addItemDecoration(divItemDec);
         mRecyclerView.setAdapter(adapter);
     }
 

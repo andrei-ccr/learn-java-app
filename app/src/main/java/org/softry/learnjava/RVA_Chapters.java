@@ -65,7 +65,7 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
             for (int i = chapterLessonList[0]; i < chapterLessonList.length; i++) {
                 ImageView imgView = new ImageView(this.context);
                 imgView.setImageDrawable(this.context.getResources().getDrawable(images.getResourceId(i, R.drawable.first_program)));
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(75, 75);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(50, 50);
                 params.setMargins(8, 8, 8, 8);
                 imgView.setLayoutParams(params);
 
