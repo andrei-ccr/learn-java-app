@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 		ChapterLessonList.put(0, new Integer[]{0, 1, 2, 3, 4, 5, 6, 7}); //Chapter 1
 		ChapterLessonList.put(1, new Integer[]{8, 9, 10, 11 , 12, 13, 14, 15, 16, 17});
 		ChapterLessonList.put(2, new Integer[]{18, 19, 20, 21, 22});
-		ChapterLessonList.put(3, new Integer[]{23, 24, 25, 26, 27});
+		//ChapterLessonList.put(3, new Integer[]{23, 24, 25, 26, 27});
 		
 	}
 	

@@ -87,6 +87,10 @@ public class Containers {
 			}
 			return k;
 		}
+
+		public void MarkPageAsRead(int page) {
+			this.pageRead[page] = 1;
+		}
 	}
 	
 	public static class Lesson {
@@ -184,7 +188,7 @@ public class Containers {
 
         public String GetProgressStr() {
             if(this.progress == -1) {
-                return "Not started.";
+                return "Not started";
             } else if(this.progress>= 100) {
                return "Completed";
             } else {

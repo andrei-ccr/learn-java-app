@@ -2,6 +2,7 @@ package org.softry.learnjava;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -74,6 +75,16 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
         } catch (Exception e) {
             e.printStackTrace();
             Log.w("myapp", "Chapter " + Integer.toString(position) + " won't have images due to Exception");
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            if(position == 0)
+                ((LinearLayout)holder.chapterDesc.getParent()).setBackground(this.context.getResources().getDrawable(R.drawable.chapter1_box));
+            else if(position == 1)
+                ((LinearLayout)holder.chapterDesc.getParent()).setBackground(this.context.getResources().getDrawable(R.drawable.chapter2_box));
+            else if(position == 2)
+                ((LinearLayout)holder.chapterDesc.getParent()).setBackground(this.context.getResources().getDrawable(R.drawable.chapter3_box));
+
         }
         holder.chapterNumber.setText(itemElem.GetNumber());
         holder.chapterName.setText(itemElem.GetName());

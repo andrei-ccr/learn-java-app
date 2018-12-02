@@ -1,5 +1,6 @@
 package org.softry.learnjava;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -137,7 +138,7 @@ public class InLessonActivity extends AppCompatActivity {
             int currentLesson = getArguments().getInt(ARG_LESSON_NUMBER);
             int lessonBodyStringId = getArguments().getInt(ARG_STR_LESSON_BODY);
             int pageTitleStringId = getArguments().getInt(ARG_STR_PAGE_TITLE);
-            int maxPages = getArguments().getInt(ARG_MAX_PAGES);
+            final int maxPages = getArguments().getInt(ARG_MAX_PAGES);
             int lessonImgId = getArguments().getInt(ARG_IMG_ID);
             String lessonTitleString = getArguments().getString(ARG_STR_LESSON_TITLE);
 
@@ -150,8 +151,12 @@ public class InLessonActivity extends AppCompatActivity {
             nextBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ViewPager thisVp = (ViewPager)rootView.getParent();
-                    thisVp.setCurrentItem(currentPage+1, true);
+                    if(currentPage+1 == maxPages) {
+                        ((Activity)v.getContext()).finish();
+                    } else {
+                        ViewPager thisVp = (ViewPager) rootView.getParent();
+                        thisVp.setCurrentItem(currentPage + 1, true);
+                    }
                 }
             });
 
@@ -162,7 +167,7 @@ public class InLessonActivity extends AppCompatActivity {
                 tvLessonTitle.setText(lessonTitleString);
                 ivLessonImage.setImageDrawable(getResources().getDrawable(lessonImgId));
                 if(currentPage+1 == maxPages) {
-                    nextBtn.setText(R.string.btn_next_lesson);
+                    nextBtn.setText(R.string.btn_finish);
                 }
             }
 

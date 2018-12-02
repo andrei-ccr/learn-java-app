@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
 
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:background="@drawable/white_box"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/chapter1_box"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackgroundBorderless"
@@ -25,10 +27,16 @@
             android:id="@+id/tvChapterNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="7dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="7dp"
             android:text="Chapter I"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="19sp"
+            android:textStyle="bold"
             app:fontFamily="sans-serif" />
 
         <TextView
@@ -41,6 +49,7 @@
             android:layout_marginBottom="0dp"
             android:layout_toRightOf="@+id/tvChapterNum"
             android:text="Basics"
+            android:textColor="#eee"
             android:textSize="17sp" />
     </RelativeLayout>
 
@@ -63,7 +72,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
         android:text="Start with the basics. Install Java and everything you need. Learn about variables, conditionals, user input and more. At the end of this chapter, you should be capable of building simple apps."
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="14sp" />
 
     <RelativeLayout
@@ -76,7 +85,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/progress_str" />
+            android:text="@string/progress_str"
+            android:textColor="#eee" />
 
         <TextView
             android:id="@+id/tvChapterProgress"
