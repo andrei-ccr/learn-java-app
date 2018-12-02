@@ -3,8 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="org.softry.learnjava.InLessonActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_dashboard"
         android:orderInCategory="100"
+        android:title="Dashboard"
+
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_bookmark"
+        android:orderInCategory="101"
+        android:title="Bookmark"
+        android:icon="@drawable/ic_bookmark"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_restart"
+        android:orderInCategory="102"
+        android:title="Restart Lesson"
+        android:icon="@drawable/ic_restart"
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="102"
         android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_report"
+        android:orderInCategory="103"
+        android:title="Report a problem"
         app:showAsAction="never" />
 </menu>

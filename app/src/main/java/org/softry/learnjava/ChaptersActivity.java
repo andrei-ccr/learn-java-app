@@ -2,6 +2,9 @@ package org.softry.learnjava;
 
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.PorterDuff;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +13,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,19 +36,10 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
         return rvAdapter;
     }
 
-    //TODO: Create exception for null adapter
-    private void InitRV_Chapters() throws Exception{
+    private void InitRV_Chapters(){
         RVA_Chapters adapter = GetChaptersRVA();
-        if (adapter == null) {
-            throw new Exception("Null adapter. Call SetChapterList() first.");
-        }
-
-        //Set Recycler View divider
-        DividerItemDecoration divItemDec = new DividerItemDecoration(getBaseContext(),DividerItemDecoration.VERTICAL);
-        divItemDec.setDrawable(ContextCompat.getDrawable(getBaseContext(), R.drawable.rv_divider));
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //mRecyclerView.addItemDecoration(divItemDec);
         mRecyclerView.setAdapter(adapter);
     }
 
@@ -55,11 +50,7 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
 
         mRecyclerView = findViewById(R.id.rvChapters);
 
-        try {
-            InitRV_Chapters();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        InitRV_Chapters();
 
     }
 
@@ -83,5 +74,16 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
             }
         }
         return false;
+    }
+
+    public static void setGrayScale(ImageView v) {
+        ColorMatrix matrix = new ColorMatrix();
+        matrix.setSaturation(0.1f);
+        ColorMatrixColorFilter cf = new ColorMatrixColorFilter(matrix);
+        v.setColorFilter(cf);
+    }
+
+    public static void setImgTint(ImageView v, int colorId) {
+        v.setColorFilter(ContextCompat.getColor(v.getContext(), colorId ), PorterDuff.Mode.MULTIPLY);
     }
 }

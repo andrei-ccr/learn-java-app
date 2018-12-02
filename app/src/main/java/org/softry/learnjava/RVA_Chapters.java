@@ -70,6 +70,8 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
                 params.setMargins(8, 8, 8, 8);
                 imgView.setLayoutParams(params);
 
+                ChaptersActivity.setGrayScale(imgView);
+
                 holder.container_chapter_images.addView(imgView);
             }
         } catch (Exception e) {
