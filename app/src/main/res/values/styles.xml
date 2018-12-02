@@ -10,7 +10,7 @@
 
     <style name="AppThemeChapterSelect" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">#eee</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/_lighterBlack</item>
          <item name="colorAccent">@color/colorAccent</item>
          <item name="android:textColorPrimaryInverse">@color/_lighterBlack</item>
 
