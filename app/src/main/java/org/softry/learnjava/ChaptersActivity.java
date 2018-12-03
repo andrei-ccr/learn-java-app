@@ -63,6 +63,11 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
 
     @Override
     public void onItemClick(View view, int position) {
+        //Position 0 and 4 are category names. Add -1 after 0 and -2 after 4 to get correct chapter index
+        //Counting starts at 0
+        if((position>=0) && (position<4)) position-=1;
+        else if(position>=4) position -=2;
+
         Log.i("myapp_info", "Selected Chapter " + Integer.toString(position));
 
         if( (!InArray(position+1, comingSoonChapters))) {

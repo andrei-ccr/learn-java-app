@@ -192,7 +192,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-		
+
+        //TODO: Data should only be loaded once at the app start, not every time this activity is created
 		//Load data
 		MapLessonsToChapters();
 		MapContentToLessons();

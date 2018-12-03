@@ -12,7 +12,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="colorPrimary">#eee</item>
-        <item name="colorPrimaryDark">#222</item>
+        <item name="colorPrimaryDark">#000</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimaryInverse">@color/_lighterBlack</item>
     </style>
