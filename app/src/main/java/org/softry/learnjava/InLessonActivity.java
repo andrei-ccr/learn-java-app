@@ -36,6 +36,8 @@ public class InLessonActivity extends AppCompatActivity {
 
     private int selectedLesson;
 
+    private static TextView tvCurrentPage;
+
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -53,6 +55,9 @@ public class InLessonActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        tvCurrentPage = findViewById(R.id.tvCurrentPage);
+
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), MainActivity.LessonContentList.get(selectedLesson).length);
 
@@ -126,6 +131,8 @@ public class InLessonActivity extends AppCompatActivity {
             fragment.setArguments(args);
 
             currentPageNum = sectionNumber;
+
+
             return fragment;
         }
 
@@ -171,7 +178,18 @@ public class InLessonActivity extends AppCompatActivity {
                 }
             }
 
+            tvCurrentPage.setText(Integer.toString(currentPage) + "/" + Integer.toString(maxPages)); //TODO: Fix display correct current page
+
             return rootView;
+        }
+
+        @Override
+        public void onViewStateRestored(Bundle savedInstanceState) {
+            super.onViewStateRestored(savedInstanceState);
+            final int currentPage = getArguments().getInt(ARG_SECTION_NUMBER);
+            final int maxPages = getArguments().getInt(ARG_MAX_PAGES);
+            tvCurrentPage.setText(Integer.toString(currentPage) + "/" + Integer.toString(maxPages));
+
         }
     }
 

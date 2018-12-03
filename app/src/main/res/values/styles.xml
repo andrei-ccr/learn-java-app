@@ -9,11 +9,12 @@
     </style>
 
     <style name="AppThemeChapterSelect" parent="Theme.AppCompat.Light">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <item name="colorPrimary">#eee</item>
-        <item name="colorPrimaryDark">@color/_lighterBlack</item>
-         <item name="colorAccent">@color/colorAccent</item>
-         <item name="android:textColorPrimaryInverse">@color/_lighterBlack</item>
-
+        <item name="colorPrimaryDark">#222</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimaryInverse">@color/_lighterBlack</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

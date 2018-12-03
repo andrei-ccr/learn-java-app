@@ -60,7 +60,7 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
     public void onBindViewHolder(mViewHolder holder, int position) {
         Containers.Chapter itemElem = mChapters.get(position);
 
-        TypedArray images = this.context.getResources().obtainTypedArray(R.array.lessonImgList);
+        /*TypedArray images = this.context.getResources().obtainTypedArray(R.array.lessonImgList);
         Integer[] chapterLessonList = MainActivity.ChapterLessonList.get(position);
         try {
             for (int i = chapterLessonList[0]; i < chapterLessonList.length; i++) {
@@ -77,7 +77,7 @@ public class RVA_Chapters extends RecyclerView.Adapter<RVA_Chapters.mViewHolder>
         } catch (Exception e) {
             e.printStackTrace();
             Log.w("myapp", "Chapter " + Integer.toString(position) + " won't have images due to Exception");
-        }
+        }*/
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             if(position == 0)
