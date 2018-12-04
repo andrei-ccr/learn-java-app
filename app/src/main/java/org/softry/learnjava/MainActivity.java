@@ -61,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
                     containerAboutTab.setVisibility(View.VISIBLE);
                     containerLearnTab.setVisibility(View.GONE);
                     return true;
+                case R.id.navigation_dashboard:
+                    containerInterviewTab.setVisibility(View.GONE);
+                    containerAboutTab.setVisibility(View.GONE);
+                    containerLearnTab.setVisibility(View.GONE);
+                    return true;
             }
             return false;
         }
