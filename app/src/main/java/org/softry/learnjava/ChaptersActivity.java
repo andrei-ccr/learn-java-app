@@ -29,7 +29,7 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
     public static final String SELECTED_CHAPTER = "org.softry.learnjava.TAG.SELECTED_CHAPTER";
 
     private RecyclerView mRecyclerView;
-    private final Integer[] comingSoonChapters = {2,3,4,5,6,7};
+    private final Integer[] comingSoonChapters = {4,5,6,7};
 
     private RVA_Chapters GetChaptersRVA() {
         RVA_Chapters rvAdapter;

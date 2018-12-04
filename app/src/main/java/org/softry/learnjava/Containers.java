@@ -5,11 +5,6 @@ import android.util.Log;
 
 public class Containers {
 
-    public static final int CHAPTER_NUMBER = 0;
-    public static final int CHAPTER_NAME = 1;
-    public static final int CHAPTER_SHORT_DESC = 2;
-    public static final int CHAPTER_LONG_DESC = 3;
-
 	public static class LessonContent {
 		private String[] content, pageTitle;
 		private int[] pageRead;
@@ -141,16 +136,6 @@ public class Containers {
         private String shortDesc;
         private int progress;
         private Integer[] lessonList;
-        private int[] lessonImagesIdList;
-
-        public Chapter(int number, String name, String shortDesc, String longDesc, Integer[] lessonList) {
-            //this.number = number;
-            this.name = name;
-            this.shortDesc = shortDesc;
-            this.longDesc = longDesc;
-            this.progress = -1; // -1 means not started
-            this.lessonList = lessonList;
-        }
 
         public Chapter(String number, String name, String shortDesc, String longDesc, Integer[] lessonList) {
             this.number = number;
@@ -169,10 +154,6 @@ public class Containers {
 
         public String GetNumber(){
             return this.number;
-        }
-
-        public String GetRomanNumber() {
-            return "I"; //TODO: Finish GerRomanNumber() function
         }
 
         public String GetName() {

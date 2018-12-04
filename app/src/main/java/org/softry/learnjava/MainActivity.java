@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
 	public static List<Containers.Chapter> ChapterList; //List of chapters in order with chapter's details
 	public static List<Containers.Lesson> LessonList; //List of lessons in order with lesson's details
+
 	public static Map<Integer, Integer[]> ChapterLessonList; //Map of a chapter to a lesson list
 	public static Map<Integer, Integer[]> LessonContentList; //Map of a lesson to a list of content Strings
 	public static Map<Integer, Integer[]> LessonTitleList; //Map of a lesson to a list of page title Strings
@@ -182,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
 					new Containers.Lesson(
 						lessonTitleList[i],
 						lessonDescList[i],
-						lessonImgList.getResourceId(i, 0),
+						lessonImgList.getResourceId(i, R.drawable.first_program),
 						new Containers.LessonContent(this, LessonContentList.get(i), LessonTitleList.get(i), new int[LessonContentList.get(i).length])
 					)
 				);

@@ -18,6 +18,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
     private List<RVA_Lessons.LessonBoxRow> mLessonsBox;
     public static final String SELECTED_LESSON = "org.softry.learnjava.TAG.SELECTED_LESSON";
+    public static int SelectedChapter;
 
     private void SetLessonBoxList(int chapter) {
         mLessonsBox = new ArrayList<>();
@@ -44,48 +45,42 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        TypedArray chapterList = getResources().obtainTypedArray(R.array.chapterList);
         TypedArray chapterThemeList = getResources().obtainTypedArray(R.array.ChaptersColor);
 
-        //TODO: Don't get selectedChapter when coming back from InLessonActivity
-        int selectedChapter = 0; //This is a temporary fix until the issue is fixed
         try {
             Intent parentActivity = getIntent();
-            selectedChapter = Integer.parseInt(parentActivity.getStringExtra(ChaptersActivity.SELECTED_CHAPTER));
+            SelectedChapter = Integer.parseInt(parentActivity.getStringExtra(ChaptersActivity.SELECTED_CHAPTER));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        setTheme(chapterThemeList.getResourceId(selectedChapter,-1));
+        setTheme(chapterThemeList.getResourceId(SelectedChapter,-1));
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
 
         ConstraintLayout cLayout = findViewById(R.id.cLayout);
-        if(selectedChapter == 0) {
+        if(SelectedChapter == 0) {
             cLayout.setBackgroundColor(getResources().getColor(R.color._chapter1color));
-        } else if(selectedChapter == 1) {
+        } else if(SelectedChapter == 1) {
             cLayout.setBackgroundColor(getResources().getColor(R.color._chapter2color));
-        } else if(selectedChapter == 2) {
+        } else if(SelectedChapter == 2) {
             cLayout.setBackgroundColor(getResources().getColor(R.color._chapter3color));
-        } else if(selectedChapter == 3) {
+        } else if(SelectedChapter == 3) {
             cLayout.setBackgroundColor(getResources().getColor(R.color._chapter4color));
         }
 
 
         TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
+        Containers.Chapter thisChapter = MainActivity.ChapterList.get(SelectedChapter);
 
-        String[] selectedChapterDetails = getResources().getStringArray(chapterList.getResourceId(selectedChapter, 0));
-        this.setTitle(selectedChapterDetails[1] + " - " + getString(R.string.app_name));
-        tvChapterDesc.setText(selectedChapterDetails[2]);
+        this.setTitle(thisChapter.GetName() + " - " + getString(R.string.app_name));
+        tvChapterDesc.setText(thisChapter.GetShortDesc());
 
-
-
-        SetLessonBoxList(selectedChapter);
+        SetLessonBoxList(SelectedChapter);
 
         RVA_Lessons rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
         rvAdapter.setClickListener(this);
-
         RecyclerView mRecyclerView = findViewById(R.id.rvLessons);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(rvAdapter);

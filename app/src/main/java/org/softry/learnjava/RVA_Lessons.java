@@ -126,14 +126,21 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             //Set title, description and image of right LessonBox
             holder.lessonTitleR.setText(itemElem.GetRightLessonBox().GetLesson().GetTitle());
             holder.lessonDescR.setText(itemElem.GetRightLessonBox().GetLesson().GetDesc());
-            holder.lessonImageR.setImageDrawable(context.getResources().getDrawable(itemElem.GetRightLessonBox().GetLesson().GetImageRID()));
+            try {
+                holder.lessonImageR.setImageDrawable(context.getResources().getDrawable(itemElem.GetRightLessonBox().GetLesson().GetImageRID()));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         //Set title, description and image of left LessonBox
         holder.lessonTitleL.setText(itemElem.GetLeftLessonBox().GetLesson().GetTitle());
         holder.lessonDescL.setText(itemElem.GetLeftLessonBox().GetLesson().GetDesc());
-        holder.lessonImageL.setImageDrawable(context.getResources().getDrawable(itemElem.GetLeftLessonBox().GetLesson().GetImageRID()));
-
+        try {
+            holder.lessonImageL.setImageDrawable(context.getResources().getDrawable(itemElem.GetLeftLessonBox().GetLesson().GetImageRID()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }
