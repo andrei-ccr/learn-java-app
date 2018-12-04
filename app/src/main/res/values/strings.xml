@@ -260,7 +260,7 @@
 <p>
 <font color="#008000">public class</font> <font color="#1aa3ff"><em>MyFirstApp</em></font> { <br>
 	&nbsp;&nbsp;&nbsp;<font color="#008000">public static</font> <font color="#B00040">void</font> <font color="#1aa3ff"><em>main</em></font>(<font color="black">String</font>[] <font color="#a300cc">args</font>) { <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println( <font color="#a300cc">"Hello World!"</font> ); <br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println( <font color="#a300cc">\"Hello World!\"</font> ); <br>
 	&nbsp;&nbsp;&nbsp;}<br>
 }
 </p>
@@ -300,18 +300,18 @@ What is a class and a public class? For now, that is not important. All programs
 	<string name="lesson_102_5_title">Saying hello</string>
 	<string name="lesson102_5"><![CDATA["
 <p>The last line of code that needs explaining is this:<br>
-System.out.println( <font color="#a300cc">"Hello World!"</font> ); <br>
+System.out.println( <font color="#a300cc">\"Hello World!\"</font> ); <br>
 </p>
 
-<p>This line will output/print to the screen the words "Hello World!" (without the quote marks ").</p>
+<p>This line will output/print to the screen the words \"Hello World!\" (without the quote marks ").</p>
 
-<p>We can print anything to screen using the command function:<br> System.out.println( <font color="#a300cc">"Your message here"</font> );</p>
+<p>We can print anything to screen using the command function:<br> System.out.println( <font color="#a300cc">\"Your message here\"</font> );</p>
 
 <p><b>Note</b> the <b>;</b> at the end.</p> 
 
 <p>You can print your own message to screen, or even print more messages by calling the printing function multiple times:<br>
-System.out.println( <font color="#a300cc">"This is a message"</font> );<br>
-System.out.println( <font color="#a300cc">"And this is another message"</font> );</p>
+System.out.println( <font color="#a300cc">\"This is a message\"</font> );<br>
+System.out.println( <font color="#a300cc">\"And this is another message\"</font> );</p>
 
 <p>Try it! Print your own messages to the screen. Remember that these must be written inside the <font color="#1aa3ff">main</font> function.</p>
 	"]]></string>
@@ -428,7 +428,7 @@ char myVar = 'b';</p>
 <p>It is very important that the character is surrounded by single quotation marks.</p>
 
 <p>What if you want to store a sentence inside a variable? Well, to do that we are going to use one important Object Data Type: the String. This is a very special and very useful data type. Unlike other Object data types, Java allows using String almost like a primitive type. Therefore, to declare a String you can write:<br>
-String myStrVar = "This is a sentence";</p>
+String myStrVar = \"This is a sentence\";</p>
 
 <p>Make sure you write String with a capital S. As you learned earlier, these are case-sensitive. </p>
 
@@ -493,7 +493,7 @@ System.out.println(number);</p>
 	   <br>
 	   &nbsp;&nbsp;&nbsp;&nbsp;number = reader.nextInt();<br>
 	   <br>
-	   &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("The number is:");<br>
+	   &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"The number is:\");<br>
 	   &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(number);<br>
 	   
    &nbsp;&nbsp;}<br>
@@ -577,11 +577,11 @@ else {<br>
 <p>int a=3;<br>
 int b=9;<br>
 <br>
-if(a>b) {<br>
-	&nbsp;&nbsp;System.out.println("a is greater than b");<br>
+if(a&gt;b) {<br>
+	&nbsp;&nbsp;System.out.println(\"a is greater than b\");<br>
 }<br>
 else {<br>
-	&nbsp;&nbsp;System.out.println("b is greater than a");<br>
+	&nbsp;&nbsp;System.out.println(\"b is greater than a\");<br>
 }</p>
 
 <p>Running the above program will output "b is greater than a". You can play with the values of a and b, change them and see how the result changes.</p>
@@ -611,7 +611,7 @@ else {<br>
 <p>int a=3;<br>
 int b=9;<br>
 <br>
-if(a>b) {<br>
+if(a&gt;b) {<br>
  &nbsp;&nbsp;System.out.println("a is greater than b");<br>
 }<br>
 else if(a==b) {<br>
@@ -627,7 +627,7 @@ else {<br>
     <string name="lesson_105_6_title">First come, first served</string>
     <string name="lesson105_6"><![CDATA["
 <p>The order of conditions is important. Let's introduce two more operators in order to explain this: <br>
- <= (the greater than or equal sign) and >= (the lesser than or equal sign). </p>
+ &lt;= (the greater than or equal sign) and &gt;= (the lesser than or equal sign). </p>
 
 <p>Now, change the condition in the if statement from a>b to a>=b. What you will notice is that when a and b are equal, both the first (a>=b) and the second condition (a==b) are true. </p>
 
@@ -641,13 +641,13 @@ else {<br>
 <p>
 boolean payedTheBills = false;<br>
 if(payedTheBills == false) {<br>
- &nbsp;&nbsp;System.out.println("Go ahead and pay them!");<br>
+ &nbsp;&nbsp;System.out.println(\"Go ahead and pay them!\");<br>
 }<br>
 else {<br>
- &nbsp;&nbsp;System.out.println("Nothing to worry about.");<br>
+ &nbsp;&nbsp;System.out.println(\"Nothing to worry about.\");<br>
 }<br>
 </p>
-<p>The above program will output the first message: "Go ahead and pay them!". That is because the variable payedTheBills is false and we check if it's equal to false. The idea here is that false==false evaluates to true (for obvious reasons). And since it evaluates to true, the first message in the if statement is executed.</p>
+<p>The above program will output the first message: \"Go ahead and pay them!\". That is because the variable payedTheBills is false and we check if it's equal to false. The idea here is that false==false evaluates to true (for obvious reasons). And since it evaluates to true, the first message in the if statement is executed.</p>
     "]]></string>
     <string name="lesson_105_8_title">Logic makes sense</string>
     <string name="lesson105_8"><![CDATA["
