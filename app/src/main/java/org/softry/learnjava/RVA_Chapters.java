@@ -21,7 +21,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
 
     public class chapterBoxViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView chapterNumber, chapterName, chapterDesc, chapterProgress;
-        LinearLayout container_chapter_images;
+        LinearLayout container_chapter_images, container_chapter_color;
 
         public chapterBoxViewHolder(View itemView) {
             super(itemView);
@@ -30,6 +30,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
             chapterDesc = itemView.findViewById(R.id.tvChapterDesc);
             chapterProgress = itemView.findViewById(R.id.tvChapterProgress);
             container_chapter_images = itemView.findViewById(R.id.container_chapter_images);
+            container_chapter_color = itemView.findViewById(R.id.viewChapterColorLayout);
             itemView.setOnClickListener(this);
         }
 
@@ -82,8 +83,9 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         switch(holder.getItemViewType()) {
             case 0:
+                position = (position>4)?(position-2):(position-1);
                 chapterBoxViewHolder viewHolder0 = (chapterBoxViewHolder)holder;
-                Containers.Chapter itemElem = mChapters.get(position-1);
+                Containers.Chapter itemElem = mChapters.get(position);
 
                 /*TypedArray images = this.context.getResources().obtainTypedArray(R.array.lessonImgList);
                 Integer[] chapterLessonList = MainActivity.ChapterLessonList.get(position);
@@ -106,11 +108,11 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     if(position == 0)
-                        ((LinearLayout)viewHolder0.chapterDesc.getParent()).setBackground(this.context.getResources().getDrawable(R.drawable.chapter1_box));
+                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter1_box));
                     else if(position == 1)
-                        ((LinearLayout)viewHolder0.chapterDesc.getParent()).setBackground(this.context.getResources().getDrawable(R.drawable.chapter2_box));
+                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter2_box));
                     else if(position == 2)
-                        ((LinearLayout)viewHolder0.chapterDesc.getParent()).setBackground(this.context.getResources().getDrawable(R.drawable.chapter3_box));
+                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter3_box));
 
                 }
                 viewHolder0.chapterNumber.setText(itemElem.GetNumber());
