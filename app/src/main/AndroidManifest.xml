@@ -25,7 +25,7 @@
             android:theme="@style/AppThemeChapterSelect"/>
         <activity
             android:name=".LessonsActivity"
-            android:parentActivityName=".ChaptersActivity"/>
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".InLessonActivity"
             android:label=" "

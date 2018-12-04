@@ -70,7 +70,7 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
 
         Log.i("myapp_info", "Selected Chapter " + Integer.toString(position));
 
-        if( (!InArray(position+1, comingSoonChapters))) {
+        if( (!Utilities.InArray(position+1, comingSoonChapters))) {
             Intent lessonsActivity = new Intent(this, LessonsActivity.class);
             lessonsActivity.putExtra(SELECTED_CHAPTER, Integer.toString(position));
             startActivity(lessonsActivity);
@@ -88,12 +88,8 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -101,23 +97,5 @@ public class ChaptersActivity extends AppCompatActivity implements RVA_Chapters.
         return super.onOptionsItemSelected(item);
     }
 
-    public static <E>boolean InArray(E element, E[] array) {
-        for(E arrayElem : array) {
-            if(arrayElem.equals(element)) {
-                return true;
-            }
-        }
-        return false;
-    }
 
-    public static void setGrayScale(ImageView v) {
-        ColorMatrix matrix = new ColorMatrix();
-        matrix.setSaturation(0.1f);
-        ColorMatrixColorFilter cf = new ColorMatrixColorFilter(matrix);
-        v.setColorFilter(cf);
-    }
-
-    public static void setImgTint(ImageView v, int colorId) {
-        v.setColorFilter(ContextCompat.getColor(v.getContext(), colorId ), PorterDuff.Mode.MULTIPLY);
-    }
 }

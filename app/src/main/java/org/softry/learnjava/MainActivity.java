@@ -8,25 +8,48 @@ import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
-import com.andexert.library.RippleView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RVA_Chapters.ItemClickListener {
 
     private TextView tvAbout;
-    private ScrollView containerLearnTab, containerInterviewTab, containerAboutTab;
+    private ScrollView containerInterviewTab, containerAboutTab, containerDashboardTab;
+    private LinearLayout containerLearnTab;
     private Button mBtnStart, mBtnActivate;
+    private RecyclerView mRecyclerView;
+
+    public static final String SELECTED_CHAPTER = "org.softry.learnjava.TAG.SELECTED_CHAPTER";
+
+    private final Integer[] comingSoonChapters = {4,5,6,7};
+
+    private RVA_Chapters GetChaptersRVA() {
+        RVA_Chapters rvAdapter;
+
+        rvAdapter = new RVA_Chapters(this, MainActivity.ChapterList);
+        rvAdapter.setClickListener(this);
+        return rvAdapter;
+    }
+
+    private void InitRV_Chapters(){
+        RVA_Chapters adapter = GetChaptersRVA();
+
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(adapter);
+    }
 
 	private void FixBottomNavigationText() {
 		BottomNavigationView mBottomNavigationView = findViewById(R.id.navigation);
@@ -49,22 +72,26 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_learn:
                     containerInterviewTab.setVisibility(View.GONE);
                     containerAboutTab.setVisibility(View.GONE);
+                    containerDashboardTab.setVisibility(View.GONE);
                     containerLearnTab.setVisibility(View.VISIBLE);
                     return true;
                 case R.id.navigation_interview:
                     containerInterviewTab.setVisibility(View.VISIBLE);
                     containerAboutTab.setVisibility(View.GONE);
+                    containerDashboardTab.setVisibility(View.GONE);
                     containerLearnTab.setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_about:
                     containerInterviewTab.setVisibility(View.GONE);
                     containerAboutTab.setVisibility(View.VISIBLE);
                     containerLearnTab.setVisibility(View.GONE);
+                    containerDashboardTab.setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_dashboard:
                     containerInterviewTab.setVisibility(View.GONE);
                     containerAboutTab.setVisibility(View.GONE);
                     containerLearnTab.setVisibility(View.GONE);
+                    containerDashboardTab.setVisibility(View.VISIBLE);
                     return true;
             }
             return false;
@@ -210,6 +237,11 @@ public class MainActivity extends AppCompatActivity {
         containerLearnTab = findViewById(R.id.container_learnTab);
         containerInterviewTab = findViewById(R.id.container_interviewTab);
         containerAboutTab = findViewById(R.id.container_aboutTab);
+        containerDashboardTab = findViewById(R.id.container_dashboardTab);
+
+        //Get the recycler view used to list chapters
+        mRecyclerView = findViewById(R.id.rvChapters);
+        InitRV_Chapters();
 
         tvAbout = findViewById(R.id.tvAbout);
 
@@ -235,6 +267,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(learnIntent);
             }
         });
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        //Position 0 and 4 are category names. Add -1 after 0 and -2 after 4 to get correct chapter index
+        //Counting starts at 0
+        if((position>=0) && (position<4)) position-=1;
+        else if(position>=4) position -=2;
+
+        Log.i("myapp_info", "Selected Chapter " + Integer.toString(position));
+
+        if( (!Utilities.InArray(position+1, comingSoonChapters))) {
+            Intent lessonsActivity = new Intent(this, LessonsActivity.class);
+            lessonsActivity.putExtra(SELECTED_CHAPTER, Integer.toString(position));
+            startActivity(lessonsActivity);
+        } else {
+            Toast.makeText(view.getContext(),"Coming soon", Toast.LENGTH_LONG).show();
+        }
     }
 
 }

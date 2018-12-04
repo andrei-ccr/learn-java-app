@@ -26,7 +26,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         Integer[] lessonsCurrentChapter = MainActivity.ChapterLessonList.get(chapter);
 
         for(int i=lessonsCurrentChapter[0];i<lessonsCurrentChapter.length-1;i+=2) {
-            if(ChaptersActivity.InArray(i+1, lessonsCurrentChapter)) {
+            if(Utilities.InArray(i+1, lessonsCurrentChapter)) {
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
                         new RVA_Lessons.LessonBox(MainActivity.LessonList.get(i), i),
                         new RVA_Lessons.LessonBox(MainActivity.LessonList.get(i+1), i+1 )
