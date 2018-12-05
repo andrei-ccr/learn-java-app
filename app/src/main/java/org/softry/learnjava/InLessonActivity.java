@@ -36,12 +36,12 @@ public class InLessonActivity extends AppCompatActivity {
 
     private int selectedLesson;
 
-    private static TextView tvCurrentPage;
+
 
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    private ViewPager mViewPager;
+    private static ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +56,7 @@ public class InLessonActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        tvCurrentPage = findViewById(R.id.tvCurrentPage);
-
+        final TextView tvCurrentPage = findViewById(R.id.tvCurrentPage);
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), MainActivity.LessonContentList.get(selectedLesson).length);
 
@@ -65,6 +64,24 @@ public class InLessonActivity extends AppCompatActivity {
         mViewPager = findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        tvCurrentPage.setText(mViewPager.getCurrentItem()+1 + "/" + MainActivity.LessonContentList.get(selectedLesson).length);
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+                tvCurrentPage.setText(mViewPager.getCurrentItem()+1 + "/" + MainActivity.LessonContentList.get(selectedLesson).length);
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
 
     }
 
@@ -178,19 +195,9 @@ public class InLessonActivity extends AppCompatActivity {
                 }
             }
 
-            tvCurrentPage.setText(Integer.toString(currentPage) + "/" + Integer.toString(maxPages)); //TODO: Fix display correct current page
-
             return rootView;
         }
 
-        @Override
-        public void onViewStateRestored(Bundle savedInstanceState) {
-            super.onViewStateRestored(savedInstanceState);
-            final int currentPage = getArguments().getInt(ARG_SECTION_NUMBER);
-            final int maxPages = getArguments().getInt(ARG_MAX_PAGES);
-            tvCurrentPage.setText(Integer.toString(currentPage) + "/" + Integer.toString(maxPages));
-
-        }
     }
 
 
