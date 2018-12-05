@@ -12,13 +12,13 @@
         android:id="@+id/action_bookmark"
         android:orderInCategory="101"
         android:title="Bookmark"
-        android:icon="@drawable/ic_fa_bookmark"
+        android:icon="@drawable/ic_bookmark"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_restart"
         android:orderInCategory="102"
         android:title="Restart Lesson"
-        android:icon="@drawable/ic_fa_restart"
+        android:icon="@drawable/ic_restart"
         app:showAsAction="ifRoom" />
 
 
