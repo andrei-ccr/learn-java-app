@@ -92,7 +92,7 @@ public class Containers {
 		private String title, desc;
 		private int imgResId;
 		private LessonContent lessonContent;
-		private int completedProcent;
+		private int completedProcent; //From 0 to 100
 		
 		public Lesson(String title, String desc, int imgResId, LessonContent lessonContent) {
 			this.title = title;
@@ -100,7 +100,7 @@ public class Containers {
 			this.imgResId = imgResId;
 			this.lessonContent = lessonContent;
 			
-			this.SetCompletedProcent((int)Math.floor(this.lessonContent.GetReadCount()/this.lessonContent.GetPageCount()));
+			this.SetCompletedProcent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
 		}
 		
 		public void SetCompletedProcent(int val) {

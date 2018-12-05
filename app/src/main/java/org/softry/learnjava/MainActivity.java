@@ -81,12 +81,12 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
                     containerDashboardTab.setVisibility(View.GONE);
                     containerLearnTab.setVisibility(View.GONE);
                     return true;
-                case R.id.navigation_about:
+                /*case R.id.navigation_about:
                     containerInterviewTab.setVisibility(View.GONE);
                     containerAboutTab.setVisibility(View.VISIBLE);
                     containerLearnTab.setVisibility(View.GONE);
                     containerDashboardTab.setVisibility(View.GONE);
-                    return true;
+                    return true;*/
                 case R.id.navigation_dashboard:
                     containerInterviewTab.setVisibility(View.GONE);
                     containerAboutTab.setVisibility(View.GONE);
@@ -203,15 +203,17 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 		String[] lessonTitleList = getResources().getStringArray(R.array.lessonTitleList);
 		String[] lessonDescList = getResources().getStringArray(R.array.lessonDescriptionList);
 		TypedArray lessonImgList = getResources().obtainTypedArray(R.array.lessonImgList);
-		
+        int[] readVector;
 		for(int i=0; i<lessonTitleList.length;i++) {
 			try {
+                readVector = new int[LessonContentList.get(i).length];
+                //readVector[0] = 1;
 				LessonList.add(
 					new Containers.Lesson(
 						lessonTitleList[i],
 						lessonDescList[i],
 						lessonImgList.getResourceId(i, R.drawable.first_program),
-						new Containers.LessonContent(this, LessonContentList.get(i), LessonTitleList.get(i), new int[LessonContentList.get(i).length])
+						new Containers.LessonContent(this, LessonContentList.get(i), LessonTitleList.get(i), readVector)
 					)
 				);
 			} catch (Exception e) {

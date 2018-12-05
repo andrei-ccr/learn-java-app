@@ -67,17 +67,30 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
 
     public class mViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView lessonTitleL, lessonDescL, lessonTitleR, lessonDescR;
-        ImageView lessonImageL, lessonImageR;
+        TextView lessonProgressL, lessonProgressR;
+        ImageView lessonImageL, lessonImageR, lessonProgressSymbolL, lessonProgressSymbolR;
         LinearLayout leftLessonBox, rightLessonBox;
 
         public mViewHolder(View itemView) {
             super(itemView);
+
+            //Left Box elements
             lessonTitleL = itemView.findViewById(R.id.tvLessonTitleL);
             lessonDescL = itemView.findViewById(R.id.tvLessonDescL);
             lessonImageL = itemView.findViewById(R.id.ivLessonImgL);
+            lessonProgressL = itemView.findViewById(R.id.tvLessonProgressL);
+            lessonProgressSymbolL = itemView.findViewById(R.id.ivProgressSymbolL);
+
+            //Right Box elements
             lessonTitleR = itemView.findViewById(R.id.tvLessonTitleR);
             lessonDescR = itemView.findViewById(R.id.tvLessonDescR);
             lessonImageR = itemView.findViewById(R.id.ivLessonImgR);
+            lessonProgressR = itemView.findViewById(R.id.tvLessonProgressR);
+            lessonProgressSymbolR = itemView.findViewById(R.id.ivProgressSymbolR);
+
+
+
+            //Box container (Linear Layout)
             leftLessonBox = itemView.findViewById(R.id.leftLessonBox);
             rightLessonBox = itemView.findViewById(R.id.rightLessonBox);
 
@@ -126,6 +139,8 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             //Set title, description and image of right LessonBox
             holder.lessonTitleR.setText(itemElem.GetRightLessonBox().GetLesson().GetTitle());
             holder.lessonDescR.setText(itemElem.GetRightLessonBox().GetLesson().GetDesc());
+            holder.lessonProgressR.setText(itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() + "%");
+
             try {
                 holder.lessonImageR.setImageDrawable(context.getResources().getDrawable(itemElem.GetRightLessonBox().GetLesson().GetImageRID()));
             } catch (Exception e) {
@@ -136,6 +151,7 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         //Set title, description and image of left LessonBox
         holder.lessonTitleL.setText(itemElem.GetLeftLessonBox().GetLesson().GetTitle());
         holder.lessonDescL.setText(itemElem.GetLeftLessonBox().GetLesson().GetDesc());
+        holder.lessonProgressL.setText(itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() + "%");
         try {
             holder.lessonImageL.setImageDrawable(context.getResources().getDrawable(itemElem.GetLeftLessonBox().GetLesson().GetImageRID()));
         } catch (Exception e) {

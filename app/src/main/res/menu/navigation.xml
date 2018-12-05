@@ -10,7 +10,7 @@
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard"
+        android:icon="@drawable/ic_fa_dashboard"
         android:title="Dashboard"
         app:showAsAction="never" />
 
@@ -20,9 +20,9 @@
         android:title="@string/title_interview"
         />
 
-    <item
+    <!--<item
         android:id="@+id/navigation_about"
         android:icon="@drawable/ic_fa_about"
-        android:title="@string/title_about" />
+        android:title="@string/title_about" />-->
 
 </menu>
