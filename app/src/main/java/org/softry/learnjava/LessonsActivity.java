@@ -19,11 +19,17 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     private List<RVA_Lessons.LessonBoxRow> mLessonsBox;
     public static final String SELECTED_LESSON = "org.softry.learnjava.TAG.SELECTED_LESSON";
     public static int SelectedChapter;
+    public RecyclerView mRecyclerView;
+    public RVA_Lessons rvAdapter;
 
     private void SetLessonBoxList(int chapter) {
         mLessonsBox = new ArrayList<>();
 
         Integer[] lessonsCurrentChapter = MainActivity.ChapterLessonList.get(chapter);
+        Log.e("myapp", "Showing read status from lesson list (first lesson)");
+        for(int i: MainActivity.LessonList.get(0).GetLessonContent().GetAllReadStatus()) {
+            Log.e("myapp", Integer.toString(i));
+        }
 
         for(int i=lessonsCurrentChapter[0];i<lessonsCurrentChapter.length-1;i+=2) {
             if(Utilities.InArray(i+1, lessonsCurrentChapter)) {
@@ -44,6 +50,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("myapp", "OnCreate() called");
 
         TypedArray chapterThemeList = getResources().obtainTypedArray(R.array.ChaptersColor);
 
@@ -79,12 +86,26 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
         SetLessonBoxList(SelectedChapter);
 
-        RVA_Lessons rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
+        rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
         rvAdapter.setClickListener(this);
-        RecyclerView mRecyclerView = findViewById(R.id.rvLessons);
+        mRecyclerView = findViewById(R.id.rvLessons);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(rvAdapter);
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.i("myapp", "OnResume called()");
+        rvAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        Log.i("myapp", "OnRestart called()");
+        rvAdapter.notifyDataSetChanged();
     }
 
     @Override

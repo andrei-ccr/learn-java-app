@@ -3,6 +3,7 @@ package org.softry.learnjava;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -140,6 +141,11 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             holder.lessonTitleR.setText(itemElem.GetRightLessonBox().GetLesson().GetTitle());
             holder.lessonDescR.setText(itemElem.GetRightLessonBox().GetLesson().GetDesc());
             holder.lessonProgressR.setText(itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() + "%");
+            if(itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() == 100) {
+                holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
+            } else {
+                holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_progress));
+            }
 
             try {
                 holder.lessonImageR.setImageDrawable(context.getResources().getDrawable(itemElem.GetRightLessonBox().GetLesson().GetImageRID()));
@@ -152,6 +158,12 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         holder.lessonTitleL.setText(itemElem.GetLeftLessonBox().GetLesson().GetTitle());
         holder.lessonDescL.setText(itemElem.GetLeftLessonBox().GetLesson().GetDesc());
         holder.lessonProgressL.setText(itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() + "%");
+        if(itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() == 100) {
+            holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
+        } else {
+            holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_progress));
+        }
+
         try {
             holder.lessonImageL.setImageDrawable(context.getResources().getDrawable(itemElem.GetLeftLessonBox().GetLesson().GetImageRID()));
         } catch (Exception e) {

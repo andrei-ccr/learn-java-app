@@ -28,6 +28,7 @@ public class Containers {
             this.pageRead = pageRead;
 
         }
+
 		
 		public String GetContentByPage(int page) {
 			try {
@@ -103,9 +104,10 @@ public class Containers {
 			this.SetCompletedProcent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
 		}
 		
-		public void SetCompletedProcent(int val) {
+		private void SetCompletedProcent(int val) {
 			this.completedProcent = Math.max(0, Math.min(100, val));
 		}
+
 		
 		public String GetTitle() {
 			return this.title;
@@ -120,7 +122,8 @@ public class Containers {
 		}
 		
 		public int GetCompletedProcent() {
-			return this.completedProcent;
+            this.SetCompletedProcent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
+            return this.completedProcent;
 		}
 		
 		public LessonContent GetLessonContent() {

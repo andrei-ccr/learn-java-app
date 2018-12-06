@@ -111,6 +111,8 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 	public static Map<Integer, Integer[]> LessonContentList; //Map of a lesson to a list of content Strings
 	public static Map<Integer, Integer[]> LessonTitleList; //Map of a lesson to a list of page title Strings
 
+    private static boolean DataLoaded = false;
+
 	private void MapLessonsToChapters() {
 		//TODO: This should be immutable/constant/final for security reasons
 		ChapterLessonList = new HashMap<>();
@@ -236,10 +238,13 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 
         //TODO: Data should only be loaded once at the app start, not every time this activity is created
 		//Load data
-		MapLessonsToChapters();
-		MapContentToLessons();
-		LoadChapters();
-		LoadLessons();
+        if(DataLoaded == false) {
+            MapLessonsToChapters();
+            MapContentToLessons();
+            LoadChapters();
+            LoadLessons();
+            DataLoaded = true;
+        }
 
 		setTitle("");
 

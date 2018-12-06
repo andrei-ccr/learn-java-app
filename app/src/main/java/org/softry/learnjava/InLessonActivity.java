@@ -25,7 +25,7 @@ import android.widget.TextView;
 public class InLessonActivity extends AppCompatActivity {
 
     private int selectedLesson;
-
+    private Containers.LessonContent lessonContent;
 
 
     /**
@@ -41,12 +41,15 @@ public class InLessonActivity extends AppCompatActivity {
         //Get current lesson
         Intent parentActivity = getIntent();
         selectedLesson = Integer.parseInt(parentActivity.getStringExtra(LessonsActivity.SELECTED_LESSON)); //Returns lesson id (eg.: 0, 1 etc)
+        lessonContent = MainActivity.LessonList.get(selectedLesson).GetLessonContent();
 
+        //Set toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        final TextView tvCurrentPage = findViewById(R.id.tvCurrentPage);
+        //Mark first page as read
+        lessonContent.MarkPageAsRead(0);
 
         SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), MainActivity.LessonContentList.get(selectedLesson).length);
 
@@ -54,6 +57,7 @@ public class InLessonActivity extends AppCompatActivity {
         mViewPager = findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        final TextView tvCurrentPage = findViewById(R.id.tvCurrentPage);
         tvCurrentPage.setText(mViewPager.getCurrentItem()+1 + "/" + MainActivity.LessonContentList.get(selectedLesson).length);
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -64,7 +68,11 @@ public class InLessonActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int i) {
+                lessonContent.MarkPageAsRead(i);
 
+                for(int r : lessonContent.GetAllReadStatus()) {
+                    Log.e("myapp", Integer.toString(r));
+                }
             }
 
             @Override
