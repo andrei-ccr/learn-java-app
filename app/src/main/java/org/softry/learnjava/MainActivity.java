@@ -7,9 +7,12 @@ import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     private LinearLayout containerLearnTab;
     private Button mBtnStart, mBtnActivate;
     private RecyclerView mRecyclerView;
+
+    private DrawerLayout mDrawerLayout;
 
     public static final String SELECTED_CHAPTER = "org.softry.learnjava.TAG.SELECTED_CHAPTER";
 
@@ -235,6 +241,10 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 		LoadChapters();
 		LoadLessons();
 
+		setTitle("");
+
+		mDrawerLayout = findViewById(R.id.drawerLayout_container);
+
         //Get the main containers
         containerLearnTab = findViewById(R.id.container_learnTab);
         containerInterviewTab = findViewById(R.id.container_interviewTab);
@@ -256,6 +266,11 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         FixBottomNavigationText();
+
+        Toolbar toolbar = findViewById(R.id.toolbar_main);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
 
         tvAbout.setText("Learn Java\n\n" +
                 "Application for learning the Java programming language. Lessons are designed for quick learning.\n\n" +
@@ -287,6 +302,17 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         } else {
             Toast.makeText(view.getContext(),"Coming soon", Toast.LENGTH_LONG).show();
         }
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+	    switch(item.getItemId()) {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
