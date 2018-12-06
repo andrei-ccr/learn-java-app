@@ -30,15 +30,11 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements RVA_Chapters.ItemClickListener {
 
-    private TextView tvAbout;
     private ScrollView containerInterviewTab, containerAboutTab, containerDashboardTab;
     private LinearLayout containerLearnTab;
-    private Button mBtnStart, mBtnActivate;
     private RecyclerView mRecyclerView;
-
     private DrawerLayout mDrawerLayout;
 
-    public static final String SELECTED_CHAPTER = "org.softry.learnjava.TAG.SELECTED_CHAPTER";
 
     private final Integer[] comingSoonChapters = {4,5,6,7};
 
@@ -87,12 +83,6 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
                     containerDashboardTab.setVisibility(View.GONE);
                     containerLearnTab.setVisibility(View.GONE);
                     return true;
-                /*case R.id.navigation_about:
-                    containerInterviewTab.setVisibility(View.GONE);
-                    containerAboutTab.setVisibility(View.VISIBLE);
-                    containerLearnTab.setVisibility(View.GONE);
-                    containerDashboardTab.setVisibility(View.GONE);
-                    return true;*/
                 case R.id.navigation_dashboard:
                     containerInterviewTab.setVisibility(View.GONE);
                     containerAboutTab.setVisibility(View.GONE);
@@ -119,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 		ChapterLessonList.put(0, new Integer[]{0, 1, 2, 3, 4, 5, 6, 7}); //Chapter 1
 		ChapterLessonList.put(1, new Integer[]{8, 9, 10, 11 , 12, 13, 14, 15, 16, 17});
 		ChapterLessonList.put(2, new Integer[]{18, 19, 20, 21, 22});
-		//ChapterLessonList.put(3, new Integer[]{23, 24, 25, 26, 27});
+		ChapterLessonList.put(3, new Integer[]{23, 24, 25, 26, 27});
 		
 	}
 	
@@ -195,14 +185,9 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         TypedArray chapterList = getResources().obtainTypedArray(R.array.chapterList);
 
         for(int i=0;i<chapterList.length();i++) {
-            aChapter = getResources().getStringArray(chapterList.getResourceId(i, 0));
+            aChapter = getResources().getStringArray(chapterList.getResourceId(i, R.array.chapter_default));
 			
-            ChapterList.add(
-                    new Containers.Chapter(aChapter[0],
-                            aChapter[1],
-                            aChapter[2],
-                            aChapter[3],
-							ChapterLessonList.get(i)));
+            ChapterList.add( new Containers.Chapter(aChapter[0], aChapter[1], aChapter[2], aChapter[3], ChapterLessonList.get(i)));
         }
     }
 	
@@ -236,7 +221,6 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //TODO: Data should only be loaded once at the app start, not every time this activity is created
 		//Load data
         if(DataLoaded == false) {
             MapLessonsToChapters();
@@ -260,11 +244,6 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         mRecyclerView = findViewById(R.id.rvChapters);
         InitRV_Chapters();
 
-        tvAbout = findViewById(R.id.tvAbout);
-
-        mBtnStart = findViewById(R.id.btn_learn_basic);
-        mBtnActivate = findViewById(R.id.btn_learn_full);
-
         containerInterviewTab.setVisibility(View.GONE);
         containerAboutTab.setVisibility(View.GONE);
 
@@ -277,18 +256,6 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
 
-        tvAbout.setText("Learn Java\n\n" +
-                "Application for learning the Java programming language. Lessons are designed for quick learning.\n\n" +
-                "Suitable for both beginners and advanced programmers.");
-
-
-       mBtnStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent learnIntent = new Intent(v.getContext(), ChaptersActivity.class);
-                startActivity(learnIntent);
-            }
-        });
     }
 
     @Override
@@ -302,7 +269,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 
         if( (!Utilities.InArray(position+1, comingSoonChapters))) {
             Intent lessonsActivity = new Intent(this, LessonsActivity.class);
-            lessonsActivity.putExtra(SELECTED_CHAPTER, Integer.toString(position));
+            lessonsActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(position));
             startActivity(lessonsActivity);
         } else {
             Toast.makeText(view.getContext(),"Coming soon", Toast.LENGTH_LONG).show();

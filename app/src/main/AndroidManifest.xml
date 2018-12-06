@@ -19,11 +19,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ChaptersActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="Select chapter"
-            android:theme="@style/AppThemeChapterSelect"/>
-        <activity
             android:name=".LessonsActivity"
             android:parentActivityName=".MainActivity"/>
         <activity

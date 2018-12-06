@@ -87,25 +87,6 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                 chapterBoxViewHolder viewHolder0 = (chapterBoxViewHolder)holder;
                 Containers.Chapter itemElem = mChapters.get(position);
 
-                /*TypedArray images = this.context.getResources().obtainTypedArray(R.array.lessonImgList);
-                Integer[] chapterLessonList = MainActivity.ChapterLessonList.get(position);
-                try {
-                    for (int i = chapterLessonList[0]; i < chapterLessonList.length; i++) {
-                        ImageView imgView = new ImageView(this.context);
-                        imgView.setImageDrawable(this.context.getResources().getDrawable(images.getResourceId(i, R.drawable.first_program)));
-                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(50, 50);
-                        params.setMargins(8, 8, 8, 8);
-                        imgView.setLayoutParams(params);
-
-                        ChaptersActivity.setGrayScale(imgView);
-
-                        holder.container_chapter_images.addView(imgView);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Log.w("myapp", "Chapter " + Integer.toString(position) + " won't have images due to Exception");
-                }*/
-
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     if(position == 0)
                         viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter1_box));
@@ -113,6 +94,14 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                         viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter2_box));
                     else if(position == 2)
                         viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter3_box));
+                    else if(position == 3)
+                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter4_box));
+                    else if(position == 4)
+                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter5_box));
+                    else if(position == 5)
+                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter6_box));
+                    else if(position == 6)
+                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter7_box));
 
                 }
                 viewHolder0.chapterNumber.setText(itemElem.GetNumber());
@@ -137,8 +126,8 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                 break;
             case 1:
                 categoryTitleViewHolder viewHolder1 = (categoryTitleViewHolder)holder;
-                if(position==0) viewHolder1.categoryName.setText("-- Level: Beginner --");
-                else if(position==4) viewHolder1.categoryName.setText("-- Level: Advanced --");
+                if(position==0) viewHolder1.categoryName.setText("---- Level: Beginner ----");
+                else if(position==4) viewHolder1.categoryName.setText("---- Level: Advanced ----");
                 break;
         }
 

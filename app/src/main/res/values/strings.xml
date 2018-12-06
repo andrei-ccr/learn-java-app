@@ -25,11 +25,19 @@
         <item name="chapter1">@array/chapter1</item>
         <item name="chapter2">@array/chapter2</item>
         <item name="chapter3">@array/chapter3</item>
-		<!--<item name="chapter4">@array/chapter4</item>
+		<item name="chapter4">@array/chapter4</item>
         <item name="chapter5">@array/chapter5</item>
         <item name="chapter6">@array/chapter6</item>
-        <item name="chapter7">@array/chapter7</item>-->
+        <item name="chapter7">@array/chapter7</item>
     </array>
+
+	<string-array name="chapter_default">
+		<item name="title">Error</item>
+		<item name="name"> </item>
+		<item name="shortDesc"> </item>
+		<item name="description"> </item>
+
+	</string-array>
 
 	<string-array name="chapter1">
 		<item name="title">Chapter I</item>

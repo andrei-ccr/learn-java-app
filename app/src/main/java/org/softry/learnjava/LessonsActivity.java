@@ -56,7 +56,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
         try {
             Intent parentActivity = getIntent();
-            SelectedChapter = Integer.parseInt(parentActivity.getStringExtra(ChaptersActivity.SELECTED_CHAPTER));
+            SelectedChapter = Integer.parseInt(parentActivity.getStringExtra(Utilities.SELECTED_CHAPTER));
         } catch (Exception e) {
             e.printStackTrace();
         }
