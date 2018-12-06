@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -227,9 +228,38 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
             DataLoaded = true;
         }
 
-		//setTitle("");
-
 		mDrawerLayout = findViewById(R.id.drawerLayout_container);
+        NavigationView navigationView = findViewById(R.id.side_bar);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                menuItem.setChecked(false);
+                mDrawerLayout.closeDrawers();
+
+                switch(menuItem.getItemId()) {
+                    case R.id.side_bar_settings:
+                        Log.i("myapp", "Settings selected");
+                        break;
+                    case R.id.side_bar_about:
+                        Log.i("myapp", "About selected");
+                        break;
+                    case R.id.side_bar_bookmarks:
+                        Log.i("myapp", "Bookmarks selected");
+                        break;
+                    case R.id.side_bar_search:
+                        Log.i("myapp", "Search selected");
+                        break;
+                    case R.id.side_bar_disable_ads:
+                        Log.i("myapp", "Disable ads selected");
+                        break;
+                    case R.id.side_bar_unlock_all:
+                        Log.i("myapp", "Unlock all selected");
+                        break;
+                }
+
+                return true;
+            }
+        });
 
         //Get the main containers
         containerLearnTab = findViewById(R.id.container_learnTab);

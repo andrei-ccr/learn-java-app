@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
- <group android:checkableBehavior="single">
+ <group android:checkableBehavior="none">
+     <item
+         android:id="@+id/side_bar_search"
+         android:title="Search"/>
+     <item
+         android:id="@+id/side_bar_bookmarks"
+         android:title="Bookmarks"/>
      <item
          android:id="@+id/side_bar_settings"
-         android:title="Settings">
+         android:title="Settings"/>
+     <item
+         android:id="@+id/side_bar_about"
+         android:title="About"/>
 
-     </item>
+     <item
+         android:id="@+id/side_bar_disable_ads"
+         android:title="Disable Ads"/>
+     <item
+         android:id="@+id/side_bar_unlock_all"
+         android:title="Unlock all lessons"/>
+
  </group>
 </menu>
