@@ -9,16 +9,18 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_fa_dashboard"
-        android:title="Dashboard"
-        app:showAsAction="never" />
-
-    <item
         android:id="@+id/navigation_interview"
         android:icon="@drawable/ic_fa_interview"
         android:title="@string/title_interview"
-        />
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_fa_dashboard"
+        android:title="@string/title_dashboard"
+        app:showAsAction="never" />
+
+
 
     <!--<item
         android:id="@+id/navigation_about"

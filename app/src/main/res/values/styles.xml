@@ -1,20 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>-->
 
-    </style>
-
-    <style name="AppThemeChapterSelect" parent="Theme.AppCompat.Light">
+    <style name="AppTheme_Main" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">#0d7cac</item>
+        <item name="colorPrimary">#0b5e9e</item>
         <item name="colorPrimaryDark">#0b5e9e</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorPrimaryInverse">@color/_lighterBlack</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -23,8 +21,6 @@
         <item name="colorPrimary">#0099cc</item>
         <item name="colorPrimaryDark">#0099cc</item>
     </style>
-
-
 
     <style name="AppTheme.ChapterOne">
         <item name="colorPrimary">@color/_chapter1color</item>

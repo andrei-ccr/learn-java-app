@@ -16,12 +16,10 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,7 +32,6 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     private LinearLayout containerLearnTab;
     private RecyclerView mRecyclerView;
     private DrawerLayout mDrawerLayout;
-
 
     private final Integer[] comingSoonChapters = {4,5,6,7};
 
@@ -230,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
             DataLoaded = true;
         }
 
-		setTitle("");
+		//setTitle("");
 
 		mDrawerLayout = findViewById(R.id.drawerLayout_container);
 
