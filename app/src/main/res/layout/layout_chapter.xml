@@ -58,17 +58,6 @@
             android:textColor="@color/_lighterBlack"
             android:textSize="17sp" />
 
-        <LinearLayout
-            android:id="@+id/container_chapter_images"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
         <TextView
             android:id="@+id/tvChapterDesc"
             android:layout_width="match_parent"
@@ -86,16 +75,35 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="8dp">
+            android:layout_marginRight="8dp"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/tvNumberOfLessons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="6 Lessons"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="false"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@+id/tvChapterProgress"
+                android:tint="@color/_gray"
+                app:srcCompat="@drawable/ic_fa_progress" />
 
             <TextView
                 android:id="@+id/tvChapterProgress"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
                 android:gravity="end"

@@ -17,7 +17,7 @@ import java.util.List;
 public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.ItemClickListener {
 
     private List<RVA_Lessons.LessonBoxRow> mLessonsBox;
-    public static final String SELECTED_LESSON = "org.softry.learnjava.TAG.SELECTED_LESSON";
+
     public static int SelectedChapter;
     public RecyclerView mRecyclerView;
     public RVA_Lessons rvAdapter;
@@ -25,21 +25,21 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     private void SetLessonBoxList(int chapter) {
         mLessonsBox = new ArrayList<>();
 
-        Integer[] lessonsCurrentChapter = MainActivity.ChapterLessonList.get(chapter);
+        Integer[] lessonsCurrentChapter = Utilities.ChapterLessonList.get(chapter);
         Log.e("myapp", "Showing read status from lesson list (first lesson)");
-        for(int i: MainActivity.LessonList.get(0).GetLessonContent().GetAllReadStatus()) {
+        for(int i: Utilities.LessonList.get(0).GetLessonContent().GetAllReadStatus()) {
             Log.e("myapp", Integer.toString(i));
         }
 
         for(int i=lessonsCurrentChapter[0];i<lessonsCurrentChapter.length-1;i+=2) {
             if(Utilities.InArray(i+1, lessonsCurrentChapter)) {
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox(MainActivity.LessonList.get(i), i),
-                        new RVA_Lessons.LessonBox(MainActivity.LessonList.get(i+1), i+1 )
+                        new RVA_Lessons.LessonBox(Utilities.LessonList.get(i), i),
+                        new RVA_Lessons.LessonBox(Utilities.LessonList.get(i+1), i+1 )
                 ));
             } else {
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox(MainActivity.LessonList.get(i), i),
+                        new RVA_Lessons.LessonBox(Utilities.LessonList.get(i), i),
                         new RVA_Lessons.LessonBox() )
                 );
             }
@@ -61,7 +61,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
             e.printStackTrace();
         }
 
-        setTheme(chapterThemeList.getResourceId(SelectedChapter,-1));
+        setTheme(chapterThemeList.getResourceId(SelectedChapter, R.style.AppTheme_ChapterOne));
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
@@ -75,11 +75,19 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
             cLayout.setBackgroundColor(getResources().getColor(R.color._chapter3color));
         } else if(SelectedChapter == 3) {
             cLayout.setBackgroundColor(getResources().getColor(R.color._chapter4color));
+        } else if(SelectedChapter == 4) {
+            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter5color));
+        } else if(SelectedChapter == 5) {
+            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter6color));
+        } else if(SelectedChapter == 6) {
+            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter7color));
+        } else if(SelectedChapter == 7) {
+            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter8color));
         }
 
 
         TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
-        Containers.Chapter thisChapter = MainActivity.ChapterList.get(SelectedChapter);
+        Containers.Chapter thisChapter = Utilities.ChapterList.get(SelectedChapter);
 
         this.setTitle(thisChapter.GetName() + " - " + getString(R.string.app_name));
         tvChapterDesc.setText(thisChapter.GetShortDesc());
@@ -114,7 +122,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         Log.i("myapp_info", "Row index " + Integer.toString(row_index));
 
         Intent lessonActivity = new Intent(this, InLessonActivity.class);
-        lessonActivity.putExtra(SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier()));
+        lessonActivity.putExtra(Utilities.SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier()));
         startActivity(lessonActivity);
     }
 
@@ -124,7 +132,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         Log.i("myapp_info", "Row index " + Integer.toString(row_index));
 
         Intent lessonActivity = new Intent(this, InLessonActivity.class);
-        lessonActivity.putExtra(SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier()));
+        lessonActivity.putExtra(Utilities.SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier()));
         startActivity(lessonActivity);
     }
 }

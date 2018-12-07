@@ -22,6 +22,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static org.softry.learnjava.Utilities.SELECTED_LESSON;
+
 public class InLessonActivity extends AppCompatActivity {
 
     private int selectedLesson;
@@ -40,8 +42,8 @@ public class InLessonActivity extends AppCompatActivity {
 
         //Get current lesson
         Intent parentActivity = getIntent();
-        selectedLesson = Integer.parseInt(parentActivity.getStringExtra(LessonsActivity.SELECTED_LESSON)); //Returns lesson id (eg.: 0, 1 etc)
-        lessonContent = MainActivity.LessonList.get(selectedLesson).GetLessonContent();
+        selectedLesson = Integer.parseInt(parentActivity.getStringExtra(SELECTED_LESSON)); //Returns lesson id (eg.: 0, 1 etc)
+        lessonContent = Utilities.LessonList.get(selectedLesson).GetLessonContent();
 
         //Set toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -51,19 +53,19 @@ public class InLessonActivity extends AppCompatActivity {
         //Mark first page as read
         lessonContent.MarkPageAsRead(0);
 
-        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), MainActivity.LessonContentList.get(selectedLesson).length);
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), Utilities.LessonContentList.get(selectedLesson).length);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         final TextView tvCurrentPage = findViewById(R.id.tvCurrentPage);
-        tvCurrentPage.setText(mViewPager.getCurrentItem()+1 + "/" + MainActivity.LessonContentList.get(selectedLesson).length);
+        tvCurrentPage.setText(mViewPager.getCurrentItem()+1 + "/" + Utilities.LessonContentList.get(selectedLesson).length);
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
-                tvCurrentPage.setText(mViewPager.getCurrentItem()+1 + "/" + MainActivity.LessonContentList.get(selectedLesson).length);
+                tvCurrentPage.setText(mViewPager.getCurrentItem()+1 + "/" + Utilities.LessonContentList.get(selectedLesson).length);
             }
 
             @Override
@@ -137,11 +139,11 @@ public class InLessonActivity extends AppCompatActivity {
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             args.putInt(ARG_LESSON_NUMBER, currentLesson);
 
-            args.putInt(ARG_STR_LESSON_BODY, MainActivity.LessonContentList.get(currentLesson)[sectionNumber]);
-            args.putInt(ARG_STR_PAGE_TITLE, MainActivity.LessonTitleList.get(currentLesson)[sectionNumber]);
-            args.putInt(ARG_MAX_PAGES, MainActivity.LessonContentList.get(currentLesson).length);
-            args.putInt(ARG_IMG_ID, MainActivity.LessonList.get(currentLesson).GetImageRID());
-            args.putString(ARG_STR_LESSON_TITLE, MainActivity.LessonList.get(currentLesson).GetTitle());
+            args.putInt(ARG_STR_LESSON_BODY, Utilities.LessonContentList.get(currentLesson)[sectionNumber]);
+            args.putInt(ARG_STR_PAGE_TITLE, Utilities.LessonTitleList.get(currentLesson)[sectionNumber]);
+            args.putInt(ARG_MAX_PAGES, Utilities.LessonContentList.get(currentLesson).length);
+            args.putInt(ARG_IMG_ID, Utilities.LessonList.get(currentLesson).GetImageRID());
+            args.putString(ARG_STR_LESSON_TITLE, Utilities.LessonList.get(currentLesson).GetTitle());
 
             fragment.setArguments(args);
 

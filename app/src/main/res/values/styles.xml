@@ -15,6 +15,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme_Main_Toolbar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#0b5e9e</item>
+        <item name="colorPrimaryDark">#0b5e9e</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -57,6 +63,11 @@
         <item name="colorPrimaryDark">@color/_chapter7color</item>
     </style>
 
+    <style name="AppTheme.ChapterEight">
+        <item name="colorPrimary">@color/_chapter8color</item>
+        <item name="colorPrimaryDark">@color/_chapter8color</item>
+    </style>
+
     <array name="ChaptersColor">
         <item>@style/AppTheme.ChapterOne</item>
         <item>@style/AppTheme.ChapterTwo</item>
@@ -65,6 +76,7 @@
         <item>@style/AppTheme.ChapterFive</item>
         <item>@style/AppTheme.ChapterSix</item>
         <item>@style/AppTheme.ChapterSeven</item>
+        <item>@style/AppTheme.ChapterEight</item>
     </array>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

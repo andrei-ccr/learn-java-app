@@ -102,6 +102,8 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                         viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter6_box));
                     else if(position == 6)
                         viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter7_box));
+                    else if(position == 7)
+                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter8_box));
 
                 }
                 viewHolder0.chapterNumber.setText(itemElem.GetNumber());
