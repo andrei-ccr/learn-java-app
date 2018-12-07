@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,7 +21,8 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
     private Context context;
 
     public class chapterBoxViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView chapterNumber, chapterName, chapterDesc, chapterProgress;
+        TextView chapterNumber, chapterName, chapterDesc, chapterProgress, chapterLessonCount;
+        ImageView chapterImage;
         LinearLayout container_chapter_color;
 
         public chapterBoxViewHolder(View itemView) {
@@ -30,6 +32,8 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
             chapterDesc = itemView.findViewById(R.id.tvChapterDesc);
             chapterProgress = itemView.findViewById(R.id.tvChapterProgress);
             container_chapter_color = itemView.findViewById(R.id.viewChapterColorLayout);
+            chapterImage = itemView.findViewById(R.id.ivChapterImage);
+            chapterLessonCount = itemView.findViewById(R.id.tvNumberOfLessons);
             itemView.setOnClickListener(this);
         }
 
@@ -103,8 +107,31 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                         viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter7_box));
                     else if(position == 7)
                         viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter8_box));
-
                 }
+                /*if(position == 0)
+                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_1));
+                else if(position == 1)
+                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_2));
+                else if(position == 2)
+                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_3));
+                else if(position == 3)
+                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_4));
+                else if(position == 4)
+                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_1));
+                else if(position == 5)
+                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_1));
+                else if(position == 6)
+                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_1));
+                else if(position == 7)
+                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_1));*/
+                viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_bookmark));
+
+                if(itemElem.GetLessonCount() <= 0) {
+                    viewHolder0.chapterLessonCount.setText("No lessons");
+                } else {
+                    viewHolder0.chapterLessonCount.setText(itemElem.GetLessonCount() + " Lessons");
+                }
+
                 viewHolder0.chapterNumber.setText(itemElem.GetNumber());
                 viewHolder0.chapterName.setText(itemElem.GetName());
                 viewHolder0.chapterDesc.setText(itemElem.GetLongDesc());

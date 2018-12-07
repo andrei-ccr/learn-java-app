@@ -139,6 +139,7 @@ public class Containers {
         private String shortDesc;
         private int progress;
         private Integer[] lessonList;
+        private int lessonCount;
 
         public Chapter(String number, String name, String shortDesc, String longDesc, Integer[] lessonList) {
             this.number = number;
@@ -147,6 +148,8 @@ public class Containers {
             this.longDesc = longDesc;
             this.progress = -1; // -1 means not started
             this.lessonList = lessonList;
+            if(lessonList != null)
+                this.lessonCount = lessonList.length;
         }
 
         public void SetProgress(int value) {
@@ -155,6 +158,7 @@ public class Containers {
             else this.progress = value;
         }
 
+        public int GetLessonCount() {return this.lessonCount;}
         public String GetNumber(){
             return this.number;
         }

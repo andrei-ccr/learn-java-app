@@ -21,7 +21,15 @@
         android:layout_width="120dp"
         android:layout_height="match_parent"
         android:background="@drawable/chapter1_box"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivChapterImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            app:srcCompat="@drawable/ic_fa_bookmark" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,7 +92,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="6 Lessons"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/_lighterBlack" />
 
             <ImageView
                 android:id="@+id/imageView"
