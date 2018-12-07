@@ -21,7 +21,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
 
     public class chapterBoxViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView chapterNumber, chapterName, chapterDesc, chapterProgress;
-        LinearLayout container_chapter_images, container_chapter_color;
+        LinearLayout container_chapter_color;
 
         public chapterBoxViewHolder(View itemView) {
             super(itemView);
@@ -29,7 +29,6 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
             chapterName = itemView.findViewById(R.id.tvChapterName);
             chapterDesc = itemView.findViewById(R.id.tvChapterDesc);
             chapterProgress = itemView.findViewById(R.id.tvChapterProgress);
-            container_chapter_images = itemView.findViewById(R.id.container_chapter_images);
             container_chapter_color = itemView.findViewById(R.id.viewChapterColorLayout);
             itemView.setOnClickListener(this);
         }
@@ -38,7 +37,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
         @Override
         public void onClick(View view) {
 
-            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+            if (mClickListener != null) mClickListener.onChapterClick(view, getAdapterPosition());
         }
     }
     public class categoryTitleViewHolder extends RecyclerView.ViewHolder {
@@ -156,6 +155,6 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
     }
 
     public interface ItemClickListener {
-        void onItemClick(View view, int position);
+        void onChapterClick(View view, int position);
     }
 }

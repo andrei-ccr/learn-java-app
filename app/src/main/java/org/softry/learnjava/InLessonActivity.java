@@ -22,13 +22,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static org.softry.learnjava.Utilities.SELECTED_LESSON;
-
 public class InLessonActivity extends AppCompatActivity {
 
     private int selectedLesson;
     private Containers.LessonContent lessonContent;
-
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -42,7 +39,7 @@ public class InLessonActivity extends AppCompatActivity {
 
         //Get current lesson
         Intent parentActivity = getIntent();
-        selectedLesson = Integer.parseInt(parentActivity.getStringExtra(SELECTED_LESSON)); //Returns lesson id (eg.: 0, 1 etc)
+        selectedLesson = Integer.parseInt(parentActivity.getStringExtra(Utilities.SELECTED_LESSON)); //Returns lesson id (eg.: 0, 1 etc)
         lessonContent = Utilities.LessonList.get(selectedLesson).GetLessonContent();
 
         //Set toolbar
@@ -202,8 +199,7 @@ public class InLessonActivity extends AppCompatActivity {
 
 
     /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
+     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
         private int mMaxPages;

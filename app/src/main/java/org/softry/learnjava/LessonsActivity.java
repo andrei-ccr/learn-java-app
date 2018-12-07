@@ -21,8 +21,14 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     public static int SelectedChapter;
     public RecyclerView mRecyclerView;
     public RVA_Lessons rvAdapter;
+    public TextView tvComingSoon;
 
     private void SetLessonBoxList(int chapter) {
+        if( (Utilities.InArray(chapter+1, Utilities.ComingSoonChapters))) {
+            tvComingSoon.setVisibility(View.VISIBLE);
+            return;
+        }
+
         mLessonsBox = new ArrayList<>();
 
         Integer[] lessonsCurrentChapter = Utilities.ChapterLessonList.get(chapter);
@@ -31,7 +37,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
             Log.e("myapp", Integer.toString(i));
         }
 
-        for(int i=lessonsCurrentChapter[0];i<lessonsCurrentChapter.length-1;i+=2) {
+        for(int i=lessonsCurrentChapter[0]; i<lessonsCurrentChapter.length-1; i+=2) {
             if(Utilities.InArray(i+1, lessonsCurrentChapter)) {
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
                         new RVA_Lessons.LessonBox(Utilities.LessonList.get(i), i),
@@ -43,9 +49,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
                         new RVA_Lessons.LessonBox() )
                 );
             }
-
         }
-
     }
 
     @Override
@@ -65,6 +69,8 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
+
+        tvComingSoon = findViewById(R.id.tvLessonComingSoon);
 
         ConstraintLayout cLayout = findViewById(R.id.cLayout);
         if(SelectedChapter == 0) {
@@ -94,11 +100,13 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
         SetLessonBoxList(SelectedChapter);
 
-        rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
-        rvAdapter.setClickListener(this);
-        mRecyclerView = findViewById(R.id.rvLessons);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(rvAdapter);
+        if(this.mLessonsBox != null) {
+            rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
+            rvAdapter.setClickListener(this);
+            mRecyclerView = findViewById(R.id.rvLessons);
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+            mRecyclerView.setAdapter(rvAdapter);
+        }
 
     }
 
@@ -106,14 +114,16 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     public void onResume() {
         super.onResume();
         Log.i("myapp", "OnResume called()");
-        rvAdapter.notifyDataSetChanged();
+        if(rvAdapter != null)
+            rvAdapter.notifyDataSetChanged();
     }
 
     @Override
     public void onRestart() {
         super.onRestart();
         Log.i("myapp", "OnRestart called()");
-        rvAdapter.notifyDataSetChanged();
+        if(rvAdapter != null)
+            rvAdapter.notifyDataSetChanged();
     }
 
     @Override

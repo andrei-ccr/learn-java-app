@@ -20,6 +20,8 @@ public final class Utilities {
     public static final String SELECTED_CHAPTER = "org.softry.learnjava.TAG.SELECTED_CHAPTER";
     public static final String SELECTED_LESSON = "org.softry.learnjava.TAG.SELECTED_LESSON";
 
+    public static final Integer[] ComingSoonChapters = {2,3,4,5,6,7,8};
+
     public static List<Containers.Chapter> ChapterList; //List of chapters in order with chapter's details
     public static List<Containers.Lesson> LessonList; //List of lessons in order with lesson's details
 

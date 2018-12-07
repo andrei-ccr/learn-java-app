@@ -71,17 +71,16 @@
                 android:layout_width="15dp"
                 android:layout_height="19dp"
                 android:layout_marginRight="5dp"
-                android:tint="@color/_progressOrange"
+                android:layout_marginEnd="5dp"
+                android:tint="@color/_gray"
                 app:srcCompat="@drawable/ic_fa_progress" />
 
             <TextView
                 android:id="@+id/tvLessonProgressL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
                 android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
                 android:text="0%"
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
@@ -103,7 +102,7 @@
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"
-        android:gravity="right|end"
+        android:gravity="end"
         android:orientation="vertical">
 
         <ImageView
@@ -144,17 +143,16 @@
                 android:layout_width="15dp"
                 android:layout_height="19dp"
                 android:layout_marginRight="5dp"
-                android:tint="@color/_progressOrange"
+                android:layout_marginEnd="5dp"
+                android:tint="@color/_gray"
                 app:srcCompat="@drawable/ic_fa_progress" />
 
             <TextView
                 android:id="@+id/tvLessonProgressR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
                 android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
                 android:text="0%"
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
