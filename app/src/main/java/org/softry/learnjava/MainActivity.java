@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 menuItem.setChecked(false);
-                mDrawerLayout.closeDrawers();
+
                 Intent intent;
                 switch(menuItem.getItemId()) {
                     case R.id.side_bar_settings:
@@ -129,6 +129,8 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
                         Log.i("myapp", "Unlock all selected");
                         break;
                 }
+
+                mDrawerLayout.closeDrawers();
 
                 return true;
             }
