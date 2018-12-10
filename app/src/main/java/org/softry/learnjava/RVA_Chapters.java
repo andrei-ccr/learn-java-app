@@ -136,26 +136,11 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                 viewHolder0.chapterName.setText(itemElem.GetName());
                 viewHolder0.chapterDesc.setText(itemElem.GetLongDesc());
                 viewHolder0.chapterProgress.setText(itemElem.GetProgressStr());
-                if(itemElem.GetProgressValue() >= 0 && itemElem.GetProgressValue() < 25) {
-                    viewHolder0.chapterProgress.setTextColor((int)R.color._progressRed);
-                }
-                else if(itemElem.GetProgressValue() >= 25 && itemElem.GetProgressValue() <= 50) {
-                    viewHolder0.chapterProgress.setTextColor((int)R.color._progressOrange);
-                }
-                else if(itemElem.GetProgressValue() >= 51 && itemElem.GetProgressValue() < 80) {
-                    viewHolder0.chapterProgress.setTextColor((int)R.color._progressYellow);
-                }
-                else if(itemElem.GetProgressValue() >= 81 && itemElem.GetProgressValue() <= 100) {
-                    viewHolder0.chapterProgress.setTextColor((int)R.color._progressGreen);
-                }
-                else {
-                    viewHolder0.chapterProgress.setTextColor((int)R.color._gray);
-                }
                 break;
             case 1:
                 categoryTitleViewHolder viewHolder1 = (categoryTitleViewHolder)holder;
-                if(position==0) viewHolder1.categoryName.setText("---- Level: Beginner ----");
-                else if(position==4) viewHolder1.categoryName.setText("---- Level: Advanced ----");
+                if(position==0) viewHolder1.categoryName.setText("Level: Beginner");
+                else if(position==4) viewHolder1.categoryName.setText("Level: Advanced");
                 break;
         }
 

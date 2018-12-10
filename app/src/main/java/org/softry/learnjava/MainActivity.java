@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     private DrawerLayout mDrawerLayout;
     private Context context;
 
+    private RVA_Chapters rvAdapter;
+
     private RVA_Chapters GetChaptersRVA() {
         RVA_Chapters rvAdapter;
 
@@ -39,10 +41,10 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     }
 
     private void InitRV_Chapters(){
-        RVA_Chapters adapter = GetChaptersRVA();
+        rvAdapter = GetChaptersRVA();
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(adapter);
+        mRecyclerView.setAdapter(rvAdapter);
     }
 
 	private void FixBottomNavigationText() {
@@ -175,6 +177,22 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.i("myapp", "OnResume called()");
+        if(rvAdapter != null)
+            rvAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        Log.i("myapp", "OnRestart called()");
+        if(rvAdapter != null)
+            rvAdapter.notifyDataSetChanged();
     }
 
     @Override

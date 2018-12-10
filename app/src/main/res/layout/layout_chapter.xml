@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    android:layout_marginLeft="8dp"
+    android:layout_marginLeft="16dp"
     android:layout_marginTop="10dp"
     android:layout_marginRight="8dp"
     android:layout_marginBottom="10dp"
@@ -18,7 +18,7 @@
 
     <LinearLayout
         android:id="@+id/viewChapterColorLayout"
-        android:layout_width="120dp"
+        android:layout_width="99dp"
         android:layout_height="match_parent"
         android:background="@drawable/chapter1_box"
         android:orientation="vertical">
@@ -51,10 +51,8 @@
             android:layout_marginBottom="1dp"
             android:gravity="left"
             android:text="Chapter I"
-            android:textColor="@color/_lighterBlack"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            app:fontFamily="sans-serif" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/tvChapterName"
@@ -73,7 +71,9 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginRight="8dp"
+            android:ellipsize="end"
             android:gravity="left"
+            android:maxLines="3"
             android:text="Start with the basics. Install Java and everything you need. Learn about variables, conditionals, user input and more. At the end of this chapter, you should be capable of building simple apps."
             android:textColor="#555"
             android:textSize="14sp" />
@@ -100,7 +100,7 @@
                 android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="false"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="4dp"
                 android:layout_toLeftOf="@+id/tvChapterProgress"
                 android:tint="@color/_gray"
                 app:srcCompat="@drawable/ic_fa_progress" />
@@ -117,7 +117,7 @@
                 android:layout_marginRight="0dp"
                 android:gravity="end"
                 android:text="0%"
-                android:textColor="@android:color/holo_red_light" />
+                android:textColor="@color/_lighterBlack" />
         </RelativeLayout>
 
     </LinearLayout>

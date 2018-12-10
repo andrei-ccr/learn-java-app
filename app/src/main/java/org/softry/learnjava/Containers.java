@@ -152,6 +152,23 @@ public class Containers {
                 this.lessonCount = lessonList.length;
         }
 
+        private void UpdateProgress() {
+            double total_lprogress = 0;
+            try {
+				for(Integer l : this.lessonList) {
+					double lprogress = Utilities.LessonList.get(l).GetCompletedProcent() / 100f;
+					total_lprogress += lprogress;
+				}
+			} catch (Exception e) {
+            	this.progress = -1;
+            	return;
+			}
+            Log.i("myapp", "For " + this.number + " progress formula is " + total_lprogress + "/" + this.lessonCount);
+            if(total_lprogress == 0) this.progress = -1;
+            else
+                this.progress = (int)((total_lprogress/this.lessonCount)*100);
+        }
+
         public void SetProgress(int value) {
             if(value<0) this.progress = -1;
             else if(value>100) this.progress = 100;
@@ -175,16 +192,17 @@ public class Containers {
         }
 
         public String GetProgressStr() {
-            if(this.progress == -1) {
+            if(GetProgressValue() == -1) {
                 return "Not started";
-            } else if(this.progress>= 100) {
+            } else if(GetProgressValue() >= 100) {
                return "Completed";
             } else {
-                return Integer.toString(this.progress) + "%";
+                return Integer.toString(GetProgressValue()) + "%";
             }
         }
 
         public int GetProgressValue() {
+            UpdateProgress();
             return this.progress;
         }
     }
