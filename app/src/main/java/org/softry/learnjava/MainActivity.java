@@ -17,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -88,6 +89,8 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         setContentView(R.layout.activity_main);
         context = this;
 
+        int screenWidth =  this.getWindowManager().getDefaultDisplay().getWidth();
+
 		//Load data
         Utilities.LoadData(context);
 
@@ -133,6 +136,29 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         containerLearnTab = findViewById(R.id.container_learnTab);
         containerInterviewTab = findViewById(R.id.container_interviewTab);
         containerDashboardTab = findViewById(R.id.container_dashboardTab);
+
+        LinearLayout box_actionButtons = findViewById(R.id.box_actionButtons);
+        LinearLayout box_currentPlan = findViewById(R.id.box_currentPlan);
+
+        Button btnStart, btnClear, btnUnlock, btnDisableAds;
+        btnStart = findViewById(R.id.btn_start);
+        btnClear = findViewById(R.id.btn_clearProgress);
+        btnUnlock = findViewById(R.id.btn_unlock);
+        btnDisableAds = findViewById(R.id.btn_disableAds);
+
+        if(screenWidth < 720) {
+            box_actionButtons.setOrientation(LinearLayout.VERTICAL);
+            btnClear.setCompoundDrawables(null, getResources().getDrawable(R.drawable.ic_clear), null, null);
+        }
+        if(screenWidth < 768) {
+            box_currentPlan.setOrientation(LinearLayout.VERTICAL);
+
+            //Remove left margin on Disable Ads button
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(btnDisableAds.getLayoutParams());
+            lp.setMargins(0,4,0,8);
+            btnDisableAds.setLayoutParams(lp);
+
+        }
 
         //Set the recycler view used to list chapters
         mRecyclerView = findViewById(R.id.rvChapters);
