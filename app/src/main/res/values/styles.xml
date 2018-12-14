@@ -68,6 +68,11 @@
         <item name="colorPrimaryDark">@color/_chapter8color</item>
     </style>
 
+    <style name="AppTheme.ChapterNine">
+        <item name="colorPrimary">@color/_chapter1color</item>
+        <item name="colorPrimaryDark">@color/_chapter1color</item>
+    </style>
+
     <array name="ChaptersColor">
         <item>@style/AppTheme.ChapterOne</item>
         <item>@style/AppTheme.ChapterTwo</item>
@@ -77,6 +82,7 @@
         <item>@style/AppTheme.ChapterSix</item>
         <item>@style/AppTheme.ChapterSeven</item>
         <item>@style/AppTheme.ChapterEight</item>
+        <item>@style/AppTheme.ChapterNine</item>
     </array>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

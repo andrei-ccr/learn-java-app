@@ -32,22 +32,20 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         mLessonsBox = new ArrayList<>();
 
         Integer[] lessonsCurrentChapter = Utilities.ChapterLessonList.get(chapter);
-        Log.e("myapp", "Showing read status from lesson list (first lesson)");
-        for(int i: Utilities.LessonList.get(0).GetLessonContent().GetAllReadStatus()) {
-            Log.e("myapp", Integer.toString(i));
-        }
-
-        for(int i=lessonsCurrentChapter[0]; i<lessonsCurrentChapter.length-1; i+=2) {
+        Log.e("myapp", lessonsCurrentChapter[0] + " is first lesson in this chapter");
+        for(int i=lessonsCurrentChapter[0]; i<lessonsCurrentChapter.length+lessonsCurrentChapter[0]; i+=2) {
             if(Utilities.InArray(i+1, lessonsCurrentChapter)) {
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
                         new RVA_Lessons.LessonBox(Utilities.LessonList.get(i), i),
                         new RVA_Lessons.LessonBox(Utilities.LessonList.get(i+1), i+1 )
                 ));
+                Log.e("myapp", "Adding lesson stereo");
             } else {
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
                         new RVA_Lessons.LessonBox(Utilities.LessonList.get(i), i),
                         new RVA_Lessons.LessonBox() )
                 );
+                Log.e("myapp", "Adding lesson mono");
             }
         }
     }
@@ -89,6 +87,8 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
             cLayout.setBackgroundColor(getResources().getColor(R.color._chapter7color));
         } else if(SelectedChapter == 7) {
             cLayout.setBackgroundColor(getResources().getColor(R.color._chapter8color));
+        } else if(SelectedChapter == 8) {
+            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter9color));
         }
 
 

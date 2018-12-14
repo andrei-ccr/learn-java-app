@@ -77,7 +77,7 @@
                 android:lineSpacingExtra="3sp"
                 android:text="To start learning , you'll first have to install Java and an IDE on your computer. This is what you'll do in this lesson:"
                 android:textColor="@color/_lighterBlack"
-                android:textSize="18sp" />
+                android:textSize="17sp" />
 
             <Button
                 android:id="@+id/btn_continue"

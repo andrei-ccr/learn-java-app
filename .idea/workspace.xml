@@ -49,34 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Containers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Containers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="class#LessonContent#0;class#Containers#0" />
-                <element signature="method#GetReadCount#0;class#LessonContent#0;class#Containers#0" />
-                <element signature="class#Lesson#0;class#Containers#0" />
-                <element signature="e#4737#4738#0" expanded="true" />
-                <element signature="e#4779#4780#0" expanded="true" />
-                <element signature="e#4814#4815#0" expanded="true" />
-                <element signature="e#4854#4855#0" expanded="true" />
-                <element signature="e#4894#4895#0" expanded="true" />
-                <element signature="e#4939#4940#0" expanded="true" />
-                <element signature="e#4977#4978#0" expanded="true" />
-                <element signature="e#5021#5022#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RVA_Lessons.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Lessons.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="143" column="62" selection-start-line="143" selection-start-column="62" selection-end-line="143" selection-end-column="62" />
+            <state relative-caret-position="221">
+              <caret line="161" column="28" selection-start-line="161" selection-start-column="28" selection-end-line="161" selection-end-column="28" />
               <folding>
                 <element signature="class#LessonBoxRow#0;class#RVA_Lessons#0" />
               </folding>
@@ -87,32 +64,68 @@
       <file leaf-file-name="LessonsActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/LessonsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="115" column="14" lean-forward="true" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
+            <state relative-caret-position="340">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3932#3960#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout_chapter.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_chapter.xml">
-          <provider selected="true" editor-type-id="android-designer2">
+      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lesson_images.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/lesson_images.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="1213" selection-start-line="1213" selection-end-line="1213" />
+              <folding>
+                <element signature="e#9602#14136#0" />
+                <element signature="e#14139#20383#0" />
+                <element signature="e#20386#26490#0" />
+                <element signature="e#26494#32156#0" />
+                <element signature="e#32160#40981#0" />
+                <element signature="e#40985#44647#0" />
+                <element signature="e#44651#52855#0" />
+                <element signature="e#52859#60722#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_in_lesson.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_in_lesson.xml">
+          <provider editor-type-id="text-editor">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
-            </state>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="RVA_Chapters.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Chapters.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="132" column="17" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
+            <state relative-caret-position="1055">
+              <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
               <folding>
                 <element signature="class#categoryTitleViewHolder#0;class#RVA_Chapters#0" />
               </folding>
@@ -120,60 +133,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="3096">
-              <caret line="314" column="12" selection-start-line="314" selection-start-column="12" selection-end-line="314" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest">
-            <state />
-          </provider>
+      <file leaf-file-name="Utilities.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Utilities.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1449">
-              <caret line="180" selection-start-line="180" selection-end-line="180" />
+            <state relative-caret-position="85">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#GetChaptersRVA#0;class#MainActivity#0" />
-                <element signature="method#FixBottomNavigationText#0;class#MainActivity#0" />
-                <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" />
+                <element signature="method#MapContentToLessons#0;class#Utilities#0" />
+                <element signature="method#InArray#0;class#Utilities#0" />
+                <element signature="method#setGrayScale#0;class#Utilities#0" />
+                <element signature="method#setImgTint#0;class#Utilities#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ic_page.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_page.xml">
+      <file leaf-file-name="Containers.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Containers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="153">
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#GetReadCount#0;class#LessonContent#0;class#Containers#0" />
+                <element signature="class#Lesson#0;class#Containers#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ic_school.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_school.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="5338">
+              <caret line="314" column="12" selection-start-line="314" selection-start-column="12" selection-end-line="314" selection-end-column="12" />
             </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -2455,7 +2452,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/lesson_images.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/lesson_images.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/white_box.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/chapter2_box.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/chapter3_box.xml" />
@@ -2478,19 +2474,12 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/chapter7_box.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/navigation.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/color/bnv_tab_item_foreground.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_sidebar_header.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_side_bar.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable-v24/chapter8_box.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/chapter8_box.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/InLessonActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/LessonsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Utilities.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_lesson.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_in_lesson.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_lessons.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/blue_button.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/chapter1_box.xml" />
@@ -2500,10 +2489,18 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_chapter_category.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Containers.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Chapters.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_chapter.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/InLessonActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_in_lesson.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/lesson_images.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/LessonsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Chapters.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Utilities.java" />
       </list>
     </option>
   </component>
@@ -2519,17 +2516,24 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LearnJava" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LearnJava" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
               <item name="LearnJava" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="LearnJava" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
             </path>
             <path>
               <item name="LearnJava" type="1abcf292:AndroidViewProjectNode" />
@@ -2555,19 +2559,13 @@
             </path>
             <path>
               <item name="LearnJava" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="LearnJava" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LearnJava" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="LearnJava" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
@@ -2742,29 +2740,29 @@
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5015129" side_tool="true" weight="0.23762377" />
-      <window_info anchor="right" id="Preview" order="6" weight="0.24810892" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Logcat" order="10" visible="true" weight="0.24092409" />
+      <window_info anchor="bottom" id="Logcat" order="10" weight="0.24092409" />
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25416037" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49848714" weight="0.24257426" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32673267" />
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" visible="true" weight="0.28382838" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.28382838" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Preview" order="6" weight="0.24810892" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32673267" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49848714" weight="0.24257426" />
@@ -2783,7 +2781,6 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5015129" side_tool="true" weight="0.23762377" />
       <window_info anchor="right" id="Preview" order="6" weight="0.24810892" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32673267" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Logcat" order="10" visible="true" weight="0.24092409" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
@@ -2796,6 +2793,7 @@
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32673267" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.28382838" />
     </layout-to-restore>
   </component>
@@ -2821,20 +2819,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_in_lesson.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="9" selection-end-column="8" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/lesson_images.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
-        </state>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/chapter4_box.xml">
@@ -2880,13 +2871,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_in_lesson.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" selection-start-line="10" selection-end-line="17" selection-end-column="37" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/color/bnv_tab_item_foreground.xml">
@@ -2896,35 +2887,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_sidebar_header.xml">
-      <provider selected="true" editor-type-id="android-designer2">
+      <provider editor-type-id="text-editor">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_side_bar.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/navigation.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/navigation.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
@@ -2933,6 +2914,9 @@
             <element signature="e#668#693#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_notifications_black_24dp.xml">
@@ -2954,21 +2938,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_bookmarks.xml">
-      <provider selected="true" editor-type-id="android-designer2">
+      <provider editor-type-id="text-editor">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/AboutActivity.java">
@@ -2985,212 +2969,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Utilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="initializer##0;class#Utilities#0" />
-            <element signature="method#MapContentToLessons#0;class#Utilities#0" />
-            <element signature="e#1839#1859#0" expanded="true" />
-            <element signature="e#1861#1881#0" expanded="true" />
-            <element signature="e#1883#1903#0" expanded="true" />
-            <element signature="e#1921#1941#0" expanded="true" />
-            <element signature="e#1943#1963#0" expanded="true" />
-            <element signature="e#1965#1985#0" expanded="true" />
-            <element signature="e#2035#2062#0" expanded="true" />
-            <element signature="e#2064#2091#0" expanded="true" />
-            <element signature="e#2093#2120#0" expanded="true" />
-            <element signature="e#2138#2165#0" expanded="true" />
-            <element signature="e#2166#2193#0" expanded="true" />
-            <element signature="e#2194#2221#0" expanded="true" />
-            <element signature="e#2273#2293#0" expanded="true" />
-            <element signature="e#2295#2315#0" expanded="true" />
-            <element signature="e#2317#2337#0" expanded="true" />
-            <element signature="e#2355#2375#0" expanded="true" />
-            <element signature="e#2377#2397#0" expanded="true" />
-            <element signature="e#2399#2419#0" expanded="true" />
-            <element signature="e#2469#2496#0" expanded="true" />
-            <element signature="e#2498#2525#0" expanded="true" />
-            <element signature="e#2527#2554#0" expanded="true" />
-            <element signature="e#2572#2599#0" expanded="true" />
-            <element signature="e#2600#2627#0" expanded="true" />
-            <element signature="e#2628#2655#0" expanded="true" />
-            <element signature="e#2707#2727#0" expanded="true" />
-            <element signature="e#2729#2749#0" expanded="true" />
-            <element signature="e#2751#2771#0" expanded="true" />
-            <element signature="e#2789#2809#0" expanded="true" />
-            <element signature="e#2811#2831#0" expanded="true" />
-            <element signature="e#2833#2853#0" expanded="true" />
-            <element signature="e#2855#2875#0" expanded="true" />
-            <element signature="e#2925#2952#0" expanded="true" />
-            <element signature="e#2954#2981#0" expanded="true" />
-            <element signature="e#2983#3010#0" expanded="true" />
-            <element signature="e#3028#3055#0" expanded="true" />
-            <element signature="e#3056#3083#0" expanded="true" />
-            <element signature="e#3084#3111#0" expanded="true" />
-            <element signature="e#3113#3140#0" expanded="true" />
-            <element signature="e#3192#3212#0" expanded="true" />
-            <element signature="e#3214#3234#0" expanded="true" />
-            <element signature="e#3236#3256#0" expanded="true" />
-            <element signature="e#3274#3294#0" expanded="true" />
-            <element signature="e#3296#3316#0" expanded="true" />
-            <element signature="e#3318#3338#0" expanded="true" />
-            <element signature="e#3340#3360#0" expanded="true" />
-            <element signature="e#3410#3437#0" expanded="true" />
-            <element signature="e#3439#3466#0" expanded="true" />
-            <element signature="e#3468#3495#0" expanded="true" />
-            <element signature="e#3497#3524#0" expanded="true" />
-            <element signature="e#3525#3552#0" expanded="true" />
-            <element signature="e#3553#3580#0" expanded="true" />
-            <element signature="e#3582#3609#0" expanded="true" />
-            <element signature="e#3661#3681#0" expanded="true" />
-            <element signature="e#3683#3703#0" expanded="true" />
-            <element signature="e#3705#3725#0" expanded="true" />
-            <element signature="e#3743#3763#0" expanded="true" />
-            <element signature="e#3765#3785#0" expanded="true" />
-            <element signature="e#3787#3807#0" expanded="true" />
-            <element signature="e#3809#3829#0" expanded="true" />
-            <element signature="e#3831#3851#0" expanded="true" />
-            <element signature="e#3853#3873#0" expanded="true" />
-            <element signature="e#3875#3896#0" expanded="true" />
-            <element signature="e#3946#3973#0" expanded="true" />
-            <element signature="e#3975#4002#0" expanded="true" />
-            <element signature="e#4004#4031#0" expanded="true" />
-            <element signature="e#4049#4076#0" expanded="true" />
-            <element signature="e#4077#4104#0" expanded="true" />
-            <element signature="e#4105#4132#0" expanded="true" />
-            <element signature="e#4133#4160#0" expanded="true" />
-            <element signature="e#4161#4188#0" expanded="true" />
-            <element signature="e#4189#4216#0" expanded="true" />
-            <element signature="e#4217#4245#0" expanded="true" />
-            <element signature="e#4297#4317#0" expanded="true" />
-            <element signature="e#4319#4339#0" expanded="true" />
-            <element signature="e#4341#4361#0" expanded="true" />
-            <element signature="e#4379#4399#0" expanded="true" />
-            <element signature="e#4401#4421#0" expanded="true" />
-            <element signature="e#4471#4498#0" expanded="true" />
-            <element signature="e#4500#4527#0" expanded="true" />
-            <element signature="e#4529#4556#0" expanded="true" />
-            <element signature="e#4574#4601#0" expanded="true" />
-            <element signature="e#4602#4629#0" expanded="true" />
-            <element signature="e#4681#4701#0" expanded="true" />
-            <element signature="e#4703#4723#0" expanded="true" />
-            <element signature="e#4725#4745#0" expanded="true" />
-            <element signature="e#4763#4783#0" expanded="true" />
-            <element signature="e#4785#4805#0" expanded="true" />
-            <element signature="e#4807#4827#0" expanded="true" />
-            <element signature="e#4829#4849#0" expanded="true" />
-            <element signature="e#4851#4871#0" expanded="true" />
-            <element signature="e#4873#4893#0" expanded="true" />
-            <element signature="e#4895#4916#0" expanded="true" />
-            <element signature="e#4918#4939#0" expanded="true" />
-            <element signature="e#4989#5016#0" expanded="true" />
-            <element signature="e#5018#5045#0" expanded="true" />
-            <element signature="e#5047#5074#0" expanded="true" />
-            <element signature="e#5092#5119#0" expanded="true" />
-            <element signature="e#5120#5147#0" expanded="true" />
-            <element signature="e#5148#5175#0" expanded="true" />
-            <element signature="e#5176#5203#0" expanded="true" />
-            <element signature="e#5204#5231#0" expanded="true" />
-            <element signature="e#5232#5259#0" expanded="true" />
-            <element signature="e#5260#5288#0" expanded="true" />
-            <element signature="e#5289#5317#0" expanded="true" />
-            <element signature="e#5369#5389#0" expanded="true" />
-            <element signature="e#5391#5411#0" expanded="true" />
-            <element signature="e#5413#5433#0" expanded="true" />
-            <element signature="e#5451#5471#0" expanded="true" />
-            <element signature="e#5473#5493#0" expanded="true" />
-            <element signature="e#5495#5515#0" expanded="true" />
-            <element signature="e#5565#5592#0" expanded="true" />
-            <element signature="e#5594#5621#0" expanded="true" />
-            <element signature="e#5623#5650#0" expanded="true" />
-            <element signature="e#5668#5695#0" expanded="true" />
-            <element signature="e#5696#5723#0" expanded="true" />
-            <element signature="e#5724#5751#0" expanded="true" />
-            <element signature="e#5803#5823#0" expanded="true" />
-            <element signature="e#5825#5845#0" expanded="true" />
-            <element signature="e#5847#5867#0" expanded="true" />
-            <element signature="e#5885#5905#0" expanded="true" />
-            <element signature="e#5907#5927#0" expanded="true" />
-            <element signature="e#5929#5949#0" expanded="true" />
-            <element signature="e#5999#6026#0" expanded="true" />
-            <element signature="e#6028#6055#0" expanded="true" />
-            <element signature="e#6057#6084#0" expanded="true" />
-            <element signature="e#6102#6129#0" expanded="true" />
-            <element signature="e#6130#6157#0" expanded="true" />
-            <element signature="e#6158#6185#0" expanded="true" />
-            <element signature="e#6237#6257#0" expanded="true" />
-            <element signature="e#6259#6279#0" expanded="true" />
-            <element signature="e#6281#6301#0" expanded="true" />
-            <element signature="e#6319#6339#0" expanded="true" />
-            <element signature="e#6341#6361#0" expanded="true" />
-            <element signature="e#6363#6383#0" expanded="true" />
-            <element signature="e#6433#6460#0" expanded="true" />
-            <element signature="e#6462#6489#0" expanded="true" />
-            <element signature="e#6491#6518#0" expanded="true" />
-            <element signature="e#6536#6563#0" expanded="true" />
-            <element signature="e#6564#6591#0" expanded="true" />
-            <element signature="e#6592#6619#0" expanded="true" />
-            <element signature="method#LoadChapters#0;class#Utilities#0" />
-            <element signature="method#LoadLessons#0;class#Utilities#0" />
-            <element signature="method#LoadData#0;class#Utilities#0" />
-            <element signature="method#InArray#0;class#Utilities#0" />
-            <element signature="method#setGrayScale#0;class#Utilities#0" />
-            <element signature="method#setImgTint#0;class#Utilities#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/InLessonActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2992">
-          <caret line="196" selection-start-line="196" selection-end-line="196" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#SectionsPagerAdapter#0;class#InLessonActivity#0" />
-            <element signature="method#getItem#0;class#SectionsPagerAdapter#0;class#InLessonActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_lesson.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="518">
           <caret line="161" column="17" lean-forward="true" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_lessons.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_in_lesson.xml">
       <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
         <state />
       </provider>
     </entry>
@@ -3208,11 +3001,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/button_shape.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_school.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        <state relative-caret-position="51">
+          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_chapter_category.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_page.xml">
@@ -3222,47 +3035,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_school.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/button_shape.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+        <state relative-caret-position="102">
+          <caret line="6" column="42" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_chapter.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_chapter_category.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="3096">
-          <caret line="314" column="12" selection-start-line="314" selection-start-column="12" selection-end-line="314" selection-end-column="12" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="180" selection-start-line="180" selection-end-line="180" />
+        <state relative-caret-position="1700">
+          <caret line="122" column="57" selection-start-line="122" selection-start-column="57" selection-end-line="122" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#GetChaptersRVA#0;class#MainActivity#0" />
@@ -3272,64 +3065,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/LessonsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="115" column="14" lean-forward="true" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="5338">
+          <caret line="314" column="12" selection-start-line="314" selection-start-column="12" selection-end-line="314" selection-end-column="12" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Lessons.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="143" column="62" selection-start-line="143" selection-start-column="62" selection-end-line="143" selection-end-column="62" />
+        <state relative-caret-position="221">
+          <caret line="161" column="28" selection-start-line="161" selection-start-column="28" selection-end-line="161" selection-end-column="28" />
           <folding>
             <element signature="class#LessonBoxRow#0;class#RVA_Lessons#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Containers.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/InLessonActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
+        <state relative-caret-position="1944">
+          <caret line="189" column="53" lean-forward="true" selection-start-line="189" selection-start-column="53" selection-end-line="189" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#LessonContent#0;class#Containers#0" />
-            <element signature="method#GetReadCount#0;class#LessonContent#0;class#Containers#0" />
-            <element signature="class#Lesson#0;class#Containers#0" />
-            <element signature="e#4737#4738#0" expanded="true" />
-            <element signature="e#4779#4780#0" expanded="true" />
-            <element signature="e#4814#4815#0" expanded="true" />
-            <element signature="e#4854#4855#0" expanded="true" />
-            <element signature="e#4894#4895#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
-            <element signature="e#4977#4978#0" expanded="true" />
-            <element signature="e#5021#5022#0" expanded="true" />
+            <element signature="class#SectionsPagerAdapter#0;class#InLessonActivity#0" />
+            <element signature="method#getItem#0;class#SectionsPagerAdapter#0;class#InLessonActivity#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Containers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#GetReadCount#0;class#LessonContent#0;class#Containers#0" />
+            <element signature="class#Lesson#0;class#Containers#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-134">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/lesson_images.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="1213" selection-start-line="1213" selection-end-line="1213" />
+          <folding>
+            <element signature="e#9602#14136#0" />
+            <element signature="e#14139#20383#0" />
+            <element signature="e#20386#26490#0" />
+            <element signature="e#26494#32156#0" />
+            <element signature="e#32160#40981#0" />
+            <element signature="e#40985#44647#0" />
+            <element signature="e#44651#52855#0" />
+            <element signature="e#52859#60722#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_in_lesson.xml">
+      <provider editor-type-id="text-editor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/RVA_Chapters.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="132" column="17" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
+        <state relative-caret-position="1055">
+          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
           <folding>
             <element signature="class#categoryTitleViewHolder#0;class#RVA_Chapters#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_chapter.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/LessonsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3932#3960#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/Utilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="method#MapContentToLessons#0;class#Utilities#0" />
+            <element signature="method#InArray#0;class#Utilities#0" />
+            <element signature="method#setGrayScale#0;class#Utilities#0" />
+            <element signature="method#setImgTint#0;class#Utilities#0" />
+          </folding>
         </state>
       </provider>
     </entry>

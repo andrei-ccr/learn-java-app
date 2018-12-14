@@ -127,7 +127,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                 viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_bookmark));
 
                 if(itemElem.GetLessonCount() <= 0) {
-                    viewHolder0.chapterLessonCount.setText("No lessons");
+                    viewHolder0.chapterLessonCount.setText("Coming soon");
                 } else {
                     viewHolder0.chapterLessonCount.setText(itemElem.GetLessonCount() + " Lessons");
                 }

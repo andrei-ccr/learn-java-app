@@ -136,8 +136,8 @@ public class InLessonActivity extends AppCompatActivity {
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             args.putInt(ARG_LESSON_NUMBER, currentLesson);
 
-            args.putInt(ARG_STR_LESSON_BODY, Utilities.LessonContentList.get(currentLesson)[sectionNumber]);
-            args.putInt(ARG_STR_PAGE_TITLE, Utilities.LessonTitleList.get(currentLesson)[sectionNumber]);
+            args.putString(ARG_STR_LESSON_BODY, Utilities.LessonContentList.get(currentLesson)[sectionNumber]);
+            args.putString(ARG_STR_PAGE_TITLE, Utilities.LessonTitleList.get(currentLesson)[sectionNumber]);
             args.putInt(ARG_MAX_PAGES, Utilities.LessonContentList.get(currentLesson).length);
             args.putInt(ARG_IMG_ID, Utilities.LessonList.get(currentLesson).GetImageRID());
             args.putString(ARG_STR_LESSON_TITLE, Utilities.LessonList.get(currentLesson).GetTitle());
@@ -157,8 +157,10 @@ public class InLessonActivity extends AppCompatActivity {
 
             final int currentPage = getArguments().getInt(ARG_SECTION_NUMBER);
             int currentLesson = getArguments().getInt(ARG_LESSON_NUMBER);
-            int lessonBodyStringId = getArguments().getInt(ARG_STR_LESSON_BODY);
-            int pageTitleStringId = getArguments().getInt(ARG_STR_PAGE_TITLE);
+
+            String lessonBodyStringId = getArguments().getString(ARG_STR_LESSON_BODY);
+            String pageTitleStringId = getArguments().getString(ARG_STR_PAGE_TITLE);
+
             final int maxPages = getArguments().getInt(ARG_MAX_PAGES);
             int lessonImgId = getArguments().getInt(ARG_IMG_ID);
             String lessonTitleString = getArguments().getString(ARG_STR_LESSON_TITLE);
@@ -181,15 +183,14 @@ public class InLessonActivity extends AppCompatActivity {
                 }
             });
 
-            Log.v("myapp", "Returned lesson body string id: " + Integer.toString(lessonBodyStringId));
-            if(lessonBodyStringId != -1) {
-                tvLessonBody.setText(Html.fromHtml(getString(lessonBodyStringId)));
-                tvPageTitle.setText(pageTitleStringId);
-                tvLessonTitle.setText(lessonTitleString);
-                ivLessonImage.setImageDrawable(getResources().getDrawable(lessonImgId));
-                if(currentPage+1 == maxPages) {
-                    nextBtn.setText(R.string.btn_finish);
-                }
+            //Log.v("myapp", "Returned lesson body string id: " + Integer.toString(lessonBodyStringId));
+
+            tvLessonBody.setText(Html.fromHtml(lessonBodyStringId));
+            tvPageTitle.setText(pageTitleStringId);
+            tvLessonTitle.setText(lessonTitleString);
+            ivLessonImage.setImageDrawable(getResources().getDrawable(lessonImgId));
+            if(currentPage+1 == maxPages) {
+                nextBtn.setText(R.string.btn_finish);
             }
 
             return rootView;

@@ -9,6 +9,14 @@
         <item name="Chapter1_6">@drawable/arrays</item>
         <item name="Chapter1_7">@drawable/loops</item>
         <item name="Chapter1_8">@drawable/functions</item>
+
+        <item name="Chapter2_1">@drawable/user_input</item>
+        <item name="Chapter2_2">@drawable/user_input</item>
+        <item name="Chapter2_3">@drawable/first_program</item>
+        <item name="Chapter2_4">@drawable/user_input</item>
+        <item name="Chapter2_5">@drawable/first_program</item>
+        <item name="Chapter2_6">@drawable/user_input</item>
+        <item name="Chapter2_7">@drawable/first_program</item>
     </array>
 
 </resources>
