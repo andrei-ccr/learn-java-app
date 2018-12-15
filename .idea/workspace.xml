@@ -64,13 +64,10 @@
       <file leaf-file-name="InLessonActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/InLessonActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2960">
-              <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+            <state relative-caret-position="-2788">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8952#9395#0" expanded="true" />
-                <element signature="e#9394#9395#0" expanded="true" />
-                <element signature="e#9735#9754#0" expanded="true" />
                 <element signature="class#SectionsPagerAdapter#0;class#InLessonActivity#0" />
                 <element signature="method#getItem#0;class#SectionsPagerAdapter#0;class#InLessonActivity#0" />
               </folding>
@@ -2712,7 +2709,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" visible="true" weight="0.28382838" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.28382838" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -3140,13 +3137,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/softry/learnjava/InLessonActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2960">
-          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+        <state relative-caret-position="-2788">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8952#9395#0" expanded="true" />
-            <element signature="e#9394#9395#0" expanded="true" />
-            <element signature="e#9735#9754#0" expanded="true" />
             <element signature="class#SectionsPagerAdapter#0;class#InLessonActivity#0" />
             <element signature="method#getItem#0;class#SectionsPagerAdapter#0;class#InLessonActivity#0" />
           </folding>

@@ -195,7 +195,8 @@
                             android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:padding="6dp"
                             android:text="Get all lessons"
-                            android:textColor="@android:color/white" />
+                            android:textColor="@android:color/white" 
+							android:visibility="gone"/>
 
                         <Button
                             android:id="@+id/btn_disableAds"
@@ -240,6 +241,7 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="4dp"
                         android:drawableLeft="@drawable/ic_page"
+                        android:drawablePadding="5dp"
                         android:text="0 Pages Read"
                         android:textSize="15sp" />
 
@@ -249,6 +251,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
                         android:drawableLeft="@drawable/ic_page"
+                        android:drawablePadding="5dp"
                         android:text="0 Lessons Completed"
                         android:textSize="15sp"
                         android:visibility="gone" />
@@ -258,6 +261,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/ic_school"
+                        android:drawablePadding="5dp"
                         android:text="Overall Progress 0%"
                         android:textSize="15sp" />
                 </LinearLayout>

@@ -125,9 +125,9 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
                     case R.id.side_bar_disable_ads:
                         Log.i("myapp", "Disable ads selected");
                         break;
-                    case R.id.side_bar_unlock_all:
+                   /* case R.id.side_bar_unlock_all:
                         Log.i("myapp", "Unlock all selected");
-                        break;
+                        break;*/
                 }
 
                 mDrawerLayout.closeDrawers();

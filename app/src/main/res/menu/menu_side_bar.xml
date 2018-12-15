@@ -17,9 +17,10 @@
      <item
          android:id="@+id/side_bar_disable_ads"
          android:title="Disable Ads"/>
-     <item
+		 
+     <!--<item
          android:id="@+id/side_bar_unlock_all"
-         android:title="Unlock all lessons"/>
+         android:title="Unlock all lessons"/>-->
 
  </group>
 </menu>

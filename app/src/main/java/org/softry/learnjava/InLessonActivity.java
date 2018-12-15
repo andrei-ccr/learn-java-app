@@ -58,7 +58,7 @@ public class InLessonActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if(selectedChapter == 0)
             toolbar.setBackgroundColor(getResources().getColor(R.color._chapter1color));
-        
+
         else if(selectedChapter == 1)
             toolbar.setBackgroundColor(getResources().getColor(R.color._chapter2color));
         else if(selectedChapter == 2)
@@ -140,10 +140,10 @@ public class InLessonActivity extends AppCompatActivity {
             finish();
             startActivity(this.getIntent());
             return true;
-        } else if(id == R.id.action_dashboard) {
+        } /*else if(id == R.id.action_dashboard) {
 
             return true;
-        } else if(id == R.id.action_report) {
+        }*/ else if(id == R.id.action_report) {
 
             return true;
         }
