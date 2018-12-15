@@ -85,6 +85,42 @@
         <item>@style/AppTheme.ChapterNine</item>
     </array>
 
+    <array name="ChaptersColorNoToolbar">
+        <item>@style/AppTheme.ChapterOne.NoToolbar</item>
+        <item>@style/AppTheme.ChapterTwo.NoToolbar</item>
+        <item>@style/AppTheme.ChapterThree.NoToolbar</item>
+        <item>@style/AppTheme.ChapterFour.NoToolbar</item>
+    </array>
+
+
+    <style name="AppTheme.ChapterOne.NoToolbar">
+        <item name="colorPrimary">@color/_chapter1color</item>
+        <item name="colorPrimaryDark">@color/_chapter1color</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.ChapterTwo.NoToolbar">
+        <item name="colorPrimary">@color/_chapter2color</item>
+        <item name="colorPrimaryDark">@color/_chapter2color</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.ChapterThree.NoToolbar">
+        <item name="colorPrimary">@color/_chapter3color</item>
+        <item name="colorPrimaryDark">@color/_chapter3color</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.ChapterFour.NoToolbar">
+        <item name="colorPrimary">@color/_chapter4color</item>
+        <item name="colorPrimaryDark">@color/_chapter4color</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

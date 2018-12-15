@@ -20,7 +20,7 @@ public final class Utilities {
     public static final String SELECTED_CHAPTER = "org.softry.learnjava.TAG.SELECTED_CHAPTER";
     public static final String SELECTED_LESSON = "org.softry.learnjava.TAG.SELECTED_LESSON";
 
-    public static final Integer[] ComingSoonChapters = {3,4,5,6,7,8,9};
+    public static final Integer[] ComingSoonChapters = {4,5,6,7,8,9};
 
     public static List<String> BookmarkList;
     public static int RecentLesson;
@@ -33,6 +33,7 @@ public final class Utilities {
         Map<Integer, Integer[]> aMap = new HashMap<>();
         aMap.put(0, new Integer[]{0, 1, 2, 3, 4, 5, 6, 7}); //Chapter 1
         aMap.put(1, new Integer[]{8, 9, 10, 11 , 12, 13, 14});
+        aMap.put(2, new Integer[]{15, 16, 17, 18 , 19, 20});
         ChapterLessonList = Collections.unmodifiableMap(aMap);
     }
 
@@ -167,6 +168,6 @@ public final class Utilities {
     }
 
     public static void RestartLesson(int lesson) { //TODO
-
+        LessonList.get(lesson).ResetCompletedProcent();
     }
 }

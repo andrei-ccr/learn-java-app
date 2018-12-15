@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
  <group android:checkableBehavior="none">
-     <item
+     <!--<item
          android:id="@+id/side_bar_search"
          android:title="Search"/>
      <item
          android:id="@+id/side_bar_bookmarks"
-         android:title="Bookmarks"/>
+         android:title="Bookmarks"/>-->
      <item
          android:id="@+id/side_bar_settings"
          android:title="Settings"/>

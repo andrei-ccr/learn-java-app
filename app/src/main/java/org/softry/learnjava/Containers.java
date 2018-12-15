@@ -129,6 +129,10 @@ public class Containers {
 		public LessonContent GetLessonContent() {
 			return this.lessonContent;
 		}
+
+		public void ResetCompletedProcent() {
+
+		}
 		
 	}
 	

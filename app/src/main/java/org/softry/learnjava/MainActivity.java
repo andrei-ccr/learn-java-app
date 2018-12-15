@@ -114,14 +114,14 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
                         startActivity(intent);
                         Log.i("myapp", "About selected");
                         break;
-                    case R.id.side_bar_bookmarks:
+                    /*case R.id.side_bar_bookmarks:
                         Log.i("myapp", "Bookmarks selected");
                         intent = new Intent(context, BookmarksActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.side_bar_search:
                         Log.i("myapp", "Search selected");
-                        break;
+                        break;*/
                     case R.id.side_bar_disable_ads:
                         Log.i("myapp", "Disable ads selected");
                         break;

@@ -96,7 +96,7 @@
                 android:textColor="@color/_lighterBlack" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/ivChapterProgressSymbol"
                 android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="false"

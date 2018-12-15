@@ -2,6 +2,7 @@ package org.softry.learnjava;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -25,7 +26,7 @@ import android.widget.Toast;
 
 public class InLessonActivity extends AppCompatActivity {
 
-    private int selectedLesson;
+    private int selectedLesson, selectedChapter;
     private Containers.LessonContent lessonContent;
 
     /**
@@ -35,13 +36,18 @@ public class InLessonActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//Get current lesson
+        Intent parentActivity = getIntent();
+        selectedLesson = Integer.parseInt(parentActivity.getStringExtra(Utilities.SELECTED_LESSON)); //Returns lesson id (eg.: 0, 1 etc)
+        selectedChapter = Integer.parseInt(parentActivity.getStringExtra(Utilities.SELECTED_CHAPTER)); //Returns lesson id (eg.: 0, 1 etc)
+
+        TypedArray chapterThemeList = getResources().obtainTypedArray(R.array.ChaptersColorNoToolbar);
+        setTheme(chapterThemeList.getResourceId(selectedChapter, R.style.AppTheme_ChapterOne_NoToolbar));
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_lesson);
 
-        //Get current lesson
-        Intent parentActivity = getIntent();
-        selectedLesson = Integer.parseInt(parentActivity.getStringExtra(Utilities.SELECTED_LESSON)); //Returns lesson id (eg.: 0, 1 etc)
+
         lessonContent = Utilities.LessonList.get(selectedLesson).GetLessonContent();
 
         Utilities.RecentLesson =  selectedLesson;
@@ -50,6 +56,26 @@ public class InLessonActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(selectedChapter == 0)
+            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter1color));
+        
+        else if(selectedChapter == 1)
+            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter2color));
+        else if(selectedChapter == 2)
+            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter3color));
+        else if(selectedChapter == 3)
+            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter4color));
+        else if(selectedChapter == 4)
+            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter5color));
+        else if(selectedChapter == 5)
+            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter6color));
+        else if(selectedChapter == 6)
+            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter7color));
+        else if(selectedChapter == 7)
+            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter8color));
+        else if(selectedChapter == 8)
+            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter9color));
+
 
         //Mark first page as read
         lessonContent.MarkPageAsRead(0);
@@ -105,11 +131,11 @@ public class InLessonActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
 
             return true;
-        } else if(id == R.id.action_bookmark) {
+        } /*else if(id == R.id.action_bookmark) {
             Utilities.AddBookmark(selectedLesson, mViewPager.getCurrentItem());
             Toast.makeText(this, "Page bookmarked.", Toast.LENGTH_LONG);
             return true;
-        } else if(id == R.id.action_restart) {
+        }*/ else if(id == R.id.action_restart) {
             Utilities.RestartLesson(1);
             finish();
             startActivity(this.getIntent());

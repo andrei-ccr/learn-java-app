@@ -21,7 +21,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/white_box"
         android:clickable="true"
         android:focusable="true"
@@ -70,8 +71,8 @@
                 android:id="@+id/ivProgressSymbolL"
                 android:layout_width="15dp"
                 android:layout_height="19dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
                 android:tint="@color/_gray"
                 app:srcCompat="@drawable/ic_fa_progress" />
 
@@ -95,9 +96,10 @@
 
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/white_box"
         android:clickable="true"
         android:focusable="true"
@@ -142,8 +144,8 @@
                 android:id="@+id/ivProgressSymbolR"
                 android:layout_width="15dp"
                 android:layout_height="19dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
                 android:tint="@color/_gray"
                 app:srcCompat="@drawable/ic_fa_progress" />
 

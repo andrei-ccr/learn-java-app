@@ -23,6 +23,8 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     public RVA_Lessons rvAdapter;
     public TextView tvComingSoon;
 
+    int chapterColorId = R.color._chapter1color;
+
     private void SetLessonBoxList(int chapter) {
         if( (Utilities.InArray(chapter+1, Utilities.ComingSoonChapters))) {
             tvComingSoon.setVisibility(View.VISIBLE);
@@ -71,25 +73,28 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         tvComingSoon = findViewById(R.id.tvLessonComingSoon);
 
         ConstraintLayout cLayout = findViewById(R.id.cLayout);
+
         if(SelectedChapter == 0) {
-            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter1color));
+            chapterColorId = R.color._chapter1color;
         } else if(SelectedChapter == 1) {
-            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter2color));
+            chapterColorId = R.color._chapter2color;
         } else if(SelectedChapter == 2) {
-            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter3color));
+            chapterColorId = R.color._chapter3color;
         } else if(SelectedChapter == 3) {
-            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter4color));
+            chapterColorId = R.color._chapter4color;
         } else if(SelectedChapter == 4) {
-            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter5color));
+            chapterColorId = R.color._chapter5color;
         } else if(SelectedChapter == 5) {
-            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter6color));
+            chapterColorId = R.color._chapter6color;
         } else if(SelectedChapter == 6) {
-            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter7color));
+            chapterColorId = R.color._chapter7color;
         } else if(SelectedChapter == 7) {
-            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter8color));
+            chapterColorId = R.color._chapter8color;
         } else if(SelectedChapter == 8) {
-            cLayout.setBackgroundColor(getResources().getColor(R.color._chapter9color));
+            chapterColorId = R.color._chapter9color;
         }
+
+        cLayout.setBackgroundColor(getResources().getColor(chapterColorId));
 
 
         TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
@@ -133,6 +138,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
         Intent lessonActivity = new Intent(this, InLessonActivity.class);
         lessonActivity.putExtra(Utilities.SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier()));
+        lessonActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(SelectedChapter));
         startActivity(lessonActivity);
     }
 
@@ -143,6 +149,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
         Intent lessonActivity = new Intent(this, InLessonActivity.class);
         lessonActivity.putExtra(Utilities.SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier()));
+        lessonActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(SelectedChapter));
         startActivity(lessonActivity);
     }
 }

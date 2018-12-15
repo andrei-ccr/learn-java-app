@@ -17,6 +17,13 @@
         <item name="Chapter2_5">@drawable/first_program</item>
         <item name="Chapter2_6">@drawable/user_input</item>
         <item name="Chapter2_7">@drawable/first_program</item>
+
+        <item name="Chapter3_1">@drawable/user_input</item>
+        <item name="Chapter3_2">@drawable/user_input</item>
+        <item name="Chapter3_3">@drawable/first_program</item>
+        <item name="Chapter3_4">@drawable/user_input</item>
+        <item name="Chapter3_5">@drawable/first_program</item>
+        <item name="Chapter3_6">@drawable/user_input</item>
     </array>
 
 </resources>

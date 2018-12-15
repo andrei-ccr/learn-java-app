@@ -22,7 +22,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
 
     public class chapterBoxViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView chapterNumber, chapterName, chapterDesc, chapterProgress, chapterLessonCount;
-        ImageView chapterImage;
+        ImageView chapterImage, chapterProgressSymbol;
         LinearLayout container_chapter_color;
 
         public chapterBoxViewHolder(View itemView) {
@@ -34,6 +34,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
             container_chapter_color = itemView.findViewById(R.id.viewChapterColorLayout);
             chapterImage = itemView.findViewById(R.id.ivChapterImage);
             chapterLessonCount = itemView.findViewById(R.id.tvNumberOfLessons);
+            chapterProgressSymbol = itemView.findViewById(R.id.ivChapterProgressSymbol);
             itemView.setOnClickListener(this);
         }
 
@@ -125,17 +126,22 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                 else if(position == 7)
                     viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_1));*/
                 viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_bookmark));
+                if(position>=3)
+                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
 
                 if(itemElem.GetLessonCount() <= 0) {
-                    viewHolder0.chapterLessonCount.setText("Coming soon");
+                    viewHolder0.chapterLessonCount.setText("LOCKED");
+                    viewHolder0.chapterProgress.setVisibility(View.GONE);
+                    viewHolder0.chapterProgressSymbol.setVisibility(View.GONE);
                 } else {
                     viewHolder0.chapterLessonCount.setText(itemElem.GetLessonCount() + " Lessons");
+                    viewHolder0.chapterProgress.setText(itemElem.GetProgressStr());
                 }
 
                 viewHolder0.chapterNumber.setText(itemElem.GetNumber());
                 viewHolder0.chapterName.setText(itemElem.GetName());
                 viewHolder0.chapterDesc.setText(itemElem.GetLongDesc());
-                viewHolder0.chapterProgress.setText(itemElem.GetProgressStr());
+
                 break;
             case 1:
                 categoryTitleViewHolder viewHolder1 = (categoryTitleViewHolder)holder;
