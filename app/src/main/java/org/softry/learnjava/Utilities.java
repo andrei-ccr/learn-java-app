@@ -22,6 +22,9 @@ public final class Utilities {
 
     public static final Integer[] ComingSoonChapters = {3,4,5,6,7,8,9};
 
+    public static List<String> BookmarkList;
+    public static int RecentLesson;
+
     public static List<Containers.Chapter> ChapterList; //List of chapters in order with chapter's details
     public static List<Containers.Lesson> LessonList; //List of lessons in order with lesson's details
 
@@ -30,8 +33,6 @@ public final class Utilities {
         Map<Integer, Integer[]> aMap = new HashMap<>();
         aMap.put(0, new Integer[]{0, 1, 2, 3, 4, 5, 6, 7}); //Chapter 1
         aMap.put(1, new Integer[]{8, 9, 10, 11 , 12, 13, 14});
-        aMap.put(2, new Integer[]{18, 19, 20, 21, 22});
-        aMap.put(3, new Integer[]{23, 24, 25, 26, 27});
         ChapterLessonList = Collections.unmodifiableMap(aMap);
     }
 
@@ -121,6 +122,9 @@ public final class Utilities {
             MapContentToLessons(context);
             LoadChapters(context);
             LoadLessons(context);
+            LoadBookmarks();
+
+            RecentLesson = -1;
             DataLoaded = true;
         }
     }
@@ -143,5 +147,26 @@ public final class Utilities {
 
     public static void setImgTint(ImageView v, int colorId) {
         v.setColorFilter(ContextCompat.getColor(v.getContext(), colorId ), PorterDuff.Mode.MULTIPLY);
+    }
+
+    private static void LoadBookmarks() {
+        BookmarkList = new ArrayList<>();
+    }
+
+    public static void AddBookmark(int lesson, int page) { //TODO
+        String bookmarkStr = lesson + "_" + page;
+        if(BookmarkList.contains(bookmarkStr)) {
+            return;
+        }
+        BookmarkList.add(bookmarkStr);
+    }
+
+    public static boolean BookmarkExists(int lesson, int page) {
+        String bookmarkStr = lesson + "_" + page;
+        return BookmarkList.contains(bookmarkStr);
+    }
+
+    public static void RestartLesson(int lesson) { //TODO
+
     }
 }

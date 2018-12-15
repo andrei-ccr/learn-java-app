@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class InLessonActivity extends AppCompatActivity {
 
@@ -34,6 +35,7 @@ public class InLessonActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_lesson);
 
@@ -41,6 +43,8 @@ public class InLessonActivity extends AppCompatActivity {
         Intent parentActivity = getIntent();
         selectedLesson = Integer.parseInt(parentActivity.getStringExtra(Utilities.SELECTED_LESSON)); //Returns lesson id (eg.: 0, 1 etc)
         lessonContent = Utilities.LessonList.get(selectedLesson).GetLessonContent();
+
+        Utilities.RecentLesson =  selectedLesson;
 
         //Set toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -99,6 +103,22 @@ public class InLessonActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
+            return true;
+        } else if(id == R.id.action_bookmark) {
+            Utilities.AddBookmark(selectedLesson, mViewPager.getCurrentItem());
+            Toast.makeText(this, "Page bookmarked.", Toast.LENGTH_LONG);
+            return true;
+        } else if(id == R.id.action_restart) {
+            Utilities.RestartLesson(1);
+            finish();
+            startActivity(this.getIntent());
+            return true;
+        } else if(id == R.id.action_dashboard) {
+
+            return true;
+        } else if(id == R.id.action_report) {
+
             return true;
         }
 
@@ -182,8 +202,6 @@ public class InLessonActivity extends AppCompatActivity {
                     }
                 }
             });
-
-            //Log.v("myapp", "Returned lesson body string id: " + Integer.toString(lessonBodyStringId));
 
             tvLessonBody.setText(Html.fromHtml(lessonBodyStringId));
             tvPageTitle.setText(pageTitleStringId);
