@@ -96,8 +96,8 @@
         <item name="shortDesc">Learn about applets, email and networking using Java.</item>
         <item name="description">Learn about applets, email and networking using Java.</item>
     </string-array>
-	
-	<string-array name="chapter9">
+
+    <string-array name="chapter9">
         <item name="title">Chapter IX</item>
         <item name="name">Files</item>
         <item name="shortDesc">Work with files and folders.</item>
@@ -146,7 +146,7 @@
         <item name="Chapter1_6">Multiple values, same variable</item>
         <item name="Chapter1_7">For, While</item>
         <item name="Chapter1_8">Function basics</item>
-		
+
         <item name="Chapter2_1">Properly handle exceptions</item>
         <item name="Chapter2_2">Print and use dates &amp; time</item>
         <item name="Chapter2_3">Read and write files</item>
@@ -154,14 +154,14 @@
         <item name="Chapter2_5">Switch-Case, For-Each</item>
         <item name="Chapter2_6">Generate random values</item>
         <item name="Chapter2_7">Program Arguments</item>
-		
+
         <item name="Chapter3_1">Classes</item>
-		<item name="Chapter3_2">Modifiers</item>
+        <item name="Chapter3_2">Modifiers</item>
         <item name="Chapter3_3">Encapsulation</item>
         <item name="Chapter3_4">Constructors &amp; Destructors</item>
         <item name="Chapter3_5">Static classes</item>
         <item name="Chapter3_6">Inheritance</item>
-		
+
         <item name="Chapter4_1">List</item>
         <item name="Chapter4_2">Stack</item>
         <item name="Chapter4_3">Set</item>
@@ -190,18 +190,17 @@
     <string name="fa_license">https://fontawesome.com/license</string>
 
 
-	
     <!-- ######################################## Lessons Body and Page Title ######################################## -->
-	
-	<array name="lessonList">
-		<item>@array/lesson101</item>
-		<item>@array/lesson102</item>
-		<item>@array/lesson103</item>
-		<item>@array/lesson104</item>
-		<item>@array/lesson105</item>
-		<item>@array/lesson106</item>
-		<item>@array/lesson107</item>
-		<item>@array/lesson108</item>
+
+    <array name="lessonList">
+        <item>@array/lesson101</item>
+        <item>@array/lesson102</item>
+        <item>@array/lesson103</item>
+        <item>@array/lesson104</item>
+        <item>@array/lesson105</item>
+        <item>@array/lesson106</item>
+        <item>@array/lesson107</item>
+        <item>@array/lesson108</item>
         <item>@array/lesson201</item>
         <item>@array/lesson202</item>
         <item>@array/lesson203</item>
@@ -215,12 +214,12 @@
         <item>@array/lesson304</item>
         <item>@array/lesson305</item>
         <item>@array/lesson306</item>
-	</array>
-	
-	<string-array name="lessonDefault">
-	    <item>!! Error !!</item>
-		<item><![CDATA["
+    </array>
+
+    <string-array name="lessonDefault">
+        <item>!! Error !!</item>
+        <item><![CDATA["
 		"]]></item>
-	</string-array>
+    </string-array>
 
 </resources>

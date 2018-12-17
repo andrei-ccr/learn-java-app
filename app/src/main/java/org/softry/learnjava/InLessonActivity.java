@@ -136,7 +136,7 @@ public class InLessonActivity extends AppCompatActivity {
             Toast.makeText(this, "Page bookmarked.", Toast.LENGTH_LONG);
             return true;
         }*/ else if(id == R.id.action_restart) {
-            Utilities.RestartLesson(1);
+            Utilities.RestartLesson(selectedLesson);
             finish();
             startActivity(this.getIntent());
             return true;

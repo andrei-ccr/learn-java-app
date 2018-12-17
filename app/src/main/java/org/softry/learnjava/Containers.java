@@ -159,6 +159,8 @@ public class Containers {
 		public void ResetCompletedProcent() {
 			LessonContent currentLC = this.lessonContent;
 			this.lessonContent = new LessonContent(currentLC.content, currentLC.pageTitle, new int[currentLC.content.length]);
+			//this.completedProcent = 0;
+            GetCompletedProcent();
 		}
 
 		

@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     private DrawerLayout mDrawerLayout;
     private Context context;
 
+    private TextView tvPagesRead, tvOverallProgress;
+
     private RVA_Chapters rvAdapter;
 
     private RVA_Chapters GetChaptersRVA() {
@@ -108,11 +110,17 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
                 switch(menuItem.getItemId()) {
                     case R.id.side_bar_settings:
                         Log.i("myapp", "Settings selected");
+                        intent = new Intent(context, SettingsActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.side_bar_about:
                         intent = new Intent(context, AboutActivity.class);
                         startActivity(intent);
                         Log.i("myapp", "About selected");
+                        break;
+                    case R.id.side_bar_report:
+                        intent = new Intent(context, ReportActivity.class);
+                        startActivity(intent);
                         break;
                     /*case R.id.side_bar_bookmarks:
                         Log.i("myapp", "Bookmarks selected");
@@ -124,13 +132,15 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
                         break;*/
                     case R.id.side_bar_disable_ads:
                         Log.i("myapp", "Disable ads selected");
+                        intent = new Intent(context, DisableAdsActivity.class);
+                        startActivity(intent);
                         break;
                    /* case R.id.side_bar_unlock_all:
                         Log.i("myapp", "Unlock all selected");
                         break;*/
                 }
 
-                mDrawerLayout.closeDrawers();
+                //mDrawerLayout.closeDrawers();
 
                 return true;
             }
@@ -145,15 +155,15 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         LinearLayout box_currentPlan = findViewById(R.id.box_currentPlan);
 
         Button btnStart, btnClear, btnUnlock, btnDisableAds;
-        btnStart = findViewById(R.id.btn_start);
-        btnClear = findViewById(R.id.btn_clearProgress);
-        btnUnlock = findViewById(R.id.btn_unlock);
+        //btnStart = findViewById(R.id.btn_start);
+        //btnClear = findViewById(R.id.btn_clearProgress);
+        //btnUnlock = findViewById(R.id.btn_unlock);
         btnDisableAds = findViewById(R.id.btn_disableAds);
 
-        if(screenWidth < 720) {
+        /*if(screenWidth < 720) {
             box_actionButtons.setOrientation(LinearLayout.VERTICAL);
             btnClear.setCompoundDrawables(null, getResources().getDrawable(R.drawable.ic_clear), null, null);
-        }
+        }*/
         if(screenWidth < 768) {
             box_currentPlan.setOrientation(LinearLayout.VERTICAL);
 
@@ -161,8 +171,15 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(btnDisableAds.getLayoutParams());
             lp.setMargins(0,4,0,8);
             btnDisableAds.setLayoutParams(lp);
-
         }
+
+        btnDisableAds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DisableAdsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //Set the recycler view used to list chapters
         mRecyclerView = findViewById(R.id.rvChapters);
@@ -179,6 +196,11 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
 
+        tvPagesRead = findViewById(R.id.tvStatsPagesRead);
+        tvOverallProgress = findViewById(R.id.tvStatsOverallProgress);
+
+        UpdateStats();
+
     }
 
     @Override
@@ -187,6 +209,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         Log.i("myapp", "OnResume called()");
         if(rvAdapter != null)
             rvAdapter.notifyDataSetChanged();
+        UpdateStats();
     }
 
     @Override
@@ -195,6 +218,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         Log.i("myapp", "OnRestart called()");
         if(rvAdapter != null)
             rvAdapter.notifyDataSetChanged();
+        UpdateStats();
     }
 
     @Override
@@ -209,6 +233,11 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         lessonsActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(position));
         startActivity(lessonsActivity);
 
+    }
+
+    private void UpdateStats() {
+        tvPagesRead.setText(Utilities.GetTotalPagesRead() + " Pages read");
+        tvOverallProgress.setText("Overall progress " + Utilities.GetOverallProgress() + "%");
     }
 
 

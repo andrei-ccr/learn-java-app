@@ -10,9 +10,12 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.softry.learnjava.Utilities.LessonList;
 
 public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.ItemClickListener {
 
@@ -21,30 +24,24 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     public static int SelectedChapter;
     public RecyclerView mRecyclerView;
     public RVA_Lessons rvAdapter;
-    public TextView tvComingSoon;
 
     int chapterColorId = R.color._chapter1color;
 
     private void SetLessonBoxList(int chapter) {
-        if( (Utilities.InArray(chapter+1, Utilities.ComingSoonChapters))) {
-            tvComingSoon.setVisibility(View.VISIBLE);
-            return;
-        }
 
         mLessonsBox = new ArrayList<>();
 
         Integer[] lessonsCurrentChapter = Utilities.ChapterLessonList.get(chapter);
-        Log.e("myapp", lessonsCurrentChapter[0] + " is first lesson in this chapter");
         for(int i=lessonsCurrentChapter[0]; i<lessonsCurrentChapter.length+lessonsCurrentChapter[0]; i+=2) {
             if(Utilities.InArray(i+1, lessonsCurrentChapter)) {
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox(Utilities.LessonList.get(i), i),
-                        new RVA_Lessons.LessonBox(Utilities.LessonList.get(i+1), i+1 )
+                        new RVA_Lessons.LessonBox(LessonList.get(i), i),
+                        new RVA_Lessons.LessonBox(LessonList.get(i+1), i+1 )
                 ));
                 Log.e("myapp", "Adding lesson stereo");
             } else {
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox(Utilities.LessonList.get(i), i),
+                        new RVA_Lessons.LessonBox(LessonList.get(i), i),
                         new RVA_Lessons.LessonBox() )
                 );
                 Log.e("myapp", "Adding lesson mono");
@@ -56,8 +53,6 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("myapp", "OnCreate() called");
 
-        TypedArray chapterThemeList = getResources().obtainTypedArray(R.array.ChaptersColor);
-
         try {
             Intent parentActivity = getIntent();
             SelectedChapter = Integer.parseInt(parentActivity.getStringExtra(Utilities.SELECTED_CHAPTER));
@@ -65,14 +60,16 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
             e.printStackTrace();
         }
 
+        //Set Theme
+        TypedArray chapterThemeList = getResources().obtainTypedArray(R.array.ChaptersColor);
         setTheme(chapterThemeList.getResourceId(SelectedChapter, R.style.AppTheme_ChapterOne));
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
 
-        tvComingSoon = findViewById(R.id.tvLessonComingSoon);
-
+        TextView tvComingSoon = findViewById(R.id.tvLessonComingSoon);
         ConstraintLayout cLayout = findViewById(R.id.cLayout);
+        TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
 
         if(SelectedChapter == 0) {
             chapterColorId = R.color._chapter1color;
@@ -97,20 +94,22 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         cLayout.setBackgroundColor(getResources().getColor(chapterColorId));
 
 
-        TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
         Containers.Chapter thisChapter = Utilities.ChapterList.get(SelectedChapter);
-
-        this.setTitle(thisChapter.GetName() + " - " + getString(R.string.app_name));
+        setTitle(thisChapter.GetName() + " - " + getString(R.string.app_name));
         tvChapterDesc.setText(thisChapter.GetShortDesc());
 
-        SetLessonBoxList(SelectedChapter);
 
-        if(this.mLessonsBox != null) {
-            rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
-            rvAdapter.setClickListener(this);
-            mRecyclerView = findViewById(R.id.rvLessons);
-            mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-            mRecyclerView.setAdapter(rvAdapter);
+        if( (Utilities.InArray(SelectedChapter, Utilities.ComingSoonChapters))) {
+            tvComingSoon.setVisibility(View.VISIBLE);
+        } else {
+            SetLessonBoxList(SelectedChapter);
+            if (this.mLessonsBox != null) {
+                rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
+                rvAdapter.setClickListener(this);
+                mRecyclerView = findViewById(R.id.rvLessons);
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+                mRecyclerView.setAdapter(rvAdapter);
+            }
         }
 
     }
@@ -119,16 +118,22 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     public void onResume() {
         super.onResume();
         Log.i("myapp", "OnResume called()");
-        if(rvAdapter != null)
-            rvAdapter.notifyDataSetChanged();
+        if(mRecyclerView != null && rvAdapter != null) {
+            rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
+            rvAdapter.setClickListener(this);
+            mRecyclerView.setAdapter(rvAdapter);
+        }
     }
 
     @Override
     public void onRestart() {
         super.onRestart();
         Log.i("myapp", "OnRestart called()");
-        if(rvAdapter != null)
-            rvAdapter.notifyDataSetChanged();
+        if(mRecyclerView != null && rvAdapter != null) {
+            rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
+            rvAdapter.setClickListener(this);
+            mRecyclerView.setAdapter(rvAdapter);
+        }
     }
 
     @Override
@@ -136,10 +141,15 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         Log.i("myapp_info", "Selected Lesson " + Integer.toString(pos));
         Log.i("myapp_info", "Row index " + Integer.toString(row_index));
 
-        Intent lessonActivity = new Intent(this, InLessonActivity.class);
-        lessonActivity.putExtra(Utilities.SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier()));
-        lessonActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(SelectedChapter));
-        startActivity(lessonActivity);
+        if(LessonList.get(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier()).IsLocked()) {
+            Toast.makeText(this , "Complete previous lessons to unlock", Toast.LENGTH_LONG);
+        } else {
+
+            Intent lessonActivity = new Intent(this, InLessonActivity.class);
+            lessonActivity.putExtra(Utilities.SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier()));
+            lessonActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(SelectedChapter));
+            startActivity(lessonActivity);
+        }
     }
 
     @Override
@@ -147,9 +157,14 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         Log.i("myapp_info", "Selected Lesson " + Integer.toString(pos));
         Log.i("myapp_info", "Row index " + Integer.toString(row_index));
 
-        Intent lessonActivity = new Intent(this, InLessonActivity.class);
-        lessonActivity.putExtra(Utilities.SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier()));
-        lessonActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(SelectedChapter));
-        startActivity(lessonActivity);
+        if(LessonList.get(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier()).IsLocked()) {
+            Toast.makeText(this , "Complete previous lessons to unlock", Toast.LENGTH_LONG);
+        } else {
+
+            Intent lessonActivity = new Intent(this, InLessonActivity.class);
+            lessonActivity.putExtra(Utilities.SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier()));
+            lessonActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(SelectedChapter));
+            startActivity(lessonActivity);
+        }
     }
 }

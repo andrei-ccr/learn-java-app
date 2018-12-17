@@ -27,21 +27,39 @@
             android:name=".InLessonActivity"
             android:label=" "
             android:parentActivityName=".LessonsActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.softry.learnjava.LessonsActivity" />
         </activity>
-
-        <activity android:name=".AboutActivity"
+        <activity
+            android:name=".AboutActivity"
+            android:label="About"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme_Main_Toolbar"
-            android:screenOrientation="portrait" />
-        <activity android:name=".BookmarksActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_Main_Toolbar" />
+        <activity
+            android:name=".BookmarksActivity"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme_Main_Toolbar"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_Main_Toolbar" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Settings"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_Main_Toolbar" />
+        <activity
+            android:name=".ReportActivity"
+            android:label="Report a problem"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_Main_Toolbar" />
+        <activity android:name=".DisableAdsActivity"
+            android:label="Disable Ads"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_Main_Toolbar" />
     </application>
 
 </manifest>

@@ -169,19 +169,44 @@ public final class Utilities {
         return BookmarkList.contains(bookmarkStr);
     }
 
-    public static void RestartLesson(int lesson) { //TODO
+    public static void RestartLesson(int lesson) {
         LessonList.get(lesson).ResetCompletedProcent();
     }
 
 
     public static void UnlockNextLesson() {
+        Log.i("myapp", "UnlockNext called");
         Containers.Lesson prevL = LessonList.get(0);
         for(Containers.Lesson l : LessonList) {
+            if(l.equals(LessonList.get(0))) continue;
             if(l.IsLocked() && prevL.IsCompleted()) {
                 l.UnlockLesson();
+                Log.i("myapp", "Lesson Unlocked");
                 break;
             }
             prevL = l;
         }
+    }
+
+    public static int GetTotalPagesRead() {
+        int total = 0;
+        for(Containers.Lesson l : LessonList) {
+            total += l.GetLessonContent().GetReadCount();
+        }
+
+        return total;
+    }
+
+    public static int GetOverallProgress() {
+        double progress = 0;
+        double lessonProgress = 0;
+        for(Containers.Lesson l : LessonList) {
+            lessonProgress += l.GetCompletedProcent()/100f;
+        }
+
+        lessonProgress /= LessonList.size();
+
+        progress = lessonProgress * 100;
+        return (int)progress;
     }
 }
