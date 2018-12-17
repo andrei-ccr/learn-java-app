@@ -2,6 +2,7 @@ package org.softry.learnjava;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -140,11 +141,23 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             //Set title, description and image of right LessonBox
             holder.lessonTitleR.setText(itemElem.GetRightLessonBox().GetLesson().GetTitle());
             holder.lessonDescR.setText(itemElem.GetRightLessonBox().GetLesson().GetDesc());
-            holder.lessonProgressR.setText(itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() + "%");
-            if(itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() == 100) {
-                holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
+            if(itemElem.GetRightLessonBox().GetLesson().IsLocked()) {
+                holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
+                holder.lessonProgressR.setText(" Locked");
             } else {
-                holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_progress));
+                holder.lessonProgressR.setText(itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() + "%");
+                if (itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() == 100) {
+                    holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
+                    holder.lessonProgressSymbolR.setColorFilter(this.context.getResources().getColor(R.color._gold));
+                    holder.lessonProgressR.setTextColor(this.context.getResources().getColor(R.color._gold));
+                    holder.lessonProgressR.setText("Completed");
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_stroke));
+                    }
+                } else {
+                    holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_progress));
+                }
             }
 
             try {
@@ -157,11 +170,22 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         //Set title, description and image of left LessonBox
         holder.lessonTitleL.setText(itemElem.GetLeftLessonBox().GetLesson().GetTitle());
         holder.lessonDescL.setText(itemElem.GetLeftLessonBox().GetLesson().GetDesc());
-        holder.lessonProgressL.setText(itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() + "%");
-        if(itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() == 100) {
-            holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
+        if(itemElem.GetLeftLessonBox().GetLesson().IsLocked()) {
+            holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
+            holder.lessonProgressL.setText(" Locked");
         } else {
-            holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_progress));
+            holder.lessonProgressL.setText(itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() + "%");
+            if (itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() == 100) {
+                holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
+                holder.lessonProgressSymbolL.setColorFilter(this.context.getResources().getColor(R.color._gold));
+                holder.lessonProgressL.setTextColor(this.context.getResources().getColor(R.color._gold));
+                holder.lessonProgressL.setText("Completed");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_stroke));
+                }
+            } else {
+                holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_progress));
+            }
         }
 
         try {

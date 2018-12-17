@@ -94,19 +94,35 @@ public class Containers {
 		private int imgResId;
 		private LessonContent lessonContent;
 		private int completedProcent; //From 0 to 100
+        private boolean locked;
 		
 		public Lesson(String title, String desc, int imgResId, LessonContent lessonContent) {
 			this.title = title;
 			this.desc = desc;
 			this.imgResId = imgResId;
 			this.lessonContent = lessonContent;
+			this.locked = true;
 			
 			this.SetCompletedProcent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
 		}
 		
 		private void SetCompletedProcent(int val) {
 			this.completedProcent = Math.max(0, Math.min(100, val));
+
+
 		}
+
+		public void UnlockLesson() {
+		    this.locked = false;
+        }
+
+        public void LockLesson() {
+		    this.locked = true;
+        }
+
+        public boolean IsLocked() {
+		    return this.locked;
+        }
 
 		
 		public String GetTitle() {
@@ -123,16 +139,28 @@ public class Containers {
 		
 		public int GetCompletedProcent() {
             this.SetCompletedProcent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
+            if(this.completedProcent == 100) {
+                Utilities.UnlockNextLesson();
+            }
             return this.completedProcent;
 		}
+
+		public boolean IsCompleted() {
+            this.SetCompletedProcent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
+            if(this.completedProcent == 100)
+                return true;
+            return false;
+        }
 		
 		public LessonContent GetLessonContent() {
 			return this.lessonContent;
 		}
 
 		public void ResetCompletedProcent() {
-
+			LessonContent currentLC = this.lessonContent;
+			this.lessonContent = new LessonContent(currentLC.content, currentLC.pageTitle, new int[currentLC.content.length]);
 		}
+
 		
 	}
 	

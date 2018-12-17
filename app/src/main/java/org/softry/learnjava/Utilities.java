@@ -116,6 +116,8 @@ public final class Utilities {
                 );
             }
         }
+
+        LessonList.get(0).UnlockLesson();
     }
 
     public static void LoadData(Context context) {
@@ -169,5 +171,17 @@ public final class Utilities {
 
     public static void RestartLesson(int lesson) { //TODO
         LessonList.get(lesson).ResetCompletedProcent();
+    }
+
+
+    public static void UnlockNextLesson() {
+        Containers.Lesson prevL = LessonList.get(0);
+        for(Containers.Lesson l : LessonList) {
+            if(l.IsLocked() && prevL.IsCompleted()) {
+                l.UnlockLesson();
+                break;
+            }
+            prevL = l;
+        }
     }
 }
