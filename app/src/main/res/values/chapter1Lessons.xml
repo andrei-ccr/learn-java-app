@@ -9,7 +9,7 @@
 
         <item>Downloading and Installing Java</item>
         <item><![CDATA["
-			<p>We'll start by downloading and installing Java. This tutorial applies for computers running <font color="#009900">Windows x64</font>. You'll download <font color="orange"><b>Java SE Development Kit 8</b></font>. </p><p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">1. Go to the Java download webpage</a><br>2. Select <i>Accept License Agreement</i><br>3. Click on the filename <font color="#009900">jdk-8u191-windows-x64.exe</font> (click the red down arrow)<br>4. Run the downloaded executable and follow the onscreen instructions.</p><p>Java will now be installed on your computer.</p><p>In the next section, you'll also learn how to download and install an IDE. An <b><font color="#123456">Integrated Development Environment</font></b> is recommended for beginners. </p>
+			<p>We'll start by downloading and installing Java. This tutorial applies for computers running <font color="#009900">Windows x64</font>. You'll download <font color="orange"><b>Java SE Development Kit 8</b></font>. </p><p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">1. Go to the Java download web page</a><br>2. Select <i>Accept License Agreement</i><br>3. Click on the filename <font color="#009900">jdk-8u191-windows-x64.exe</font> (click the red down arrow)<br>4. Run the downloaded executable and follow the onscreen instructions.</p><p>Java will now be installed on your computer.</p><p>In the next section, you'll also learn how to download and install an IDE. An <b><font color="#123456">Integrated Development Environment</font></b> is recommended for beginners. </p>
 		"]]>
 		</item>
 
@@ -59,7 +59,7 @@
 
 			<p>If a dialog appears asking you to save, click <b>OK</b>. The program will now execute. You should see the words <font color="#555">"Hello World!"</font> around the bottom area of Eclipse</p>
 
-			<p>If there were <font color="red"><em>errors</em></font> in your code, a dialog will show up, warning you about them. Go <a href="102_1">back</a> and check that you didn't mispell anything in your code.</p>
+			<p>If there were <font color="red"><em>errors</em></font> in your code, a dialog will show up, warning you about them. Go <a href="102_1">back</a> and check that you didn't misspell anything in your code.</p>
 		"]]></item>
 
         <item>What does it do?</item>
@@ -357,7 +357,7 @@ str = reader.nextLine();</p>
 <p>if(6&gt;4) {<br>
 	&nbsp; &nbsp;System.out.println(\"This is inside if\");<br>
 }<br>
-System.out.println(\"This is outside if and it will execute everytime\");</p>
+System.out.println(\"This is outside if and it will execute every time\");</p>
 
 <pThe code above will print both messages. However, if we change the condition from 6&gt;4 to 6&lt;4, the first message won't be printed anymore because, obviously, 6 is not lower that 4.</p>
     "]]></item>
@@ -401,7 +401,7 @@ else {<br>
  &nbsp;&nbsp;//if no conditions are true, execute this<br>
 }</p>
 
-<p>This allows us to specify another condition that might be true and another set of instruction to execute if it is true. However you have to keep in mind that each code is executed from top to bottom. Therefore, if the first condition is true then the other conditions are ignored even if they might true aswell. In the next section, we'll explain this with examples.</p>
+<p>This allows us to specify another condition that might be true and another set of instruction to execute if it is true. However you have to keep in mind that each code is executed from top to bottom. Therefore, if the first condition is true then the other conditions are ignored even if they might true as well. In the next section, we'll explain this with examples.</p>
 
     "]]></item>
         <item>Compare numbers</item>
@@ -497,17 +497,17 @@ if(payedTheBills) {</p>
 
 		<p>
 		<b>AND</b><br>
-		false && false   false<br>
-		true && false    false<br>
-		false && true    false<br>
-		true && true     true </p>
+		false && false -&gt; false<br>
+		true && false -&gt; false<br>
+		false && true -&gt; false<br>
+		true && true -&gt; true </p>
 
 		<p>
 		<b>OR</b><br>
-		false || false   false<br>
-		true || false    true<br>
-		false || true    true<br>
-		true || true     true</p>
+		false || false -&gt; false<br>
+		true || false -&gt; true<br>
+		false || true -&gt; true<br>
+		true || true -&gt; true</p>
 
 	"]]></item>
 
@@ -527,10 +527,10 @@ if(payedTheBills) {</p>
 		</p>
 
 		<p>
-		If only one expression needs to be true, we can use the OR operator. Let's take a very simple example. If a number is 0 or 1 we print "Ok":</p>
+		If only one expression needs to be true, we can use the OR operator. Let's take a very simple example. If a number is 0 or 1 we print "OK":</p>
 		<p>
 		if((x == 0) || (x == 1)) {<br>
-		  &nbsp;&nbsp;System.out.println("Ok");<br>
+		  &nbsp;&nbsp;System.out.println("OK");<br>
 		}
 		</p>
 
@@ -565,7 +565,7 @@ int number5;</p>
 
 <p>This means that we have an int variable named number that can store not one but five ints. Using arrays is a more convenient way to store collections of data.</p>
     "]]></item>
-        <item>Asigning</item>
+        <item>Assigning</item>
         <item><![CDATA["
 <p>Now, we can assign a value to any element of the array like this:</p>
 
@@ -639,9 +639,9 @@ int[] number = {4, 7, 8, 99, 12};</p>
         <item>Looping forever</item>
         <item><![CDATA["
 
-<p>It is very important to make sure we don't get trapped inside a neverending loop. The code that will execute inside the while loop, should at some point have an instruction that will change the condition to become false.</p>
+<p>It is very important to make sure we don't get trapped inside a never ending loop. The code that will execute inside the while loop, should at some point have an instruction that will change the condition to become false.</p>
 
-<p>If you enter a neverending loop, your program will freeze and become unusable and you will have to force your program to quit (by ending the process). In some cases, the program will crash and quit on it's own.</p>
+<p>If you enter a never ending loop, your program will freeze and become unusable and you will have to force your program to quit (by ending the process). In some cases, the program will crash and quit on it's own.</p>
     "]]></item>
         <item>Counting</item>
         <item><![CDATA["
@@ -685,7 +685,7 @@ i = i+1</p>
 	<br>//Code here will execute while condition is true<br>
 }</p>
 
-<p>Besides the condition, the for loop allows us to write an instruction that will execute only the first time, as well as an instruction that will execute everytime the loop repeats. This means that we can write our previous counting program like this:
+<p>Besides the condition, the for loop allows us to write an instruction that will execute only the first time, as well as an instruction that will execute every time the loop repeats. This means that we can write our previous counting program like this:
 </p>
 
 <p>for(int i=1; i&lt;=10; i++) {<br>
@@ -741,7 +741,7 @@ Now that our n array has elements, let's print the array. In the previous lesson
  &nbsp;&nbsp;System.out.println(n[i]);<br>
 }</p>
 
-<p>This way, each element is printed to the screen. Remember that we go from the 0th element to the 4th element. This is done by starting with i from 0 and repeating while i<5 (i is stricly lesser than 5) or i<=4 (i is lesser than or equal to 4).</p>
+<p>This way, each element is printed to the screen. Remember that we go from the 0th element to the 4th element. This is done by starting with i from 0 and repeating while i<5 (i is strictly lesser than 5) or i<=4 (i is lesser than or equal to 4).</p>
     "]]></item>
         <item>Get the length</item>
         <item><![CDATA["
@@ -762,11 +762,11 @@ for(int i=0;i<n.length;i++) {<br>
 <p>So far, you learned that loops stop once the condition becomes false. There's also a way to stop a loop using a special instruction: break. When you break a loop, no other instruction inside the loop will get execute. </p>
 <p>
 while(condition) {<br>
-  &nbsp;&nbsp;//... some instructions up here ...<br>
+  &nbsp;&nbsp;//… some instructions up here …<br>
   &nbsp;&nbsp;break;<br>
-  &nbsp;&nbsp;//... instructions here but they won't execute, condition doesn't matter<br>
+  &nbsp;&nbsp;//… instructions here but they won't execute, condition doesn't matter<br>
 }<br>
-//... instructions outside the loop, execute when loop is finished<br>
+//… instructions outside the loop, execute when loop is finished<br>
 </p>
 <p>
 The break instruction works only inside control structures such as loops. You can choose when the loop should break based on a condition by adding an if structure inside the loop.</p>
@@ -813,11 +813,8 @@ while(condition) {<br>
 			<p>We already know several methods. For example the System.out.println() method which prints something to console. It's defined inside the System.out class.</p>
 
 			<p>Another important method is the main() method which we must define in our program. It is called automatically when the program starts.</p>
-		"]]></item>
 
-        <item></item>
-        <item><![CDATA["
-			<p>Every method must be declared inside a class. Until chapter III, we will use only one class in our project. Therefore, we are going to declare all methods inside this class.</p>
+		    <p>Every method must be declared inside a class. Until chapter III, we will use only one class in our project. Therefore, we are going to declare all methods inside this class.</p>
 
 			<p>We cannot define a method inside another method.</p>
 		"]]></item>
@@ -880,7 +877,7 @@ while(condition) {<br>
 			<p>Then we output the result variable which contains the sum. </p>
 		"]]></item>
 
-        <item></item>
+        <item>Function to add</item>
         <item><![CDATA["
 			<p>To call this method we use:<br>
 			AddNumbers(2,2);
@@ -890,7 +887,7 @@ while(condition) {<br>
 			The result variable inside the method can only be used in this method. It is called a local variable and it stops existing once the method ends. Therefore, we cannot directly access result from main.</p>
 		"]]></item>
 
-        <item></item>
+        <item>Returning values</item>
         <item><![CDATA["
 			<p>
 			To overcome this, methods can return a value. The returned value can be stored inside another variable for future use. Let's define another method that adds two numbers. This one will return the sum instead of printing it to screen.</p>
@@ -906,7 +903,7 @@ while(condition) {<br>
 			<p>If the method type is not void, you MUST return a value. Otherwise, your program won't compile.</p>
 		"]]></item>
 
-        <item></item>
+        <item>Somebody get that value</item>
         <item><![CDATA["
 			<p>
 			We can call this method just like the other one:<br>
@@ -918,7 +915,7 @@ while(condition) {<br>
 			<p>We should store the returned result in a variable. And we should also print it to confirm it's there.</p>
 		"]]></item>
 
-        <item></item>
+        <item>Handle returns</item>
         <item><![CDATA["
 			<p>
 			First, define a variable to store the result. We'll call it theSum.<br>
@@ -937,7 +934,7 @@ while(condition) {<br>
 			</p>
 		"]]></item>
 
-        <item></item>
+        <item>Return and stop</item>
         <item><![CDATA["
 			<p>
 			When the return instruction is executed, the method stops, the value of the specified local variable is returned and the execution of code continues with the instruction below the calling. Therefore, anything written below return will NOT execute. For example:
@@ -959,18 +956,18 @@ while(condition) {<br>
 			</p>
 		"]]></item>
 
-        <item></item>
+        <item>Stacking methods</item>
         <item><![CDATA["
 			<p>
 			Keep in mind that you don't have to call a method inside main, you can call any method inside any other method. For example:
 			</p>
 			<p>
 			static void foo() {<br>
-			  &nbsp;&nbsp;//code...<br>
+			  &nbsp;&nbsp;//code…<br>
 			}<br><br>
 
 			static void bar() {<br>
-			 &nbsp;&nbsp; //code...<br>
+			 &nbsp;&nbsp; //code…<br>
 			  &nbsp;&nbsp;foo();<br>
 			}
 			</p>
@@ -979,7 +976,7 @@ while(condition) {<br>
 			</p>
 		"]]></item>
 
-        <item></item>
+        <item>Inception</item>
         <item><![CDATA["
 			<p>
 			Calling the same method inside itself is called recursion.
@@ -990,9 +987,9 @@ while(condition) {<br>
 			<p>
 			In the above case, calling foo() once (from main for example), will make foo() get called endlessly. When this happens, the program will quickly ran out of memory and it will "throw" a StackOverFlowError. This error is irrecoverable. In other words the program will crash and there's nothing you can. We will learn more about error throwing in the next chapter.</p>
 
-			<p>To avoid this, recursive calls are ussually surrounded by an if condition.</p>
+			<p>To avoid this, recursive calls are usually surrounded by an if condition.</p>
 
-			<p>Recursive methods are used in algorithms such as computing the fibonaci sequence.</p>
+			<p>Recursive methods are used in algorithms such as computing the fibonacci sequence.</p>
 		"]]></item>
 
     </string-array>
