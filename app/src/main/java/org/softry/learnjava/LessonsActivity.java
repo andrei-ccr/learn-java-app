@@ -38,13 +38,11 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
                         new RVA_Lessons.LessonBox(LessonList.get(i), i),
                         new RVA_Lessons.LessonBox(LessonList.get(i+1), i+1 )
                 ));
-                Log.e("myapp", "Adding lesson stereo");
             } else {
                 mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
                         new RVA_Lessons.LessonBox(LessonList.get(i), i),
                         new RVA_Lessons.LessonBox() )
                 );
-                Log.e("myapp", "Adding lesson mono");
             }
         }
     }
@@ -68,6 +66,8 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         setContentView(R.layout.activity_lessons);
 
         TextView tvComingSoon = findViewById(R.id.tvLessonComingSoon);
+        TextView tvComingSoonDesc = findViewById(R.id.tvLessonLockedDesc);
+        TextView btnDonate = findViewById(R.id.btnDonate);
         ConstraintLayout cLayout = findViewById(R.id.cLayout);
         TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
 
@@ -99,8 +99,10 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         tvChapterDesc.setText(thisChapter.GetShortDesc());
 
 
-        if( (Utilities.InArray(SelectedChapter, Utilities.ComingSoonChapters))) {
+        if( (Utilities.InArray(SelectedChapter+1, Utilities.ComingSoonChapters))) {
             tvComingSoon.setVisibility(View.VISIBLE);
+            tvComingSoonDesc.setVisibility(View.VISIBLE);
+            //btnDonate.setVisibility(View.VISIBLE);
         } else {
             SetLessonBoxList(SelectedChapter);
             if (this.mLessonsBox != null) {

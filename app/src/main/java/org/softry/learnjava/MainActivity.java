@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 
         Button btnStart, btnClear, btnUnlock, btnDisableAds;
         //btnStart = findViewById(R.id.btn_start);
-        //btnClear = findViewById(R.id.btn_clearProgress);
+        btnClear = findViewById(R.id.btn_clearProgress);
         //btnUnlock = findViewById(R.id.btn_unlock);
         btnDisableAds = findViewById(R.id.btn_disableAds);
 
@@ -178,6 +178,16 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
             public void onClick(View v) {
                 Intent intent = new Intent(context, DisableAdsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utilities.DeleteStorage();
+                Utilities.ReloadData(context);
+                UpdateStats();
+                rvAdapter.notifyDataSetChanged();
             }
         });
 

@@ -79,6 +79,7 @@ public class InLessonActivity extends AppCompatActivity {
 
         //Mark first page as read
         lessonContent.MarkPageAsRead(0);
+		Utilities.SaveReadProgress(selectedLesson, lessonContent.GetAllReadStatus());
 
         SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), Utilities.LessonContentList.get(selectedLesson).length);
 
@@ -98,10 +99,7 @@ public class InLessonActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int i) {
                 lessonContent.MarkPageAsRead(i);
-
-                for(int r : lessonContent.GetAllReadStatus()) {
-                    Log.e("myapp", Integer.toString(r));
-                }
+				Utilities.SaveReadProgress(selectedLesson, lessonContent.GetAllReadStatus());
             }
 
             @Override
