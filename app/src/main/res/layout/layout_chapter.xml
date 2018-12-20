@@ -18,7 +18,7 @@
 
     <LinearLayout
         android:id="@+id/viewChapterColorLayout"
-        android:layout_width="99dp"
+        android:layout_width="90dp"
         android:layout_height="match_parent"
         android:background="@drawable/chapter1_box"
         android:orientation="vertical">
@@ -28,16 +28,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10dp"
-            app:srcCompat="@drawable/ic_fa_bookmark" />
+            app:srcCompat="@drawable/ic_fa_clone" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvChapterName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:gravity="left"
+            android:text="Basics"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tvChapterNum"
@@ -51,18 +61,7 @@
             android:layout_marginBottom="1dp"
             android:gravity="left"
             android:text="Chapter I"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="19sp" />
-
-        <TextView
-            android:id="@+id/tvChapterName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="7dp"
-            android:gravity="left"
-            android:text="Basics"
-            android:textColor="@color/_lighterBlack"
-            android:textSize="17sp" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
             android:id="@+id/tvChapterDesc"
@@ -90,14 +89,15 @@
                 android:id="@+id/tvNumberOfLessons"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="6 Lessons"
+                android:drawableLeft="@drawable/ic_fa_interview"
+                android:drawablePadding="6dp"
+                android:text="6"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/_lighterBlack" />
 
             <ImageView
                 android:id="@+id/ivChapterProgressSymbol"
-                android:layout_width="10dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="false"
                 android:layout_marginRight="4dp"

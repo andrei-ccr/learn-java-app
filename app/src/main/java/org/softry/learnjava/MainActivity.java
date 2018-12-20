@@ -71,11 +71,11 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
                     containerDashboardTab.setVisibility(View.GONE);
                     containerLearnTab.setVisibility(View.VISIBLE);
                     return true;
-                case R.id.navigation_interview:
+                /*case R.id.navigation_interview:
                     containerInterviewTab.setVisibility(View.VISIBLE);
                     containerDashboardTab.setVisibility(View.GONE);
                     containerLearnTab.setVisibility(View.GONE);
-                    return true;
+                    return true;*/
                 case R.id.navigation_dashboard:
                     containerInterviewTab.setVisibility(View.GONE);
                     containerLearnTab.setVisibility(View.GONE);

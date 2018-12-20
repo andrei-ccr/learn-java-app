@@ -90,8 +90,6 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             lessonProgressR = itemView.findViewById(R.id.tvLessonProgressR);
             lessonProgressSymbolR = itemView.findViewById(R.id.ivProgressSymbolR);
 
-
-
             //Box container (Linear Layout)
             leftLessonBox = itemView.findViewById(R.id.leftLessonBox);
             rightLessonBox = itemView.findViewById(R.id.rightLessonBox);
@@ -124,6 +122,7 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
 
     @Override
     public mViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         View view = mInflater.inflate(R.layout.layout_lesson, parent,false);
         return new mViewHolder(view);
     }
@@ -143,14 +142,21 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             holder.lessonDescR.setText(itemElem.GetRightLessonBox().GetLesson().GetDesc());
             if(itemElem.GetRightLessonBox().GetLesson().IsLocked()) {
                 holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
-                holder.lessonProgressR.setText(" Locked");
+                holder.lessonProgressR.setText(" ");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_locked));
+                }
+
             } else {
                 holder.lessonProgressR.setText(itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() + "%");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box));
+                }
                 if (itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() == 100) {
                     holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
                     holder.lessonProgressSymbolR.setColorFilter(this.context.getResources().getColor(R.color._gold));
                     holder.lessonProgressR.setTextColor(this.context.getResources().getColor(R.color._gold));
-                    holder.lessonProgressR.setText("Completed");
+                    holder.lessonProgressR.setText(" ");
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                         holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_stroke));
@@ -172,14 +178,20 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         holder.lessonDescL.setText(itemElem.GetLeftLessonBox().GetLesson().GetDesc());
         if(itemElem.GetLeftLessonBox().GetLesson().IsLocked()) {
             holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
-            holder.lessonProgressL.setText(" Locked");
+            holder.lessonProgressL.setText(" ");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_locked));
+            }
         } else {
             holder.lessonProgressL.setText(itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() + "%");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box));
+            }
             if (itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() == 100) {
                 holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
                 holder.lessonProgressSymbolL.setColorFilter(this.context.getResources().getColor(R.color._gold));
                 holder.lessonProgressL.setTextColor(this.context.getResources().getColor(R.color._gold));
-                holder.lessonProgressL.setText("Completed");
+                holder.lessonProgressL.setText(" ");
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_stroke));
                 }
@@ -193,8 +205,6 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
     @Override
@@ -205,11 +215,11 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
 
     /*String getEntryText(int id) {
         return mEntryObjList.get(id).getText();
-    }
+     }
 
-    String getEntryTime(int id) {
+     String getEntryTime(int id) {
         return mEntryObjList.get(id).getTimestamp();
-    }*/
+     }*/
 
 
     void setClickListener(ItemClickListener itemClickListener) {

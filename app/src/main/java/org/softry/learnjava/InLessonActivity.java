@@ -1,8 +1,10 @@
 package org.softry.learnjava;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -78,8 +80,10 @@ public class InLessonActivity extends AppCompatActivity {
 
 
         //Mark first page as read
-        lessonContent.MarkPageAsRead(0);
-		Utilities.SaveReadProgress(selectedLesson, lessonContent.GetAllReadStatus());
+        if(!Utilities.LessonList.get(selectedLesson).IsLocked()){
+            lessonContent.MarkPageAsRead(0);
+            Utilities.SaveReadProgress(selectedLesson, lessonContent.GetAllReadStatus());
+        }
 
         SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), Utilities.LessonContentList.get(selectedLesson).length);
 
@@ -98,8 +102,13 @@ public class InLessonActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int i) {
-                lessonContent.MarkPageAsRead(i);
-				Utilities.SaveReadProgress(selectedLesson, lessonContent.GetAllReadStatus());
+                if(!Utilities.LessonList.get(selectedLesson).IsLocked()) {
+                    lessonContent.MarkPageAsRead(i);
+                    Utilities.SaveReadProgress(selectedLesson, lessonContent.GetAllReadStatus());
+                }
+
+
+
             }
 
             @Override
@@ -124,25 +133,44 @@ public class InLessonActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        Intent intent;
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-
+            intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
             return true;
         } /*else if(id == R.id.action_bookmark) {
             Utilities.AddBookmark(selectedLesson, mViewPager.getCurrentItem());
             Toast.makeText(this, "Page bookmarked.", Toast.LENGTH_LONG);
             return true;
         }*/ else if(id == R.id.action_restart) {
-            Utilities.RestartLesson(selectedLesson);
-            finish();
-            startActivity(this.getIntent());
+
+            final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+            dlgAlert.setMessage("Are you sure you want to reset current lesson's progress?");
+            dlgAlert.setTitle("Reset progress");
+            dlgAlert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Utilities.RestartLesson(selectedLesson);
+                            finish();
+
+                        }
+                    });
+            dlgAlert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            dlgAlert.setCancelable(true);
+            dlgAlert.create().show();
+
             return true;
         } /*else if(id == R.id.action_dashboard) {
 
             return true;
         }*/ else if(id == R.id.action_report) {
-
+            intent = new Intent(this, ReportActivity.class);
+            startActivity(intent);
             return true;
         }
 
@@ -189,7 +217,6 @@ public class InLessonActivity extends AppCompatActivity {
             fragment.setArguments(args);
 
             currentPageNum = sectionNumber;
-
 
             return fragment;
         }

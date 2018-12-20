@@ -117,7 +117,7 @@
         <item name="Chapter2_1">Try-Catch</item>
         <item name="Chapter2_2">Date &amp; Time</item>
         <item name="Chapter2_3">Basic File I/O</item>
-        <item name="Chapter2_4">Strings &amp; REGEX</item>
+        <item name="Chapter2_4">Strings</item>
         <item name="Chapter2_5">More Control Statements</item>
         <item name="Chapter2_6">Random</item>
         <item name="Chapter2_7">Program Arguments</item>
@@ -139,7 +139,7 @@
 
     <string-array name="lessonDescriptionList">
         <item name="Chapter1_1">Install Java &amp; Eclipse</item>
-        <item name="Chapter1_2">Hello World!</item>
+        <item name="Chapter1_2">Hello World! \n</item>
         <item name="Chapter1_3">Store values and use them</item>
         <item name="Chapter1_4">Read values from keyboard</item>
         <item name="Chapter1_5">If, else-if statements</item>
@@ -152,12 +152,12 @@
         <item name="Chapter2_3">Read and write files</item>
         <item name="Chapter2_4">String functions</item>
         <item name="Chapter2_5">Switch-Case, For-Each</item>
-        <item name="Chapter2_6">Generate random values</item>
+        <item name="Chapter2_6">Generate random values \n</item>
         <item name="Chapter2_7">Program Arguments</item>
 
         <item name="Chapter3_1">Classes</item>
         <item name="Chapter3_2">Modifiers</item>
-        <item name="Chapter3_3">Encapsulation</item>
+        <item name="Chapter3_3">Encapsulation \n\n</item>
         <item name="Chapter3_4">Constructors &amp; Destructors</item>
         <item name="Chapter3_5">Static classes</item>
         <item name="Chapter3_6">Inheritance</item>

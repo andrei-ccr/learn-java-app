@@ -194,7 +194,7 @@ public class Containers {
             	this.progress = -1;
             	return;
 			}
-            Log.i("myapp", "For " + this.number + " progress formula is " + total_lprogress + "/" + this.lessonCount);
+            //Log.i("myapp", "For " + this.number + " progress formula is " + total_lprogress + "/" + this.lessonCount);
             if(total_lprogress == 0) this.progress = -1;
             else
                 this.progress = (int)((total_lprogress/this.lessonCount)*100);
@@ -224,7 +224,7 @@ public class Containers {
 
         public String GetProgressStr() {
             if(GetProgressValue() == -1) {
-                return "Not started";
+                return "";
             } else if(GetProgressValue() >= 100) {
                return "Completed";
             } else {

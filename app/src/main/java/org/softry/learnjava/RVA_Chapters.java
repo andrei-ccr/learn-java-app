@@ -109,33 +109,22 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                     else if(position == 7)
                         viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter8_box));
                 }
-                /*if(position == 0)
-                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_1));
-                else if(position == 1)
-                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_2));
-                else if(position == 2)
-                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_3));
-                else if(position == 3)
-                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_4));
-                else if(position == 4)
-                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_1));
-                else if(position == 5)
-                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_1));
-                else if(position == 6)
-                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_1));
-                else if(position == 7)
-                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.chapter_1));*/
-                viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_bookmark));
-                if(position>=3)
-                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
 
-                if(itemElem.GetLessonCount() <= 0) {
-                    viewHolder0.chapterLessonCount.setText("LOCKED");
+                viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_clone));
+                if(position == 2) viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_boxes));
+
+                if(position>=3) {
+                    viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
+                    viewHolder0.chapterLessonCount.setText("PRO ONLY");
+                    viewHolder0.chapterLessonCount.setCompoundDrawables(null,null,null,null);
                     viewHolder0.chapterProgress.setVisibility(View.GONE);
                     viewHolder0.chapterProgressSymbol.setVisibility(View.GONE);
                 } else {
-                    viewHolder0.chapterLessonCount.setText(itemElem.GetLessonCount() + " Lessons");
+                    viewHolder0.chapterLessonCount.setText(itemElem.GetLessonCount() + "");
                     viewHolder0.chapterProgress.setText(itemElem.GetProgressStr());
+					viewHolder0.chapterProgress.setVisibility(View.VISIBLE);
+                    viewHolder0.chapterProgressSymbol.setVisibility(View.VISIBLE);
+					viewHolder0.chapterLessonCount.setCompoundDrawablesWithIntrinsicBounds(this.context.getResources().getDrawable(R.drawable.ic_fa_interview),null,null,null);
                 }
 
                 viewHolder0.chapterNumber.setText(itemElem.GetNumber());

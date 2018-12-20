@@ -1,8 +1,12 @@
 package org.softry.learnjava;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,7 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,7 +105,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
         if( (Utilities.InArray(SelectedChapter+1, Utilities.ComingSoonChapters))) {
             tvComingSoon.setVisibility(View.VISIBLE);
-            tvComingSoonDesc.setVisibility(View.VISIBLE);
+            //tvComingSoonDesc.setVisibility(View.VISIBLE);
             //btnDonate.setVisibility(View.VISIBLE);
         } else {
             SetLessonBoxList(SelectedChapter);
@@ -139,34 +143,60 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     }
 
     @Override
-    public void onLeftBoxClick(View view, int pos, int row_index) {
-        Log.i("myapp_info", "Selected Lesson " + Integer.toString(pos));
-        Log.i("myapp_info", "Row index " + Integer.toString(row_index));
-
+    public void onLeftBoxClick(View view, int pos, final int row_index) {
         if(LessonList.get(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier()).IsLocked()) {
-            Toast.makeText(this , "Complete previous lessons to unlock", Toast.LENGTH_LONG);
+			Snackbar.make(view, "Complete the previous lesson to unlock", Snackbar.LENGTH_LONG).setAction("Unlock",  new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            //TODO: Show prompt about progress not being saved and watch ad
+                            ShowLockedPrompt(view.getContext(), mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier());
+                        }
+                    }).show();
         } else {
+            OpenLesson(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier());
 
-            Intent lessonActivity = new Intent(this, InLessonActivity.class);
-            lessonActivity.putExtra(Utilities.SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier()));
-            lessonActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(SelectedChapter));
-            startActivity(lessonActivity);
         }
     }
 
     @Override
-    public void onRightBoxClick(View view, int pos, int row_index) {
-        Log.i("myapp_info", "Selected Lesson " + Integer.toString(pos));
-        Log.i("myapp_info", "Row index " + Integer.toString(row_index));
-
+    public void onRightBoxClick(View view, int pos, final int row_index) {
         if(LessonList.get(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier()).IsLocked()) {
-            Toast.makeText(this , "Complete previous lessons to unlock", Toast.LENGTH_LONG);
+			Snackbar.make(view, "Complete the previous lesson to unlock", Snackbar.LENGTH_LONG).setAction("Unlock", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            ShowLockedPrompt(view.getContext(), mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier());
+                        }
+                    }).show();
         } else {
+            OpenLesson(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier());
 
-            Intent lessonActivity = new Intent(this, InLessonActivity.class);
-            lessonActivity.putExtra(Utilities.SELECTED_LESSON, Integer.toString(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier()));
-            lessonActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(SelectedChapter));
-            startActivity(lessonActivity);
         }
+    }
+
+    private void OpenLesson(int lesson_index) {
+        Intent lessonActivity = new Intent(this, InLessonActivity.class);
+        lessonActivity.putExtra(Utilities.SELECTED_LESSON, Integer.toString(lesson_index));
+        lessonActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(SelectedChapter));
+        startActivity(lessonActivity);
+    }
+
+    private void ShowLockedPrompt(Context c, final int lesson_index) {
+        final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(c);
+        dlgAlert.setMessage("You can still read this lesson after you watch an ad. \n\nYour lesson progress won't be saved.");
+        dlgAlert.setTitle("Unlock");
+        dlgAlert.setPositiveButton("Read lesson", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                OpenLesson(lesson_index);
+                dialog.dismiss();
+            }
+        });
+        dlgAlert.setNegativeButton("Go back", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        dlgAlert.setCancelable(true);
+        dlgAlert.create().show();
     }
 }

@@ -2,7 +2,9 @@
   <dictionary name="ciucu">
     <words>
       <w>bgcolor</w>
+      <w>myfile</w>
       <w>mystr</w>
+      <w>prng</w>
     </words>
   </dictionary>
 </component>
