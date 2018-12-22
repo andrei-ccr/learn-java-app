@@ -71,7 +71,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/D:/AndroidStudio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_school_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/D:/AndroidStudio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_party_mode_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -81,13 +81,10 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="ffffff" />
-                            <entry key="height" value="512" />
-                            <entry key="outputName" value="ic_fa_boxes" />
+                            <entry key="outputName" value="ic_party_mode" />
                             <entry key="overrideSize" value="true" />
                             <entry key="sourceFile" value="C:\Users\ciucu\Downloads\boxes-solid.svg" />
-                            <entry key="width" value="576" />
                           </map>
                         </option>
                       </PersistentState>

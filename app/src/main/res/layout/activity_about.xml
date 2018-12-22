@@ -34,7 +34,7 @@
                 android:layout_marginRight="10dp"
                 android:text="@string/app_name"
                 android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tvAboutAppVersion"
@@ -42,9 +42,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="v1.0.1000"
+                android:text="@string/app_ver"
                 android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textSize="11sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tvAbout"
@@ -53,8 +53,101 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:text="Learn the Java programming language with step by step lessons. Lessons are designed for quick learning.\n\nSuitable for both beginners and advanced programmers."
-                android:textAppearance="@style/TextAppearance.AppCompat" />
+                android:text="@string/app_desc"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/fa_license"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/_holoDarkBlue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/app_desc_donate"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_share_twitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/chapter1_box"
+                    android:text="T" />
+
+                <Button
+                    android:id="@+id/btn_share_fb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/chapter4_box"
+                    android:text="F" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_share_donate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/blue_button"
+                    android:drawableTop="@drawable/ic_bookmark"
+                    android:text="Donate"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/btn_share_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_shape"
+                    android:drawableTop="@drawable/ic_bookmark"
+                    android:text="Rate"
+                    android:textColor="@android:color/white"
+                    tools:layout_editor_absoluteY="326dp" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

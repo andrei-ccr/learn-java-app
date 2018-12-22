@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">Learn Java</string>
+    <string name="app_desc">
+        Learn to code in Java with lessons that take you step by step. Suitable for beginners
+        with limited or no programming knowledge.\n\nEach lesson teaches you a new concept with proper explanation and examples.
 
+    </string>
+    <string name="app_ver">v1.0.1221 [Beta]</string>
+    <string name="app_desc_donate">Please support this project by sharing, rating or contributing with any amount you wish on Patreon.</string>
     <string name="title_learn">Learn</string>
-    <string name="title_interview">Interview Questions</string>
-    <string name="title_about">About</string>
     <string name="title_dashboard">Dashboard</string>
+
+
 
 
     <!-- Boxes -->
@@ -187,7 +193,7 @@
     <!-- Other strings -->
     <string name="progress_str">Progress:</string>
     <string name="chapter_str">Chapter</string>
-    <string name="fa_license">https://fontawesome.com/license</string>
+    <string name="fa_license">Icons by Font Awesome \nhttps://fontawesome.com/license</string>
 
 
     <!-- ######################################## Lessons Body and Page Title ######################################## -->
