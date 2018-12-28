@@ -5,7 +5,7 @@
         with limited or no programming knowledge.\n\nEach lesson teaches you a new concept with proper explanation and examples.
 
     </string>
-    <string name="app_ver">v1.0.1221 [Beta]</string>
+    <string name="app_ver">v1.0.1228 [Beta]</string>
     <string name="app_desc_donate">Please support this project by sharing, rating or contributing with any amount you wish on Patreon.</string>
     <string name="title_learn">Learn</string>
     <string name="title_dashboard">Dashboard</string>
@@ -131,7 +131,7 @@
         <item name="Chapter3_1">Classes</item>
         <item name="Chapter3_2">Modifiers</item>
         <item name="Chapter3_3">Encapsulation</item>
-        <item name="Chapter3_4">Constructors &amp; Destructors</item>
+        <item name="Chapter3_4">Constructors</item>
         <item name="Chapter3_5">Static classes</item>
         <item name="Chapter3_6">Inheritance</item>
 
@@ -159,14 +159,14 @@
         <item name="Chapter2_4">String functions</item>
         <item name="Chapter2_5">Switch-Case, For-Each</item>
         <item name="Chapter2_6">Generate random values \n</item>
-        <item name="Chapter2_7">Program Arguments</item>
+        <item name="Chapter2_7">Define running options</item>
 
-        <item name="Chapter3_1">Classes</item>
-        <item name="Chapter3_2">Modifiers</item>
-        <item name="Chapter3_3">Encapsulation \n\n</item>
-        <item name="Chapter3_4">Constructors &amp; Destructors</item>
-        <item name="Chapter3_5">Static classes</item>
-        <item name="Chapter3_6">Inheritance</item>
+        <item name="Chapter3_1">Create objects</item>
+        <item name="Chapter3_2">Static, final, public, private</item>
+        <item name="Chapter3_3">Hiding data \n\n</item>
+        <item name="Chapter3_4">Code at object creation</item>
+        <item name="Chapter3_5">Static methods and properties</item>
+        <item name="Chapter3_6">Extend to subclasses</item>
 
         <item name="Chapter4_1">List</item>
         <item name="Chapter4_2">Stack</item>

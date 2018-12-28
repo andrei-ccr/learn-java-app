@@ -29,4 +29,5 @@
     <color name="_chapter8color">#a98f0d</color>
     <color name="_chapter9color">#0ae</color>
     <color name="background_material_light">#fafafa</color>
+    <color name="_black">#000000</color>
 </resources>

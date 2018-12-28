@@ -152,6 +152,8 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
                             ShowLockedPrompt(view.getContext(), mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier());
                         }
                     }).show();
+        } else if(Utilities.InArray(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier(), Utilities.ComingSoonLessons)) {
+            Snackbar.make(view, "This lesson is coming soon.", Snackbar.LENGTH_LONG).show();
         } else {
             OpenLesson(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier());
 
@@ -167,6 +169,8 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
                             ShowLockedPrompt(view.getContext(), mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier());
                         }
                     }).show();
+        } else if(Utilities.InArray(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier(), Utilities.ComingSoonLessons)) {
+            Snackbar.make(view, "This lesson is coming soon.", Snackbar.LENGTH_LONG).show();
         } else {
             OpenLesson(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier());
 

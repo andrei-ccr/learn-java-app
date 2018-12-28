@@ -35,7 +35,7 @@ public final class Utilities {
 	private static JSONObject jsonReadStatus;
 
     public static final Integer[] ComingSoonChapters = {4,5,6,7,8,9};
-	public static final Integer[] ComingSoonLessons = {14};
+	public static final Integer[] ComingSoonLessons = {14, 18, 19, 20};
 
     public static List<String> BookmarkList;
     public static int RecentLesson;

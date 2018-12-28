@@ -71,7 +71,7 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         TextView lessonTitleL, lessonDescL, lessonTitleR, lessonDescR;
         TextView lessonProgressL, lessonProgressR;
         ImageView lessonImageL, lessonImageR, lessonProgressSymbolL, lessonProgressSymbolR;
-        LinearLayout leftLessonBox, rightLessonBox;
+        LinearLayout leftLessonBox, rightLessonBox, statusContainerLeft, statusContainerRight, comingSoonLeft, comingSoonRight;
 
         public mViewHolder(View itemView) {
             super(itemView);
@@ -83,12 +83,18 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             lessonProgressL = itemView.findViewById(R.id.tvLessonProgressL);
             lessonProgressSymbolL = itemView.findViewById(R.id.ivProgressSymbolL);
 
+            statusContainerLeft = itemView.findViewById(R.id.lessonStatusContainerL);
+            comingSoonLeft = itemView.findViewById(R.id.lessonComingSoonL);
+
             //Right Box elements
             lessonTitleR = itemView.findViewById(R.id.tvLessonTitleR);
             lessonDescR = itemView.findViewById(R.id.tvLessonDescR);
             lessonImageR = itemView.findViewById(R.id.ivLessonImgR);
             lessonProgressR = itemView.findViewById(R.id.tvLessonProgressR);
             lessonProgressSymbolR = itemView.findViewById(R.id.ivProgressSymbolR);
+
+            statusContainerRight = itemView.findViewById(R.id.lessonStatusContainerR);
+            comingSoonRight = itemView.findViewById(R.id.lessonComingSoonR);
 
             //Box container (Linear Layout)
             leftLessonBox = itemView.findViewById(R.id.leftLessonBox);
@@ -140,71 +146,90 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             //Set title, description and image of right LessonBox
             holder.lessonTitleR.setText(itemElem.GetRightLessonBox().GetLesson().GetTitle());
             holder.lessonDescR.setText(itemElem.GetRightLessonBox().GetLesson().GetDesc());
-            if(itemElem.GetRightLessonBox().GetLesson().IsLocked()) {
-                holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
-                holder.lessonProgressR.setText(" ");
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_locked));
-                }
-
-            } else {
-                holder.lessonProgressR.setText(itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() + "%");
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box));
-                }
-                if (itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() == 100) {
-                    holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
-                    holder.lessonProgressSymbolR.setColorFilter(this.context.getResources().getColor(R.color._gold));
-                    holder.lessonProgressR.setTextColor(this.context.getResources().getColor(R.color._gold));
-                    holder.lessonProgressR.setText(" ");
-
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                        holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_stroke));
-                    }
-                } else {
-                    holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_progress));
-                }
-            }
-
             try {
                 holder.lessonImageR.setImageDrawable(context.getResources().getDrawable(itemElem.GetRightLessonBox().GetLesson().GetImageRID()));
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
+
+            //Set Status
+            Log.e("myapp", Integer.toString(position));
+            if(Utilities.InArray(2*position+1, Utilities.ComingSoonLessons)) {
+                holder.statusContainerRight.setVisibility(View.GONE);
+                holder.comingSoonRight.setVisibility(View.VISIBLE);
+            } else {
+                holder.statusContainerRight.setVisibility(View.VISIBLE);
+                holder.comingSoonRight.setVisibility(View.GONE);
+
+                if(itemElem.GetRightLessonBox().GetLesson().IsLocked()) {
+                    holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
+                    holder.lessonProgressR.setText(" ");
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_locked));
+                    }
+                } else {
+                    holder.lessonProgressR.setText(itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() + "%");
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box));
+                    }
+                    if (itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() == 100) {
+                        holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
+                        holder.lessonProgressSymbolR.setColorFilter(this.context.getResources().getColor(R.color._gold));
+                        holder.lessonProgressR.setTextColor(this.context.getResources().getColor(R.color._gold));
+                        holder.lessonProgressR.setText(" ");
+
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                            holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_stroke));
+                        }
+                    } else {
+                        holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_progress));
+                    }
+                } /* END IF Lesson Right isLocked */
+            }
+
+        } /* END IF Right Lesson Box exists */
 
         //Set title, description and image of left LessonBox
         holder.lessonTitleL.setText(itemElem.GetLeftLessonBox().GetLesson().GetTitle());
         holder.lessonDescL.setText(itemElem.GetLeftLessonBox().GetLesson().GetDesc());
-        if(itemElem.GetLeftLessonBox().GetLesson().IsLocked()) {
-            holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
-            holder.lessonProgressL.setText(" ");
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_locked));
-            }
-        } else {
-            holder.lessonProgressL.setText(itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() + "%");
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box));
-            }
-            if (itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() == 100) {
-                holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
-                holder.lessonProgressSymbolL.setColorFilter(this.context.getResources().getColor(R.color._gold));
-                holder.lessonProgressL.setTextColor(this.context.getResources().getColor(R.color._gold));
-                holder.lessonProgressL.setText(" ");
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_stroke));
-                }
-            } else {
-                holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_progress));
-            }
-        }
-
         try {
             holder.lessonImageL.setImageDrawable(context.getResources().getDrawable(itemElem.GetLeftLessonBox().GetLesson().GetImageRID()));
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        if(Utilities.InArray(2*position, Utilities.ComingSoonLessons)) {
+            holder.statusContainerLeft.setVisibility(View.GONE);
+            holder.comingSoonLeft.setVisibility(View.VISIBLE);
+        } else {
+            holder.statusContainerLeft.setVisibility(View.VISIBLE);
+            holder.comingSoonLeft.setVisibility(View.GONE);
+            if (itemElem.GetLeftLessonBox().GetLesson().IsLocked()) {
+                holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
+                holder.lessonProgressL.setText("");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_locked));
+                }
+            } else {
+                holder.lessonProgressL.setText(itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() + "%");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box));
+                }
+                if (itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() == 100) {
+                    holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
+                    holder.lessonProgressSymbolL.setColorFilter(this.context.getResources().getColor(R.color._gold));
+                    holder.lessonProgressL.setTextColor(this.context.getResources().getColor(R.color._gold));
+                    holder.lessonProgressL.setText("");
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_stroke));
+                    }
+                } else {
+                    holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_progress));
+                }
+            } /* END IF Lesson Left isLocked */
+        }
+
+
     }
 
     @Override

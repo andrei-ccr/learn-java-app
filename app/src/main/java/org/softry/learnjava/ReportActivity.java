@@ -17,20 +17,16 @@ public class ReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
 
-        final RadioButton rb1, rb2, rb3, rb4, rb5;
+		final RadioGroup rbg = findViewById(R.id.radioGroup);
         submitBtn = findViewById(R.id.btn_reportProblem);
-        rb1 = findViewById(R.id.radioButton);
-        rb2 = findViewById(R.id.radioButton2);
-        rb3 = findViewById(R.id.radioButton3);
-        rb4 = findViewById(R.id.radioButton4);
-        rb5 = findViewById(R.id.radioButton5);
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if(rb1.isSelected() || rb2.isSelected() || rb3.isSelected() || rb4.isSelected() || rb5.isSelected())
-                    finish();
+				int selectedId = rbg.getCheckedRadioButtonId();
+				if(selectedId != 0) {
+					finish();
+				}
                 else
                     Snackbar.make(v,"Please select a problem to report", Snackbar.LENGTH_LONG).show();
             }
