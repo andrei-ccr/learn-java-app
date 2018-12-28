@@ -23,7 +23,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
     public class chapterBoxViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView chapterNumber, chapterName, chapterDesc, chapterProgress, chapterLessonCount;
         ImageView chapterImage, chapterProgressSymbol;
-        LinearLayout container_chapter_color;
+        LinearLayout container_chapter_color, chapterBoxContainer;
 
         public chapterBoxViewHolder(View itemView) {
             super(itemView);
@@ -35,6 +35,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
             chapterImage = itemView.findViewById(R.id.ivChapterImage);
             chapterLessonCount = itemView.findViewById(R.id.tvNumberOfLessons);
             chapterProgressSymbol = itemView.findViewById(R.id.ivChapterProgressSymbol);
+            chapterBoxContainer = itemView.findViewById(R.id.chapterBoxContainer);
             itemView.setOnClickListener(this);
         }
 
@@ -92,23 +93,29 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                 Containers.Chapter itemElem = mChapters.get(position);
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    int cBoxColor = R.drawable.chapter1_box;
                     if(position == 0)
-                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter1_box));
+                        cBoxColor = R.drawable.chapter1_box;
                     else if(position == 1)
-                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter2_box));
+                        cBoxColor = R.drawable.chapter2_box;
                     else if(position == 2)
-                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter3_box));
+                        cBoxColor = R.drawable.chapter3_box;
                     else if(position == 3)
-                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter4_box));
+                        cBoxColor = R.drawable.chapter4_box;
                     else if(position == 4)
-                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter5_box));
+                        cBoxColor = R.drawable.chapter5_box;
                     else if(position == 5)
-                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter6_box));
+                        cBoxColor = R.drawable.chapter6_box;
                     else if(position == 6)
-                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter7_box));
+                        cBoxColor = R.drawable.chapter7_box;
                     else if(position == 7)
-                        viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(R.drawable.chapter8_box));
+                        cBoxColor = R.drawable.chapter8_box;
+
+                    viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(cBoxColor));
+                    viewHolder0.chapterBoxContainer.setBackground(this.context.getResources().getDrawable(cBoxColor));
+
                 }
+
 
                 viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_clone));
                 if(position == 2) viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_boxes));
@@ -124,7 +131,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                     viewHolder0.chapterProgress.setText(itemElem.GetProgressStr());
 					viewHolder0.chapterProgress.setVisibility(View.VISIBLE);
                     viewHolder0.chapterProgressSymbol.setVisibility(View.VISIBLE);
-					viewHolder0.chapterLessonCount.setCompoundDrawablesWithIntrinsicBounds(this.context.getResources().getDrawable(R.drawable.ic_fa_interview),null,null,null);
+					//viewHolder0.chapterLessonCount.setCompoundDrawablesWithIntrinsicBounds(this.context.getResources().getDrawable(R.drawable.ic_fa_interview),null,null,null);
                 }
 
                 viewHolder0.chapterNumber.setText(itemElem.GetNumber());

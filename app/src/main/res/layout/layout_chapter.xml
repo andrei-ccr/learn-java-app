@@ -2,19 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chapterBoxContainer"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:layout_marginLeft="16dp"
     android:layout_marginTop="10dp"
     android:layout_marginRight="8dp"
     android:layout_marginBottom="10dp"
+    android:background="@drawable/chapter1_box"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackgroundBorderless"
     android:orientation="horizontal"
     android:paddingTop="5dp"
-    android:paddingBottom="12dp">
+    android:paddingBottom="5dp">
 
     <LinearLayout
         android:id="@+id/viewChapterColorLayout"
@@ -47,6 +49,7 @@
             android:gravity="left"
             android:text="Basics"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
 
         <TextView
@@ -61,7 +64,9 @@
             android:layout_marginBottom="1dp"
             android:gravity="left"
             android:text="Chapter I"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/tvChapterDesc"
@@ -74,16 +79,16 @@
             android:gravity="left"
             android:maxLines="3"
             android:text="Start with the basics. Install Java and everything you need. Learn about variables, conditionals, user input and more. At the end of this chapter, you should be capable of building simple apps."
-            android:textColor="#555"
+            android:textColor="@color/_white"
             android:textSize="14sp" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:layout_marginRight="8dp"
-            android:gravity="end">
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/tvNumberOfLessons"
@@ -93,16 +98,17 @@
                 android:drawablePadding="6dp"
                 android:text="6"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/_lighterBlack" />
+                android:textColor="@color/_white"
+                android:visibility="gone" />
 
             <ImageView
                 android:id="@+id/ivChapterProgressSymbol"
-                android:layout_width="20dp"
+                android:layout_width="15dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="false"
                 android:layout_marginRight="4dp"
                 android:layout_toLeftOf="@+id/tvChapterProgress"
-                android:tint="@color/_gray"
+                android:tint="@color/_white"
                 app:srcCompat="@drawable/ic_fa_progress" />
 
             <TextView
@@ -115,9 +121,9 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginRight="0dp"
-                android:gravity="end"
+                android:gravity="center"
                 android:text="0%"
-                android:textColor="@color/_lighterBlack" />
+                android:textColor="@color/_white" />
         </RelativeLayout>
 
     </LinearLayout>

@@ -109,7 +109,7 @@
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/white_box"
-                    android:gravity="center"
+                    android:gravity="left|start"
                     android:orientation="horizontal"
                     android:visibility="gone">
 
@@ -168,7 +168,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="16dp"
-                        android:gravity="center_vertical|center_horizontal|center"
+                        android:gravity="left|start"
                         android:orientation="horizontal">
 
                         <Button
