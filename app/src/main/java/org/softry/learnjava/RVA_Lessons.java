@@ -154,7 +154,7 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
 
             //Set Status
             Log.e("myapp", Integer.toString(position));
-            if(Utilities.InArray(2*position+1, Utilities.ComingSoonLessons)) {
+            if(itemElem.GetRightLessonBox().GetLesson().ComingSoon()) {
                 holder.statusContainerRight.setVisibility(View.GONE);
                 holder.comingSoonRight.setVisibility(View.VISIBLE);
             } else {
@@ -198,7 +198,7 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             e.printStackTrace();
         }
 
-        if(Utilities.InArray(2*position, Utilities.ComingSoonLessons)) {
+        if(itemElem.GetLeftLessonBox().GetLesson().ComingSoon()) {
             holder.statusContainerLeft.setVisibility(View.GONE);
             holder.comingSoonLeft.setVisibility(View.VISIBLE);
         } else {

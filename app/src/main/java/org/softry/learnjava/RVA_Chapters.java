@@ -138,6 +138,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                 viewHolder0.chapterName.setText(itemElem.GetName());
                 viewHolder0.chapterDesc.setText(itemElem.GetLongDesc());
 
+
                 break;
             case 1:
                 categoryTitleViewHolder viewHolder1 = (categoryTitleViewHolder)holder;
@@ -151,7 +152,10 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
 
     @Override
     public int getItemCount() {
-        return mChapters.size()+2;
+        if(Utilities.ShowProOnlyChapters == false) {
+            return 4;
+        } else
+            return mChapters.size()+2;
     }
 
 

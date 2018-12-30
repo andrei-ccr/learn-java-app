@@ -30,4 +30,5 @@
     <color name="_chapter9color">#0ae</color>
     <color name="background_material_light">#fafafa</color>
     <color name="_black">#000000</color>
+    <color name="_theme_color">#1274bf</color>
 </resources>

@@ -95,6 +95,7 @@ public class Containers {
 		private LessonContent lessonContent;
 		private int completedProcent; //From 0 to 100
         private boolean locked;
+        private boolean comingSoon = false;
 		
 		public Lesson(String title, String desc, int imgResId, LessonContent lessonContent) {
 			this.title = title;
@@ -104,6 +105,15 @@ public class Containers {
 			this.locked = true;
 			
 			this.SetCompletedProcent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
+		}
+
+		public Lesson(boolean comingSoon, String title, String desc, int imgResId, LessonContent lessonContent) {
+			this(title,desc,imgResId,lessonContent);
+			this.comingSoon = comingSoon;
+		}
+
+		public boolean ComingSoon() {
+			return this.comingSoon;
 		}
 		
 		private void SetCompletedProcent(int val) {

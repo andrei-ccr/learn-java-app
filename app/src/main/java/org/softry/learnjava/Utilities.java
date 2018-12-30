@@ -34,6 +34,9 @@ public final class Utilities {
 	
 	private static JSONObject jsonReadStatus;
 
+	public static boolean ShowComingSoonLessons = true;
+	public static boolean ShowProOnlyChapters = false;
+
     public static final Integer[] ComingSoonChapters = {4,5,6,7,8,9};
 	public static final Integer[] ComingSoonLessons = {14, 18, 19, 20};
 
@@ -143,15 +146,26 @@ public final class Utilities {
                         readVector[j] = Character.getNumericValue(rv.charAt(j));
                     }
                 }
-				
-                LessonList.add(
-                        new Containers.Lesson(
-                                lessonTitleList[i],
-                                lessonDescList[i],
-                                lessonImgList.getResourceId(i, R.drawable.first_program),
-                                new Containers.LessonContent(LessonContentList.get(i), LessonTitleList.get(i), readVector)
-                        )
-                );
+
+                if(Utilities.InArray(i, Utilities.ComingSoonLessons)) {
+                    LessonList.add(
+                            new Containers.Lesson(true,
+                                    lessonTitleList[i],
+                                    lessonDescList[i],
+                                    lessonImgList.getResourceId(i, R.drawable.first_program),
+                                    new Containers.LessonContent(LessonContentList.get(i), LessonTitleList.get(i), readVector)
+                            )
+                    );
+                } else {
+                    LessonList.add(
+                            new Containers.Lesson(
+                                    lessonTitleList[i],
+                                    lessonDescList[i],
+                                    lessonImgList.getResourceId(i, R.drawable.first_program),
+                                    new Containers.LessonContent(LessonContentList.get(i), LessonTitleList.get(i), readVector)
+                            )
+                    );
+                }
             } catch (Exception e) {
                 e.printStackTrace();
                 Log.w("myapp", "Error lesson added in place of lesson " + Integer.toString(i));

@@ -25,7 +25,7 @@
                 android:id="@+id/toolbar_main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#0b5e9e"
+                android:background="#1274bf"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintTop_toTopOf="parent">
@@ -281,7 +281,8 @@
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/white_box"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/textView8"
@@ -357,6 +358,7 @@
             android:id="@+id/navigation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
             android:background="@android:color/background_light"
             app:itemIconTint="@color/bnv_tab_item_foreground"
             app:itemTextColor="@color/bnv_tab_item_foreground"

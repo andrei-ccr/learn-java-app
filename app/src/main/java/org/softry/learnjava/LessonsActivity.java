@@ -144,7 +144,9 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
     @Override
     public void onLeftBoxClick(View view, int pos, final int row_index) {
-        if(LessonList.get(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier()).IsLocked()) {
+        if(Utilities.InArray(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier(), Utilities.ComingSoonLessons)) {
+            Snackbar.make(view, "This lesson is not yet available.", Snackbar.LENGTH_LONG).show();
+        } else if(LessonList.get(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier()).IsLocked()) {
 			Snackbar.make(view, "Complete the previous lesson to unlock", Snackbar.LENGTH_LONG).setAction("Unlock",  new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -152,8 +154,6 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
                             ShowLockedPrompt(view.getContext(), mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier());
                         }
                     }).show();
-        } else if(Utilities.InArray(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier(), Utilities.ComingSoonLessons)) {
-            Snackbar.make(view, "This lesson is coming soon.", Snackbar.LENGTH_LONG).show();
         } else {
             OpenLesson(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier());
 
@@ -162,16 +162,16 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
     @Override
     public void onRightBoxClick(View view, int pos, final int row_index) {
-        if(LessonList.get(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier()).IsLocked()) {
+        if(Utilities.InArray(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier(), Utilities.ComingSoonLessons)) {
+            Snackbar.make(view, "This lesson is not yet available.", Snackbar.LENGTH_LONG).show();
+        } else if(LessonList.get(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier()).IsLocked()) {
 			Snackbar.make(view, "Complete the previous lesson to unlock", Snackbar.LENGTH_LONG).setAction("Unlock", new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             ShowLockedPrompt(view.getContext(), mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier());
                         }
                     }).show();
-        } else if(Utilities.InArray(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier(), Utilities.ComingSoonLessons)) {
-            Snackbar.make(view, "This lesson is coming soon.", Snackbar.LENGTH_LONG).show();
-        } else {
+        }  else {
             OpenLesson(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier());
 
         }

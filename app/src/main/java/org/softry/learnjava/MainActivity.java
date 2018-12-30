@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     private DrawerLayout mDrawerLayout;
     private Context context;
 
-    private TextView tvPagesRead, tvOverallProgress;
+    private TextView tvPagesRead, tvOverallProgress, tvSideBarProgress;
 
     private RVA_Chapters rvAdapter;
 
@@ -208,6 +208,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 
         tvPagesRead = findViewById(R.id.tvStatsPagesRead);
         tvOverallProgress = findViewById(R.id.tvStatsOverallProgress);
+        tvSideBarProgress = navigationView.getHeaderView(0).findViewById(R.id.tv_sidebar_progress);
 
         UpdateStats();
 
@@ -248,6 +249,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     private void UpdateStats() {
         tvPagesRead.setText(Utilities.GetTotalPagesRead() + " Pages read");
         tvOverallProgress.setText("Overall progress " + Utilities.GetOverallProgress() + "%");
+        tvSideBarProgress.setText("Overall progress: " + Utilities.GetOverallProgress() + "%");
     }
 
 

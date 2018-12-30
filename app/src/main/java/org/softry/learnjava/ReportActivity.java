@@ -3,6 +3,7 @@ package org.softry.learnjava;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ActionMode;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +25,8 @@ public class ReportActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 				int selectedId = rbg.getCheckedRadioButtonId();
-				if(selectedId != 0) {
+				Log.e("myapp", Integer.toString(selectedId));
+				if(selectedId >= 0) {
 					finish();
 				}
                 else
