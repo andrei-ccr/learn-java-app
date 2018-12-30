@@ -161,9 +161,9 @@
         <item name="Chapter2_6">Generate random values \n</item>
         <item name="Chapter2_7">Define running options</item>
 
-        <item name="Chapter3_1">Create objects</item>
+        <item name="Chapter3_1">Create objects \n</item>
         <item name="Chapter3_2">Static, final, public, private</item>
-        <item name="Chapter3_3">Hiding data \n\n</item>
+        <item name="Chapter3_3">Hiding data \n</item>
         <item name="Chapter3_4">Code at object creation</item>
         <item name="Chapter3_5">Static methods and properties</item>
         <item name="Chapter3_6">Extend to subclasses</item>

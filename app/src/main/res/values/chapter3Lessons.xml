@@ -3,133 +3,334 @@
     <string-array name="lesson301">
         <item></item>
         <item><![CDATA["
+<p>Up until this point, we used only one class: the class where our program runs. In Java, everything we define must be inside a class.</p>
+
+<p>Classes are made up of properties (variables basically) and methods. We are familiar with defining methods in our class, but to keep things more organised, we can define methods in a separate class.</p>
 
 
         "]]></item>
 		<item></item>
         <item><![CDATA["
+<p>To declare a class we use the class keyword, followed by a class name. Class code goes between brackets {}.</p>
+
+<p>class Example {<br>
+  &nbsp;&nbsp;//Code goes here<br>
+}</p>
+
+<p>Classes can be declared both outside and inside another class. However, they can't be declared inside a method. You can declare multiple classes in the same file as well as declare them separately each belonging to a file. To create a new class file in Eclipse, refer to lesson 1 from chapter I.</p>
+
+<p>File &gt; New &gt; Class</p>
 
 
         "]]></item>
 		<item></item>
         <item><![CDATA["
+<p>Let's make another class, outside our main class, called Dog. In this class, we'll define a method named Bark:</p>
 
+<p>class Dog {<br>
+  &nbsp;&nbsp;public void Bark() {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"Bark\");<br>
+  &nbsp;&nbsp;}<br>
+}
+</p>
+<p>
+Note that we declated the method as public. Also, we didn't make the method static like we learned before. Therefore, to use this method, we will have to create a Dog object out of this class (declare a Dog variable). We are going to access this from our main class (where the main method is defined).</p>
+
+<p>class MainProgram {<br>
+  &nbsp;&nbsp;public static void main(String[] args) {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Dog myDog = new Dog();<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;myDog.Bark();<br>
+  &nbsp;&nbsp;}<br>
+}
+</p>
+        "]]></item>
+		<item></item>
+        <item><![CDATA["
+<p>Let's explain the two lines of code in the main method:</p>
+
+<p>Dog myDog = new Dog();</p>
+
+<p>This is how we declare a Dog object(variable) named myDog. We declare myDog of type Dog and then assign to it a new Dog() which means we assign a new, "clean" object of class Dog. This will make more sense later, when we add properties to classes and learn about constructors.</p>
+
+<p>The second line:</p>
+
+<p>myDog.Bark();</p>
+
+<p>is used to call the Bark() method inside the Dog class. This is the only way to access the Bark() method because the it belongs to myDog.</p>
 
         "]]></item>
 		<item></item>
         <item><![CDATA["
+<p>Think of it this way: all the methods and properties inside a class only exist when we declare an Object of that class. That is why we had to declare a Dog object to access the Bark method. We could declare another Dog object called myOtherDog. This second dog would also be able to Bark().</p>
 
+<p>myOtherDog.Bark();</p>
 
-        "]]></item>
-		<item></item>
-        <item><![CDATA["
+<p>We can't call the Bark method directly from class like this:</p>
 
+<p>Dog.Bark();</p>
 
-        "]]></item>
-		<item></item>
-        <item><![CDATA["
+<p>To be able to do that, we would have to declare the method as static.</p>
 
-
-        "]]></item>
-		<item></item>
-        <item><![CDATA["
-
+<p>In our example with dogs, it makes much more sense to have a Bark() method that can only be called for a particular dog (make a particular dog bark).</p>
 
         "]]></item>
 		<item></item>
         <item><![CDATA["
+<p>Let's upgrade the Dog class by adding some properties. To keep it simple, we'll add two properties: the name and color of a dog. Inside the Dog class, define these two variables.</p>
 
+<p>class Dog {<br>
+  &nbsp;&nbsp;public String name;<br>
+  &nbsp;&nbsp;public String color;<br>
+  <br>
+  &nbsp;&nbsp;public void Bark() {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"Bark\");<br>
+  &nbsp;&nbsp;}
+}
+</p>
+<p>
+They are public so that we can access them. In the next lesson, you'll learn about the difference between public and private properties/methods.</p>
 
+<p>We don't assign any values to these properties inside the class. Come back to our definition of the Dog object in the main class and give your dog a name like this:</p>
+
+<p>myDog.name = \"Hawk\";</p>
+
+<p>And to get the name, just use myDog.name instruction. Let's print it:</p>
+
+<p>System.out.println(myDog.name);</p>
         "]]></item>
 		<item></item>
         <item><![CDATA["
 
+<p>We can further upgrade this class by adding a method that prints the dog's name.</p>
+<p>
+class Dog {<br>
+  &nbsp;&nbsp;public String name;<br>
+  &nbsp;&nbsp;public String color;<br>
+<br>
+  &nbsp;&nbsp;public void Bark() {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"Bark\");<br>
+  &nbsp;&nbsp;}<br>
+<br>
+  &nbsp;&nbsp;public void SayName() {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"My name is: \" + this.name);<br>
+  &nbsp;&nbsp;}<br>
+}
+</p>
+<p>Sure, dogs don't talk, but we can assume this is a more intelligent class of dogs.</p>
 
+<p>To get or set the value of a property inside the same class, we use the this keyword. We also use it when accessing the methods of a class, in the same class. For example, to make the dog bark after saying its name, do this inside the SayName() method:</p>
+
+<p>public void SayName() {<br>
+  &nbsp;&nbsp;System.out.println(\"My name is: \" + this.name);<br>
+  &nbsp;&nbsp;this.Bark();
+}
+</p>
+<p>
+We called the Bark method inside the SayName method. Back in our main class, instead of printing the name with println, just call:<br>
+myDog.SayName();
+</p>
+<p>
+Don't forget to set a name before calling the method.
+</p>
+        "]]></item>
+		<item></item>
+        <item><![CDATA["
+		
+<p>Now let's assume you have two dogs. The other dog is declared as myOtherDog. We can name him \"Buck\". Go ahead and print his name too. Your final code in main should look something like this:</p>
+
+<p>Dog myDog = new Dog();<br>
+Dog myOtherDog = new Dog();<br>
+<br>
+myDog.name = \"Hawk\";<br>
+myOtherDog.name = \"Buck\";<br>
+<br>
+myDog.SayName();<br>
+myOtherDog.SayName();<br>
+</p>
+        "]]></item>
+		<item></item>
+        <item><![CDATA["
+
+<p>Learning the basics of Object Oriented Programming might prove difficult for a beginner, however the importance of it, especially for getting hired or writting big projects in a team, makes it a must-have skill for any good programmer.</p>
+
+<p>In the next lesson, we'll learn about modifiers such as static, final, public, private. These will help us write better classes.</p>
         "]]></item>
 		
     </string-array>
     <string-array name="lesson302">
         <item></item>
         <item><![CDATA["
+<p>You've already seen two modifiers since the first lesson: public and static.</p>
 
+<p>Modifiers just change the way a variable or method works. Unlike the type (int, char, String), modifiers are optional in a definition.</p>
 
+<p>In Java, the modifiers are split into two categories: Access Modifiers and Non-Access Modifiers.</p>
         "]]></item>
 		<item></item>
         <item><![CDATA["
 
+<p>The Access Modifiers are used to define the access level of a method, property or class. There are four access levels:</p>
+<p>
+ &nbsp;public  -  Accessible everywhere<br>
+ &nbsp;private -  Accessible only to the class<br>
+ &nbsp;protected - Accessible to subclasses (in other packages)
+</p>
+<p>
+The forth level has no keyword and is known as the default access level. Properties and methods are by default accessible to the subclasses in the same package.</p>
+        "]]></item>
+		<item></item>
+        <item><![CDATA["
+<p>Non-access modifiers provide other functionalities such as creating constants and some of them are used only when the program is multi-threaded (Chapter VI).</p>
 
+<p>There are many non-access modifiers, but in this lesson we'll only introduce three of them: static, final and abstract.</p>
+
+<p>The abstract keyword is used only in class and method definition.</p>
+        "]]></item>
+		<item></item>
+        <item><![CDATA["
+<p>Until you learn the class inheritance, you won't see any difference between the private, protected and default access modifiers.</p>
+
+<p>Regardless, you should always declare methods as private if they shouldn't be used outside the class. As we'll see in the next lesson, properties are typically declared as private and they are accessed from outside using methods. This technique is called encapsulation and is used to prevent another programmer, for example, to use your class properties in the wrong way.
+</p>
+<p>Try changing the name property (of the Dog class from the previous lesson) to private. Your program will no longer compile.</p>
+        "]]></item>
+		<item></item>
+        <item><![CDATA["
+<p>We used the static keyword before, to define methods that can be accessed without declaring an object. Properties can also be declared as static and used without declaring an object. Note that other properties or methods that are not static will not be able to use static properties/methods in the same class.
+</p>
+<p>
+Note: If you declare something as static, you still have to make it public, otherwise you won't be able to access it from outside the class.
+</p>
+<p>In the Static Classes lesson, we'll see more examples.</p>
+        "]]></item>
+		<item></item>
+        <item><![CDATA["
+<p>The final keyword have multiple uses.</p>
+
+<p>When used in a variable declaration, that variable have to be initialized and its value can't change. For example:</p>
+
+<p>final int val = 101;</p>
+
+<p>If we try to change the value of val somewhere else in the code, the program will not compile. val will have a value of 101 until the end of the program. Also, we cannot leave the variable uninitialized.
+</p>
+<p>final int val;</p>
+
+<p>The above code won't compile.</p>
+        "]]></item>
+		<item></item>
+        <item><![CDATA["
+<p>When used in a method declaration, the method can't be overridden in a subclass. We'll learn more about this in the Class Inheritance lesson. 
+</p>
+<p>
+A class can also be declared as final. When a class is final, there cannot exist any subclasses that inherits it. 
+</p>
+        "]]></item>
+		<item></item>
+        <item><![CDATA["
+<p>The abstract keyword can only be used in class and method declaration. An abstract class is a little bit different than a regular class.
+</p>
+<p>
+It can contain both properties and methods. Methods are typically declared as abstract, however that is not required. An abstract class cannot be used to declare objects. A subclass must inherit the abstract class and that subclass will be used to instanciate  objects.
+</p>
+<p>
+Abstract methods are methods declared without code between brackets {}. The abstract keyword is also used in abstract method declaration:
+</p>
+<p>
+public abstract void doSomething();
+</p>
         "]]></item>
 		<item></item>
         <item><![CDATA["
 
-
-        "]]></item>
-		<item></item>
-        <item><![CDATA["
-
-
-        "]]></item>
-		<item></item>
-        <item><![CDATA["
-
-
-        "]]></item>
-		<item></item>
-        <item><![CDATA["
-
-
-        "]]></item>
-		<item></item>
-        <item><![CDATA["
-
-
-        "]]></item>
-		<item></item>
-        <item><![CDATA["
-
-
-        "]]></item>
-		<item></item>
-        <item><![CDATA["
-
-
+<p>This lesson only acted as an introduction to the most common modifiers in Java. In the following lessons, you will get a better understanding of them and we will when it's best to use them.
+</p>
+<p>In the end, their purpose is to enhance your code and create a good program design. You will notice that you can write a functional program without using them at all. However, if you're interested in writing good, readable code and to follow good practices, you should not avoid using them.
+</p>
         "]]></item>
 		
     </string-array>
     <string-array name="lesson303">
         <item></item>
         <item><![CDATA["
+<p>One of the most fundamental and the simplest concept in Object Oriented Programming is called Encapsulation. </p>
 
-
+<p>Encapsulation is simple: declare all properties(variables) inside a class as private and use public methods to access them. This way, the properties won't be manipulated directly and it could prevent someone else (another programmer using your code) to missuse them.
+</p>
         "]]></item>
 		<item></item>
         <item><![CDATA["
+<p>For every property there are usually two methods used to access it: a getter and a setter.</p>
 
+<p>The getter method is used to retrieve the value of the property. The setter method is used to assign a value to the property.</p>
 
+<p>In some cases, you might only want to have a property that is read-only. In this case you can only define only a getter method for this property. You could also have a write-only property, although there is rarely a program design that would need such a property.
+</p>
+<p>
+If the property doesn't have any purpose outside its class, no getter or setter have to be declared.
+</p>
         "]]></item>
 		<item></item>
         <item><![CDATA["
-
-
+<p>Let's use our Dog class again. Last time, we tried to make the name property private. The code won't compile like that because we try to access the name property (which is now private) in our main program.
+</p>
+<p>
+Now we'll define a getter and a setter in the Dog class. We can then use them to access the name property.
+</p>
+<p>class Dog {<br>
+  &nbsp;&nbsp;private String name;<br>
+  &nbsp;&nbsp;...<br>
+  &nbsp;&nbsp;// Other code here<br>
+  &nbsp;&nbsp;...<br>
+  &nbsp;&nbsp;public String getName() {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;return this.name;<br>
+  &nbsp;&nbsp;}<br>
+  &nbsp;&nbsp;public void setName(String value) {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;this.name = value;<br>
+  &nbsp;&nbsp;}<br>
+}
+</p>
         "]]></item>
 		<item></item>
         <item><![CDATA["
-
-
+<p>getName() represents the getter and setName() represents the setter. These method names are simply a convention. We can name our getter and setter anything we want.
+</p>
+<p>The getName() method has a String type. The type of the getter must match the type of the property. This is because we use this method to return the property, so the return type must match.
+</p>
+<p>The setName() method receives a String parameter and assigns its value to the property. Again, the type of this parameter must match the type of the property. We declare this method as void, because it doesn't have to return anything.
+</p>
+<p>Remember that both methods must be public.</p>
         "]]></item>
 		<item></item>
         <item><![CDATA["
+<p>In our main class we can now set the name of a dog using the setter.</p>
 
-
+<p>myDog.setName(\"Hawk\");<br>
+myOtherDog.setName(\"Buck\");
+</p>
+<p>We have the SayName() method to print the name, therefore we don't need to use the getter. However, if we want to, we can print the name like this:
+</p>
+<p>System.out.println(myDog.getName());
+</p>
         "]]></item>
 		<item></item>
         <item><![CDATA["
-
-
+<p>These are the simplest getter and setter methods we can have. In some cases, you might want to add more functionality to your getter or setter. For example, you can restrict some names by adding an if statement in the setter that refuses to set certain names:
+</p>
+<p>public void setName(String value) {<br>
+  &nbsp;&nbsp;if(value.equals("Bobby")) {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;//Don't do anything<br>
+  &nbsp;&nbsp;}<br>
+  &nbsp;&nbsp;else {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;this.name = value;<br>
+  &nbsp;&nbsp;}
+}
+</p>
         "]]></item>
 		<item></item>
         <item><![CDATA["
+<p>Keep in mind that getters and setters are nothing more than simple methods. There are no restrictions when defining them.  </p>
 
+<p>It is considered good practice to have properties declared as private and accessed only through getters and setters. As usual, the choice is yours. This is however, one of the most important concepts in OOP and employers will often disqualify anyone who doesn't know or use it.</p>
 
         "]]></item>
 		

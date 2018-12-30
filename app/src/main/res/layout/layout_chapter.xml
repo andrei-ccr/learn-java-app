@@ -15,8 +15,8 @@
     android:focusable="true"
     android:foreground="?attr/selectableItemBackgroundBorderless"
     android:orientation="horizontal"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp">
+    android:paddingTop="3dp"
+    android:paddingBottom="1dp">
 
     <LinearLayout
         android:id="@+id/viewChapterColorLayout"
@@ -29,7 +29,6 @@
             android:id="@+id/ivChapterImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
             app:srcCompat="@drawable/ic_fa_clone" />
     </LinearLayout>
 
