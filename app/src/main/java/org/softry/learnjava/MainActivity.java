@@ -22,6 +22,11 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 public class MainActivity extends AppCompatActivity implements RVA_Chapters.ItemClickListener {
 
     private ScrollView containerInterviewTab, containerDashboardTab;
@@ -29,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     private RecyclerView mRecyclerView;
     private DrawerLayout mDrawerLayout;
     private Context context;
+    private AdView mAdView;
 
     private TextView tvPagesRead, tvOverallProgress, tvSideBarProgress;
 
@@ -91,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MobileAds.initialize(this, "ca-app-pub-9490509780764092~4738195324");
         context = this;
 
         int screenWidth =  this.getWindowManager().getDefaultDisplay().getWidth();
@@ -211,6 +218,10 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         tvSideBarProgress = navigationView.getHeaderView(0).findViewById(R.id.tv_sidebar_progress);
 
         UpdateStats();
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build();//.addTestDevice("80B20B041E29D3D23790297B560D858C")
+        mAdView.loadAd(adRequest);
 
     }
 

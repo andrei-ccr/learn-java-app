@@ -26,6 +26,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class InLessonActivity extends AppCompatActivity {
 
     private int selectedLesson, selectedChapter;
@@ -48,6 +51,10 @@ public class InLessonActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_lesson);
+
+        AdView mAdView = findViewById(R.id.adView2);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build();//.addTestDevice("80B20B041E29D3D23790297B560D858C")
+        mAdView.loadAd(adRequest);
 
 
         lessonContent = Utilities.LessonList.get(selectedLesson).GetLessonContent();
