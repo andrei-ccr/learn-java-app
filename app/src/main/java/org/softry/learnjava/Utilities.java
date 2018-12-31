@@ -35,7 +35,7 @@ public final class Utilities {
 	private static JSONObject jsonReadStatus;
 
 	public static boolean ShowComingSoonLessons = true;
-	public static boolean ShowProOnlyChapters = false;
+	public static boolean ShowProOnlyChapters = true;
 
     public static final Integer[] ComingSoonChapters = {4,5,6,7,8,9};
 	public static final Integer[] ComingSoonLessons = {14, 18, 19, 20};
@@ -268,13 +268,11 @@ public final class Utilities {
 
 
     public static void UnlockNextLesson() {
-        Log.i("myapp", "UnlockNext called");
         Containers.Lesson prevL = LessonList.get(0);
         for(Containers.Lesson l : LessonList) {
             if(l.equals(LessonList.get(0))) continue;
-            if(l.IsLocked() && prevL.IsCompleted()) {
+            if((l.IsLocked() && prevL.IsCompleted()) || (l.IsLocked() && prevL.ComingSoon())) {
                 l.UnlockLesson();
-                Log.i("myapp", "Lesson Unlocked");
                 break;
             }
             prevL = l;
@@ -296,11 +294,17 @@ public final class Utilities {
     public static int GetOverallProgress() {
         double progress = 0;
         double lessonProgress = 0;
+        int comingSoonLessons = 0;
         for(Containers.Lesson l : LessonList) {
+            if(l.ComingSoon()) {
+                comingSoonLessons++;
+                continue;
+            }
             lessonProgress += l.GetCompletedProcent()/100f;
         }
 
-        lessonProgress /= LessonList.size();
+        //Ignore lessons that are in Coming Soon state
+        lessonProgress /= (LessonList.size() - comingSoonLessons);
 
         progress = lessonProgress * 100;
         return (int)progress;
@@ -329,7 +333,11 @@ public final class Utilities {
 		StringBuilder sb = new StringBuilder();
 	
 		for(Containers.Lesson l : LessonList) {
-			sb.append(Integer.toString( l.IsLocked()?0:1 ));
+		    if(l.ComingSoon()) {
+		        sb.append(Integer.toString(0));
+            } else {
+                sb.append(Integer.toString(l.IsLocked() ? 0 : 1));
+            }
 		}
 
 		try {

@@ -157,6 +157,9 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             if(itemElem.GetRightLessonBox().GetLesson().ComingSoon()) {
                 holder.statusContainerRight.setVisibility(View.GONE);
                 holder.comingSoonRight.setVisibility(View.VISIBLE);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_locked));
+                }
             } else {
                 holder.statusContainerRight.setVisibility(View.VISIBLE);
                 holder.comingSoonRight.setVisibility(View.GONE);
@@ -201,13 +204,16 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         if(itemElem.GetLeftLessonBox().GetLesson().ComingSoon()) {
             holder.statusContainerLeft.setVisibility(View.GONE);
             holder.comingSoonLeft.setVisibility(View.VISIBLE);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_locked));
+            }
         } else {
             holder.statusContainerLeft.setVisibility(View.VISIBLE);
             holder.comingSoonLeft.setVisibility(View.GONE);
             if (itemElem.GetLeftLessonBox().GetLesson().IsLocked()) {
                 holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
                 holder.lessonProgressL.setText("");
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_locked));
                 }
             } else {

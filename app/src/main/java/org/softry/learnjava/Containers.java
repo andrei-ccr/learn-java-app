@@ -110,6 +110,8 @@ public class Containers {
 		public Lesson(boolean comingSoon, String title, String desc, int imgResId, LessonContent lessonContent) {
 			this(title,desc,imgResId,lessonContent);
 			this.comingSoon = comingSoon;
+			this.locked = false;
+			this.completedProcent = 100;
 		}
 
 		public boolean ComingSoon() {
@@ -195,8 +197,13 @@ public class Containers {
 
         private void UpdateProgress() {
             double total_lprogress = 0;
+            int comingSoonLessons = 0;
             try {
 				for(Integer l : this.lessonList) {
+				    if(Utilities.LessonList.get(l).ComingSoon()) {
+				        comingSoonLessons++;
+				        continue;
+                    }
 					double lprogress = Utilities.LessonList.get(l).GetCompletedProcent() / 100f;
 					total_lprogress += lprogress;
 				}
@@ -207,7 +214,7 @@ public class Containers {
             //Log.i("myapp", "For " + this.number + " progress formula is " + total_lprogress + "/" + this.lessonCount);
             if(total_lprogress == 0) this.progress = -1;
             else
-                this.progress = (int)((total_lprogress/this.lessonCount)*100);
+                this.progress = (int)((total_lprogress/(this.lessonCount-comingSoonLessons))*100);
         }
 
         public void SetProgress(int value) {

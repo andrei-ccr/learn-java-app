@@ -135,12 +135,12 @@
         <item name="Chapter3_5">Static classes</item>
         <item name="Chapter3_6">Inheritance</item>
 
-        <item name="Chapter4_1">Lists</item>
+        <!--<item name="Chapter4_1">Lists</item>
         <item name="Chapter4_2">Stacks</item>
         <item name="Chapter4_3">Sets</item>
         <item name="Chapter4_4">Maps</item>
         <item name="Chapter4_5">Sorting Data</item>
-        <item name="Chapter4_6">More examples</item>
+        <item name="Chapter4_6">More examples</item>-->
     </string-array>
 
     <string-array name="lessonDescriptionList">
@@ -168,12 +168,12 @@
         <item name="Chapter3_5">Static methods and properties</item>
         <item name="Chapter3_6">Extend to subclasses</item>
 
-        <item name="Chapter4_1">List</item>
+        <!--<item name="Chapter4_1">List</item>
         <item name="Chapter4_2">Stack</item>
         <item name="Chapter4_3">Set</item>
         <item name="Chapter4_4">Map</item>
         <item name="Chapter4_5">Sorting Data</item>
-        <item name="Chapter4_6">More examples</item>
+        <item name="Chapter4_6">More examples</item>-->
     </string-array>
 
 

@@ -979,7 +979,7 @@ while(condition) {<br>
         <item>Inception</item>
         <item><![CDATA["
 			<p>
-			Calling the same method inside itself is called recursion.
+			Calling the same method inside itself is called recursion.<br>
 			static void foo() {<br>
 			  &nbsp;&nbsp;foo();<br>
 			}

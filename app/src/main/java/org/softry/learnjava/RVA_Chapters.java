@@ -116,22 +116,25 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
 
                 }
 
-
                 viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_clone));
                 if(position == 2) viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_boxes));
 
                 if(position>=3) {
                     viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
-                    viewHolder0.chapterLessonCount.setText("PRO ONLY");
-                    viewHolder0.chapterLessonCount.setCompoundDrawables(null,null,null,null);
+                    //viewHolder0.chapterLessonCount.setText("PRO ONLY");
+                    //viewHolder0.chapterLessonCount.setCompoundDrawables(null,null,null,null);
                     viewHolder0.chapterProgress.setVisibility(View.GONE);
                     viewHolder0.chapterProgressSymbol.setVisibility(View.GONE);
                 } else {
-                    viewHolder0.chapterLessonCount.setText(itemElem.GetLessonCount() + "");
+                    //viewHolder0.chapterLessonCount.setText(itemElem.GetLessonCount() + "");
                     viewHolder0.chapterProgress.setText(itemElem.GetProgressStr());
 					viewHolder0.chapterProgress.setVisibility(View.VISIBLE);
-                    viewHolder0.chapterProgressSymbol.setVisibility(View.VISIBLE);
-					//viewHolder0.chapterLessonCount.setCompoundDrawablesWithIntrinsicBounds(this.context.getResources().getDrawable(R.drawable.ic_fa_interview),null,null,null);
+					if(itemElem.GetProgressStr().equalsIgnoreCase("")) {
+                        viewHolder0.chapterProgressSymbol.setVisibility(View.GONE);
+                    } else {
+                        viewHolder0.chapterProgressSymbol.setVisibility(View.VISIBLE);
+                    }
+                    //viewHolder0.chapterLessonCount.setCompoundDrawablesWithIntrinsicBounds(this.context.getResources().getDrawable(R.drawable.ic_fa_interview),null,null,null);
                 }
 
                 viewHolder0.chapterNumber.setText(itemElem.GetNumber());
