@@ -15,6 +15,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.AdRequest;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +32,9 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     public static int SelectedChapter;
     public RecyclerView mRecyclerView;
     public RVA_Lessons rvAdapter;
+	
+	private InterstitialAd mInterstitialAd;
+	private int adError = -1;
 
     int chapterColorId = R.color._chapter1color;
 
@@ -68,10 +75,14 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
+		
+		mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build());
 
         TextView tvComingSoon = findViewById(R.id.tvLessonComingSoon);
-        TextView tvComingSoonDesc = findViewById(R.id.tvLessonLockedDesc);
-        TextView btnDonate = findViewById(R.id.btnDonate);
+        //TextView tvComingSoonDesc = findViewById(R.id.tvLessonLockedDesc);
+        //TextView btnDonate = findViewById(R.id.btnDonate);
         ConstraintLayout cLayout = findViewById(R.id.cLayout);
         TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
 
@@ -117,6 +128,19 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
                 mRecyclerView.setAdapter(rvAdapter);
             }
         }
+		
+		
+		mInterstitialAd.setAdListener(new AdListener() {
+			@Override
+			public void onAdFailedToLoad(int errorCode) {
+				adError = errorCode;
+			}
+
+			@Override
+			public void onAdClosed() {
+                mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build());
+			}
+		});
 
     }
 
@@ -150,12 +174,11 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 			Snackbar.make(view, "Complete the previous lesson to unlock", Snackbar.LENGTH_LONG).setAction("Unlock",  new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            //TODO: Show prompt about progress not being saved and watch ad
                             ShowLockedPrompt(view.getContext(), mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier());
                         }
                     }).show();
         } else {
-            OpenLesson(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier());
+            OpenLesson(mLessonsBox.get(row_index).GetLeftLessonBox().GetIdentifier(), true);
 
         }
     }
@@ -172,12 +195,20 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
                         }
                     }).show();
         }  else {
-            OpenLesson(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier());
-
+            OpenLesson(mLessonsBox.get(row_index).GetRightLessonBox().GetIdentifier(),true);
         }
     }
 
-    private void OpenLesson(int lesson_index) {
+    private void OpenLesson(int lesson_index, boolean withInterstitial) {
+		//TODO add 50% random chance that an interstitial shows
+		if(withInterstitial) {
+			if (mInterstitialAd.isLoaded())
+				mInterstitialAd.show();
+            else {
+                Log.d("myapp", "The interstitial wasn't loaded yet.");
+            }
+		}
+		
         Intent lessonActivity = new Intent(this, InLessonActivity.class);
         lessonActivity.putExtra(Utilities.SELECTED_LESSON, Integer.toString(lesson_index));
         lessonActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(SelectedChapter));
@@ -190,7 +221,18 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         dlgAlert.setTitle("Unlock");
         dlgAlert.setPositiveButton("Read lesson", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                OpenLesson(lesson_index);
+				//TODO: This should be a REWARD AD not INTERSTITIAL
+				if (mInterstitialAd.isLoaded()) {
+					mInterstitialAd.show();
+					OpenLesson(lesson_index, false);
+				} else {
+					if(adError != -1) {
+						OpenLesson(lesson_index, true);
+					} else {
+						Log.d("myapp", "The interstitial wasn't loaded yet.");
+					}
+				}
+                adError = -1;
                 dialog.dismiss();
             }
         });

@@ -34,33 +34,17 @@
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
 
-        <LinearLayout
-            android:id="@+id/adLL"
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
             android:layout_width="wrap_content"
-            android:layout_height="52dp"
-            android:layout_marginBottom="3dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
+            android:background="@color/_white"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appbar_main"
-            app:layout_constraintVertical_bias="0.0">
-
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                ads:adSize="BANNER"
-                ads:adUnitId="ca-app-pub-3940526099942544/6300978111"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="56dp" />
-        </LinearLayout>
-
+            app:layout_constraintTop_toBottomOf="@+id/appbar_main" />
 
         <ScrollView
             android:id="@+id/container_interviewTab"
@@ -380,6 +364,7 @@
                 android:id="@+id/rvChapters"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
                 app:layout_constraintBottom_toBottomOf="parent" />
         </LinearLayout>
 

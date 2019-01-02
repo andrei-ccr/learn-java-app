@@ -153,7 +153,6 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             }
 
             //Set Status
-            Log.e("myapp", Integer.toString(position));
             if(itemElem.GetRightLessonBox().GetLesson().ComingSoon()) {
                 holder.statusContainerRight.setVisibility(View.GONE);
                 holder.comingSoonRight.setVisibility(View.VISIBLE);
