@@ -1,10 +1,9 @@
 package org.softry.learnjava;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,50 +15,56 @@ import java.util.List;
 
 public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
 
-    public static class LessonBox {
+
+    /**
+     * Contains information found a in a lesson box:
+     * - a Lesson object
+     * - a number identifier that should be unique
+     */
+    static class LessonBox {
         private Containers.Lesson lesson;
-        private int indentifier;
+        private int identifier;
 
-        public LessonBox() {
+        LessonBox() {
             this.lesson = null;
-            this.indentifier = -1;
+            this.identifier = -1;
         }
 
-        public LessonBox(Containers.Lesson lesson, int identifier) {
+        LessonBox(Containers.Lesson lesson, int identifier) {
             this.lesson = lesson;
-            this.indentifier = identifier;
+            this.identifier = identifier;
         }
 
-        public int GetIdentifier() {
-            return this.indentifier;
+        int GetIdentifier() {
+            return this.identifier;
         }
 
-        public Containers.Lesson GetLesson() {
+        Containers.Lesson GetLesson() {
             return this.lesson;
         }
     }
 
-    public static class LessonBoxRow {
+
+    /**
+     * Contains two LessonBox objects, one on the left side
+     * and one on the right side
+     */
+    static class LessonBoxRow {
         private LessonBox[] lessonBox;
 
-        public LessonBoxRow(LessonBox leftLessonBox, LessonBox rightLessonBox) {
+        LessonBoxRow(LessonBox leftLessonBox, LessonBox rightLessonBox) {
             this.lessonBox = new LessonBox[2];
             this.lessonBox[0] = leftLessonBox;
             this.lessonBox[1] = rightLessonBox;
         }
 
-        public LessonBox GetLeftLessonBox() {
+        LessonBox GetLeftLessonBox() {
             return this.lessonBox[0];
         }
-
-        public LessonBox GetRightLessonBox() {
+        LessonBox GetRightLessonBox() {
             return this.lessonBox[1];
         }
 
-        public LessonBox GetLessonBox(int pos) {
-            if(pos % 2 == 0) return this.lessonBox[0]; //If pos is even, selected box is from left
-            else return this.lessonBox[1];
-        }
     }
 
     private List<LessonBoxRow> mLessonBoxRows;
@@ -73,7 +78,7 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         ImageView lessonImageL, lessonImageR, lessonProgressSymbolL, lessonProgressSymbolR;
         LinearLayout leftLessonBox, rightLessonBox, statusContainerLeft, statusContainerRight, comingSoonLeft, comingSoonRight;
 
-        public mViewHolder(View itemView) {
+        mViewHolder(View itemView) {
             super(itemView);
 
             //Left Box elements
@@ -82,7 +87,6 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             lessonImageL = itemView.findViewById(R.id.ivLessonImgL);
             lessonProgressL = itemView.findViewById(R.id.tvLessonProgressL);
             lessonProgressSymbolL = itemView.findViewById(R.id.ivProgressSymbolL);
-
             statusContainerLeft = itemView.findViewById(R.id.lessonStatusContainerL);
             comingSoonLeft = itemView.findViewById(R.id.lessonComingSoonL);
 
@@ -92,7 +96,6 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             lessonImageR = itemView.findViewById(R.id.ivLessonImgR);
             lessonProgressR = itemView.findViewById(R.id.tvLessonProgressR);
             lessonProgressSymbolR = itemView.findViewById(R.id.ivProgressSymbolR);
-
             statusContainerRight = itemView.findViewById(R.id.lessonStatusContainerR);
             comingSoonRight = itemView.findViewById(R.id.lessonComingSoonR);
 
@@ -100,7 +103,6 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             leftLessonBox = itemView.findViewById(R.id.leftLessonBox);
             rightLessonBox = itemView.findViewById(R.id.rightLessonBox);
 
-            itemView.setOnClickListener(this);
             leftLessonBox.setOnClickListener(this);
             rightLessonBox.setOnClickListener(this);
         }
@@ -126,34 +128,35 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         this.context = context;
     }
 
+    @NonNull
     @Override
-    public mViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public mViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = mInflater.inflate(R.layout.layout_lesson, parent,false);
         return new mViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(mViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull mViewHolder holder, int position) {
         LessonBoxRow itemElem = mLessonBoxRows.get(position);
+        LessonBox leftLessonBox = itemElem.GetLeftLessonBox(), rightLessonBox = itemElem.GetRightLessonBox();
 
         //If right LessonBox is null just hide it
-        if((itemElem.GetRightLessonBox() == null ) || (itemElem.GetRightLessonBox().GetLesson() == null)) {
+        if((rightLessonBox == null ) || (rightLessonBox.GetLesson() == null)) {
             LinearLayout lessonBox = (LinearLayout)holder.lessonTitleR.getParent();
             lessonBox.setVisibility(View.GONE);
         } else {
-
             //Set title, description and image of right LessonBox
-            holder.lessonTitleR.setText(itemElem.GetRightLessonBox().GetLesson().GetTitle());
-            holder.lessonDescR.setText(itemElem.GetRightLessonBox().GetLesson().GetDesc());
+            holder.lessonTitleR.setText(rightLessonBox.GetLesson().GetTitle());
+            holder.lessonDescR.setText(rightLessonBox.GetLesson().GetDesc());
             try {
-                holder.lessonImageR.setImageDrawable(context.getResources().getDrawable(itemElem.GetRightLessonBox().GetLesson().GetImageRID()));
+                holder.lessonImageR.setImageDrawable(context.getResources().getDrawable(rightLessonBox.GetLesson().GetImageRID()));
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
             //Set Status
-            if(itemElem.GetRightLessonBox().GetLesson().ComingSoon()) {
+            if(rightLessonBox.GetLesson().ComingSoon()) {
                 holder.statusContainerRight.setVisibility(View.GONE);
                 holder.comingSoonRight.setVisibility(View.VISIBLE);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
@@ -163,18 +166,18 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
                 holder.statusContainerRight.setVisibility(View.VISIBLE);
                 holder.comingSoonRight.setVisibility(View.GONE);
 
-                if(itemElem.GetRightLessonBox().GetLesson().IsLocked()) {
+                if(rightLessonBox.GetLesson().IsLocked()) {
                     holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
                     holder.lessonProgressR.setText(" ");
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                         holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_locked));
                     }
                 } else {
-                    holder.lessonProgressR.setText(itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() + "%");
+                    holder.lessonProgressR.setText(rightLessonBox.GetLesson().GetCompletedPercent(context) + "%");
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                         holder.rightLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box));
                     }
-                    if (itemElem.GetRightLessonBox().GetLesson().GetCompletedProcent() == 100) {
+                    if (rightLessonBox.GetLesson().GetCompletedPercent(context) == 100) {
                         holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
                         holder.lessonProgressSymbolR.setColorFilter(this.context.getResources().getColor(R.color._gold));
                         holder.lessonProgressR.setTextColor(this.context.getResources().getColor(R.color._gold));
@@ -186,21 +189,20 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
                     } else {
                         holder.lessonProgressSymbolR.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_progress));
                     }
-                } /* END IF Lesson Right isLocked */
-            }
-
+                } /* END IF Right Lesson isLocked */
+            } /* END IF Right Lesson coming soon*/
         } /* END IF Right Lesson Box exists */
 
         //Set title, description and image of left LessonBox
-        holder.lessonTitleL.setText(itemElem.GetLeftLessonBox().GetLesson().GetTitle());
-        holder.lessonDescL.setText(itemElem.GetLeftLessonBox().GetLesson().GetDesc());
+        holder.lessonTitleL.setText(leftLessonBox.GetLesson().GetTitle());
+        holder.lessonDescL.setText(leftLessonBox.GetLesson().GetDesc());
         try {
-            holder.lessonImageL.setImageDrawable(context.getResources().getDrawable(itemElem.GetLeftLessonBox().GetLesson().GetImageRID()));
+            holder.lessonImageL.setImageDrawable(context.getResources().getDrawable(leftLessonBox.GetLesson().GetImageRID()));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        if(itemElem.GetLeftLessonBox().GetLesson().ComingSoon()) {
+        if(leftLessonBox.GetLesson().ComingSoon()) {
             holder.statusContainerLeft.setVisibility(View.GONE);
             holder.comingSoonLeft.setVisibility(View.VISIBLE);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
@@ -209,18 +211,18 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         } else {
             holder.statusContainerLeft.setVisibility(View.VISIBLE);
             holder.comingSoonLeft.setVisibility(View.GONE);
-            if (itemElem.GetLeftLessonBox().GetLesson().IsLocked()) {
+            if (leftLessonBox.GetLesson().IsLocked()) {
                 holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
                 holder.lessonProgressL.setText("");
                 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box_locked));
                 }
             } else {
-                holder.lessonProgressL.setText(itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() + "%");
+                holder.lessonProgressL.setText(leftLessonBox.GetLesson().GetCompletedPercent(context) + "%");
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     holder.leftLessonBox.setBackground(this.context.getResources().getDrawable(R.drawable.white_box));
                 }
-                if (itemElem.GetLeftLessonBox().GetLesson().GetCompletedProcent() == 100) {
+                if (leftLessonBox.GetLesson().GetCompletedPercent(context) == 100) {
                     holder.lessonProgressSymbolL.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_check));
                     holder.lessonProgressSymbolL.setColorFilter(this.context.getResources().getColor(R.color._gold));
                     holder.lessonProgressL.setTextColor(this.context.getResources().getColor(R.color._gold));
@@ -234,7 +236,6 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
             } /* END IF Lesson Left isLocked */
         }
 
-
     }
 
     @Override
@@ -242,22 +243,11 @@ public class RVA_Lessons extends RecyclerView.Adapter<RVA_Lessons.mViewHolder> {
         return mLessonBoxRows.size();
     }
 
-
-    /*String getEntryText(int id) {
-        return mEntryObjList.get(id).getText();
-     }
-
-     String getEntryTime(int id) {
-        return mEntryObjList.get(id).getTimestamp();
-     }*/
-
-
     void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;
     }
 
     public interface ItemClickListener {
-        //void onItemClick(View view, int position);
         void onLeftBoxClick(View view, int position, int row_index);
         void onRightBoxClick(View view, int position, int row_index);
     }

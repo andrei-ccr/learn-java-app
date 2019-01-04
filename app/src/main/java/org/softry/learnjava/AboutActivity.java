@@ -21,28 +21,28 @@ public class AboutActivity extends AppCompatActivity {
         btnFb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //TODO: Open to facebook
             }
         });
 
         btnTwitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //TODO: Open to twitter
             }
         });
 
         btnRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //TODO: Open to store to rate
             }
         });
 
         btnDonate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //TODO: Open to donation page
             }
         });
     }

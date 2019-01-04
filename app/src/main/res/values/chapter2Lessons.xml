@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="lesson201">
-        <item></item>
+        <item>Throwing</item>
         <item><![CDATA["
 <p>If during the execution of a program, something goes wrong, an exception is \"thrown\". Exceptions (also called exceptional events) must be \"caught\", otherwise they cause the program to terminate.</p>
 
 <p>Leaving exceptions uncaught (unhandled exceptions) can cause instability and could also lead to security issues. Therefore, it is important to catch any piece of code that could throw an exception.</p>
 
         "]]></item>
-        <item></item>
+        <item>Catching</item>
         <item><![CDATA["
 <p>To catch an exception, we are going to use the try-catch statement. The general form is:<br>
 try {<br>
@@ -23,7 +23,7 @@ catch(ExceptionName e) {<br>
 <p>We wrap the code that could throw exceptions inside the try block. During execution, if an exception is thrown, the code execution inside the try block stops and the code inside the catch block executes.</p>
 
         "]]></item>
-        <item></item>
+        <item>Try again</item>
         <item><![CDATA["
 <p>When handling exceptions, it's important to make sure NOT to use code that could throw another exception. That means, don't write code inside the catch block that could throw another exception.</p>
 
@@ -32,7 +32,7 @@ catch(ExceptionName e) {<br>
 <p>Nesting try-catch statements like this is possible, but it's not recommended. The main issue is that it will make your code hard to read.</p>
 
         "]]></item>
-        <item></item>
+        <item>Name of exception</item>
         <item><![CDATA["
 <p>As you can see, the name of the thrown exception must be provided in the catch statement. </p>
 
@@ -50,7 +50,7 @@ catch(ExceptionName e) {<br>
 <p>If we try handling an InputMismatchException, but the exception is a ArrayIndexOutOfBoundsException, the try-catch block will have no effect and the program will terminate.</p>
 
         "]]></item>
-        <item></item>
+        <item>General exception</item>
         <item><![CDATA["
 <p>There is, luckily, a way to handle any exception without knowing its name. By using Exception as the exception name in the catch statement, any exception inside the try block will be caught.</p>
 <p>
@@ -63,7 +63,7 @@ try {<br>
 <p>The reason why you shouldn't use this general way of handling exceptions, is that all of these exception names including Exception are class names. They are in fact classes, which contain functions that can provide better ways of handling the exception. If you don't care too much about technical details (not recommended), you can just handle the general Exception.</p>
 
         "]]></item>
-        <item></item>
+        <item>Multiple exceptions</item>
         <item><![CDATA["
 <p>We can catch more than one exception if we need to. If the instructions inside the try block throw two exceptions for example, we can write two catch blocks:</p>
 <p>
@@ -84,9 +84,9 @@ try {<br>
 }
 </p>
         "]]></item>
-        <item></item>
+        <item>Your choice</item>
         <item><![CDATA["
-<p>How you handle an exception is up to you. You could even not write any code at all inside the catch block.</p>
+<p>How you handle an exception is up to you. You could even choose to not write any code at all inside the catch block.</p>
 
 <p>A popular instruction inside the catch block is:<br>
 e.printStackTrace();</p>
@@ -96,14 +96,14 @@ e.printStackTrace();</p>
 <p>The program will continue its execution after the end of the try-catch statement, therefore you need to make sure that the code that follows will work correctly in both cases(whether an exception was thrown or not).</p>
 
         "]]></item>
-        <item></item>
+        <item>Errors vs Exceptions</item>
         <item><![CDATA["
 <p>In some cases, a more serious event might occur: Errors. Errors can be thrown just like exceptions, but they cannot be handled. Once an error is thrown, the program will terminate and there is nothing you can do. They occur when something goes wrong with the runtime environment.</p>
 
 <p>A common error happen when the Java Virtual Machine runs out of memory. Even though Errors cannot be handled, there are ways to prevent them from occurring, like making sure you don't use too much memory.</p>
 
         "]]></item>
-        <item></item>
+        <item>Example exception</item>
         <item><![CDATA["
 <p>In Lesson 3:Basic File I/O we are going to use try-catch blocks to handle possible exceptions. Until then, let's take this example:</p>
 <p>
@@ -123,7 +123,7 @@ e.printStackTrace();</p>
 <p>Now try to access a valid index like arr[2]. The 3rd element will be printed along with the last message. </p>
 
         "]]></item>
-        <item></item>
+        <item>Conclusion</item>
         <item><![CDATA["
 <p>Now that you understand how to handle exceptions you can write more stable programs. </p>
 
@@ -134,14 +134,14 @@ e.printStackTrace();</p>
     </string-array>
 
     <string-array name="lesson202">
-        <item></item>
+        <item>Using date and time</item>
         <item><![CDATA["
 <p>Using date and time functions will prove useful for many projects. We are also going to use them in later lessons.</p>
 
 <p>We are going to learn the functions to get the current local date and time as well as functions for formatting time.</p>
 
         "]]></item>
-        <item></item>
+        <item>Getting current timestamp</item>
         <item><![CDATA["
 
 <p>The current date and time in Java is based on the amount of time that has passed since January 1st, 1970 UTC (Universal Coordinated Time). This value is also know as the Unix epoch time.</p>
@@ -155,7 +155,7 @@ e.printStackTrace();</p>
 <p>long time = System.currentTimeMillis();</p>
 
         "]]></item>
-        <item></item>
+        <item>Print timestamp</item>
         <item><![CDATA["
 
 <p>You can print that and see what value it has. Wait a few seconds and try printing it again. The value should be a bit higher.</p>
@@ -166,7 +166,7 @@ e.printStackTrace();</p>
 
 <p>Dividing by 1000 will convert the milliseconds in seconds. You can then divide the seconds by 60 to get the minutes and so on.</p>
         "]]></item>
-        <item></item>
+        <item>Local classes</item>
         <item><![CDATA["
 <p>A more convenient way to get the current date and time is to use the LocalData, LocalTime or LocalDateTime classes.</p>
 
@@ -182,7 +182,7 @@ import java.time.LocalTime;
 <p>Remember that import statements are written at the top, above any other code.</p>
 
         "]]></item>
-        <item></item>
+        <item>The date right now</item>
         <item><![CDATA["
 <p>Let's get the current date. As explained, we are going to use the now function inside the LocalDate class:</p>
 
@@ -196,7 +196,7 @@ import java.time.LocalTime;
 
 <p>We can similarly use LocalTime or LocalDateTime to get the current time or both date and time.</p>
         "]]></item>
-        <item></item>
+        <item>Years, months, days</item>
         <item><![CDATA["
 <p>The function now() does NOT return a string. It returns an object of type LocalDate (respectively LocalTime or LocalDateTime, depending which one is used).</p>
 
@@ -216,7 +216,7 @@ varDate.getYear(); //Return current year<br>
 varDate.getDayOfMonth(); //Return current day (number between 1-31)</p>
 
         "]]></item>
-        <item></item>
+        <item>Formatting</item>
         <item><![CDATA["
 <p>We can reformat the date and time in order to display the way we want. To do that we are going to use a DateTimeFormatter object.</p>
 
@@ -232,7 +232,7 @@ import java.time.format.DateTimeFormatter; </p>
 <p>On the next page we'll explain this code line by line.</p>
 
         "]]></item>
-        <item></item>
+        <item>Formatting</item>
         <item><![CDATA["
 <p>The first line<br>
 DateTimeFormatter aFormatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); <br>
@@ -246,7 +246,7 @@ declares a variable named aFormatter. Inside it we store an object of type DateT
 
 
         "]]></item>
-        <item></item>
+        <item>Format options</item>
         <item><![CDATA["
 
 <p>The pattern we used previously is :<br>
@@ -264,14 +264,14 @@ ss - replaced with second
     </string-array>
 
     <string-array name="lesson203">
-        <item></item>
+        <item>Introduction</item>
         <item><![CDATA["
 <p>In Chapter I Lesson 4: User Input you learned how to read user input from keyboard. We used the object Scanner to do that.</p>
 
 <p>In this lesson, we are going to use the Scanner object to read text from a file on your hard disk/SSD. We are also going to learn other classes that can be used to read and write to files.</p>
 
         "]]></item>
-        <item></item>
+        <item>Importing</item>
         <item><![CDATA["
 
 <p>Before using the Scanner class, we have to import it. We are also going to use a new class named File, which needs to be imported as well.</p>
@@ -282,7 +282,7 @@ import java.util.Scanner;</p>
 <p>Now that they are imported, using them is very easy.</p>
 
         "]]></item>
-        <item></item>
+        <item>File object</item>
         <item><![CDATA["
 
 <p>First we have to declare a File object. The File object will contain the path to the file we want to read.</p>
@@ -291,7 +291,7 @@ import java.util.Scanner;</p>
 
 
         "]]></item>
-        <item></item>
+        <item>Working with a file</item>
         <item><![CDATA["
 <p>Inside the opened directory, create a text file. Name it myfile.txt and write something in it. We are going to read the contents of that file and print them on screen.</p>
 
@@ -301,15 +301,15 @@ File file = new File("myfile.txt");</p>
 <p>Note: This object only holds the path to the file. If the file doesn't exist, it won't throw any exception.</p>
 
         "]]></item>
-        <item></item>
+        <item>Declaring the Scanner</item>
         <item><![CDATA["
-<p>Now, we can a Scanner to open the file for reading. To declare a Scanner we will write:<br>
+<p>Now, we can use a Scanner to open the file for reading. To declare a Scanner we will write:<br>
 Scanner sc = new Scanner(file);</p>
 <p>
 When running the program, if this instruction is executed, but the file doesn't exist, it will throw a FileNotFoundException. We will have to handle this possibility using a try-catch block. For now, let's assume the file exists and no exception will be thrown.</p>
 
         "]]></item>
-        <item></item>
+        <item>Reading</item>
         <item><![CDATA["
 
 <p>We can use our Scanner object sc to read the contents of the file. To do that, call sc.nextLine(). This function will read the first line in the text file and return it as String.</p>
@@ -318,7 +318,7 @@ When running the program, if this instruction is executed, but the file doesn't 
 
 <p>You can now print readStr to check if the file has been read properly.</p>
         "]]></item>
-        <item></item>
+        <item>Reading everything</item>
         <item><![CDATA["
 <p>If your file has multiple lines, you might want to read all of them, not just the first line. To do that you just have to call sc.nextLine() again. The second time, it will read the second line, the third time, the third line and so on.</p>
 
@@ -332,14 +332,14 @@ while(sc.hasNextLine()) {<br>
 <p>We use sc.hasNextLine() which returns true if a next line exists(after the one that was previously read).</p>
 
         "]]></item>
-        <item></item>
+        <item>Close Scanner</item>
         <item><![CDATA["
 
 <p>A final important thing that we should do with Scanners that read files is to close them. We can close our Scanner using the sc.close() function.</p>
 
 <p>We have to close the Scanner after we are done reading the file and we are sure we won't have to read it again. If we close it too soon, we won't be able to read the file unless we restart the program. Leaving the Scanner "opened", is bad practice.</p>
         "]]></item>
-        <item></item>
+        <item>Other ways</item>
         <item><![CDATA["
 
 <p>Introducing two more classes that can be used for file reading respectively writing. The FileReader and FileWriter. To import them, use</p> 
@@ -353,7 +353,7 @@ import java.io.*
 
 <p>Note: It's not recommended to import classes that you do not use.</p>
         "]]></item>
-        <item></item>
+        <item>Reading using FileReader</item>
         <item><![CDATA["
 
 <p>The FileReader object can be used as an alternative to Scanner. The only difference is that you have to read the contents as an array of char values instead of a String. You can then convert the array to a String.</p>
@@ -365,7 +365,7 @@ String str = new String(arr);</p>
 
 <p>We declared a char array of 50 characters. This means that only the first 50 characters from the file will be read.</p>
         "]]></item>
-        <item></item>
+        <item>Writing using FileWriter</item>
         <item><![CDATA["
 
 <p>To write to a file, just declare a FileWriter and use the write function.</p>
@@ -377,7 +377,7 @@ fw.write("This will be written in the file");</p>
 <p>You can also use a String variable as the parameter of fw.write();</p>
 
         "]]></item>
-        <item></item>
+        <item>Always close</item>
         <item><![CDATA["
 <p>Just like with Scanner, FileWriter and FileReader must be closed after use. To close them, use their close() function. The same rules apply.</p>
 
@@ -388,7 +388,7 @@ fw.write("This will be written in the file");</p>
     </string-array>
 
     <string-array name="lesson204">
-        <item></item>
+        <item>Popular String</item>
         <item><![CDATA["
 <p>The String data type is one of the most used types in Java. You're going to end up using it in almost all of your projects.</p>
 
@@ -399,7 +399,7 @@ fw.write("This will be written in the file");</p>
 <p>In your first Java lesson, when you learned how to print a message, you actually used a string. The System.out.println() function takes a String as parameter and outputs it on screen.</p>
 
         "]]></item>
-        <item></item>
+        <item>Declaration</item>
         <item><![CDATA["
 <p>In the print function, we can either specify a string directly like<br>
 System.out.println(\"Hello world!\");</p>
@@ -415,7 +415,7 @@ System.out.println(myStr);</p>
 </p>
 
         "]]></item>
-        <item></item>
+        <item>Converting primitives</item>
         <item><![CDATA["
 
 <p>To convert primitive data types to String we are going to use their corresponding classes and a function called toString(). The corresponding classes of the primitive types are:
@@ -442,7 +442,7 @@ Integer.toString(intValue);
 <p>
 The returned value is going to be a String.</p>
         "]]></item>
-        <item></item>
+        <item>Integer to String</item>
         <item><![CDATA["
 <p>For example: Integer.toString(44) will return the value "44". The same rules apply for the other primitive types. </p>
 
@@ -458,7 +458,7 @@ The returned value is going to be a String.</p>
 If the string doesn't contain a value that can be converted, a NumberFormatException is thrown. In the case of parseBoolean(), nothing is returned.
 </p>
         "]]></item>
-        <item></item>
+        <item>String convert method</item>
         <item><![CDATA["
 
 <p>
@@ -471,7 +471,7 @@ This converts the int 44 into "44" of String type.
 <p>
 It's up to you what method you want to use. The valueOf() function is easier to use since you don't have to care about the type of the value you try to convert.</p>
         "]]></item>
-        <item></item>
+        <item>Put them together</item>
         <item><![CDATA["
         <p>
 Java has the ability to concatenate strings very easily. The operator for concatenating two strings is + (the plus sign). The same operator is used for adding two numbers. When dealing with both strings and numbers, it's better to convert them to the type you intend.</p>
@@ -498,7 +498,7 @@ System.out.println(str1+str2);
 If you have a value of a different type you should first convert it to String and then attempt to concatenate it.
 </p>
         "]]></item>
-        <item></item>
+        <item>Different results</item>
         <item><![CDATA["
 
 <p>If you don't convert values to String before concatenating, you might encounter unexpected results. For example, let's assume you wrote a function that adds two numbers and you want to print the numbers and the result:
@@ -524,7 +524,7 @@ Now call the function like before. The message will now be<br>
 <p>The variables were now interpreted as numbers, added and the result was converted to String and concatenated with the rest. In this case, to avoid confusion, we should just store the result in a separate variable and use that in the message. This experiment was done to understand how can variables be interpreted and how confusing it can get if we're not careful.
 </p>
         "]]></item>
-        <item></item>
+        <item>How long is the String</item>
         <item><![CDATA["
 <p>A String variable will also contain functions that can be used to manipulate or get information about that string. For example the length() function will return how many characters does a string contain.
 </p>
@@ -534,7 +534,7 @@ int count = myStr.length();</p>
 The count variable will have a value of 27. 
 </p>
         "]]></item>
-        <item></item>
+        <item>Transforming strings</item>
         <item><![CDATA["
 <p>
 The functions toLowerCase() and toUpperCase() will make each character in the string lower case respectively upper case. The numbers and special characters inside the string will be left alone.
@@ -545,7 +545,7 @@ System.out.println(\"Lowercase \" + myStr2.toLowerCase());
 </p>
 <p>The functions return a new transformed String.</p>
         "]]></item>
-        <item></item>
+        <item>Compare</item>
         <item><![CDATA["
 
 <p>Comparing two Strings is a bit different than comparing primitive types. When comparing two primitive values, you can use the == (equal sign) or the != (not equal sign) to check whether the two values are equal or not. </p>
@@ -561,7 +561,7 @@ str2.equals(str1);</p>
 
 <p>The above has the same effect. </p>
         "]]></item>
-        <item></item>
+        <item>Other functions</item>
         <item><![CDATA["
 
 <p>Some other useful functions include contains(), replace(), isEmpty() and more.</p>
@@ -575,7 +575,7 @@ More in-depth lessons about Strings are available in later chapters.
         
     </string-array>
     <string-array name="lesson205">
-        <item></item>
+        <item>More controls</item>
         <item><![CDATA["
 <p>So far, we learned the following control structures: if-else, for, while.</p>
 
@@ -589,7 +589,7 @@ In this lesson we are going to learn a couple more control structures:<br>
 <p>We are also going to see more examples of using the break keyword to stop the execution of code inside a control structure and the continue keyword to force the next iteration of a loop (skip code in loop).
 </p>
         "]]></item>
-        <item></item>
+        <item>Switch-case</item>
         <item><![CDATA["
 <p>
 Previously, we learned that we can execute code based on a condition using the if statement.
@@ -601,7 +601,7 @@ The if statement can be used together with a single else or multiple else if sta
 Another structure that can be used for decisions is the switch-case structure. Unlike if, switch-case is used to execute code based on what value an expression has.
 </p>
         "]]></item>
-        <item></item>
+        <item>Using cases</item>
         <item><![CDATA["
 <p>
 The general structure of switch-case is:<br>
@@ -635,7 +635,7 @@ switch(expression) {<br>
 The default case is optional and is written after all the other cases.
 </p>
         "]]></item>
-        <item></item>
+        <item>Unexpected executions</item>
         <item><![CDATA["
 <p>
 Beginners might find confusing the switch-case structure because of the way it works: if there's a case that matches the expression, the code in that case statement will execute as well as *all the code from all the cases below*.
@@ -656,7 +656,7 @@ switch(expression) {<br>
 }
 </p>
         "]]></item>
-        <item></item>
+        <item>Break the case</item>
         <item><![CDATA["
 <p>To prevent the control from falling through, a break is usually used at the end of every case. We learned about the break keyword in Chapter I Lesson 7. The break keyword would end loop statement regardless of the condition and no code below it would execute.
 </p>
@@ -682,7 +682,7 @@ switch(expression) {<br>
 Note how there's no need to use a break in the default case, as there are no other cases below to fall to.
 </p>
         "]]></item>
-        <item></item>
+        <item>No conditions</item>
         <item><![CDATA["
 <p>
 The switch-case statement is limited in that you can only test against constants. 
@@ -720,7 +720,7 @@ switch(number) {<br>
 The code above won't compile.
 </p>
         "]]></item>
-        <item></item>
+        <item>Short if</item>
         <item><![CDATA["
 
 <p>
@@ -745,7 +745,7 @@ int a = (x>y)?(1):(-1);
 <p>
 The variable a will get a value of 1 if x>y. Otherwise, it will get a value of -1.</p>
         "]]></item>
-        <item></item>
+        <item>Keep going</item>
         <item><![CDATA["
 
 <p>
@@ -771,7 +771,7 @@ In other words, continue is used to skip the execution of the instruction below 
 <p>
 Both break and continue are usually placed in a loop surrounded by an if statement, so that the loop will break or continue only if a condition is true.</p>
         "]]></item>
-        <item></item>
+        <item>Skip code</item>
         <item><![CDATA["
 <p>Before we move on, let's take a final example for these instructions.</p>
 <p>
@@ -799,7 +799,7 @@ for(int i=0;i<=10;i++) {<br>
 This time, we replaced break with continue when i is equal to 5. Running the code above will print all the numbers between 0 and 10 except 5. That's because when i is equal to 5, the continue statement executes, so all the code below it gets skipped. Then the loop continues normally.
 </p>
         "]]></item>
-        <item></item>
+        <item>For-each</item>
         <item><![CDATA["
 <p>The for loop has a different form used to iterate through collections of objects/arrays. It's often referred to as a foreach loop, although only the for keyword is used in its structure.
 </p>
@@ -825,14 +825,14 @@ The above will print one by one the values in x, as i takes each value one by on
         
     </string-array>
     <string-array name="lesson206">
-        <item></item>
+        <item>Be random</item>
         <item><![CDATA["
 <p>Being able to generate random values will come in handy in many projects especially games or security related.</p>
 
 <p>In Java, we can easily generate random values using some special functions.
 Starting with Java 1.7, there's a better way to generate a random number between a range. There's also the pre 1.7 way which uses functions inside a class named Random.</p>
         "]]></item>
-        <item></item>
+        <item>Importing randomness</item>
         <item><![CDATA["
 <p>To use the Random functions, we will have to declare a variable of type Random. As always, before we can use this class, we'll have to import it.</p>
 
@@ -844,7 +844,7 @@ Starting with Java 1.7, there's a better way to generate a random number between
 
 <p>We can use the r variable to access the functions for generating random values.</p>
         "]]></item>
-        <item></item>
+        <item>Think of a number</item>
         <item><![CDATA["
 <p>To generate a random int use the nextInt() function.</p>
 
@@ -857,7 +857,7 @@ System.out.println(x);</p>
 
 <p>Run the program a couple of times to see a different generated number.</p>
         "]]></item>
-        <item></item>
+        <item>Ranges</item>
         <item><![CDATA["
 <p>If you need to generate a number between a certain range you can use the same function. nextInt() can take one parameter and returns a number between 0 and that number exclusive.</p>
 
@@ -872,7 +872,7 @@ r.nextInt(75-11) + 11;</p>
 
 <p>What we have to do is subtract the lower bound value from the upper bound value and pass that as parameter. Then add the lower bound value to the number generated by the function.</p>
         "]]></item>
-        <item></item>
+        <item>Lower and upper bound</item>
         <item><![CDATA["
 <p>To make this easier to use (and read) we can write our own function that takes two parameters (lower and upper bound) and return a random int using the nextInt function like we previously did.</p>
 
@@ -885,7 +885,7 @@ r.nextInt(75-11) + 11;</p>
 <p>
 For versions before Java 1.7, there is no better alternative.</p>
         "]]></item>
-        <item></item>
+        <item>Better way for newer Java</item>
         <item><![CDATA["
 
         <p>
@@ -905,7 +905,7 @@ int x = ThreadLocalRandom.current().nextInt(10, 100);
 <p>
 Remember that the upper bound is also exclusive here, so 100 will never be generated.</p>
         "]]></item>
-        <item></item>
+        <item>Better way for newer Java</item>
         <item><![CDATA["
         <p>
 ThreadLocalRandom also has functions for generating float, double, long and boolean: nextLong(), nextBoolean(), nextDouble() and so on. They accept lower and upper bounds as parameters or can be used without specifying any of them. nextBoolean() doesn't accept any parameters.
@@ -914,7 +914,7 @@ ThreadLocalRandom also has functions for generating float, double, long and bool
 For pre-1.7 versions, the same functions are available, but with the same limitation as before: you can only provide an upper value in the range.
 </p>
         "]]></item>
-        <item></item>
+        <item>Not true random</item>
         <item><![CDATA["
 <p>
 All these functions generate values known as pseudo-random numbers (PRNG). This means that the numbers are generated using a formula that only makes it appear random.
@@ -926,7 +926,7 @@ These type of generators can pose a security risk if used wrong. Someone could d
 In Java, before you start generating numbers you can specify a seed.
 </p>
         "]]></item>
-        <item></item>
+        <item>Seed</item>
         <item><![CDATA["
 <p>
 To set the seed you can use the setSeed function that takes a long as parameter (the value of the seed). 
@@ -949,7 +949,7 @@ The seed is harder to be guessed this way. However, when it comes to security, t
         
     </string-array>
     <string-array name="lesson207">
-        <item></item>
+        <item> </item>
         <item><![CDATA["
 
         "]]></item>

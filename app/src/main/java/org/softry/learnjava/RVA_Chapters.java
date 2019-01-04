@@ -2,6 +2,7 @@ package org.softry.learnjava;
 
 import android.content.Context;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,11 +22,11 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
     private Context context;
 
     public class chapterBoxViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView chapterNumber, chapterName, chapterDesc, chapterProgress, chapterLessonCount;
+        TextView chapterNumber, chapterName, chapterDesc, chapterProgress;
         ImageView chapterImage, chapterProgressSymbol;
         LinearLayout container_chapter_color, chapterBoxContainer;
 
-        public chapterBoxViewHolder(View itemView) {
+        chapterBoxViewHolder(View itemView) {
             super(itemView);
             chapterNumber = itemView.findViewById(R.id.tvChapterNum);
             chapterName = itemView.findViewById(R.id.tvChapterName);
@@ -33,12 +34,10 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
             chapterProgress = itemView.findViewById(R.id.tvChapterProgress);
             container_chapter_color = itemView.findViewById(R.id.viewChapterColorLayout);
             chapterImage = itemView.findViewById(R.id.ivChapterImage);
-            chapterLessonCount = itemView.findViewById(R.id.tvNumberOfLessons);
             chapterProgressSymbol = itemView.findViewById(R.id.ivChapterProgressSymbol);
             chapterBoxContainer = itemView.findViewById(R.id.chapterBoxContainer);
             itemView.setOnClickListener(this);
         }
-
 
         @Override
         public void onClick(View view) {
@@ -49,7 +48,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
     public class categoryTitleViewHolder extends RecyclerView.ViewHolder {
         TextView categoryName;
 
-        public categoryTitleViewHolder(View itemView) {
+        categoryTitleViewHolder(View itemView) {
             super(itemView);
             categoryName = itemView.findViewById(R.id.tvChapterCategory);
         }
@@ -85,7 +84,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
     }
 
     @Override
-    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, int position) {
         switch(holder.getItemViewType()) {
             case 0:
                 position = (position>4)?(position-2):(position-1);
@@ -93,7 +92,7 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                 Containers.Chapter itemElem = mChapters.get(position);
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    int cBoxColor = R.drawable.chapter1_box;
+                    int cBoxColor;
                     if(position == 0)
                         cBoxColor = R.drawable.chapter1_box;
                     else if(position == 1)
@@ -110,6 +109,8 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                         cBoxColor = R.drawable.chapter7_box;
                     else if(position == 7)
                         cBoxColor = R.drawable.chapter8_box;
+                    else
+                        cBoxColor = R.drawable.chapter1_box;
 
                     viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(cBoxColor));
                     viewHolder0.chapterBoxContainer.setBackground(this.context.getResources().getDrawable(cBoxColor));
@@ -121,20 +122,18 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
 
                 if(position>=3) {
                     viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_locked));
-                    //viewHolder0.chapterLessonCount.setText("PRO ONLY");
-                    //viewHolder0.chapterLessonCount.setCompoundDrawables(null,null,null,null);
                     viewHolder0.chapterProgress.setVisibility(View.GONE);
                     viewHolder0.chapterProgressSymbol.setVisibility(View.GONE);
                 } else {
-                    //viewHolder0.chapterLessonCount.setText(itemElem.GetLessonCount() + "");
-                    viewHolder0.chapterProgress.setText(itemElem.GetProgressStr());
+                    viewHolder0.chapterProgress.setText(itemElem.GetProgressStr(context));
 					viewHolder0.chapterProgress.setVisibility(View.VISIBLE);
-					if(itemElem.GetProgressStr().equalsIgnoreCase("")) {
+					if(itemElem.GetProgressStr(context).equalsIgnoreCase("")) {
                         viewHolder0.chapterProgressSymbol.setVisibility(View.GONE);
+                        viewHolder0.chapterProgress.setVisibility(View.GONE);
                     } else {
                         viewHolder0.chapterProgressSymbol.setVisibility(View.VISIBLE);
+                        viewHolder0.chapterProgress.setVisibility(View.VISIBLE);
                     }
-                    //viewHolder0.chapterLessonCount.setCompoundDrawablesWithIntrinsicBounds(this.context.getResources().getDrawable(R.drawable.ic_fa_interview),null,null,null);
                 }
 
                 viewHolder0.chapterNumber.setText(itemElem.GetNumber());
@@ -145,31 +144,20 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                 break;
             case 1:
                 categoryTitleViewHolder viewHolder1 = (categoryTitleViewHolder)holder;
-                if(position==0) viewHolder1.categoryName.setText("Level: Beginner");
-                else if(position==4) viewHolder1.categoryName.setText("Level: Advanced");
+                if(position==0) viewHolder1.categoryName.setText(context.getString(R.string.lvl_beginner_str));
+                else if(position==4) viewHolder1.categoryName.setText(context.getString(R.string.lvl_advanced_str));
                 break;
         }
-
 
     }
 
     @Override
     public int getItemCount() {
-        if(Utilities.ShowProOnlyChapters == false) {
+        if(!Utilities.ShowProOnlyChapters) {
             return 4;
         } else
             return mChapters.size()+2;
     }
-
-
-    /*String getEntryText(int id) {
-        return mEntryObjList.get(id).getText();
-    }
-
-    String getEntryTime(int id) {
-        return mEntryObjList.get(id).getTimestamp();
-    }*/
-
 
     void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;

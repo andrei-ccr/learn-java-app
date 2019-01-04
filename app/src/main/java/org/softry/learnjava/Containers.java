@@ -9,7 +9,7 @@ public class Containers {
 		private String[] content, pageTitle;
 		private int[] pageRead;
 		
-		public LessonContent(String[] content, String[] pageTitle, int[] pageRead) {
+		LessonContent(String[] content, String[] pageTitle, int[] pageRead) {
 			this.content = content;
 			this.pageTitle = pageTitle;
 			this.pageRead = pageRead; 
@@ -30,7 +30,7 @@ public class Containers {
         }
 
 		
-		public String GetContentByPage(int page) {
+		String GetContentByPage(int page) {
 			try {
 				return this.content[page];
 			} catch (Exception e) {
@@ -40,7 +40,7 @@ public class Containers {
 			}
 		}
 		
-		public String GetTitleByPage(int page) {
+		String GetTitleByPage(int page) {
 			try {
 				return this.pageTitle[page];
 			} catch (Exception e) {
@@ -50,7 +50,7 @@ public class Containers {
 			}
 		}
 		
-		public int GetReadStatusByPage(int page) {
+		int GetReadStatusByPage(int page) {
 			try {
 				return this.pageRead[page];
 			} catch (Exception e) {
@@ -60,23 +60,19 @@ public class Containers {
 			}
 		}
 		
-		public String[] GetAllContent() {
+		String[] GetAllContent() {
 			return this.content;
 		}
 		
-		public String[] GetAllTitles() {
-			return this.pageTitle;
-		}
-		
-		public int[] GetAllReadStatus() {
+		int[] GetAllReadStatus() {
 			return this.pageRead;
 		}
 		
-		public int GetPageCount() {
+		int GetPageCount() {
 			return this.pageRead.length;
 		}
 		
-		public int GetReadCount() {
+		int GetReadCount() {
 			int k = 0;
 			for(Integer i : this.pageRead) {
 				if(i == 1) k++;
@@ -84,95 +80,90 @@ public class Containers {
 			return k;
 		}
 
-		public void MarkPageAsRead(int page) {
+		void MarkPageAsRead(int page) {
 			this.pageRead[page] = 1;
 		}
 	}
 	
-	public static class Lesson {
+	static class Lesson {
 		private String title, desc;
 		private int imgResId;
 		private LessonContent lessonContent;
-		private int completedProcent; //From 0 to 100
+		private int completedPercent; //From 0 to 100
         private boolean locked;
         private boolean comingSoon = false;
 		
-		public Lesson(String title, String desc, int imgResId, LessonContent lessonContent) {
+		Lesson(String title, String desc, int imgResId, LessonContent lessonContent) {
 			this.title = title;
 			this.desc = desc;
 			this.imgResId = imgResId;
 			this.lessonContent = lessonContent;
 			this.locked = true;
 			
-			this.SetCompletedProcent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
+			this.SetCompletedPercent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
 		}
 
-		public Lesson(boolean comingSoon, String title, String desc, int imgResId, LessonContent lessonContent) {
+		Lesson(boolean comingSoon, String title, String desc, int imgResId, LessonContent lessonContent) {
 			this(title,desc,imgResId,lessonContent);
 			this.comingSoon = comingSoon;
 			this.locked = false;
-			this.completedProcent = 100;
+			this.completedPercent = 100;
 		}
 
-		public boolean ComingSoon() {
+		boolean ComingSoon() {
 			return this.comingSoon;
 		}
 		
-		private void SetCompletedProcent(int val) {
-			this.completedProcent = Math.max(0, Math.min(100, val));
+		private void SetCompletedPercent(int val) {
+			this.completedPercent = Math.max(0, Math.min(100, val));
 		}
 
-		public void UnlockLesson() {
+		void UnlockLesson() {
 		    this.locked = false;
         }
-
-        public void LockLesson() {
+        void LockLesson() {
 		    this.locked = true;
         }
 
-        public boolean IsLocked() {
+        boolean IsLocked() {
 		    return this.locked;
         }
-
 		
-		public String GetTitle() {
+		String GetTitle() {
 			return this.title;
 		}
 		
-		public String GetDesc() {
+		String GetDesc() {
 			return this.desc;
 		}
 		
-		public int GetImageRID() {
+		int GetImageRID() {
 			return this.imgResId;
 		}
 		
-		public int GetCompletedProcent() {
-            this.SetCompletedProcent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
-            if(this.completedProcent == 100) {
-                Utilities.UnlockNextLesson();
+		int GetCompletedPercent(Context context) {
+            this.SetCompletedPercent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
+            if(this.completedPercent == 100) {
+                Utilities.UnlockNextLesson(context);
             }
-            return this.completedProcent;
+            return this.completedPercent;
 		}
 
-		public boolean IsCompleted() {
-            this.SetCompletedProcent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
-            if(this.completedProcent == 100)
-                return true;
-            return false;
+		boolean IsCompleted() {
+            this.SetCompletedPercent((int)Math.floor(((float)this.lessonContent.GetReadCount()/(float)this.lessonContent.GetPageCount())*100f));
+            return this.completedPercent == 100;
         }
 		
-		public LessonContent GetLessonContent() {
+		LessonContent GetLessonContent() {
 			return this.lessonContent;
 		}
 
-		public void ResetCompletedProcent() {
+		void ResetCompletedPercent(Context context) {
 			LessonContent currentLC = this.lessonContent;
 			this.lessonContent = new LessonContent(currentLC.content, currentLC.pageTitle, new int[currentLC.content.length]);
-            GetCompletedProcent();
+            GetCompletedPercent(context);
 		}
 
-		
 	}
 	
     public static class Chapter {
@@ -195,7 +186,7 @@ public class Containers {
                 this.lessonCount = lessonList.length;
         }
 
-        private void UpdateProgress() {
+        private void UpdateProgress(Context context) {
             double total_lprogress = 0;
             int comingSoonLessons = 0;
             try {
@@ -204,53 +195,52 @@ public class Containers {
 				        comingSoonLessons++;
 				        continue;
                     }
-					double lprogress = Utilities.LessonList.get(l).GetCompletedProcent() / 100f;
+					double lprogress = Utilities.LessonList.get(l).GetCompletedPercent(context) / 100f;
 					total_lprogress += lprogress;
 				}
 			} catch (Exception e) {
             	this.progress = -1;
             	return;
 			}
-            //Log.i("myapp", "For " + this.number + " progress formula is " + total_lprogress + "/" + this.lessonCount);
             if(total_lprogress == 0) this.progress = -1;
             else
                 this.progress = (int)((total_lprogress/(this.lessonCount-comingSoonLessons))*100);
         }
 
-        public void SetProgress(int value) {
+        /*public void SetProgress(int value) {
             if(value<0) this.progress = -1;
             else if(value>100) this.progress = 100;
             else this.progress = value;
-        }
+        }*/
 
-        public int GetLessonCount() {return this.lessonCount;}
-        public String GetNumber(){
+        //public int GetLessonCount() {return this.lessonCount;}
+        String GetNumber(){
             return this.number;
         }
 
-        public String GetName() {
+        String GetName() {
             return this.name;
         }
 
-        public String GetShortDesc() {
+        String GetShortDesc() {
             return this.shortDesc;
         }
-        public String GetLongDesc() {
+        String GetLongDesc() {
             return this.longDesc;
         }
 
-        public String GetProgressStr() {
-            if(GetProgressValue() == -1) {
+        String GetProgressStr(Context context) {
+            if(GetProgressValue(context) == -1) {
                 return "";
-            } else if(GetProgressValue() >= 100) {
+            } else if(GetProgressValue(context) >= 100) {
                return "Completed";
             } else {
-                return Integer.toString(GetProgressValue()) + "%";
+                return Integer.toString(GetProgressValue(context)) + "%";
             }
         }
 
-        public int GetProgressValue() {
-            UpdateProgress();
+        int GetProgressValue(Context context) {
+            UpdateProgress(context);
             return this.progress;
         }
     }

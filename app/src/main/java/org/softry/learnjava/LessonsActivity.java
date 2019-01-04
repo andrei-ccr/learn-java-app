@@ -36,77 +36,30 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 	private InterstitialAd mInterstitialAd;
 	private int adError = -1;
 
-    int chapterColorId = R.color._chapter1color;
-
-    private void SetLessonBoxList(int chapter) {
-
-        mLessonsBox = new ArrayList<>();
-
-        Integer[] lessonsCurrentChapter = Utilities.ChapterLessonList.get(chapter);
-        for(int i=lessonsCurrentChapter[0]; i<lessonsCurrentChapter.length+lessonsCurrentChapter[0]; i+=2) {
-            if(Utilities.InArray(i+1, lessonsCurrentChapter)) {
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox(LessonList.get(i), i),
-                        new RVA_Lessons.LessonBox(LessonList.get(i+1), i+1 )
-                ));
-            } else {
-                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
-                        new RVA_Lessons.LessonBox(LessonList.get(i), i),
-                        new RVA_Lessons.LessonBox() )
-                );
-            }
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i("myapp", "OnCreate() called");
-
         try {
             Intent parentActivity = getIntent();
             SelectedChapter = Integer.parseInt(parentActivity.getStringExtra(Utilities.SELECTED_CHAPTER));
         } catch (Exception e) {
+            Log.d("myapp", "SelectedChapter didn't get any value");
             e.printStackTrace();
         }
 
-        //Set Theme
+        //Set theme (must set before super.onCreate())
         TypedArray chapterThemeList = getResources().obtainTypedArray(R.array.ChaptersColor);
         setTheme(chapterThemeList.getResourceId(SelectedChapter, R.style.AppTheme_ChapterOne));
+        chapterThemeList.recycle();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
-		
-		mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.testInterstitial));
-        mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build());
-
         TextView tvComingSoon = findViewById(R.id.tvLessonComingSoon);
-        //TextView tvComingSoonDesc = findViewById(R.id.tvLessonLockedDesc);
-        //TextView btnDonate = findViewById(R.id.btnDonate);
         ConstraintLayout cLayout = findViewById(R.id.cLayout);
         TextView tvChapterDesc = findViewById(R.id.tvSelectedChapterDesc);
 
-        if(SelectedChapter == 0) {
-            chapterColorId = R.color._chapter1color;
-        } else if(SelectedChapter == 1) {
-            chapterColorId = R.color._chapter2color;
-        } else if(SelectedChapter == 2) {
-            chapterColorId = R.color._chapter3color;
-        } else if(SelectedChapter == 3) {
-            chapterColorId = R.color._chapter4color;
-        } else if(SelectedChapter == 4) {
-            chapterColorId = R.color._chapter5color;
-        } else if(SelectedChapter == 5) {
-            chapterColorId = R.color._chapter6color;
-        } else if(SelectedChapter == 6) {
-            chapterColorId = R.color._chapter7color;
-        } else if(SelectedChapter == 7) {
-            chapterColorId = R.color._chapter8color;
-        } else if(SelectedChapter == 8) {
-            chapterColorId = R.color._chapter9color;
-        }
 
-        cLayout.setBackgroundColor(getResources().getColor(chapterColorId));
+        cLayout.setBackgroundColor(GetBackgroundColorId());
 
 
         Containers.Chapter thisChapter = Utilities.ChapterList.get(SelectedChapter);
@@ -116,8 +69,6 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
         if( (Utilities.InArray(SelectedChapter+1, Utilities.ComingSoonChapters))) {
             tvComingSoon.setVisibility(View.VISIBLE);
-            //tvComingSoonDesc.setVisibility(View.VISIBLE);
-            //btnDonate.setVisibility(View.VISIBLE);
         } else {
             SetLessonBoxList(SelectedChapter);
             if (this.mLessonsBox != null) {
@@ -128,8 +79,10 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
                 mRecyclerView.setAdapter(rvAdapter);
             }
         }
-		
-		
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.testInterstitial));
+        mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build());
 		mInterstitialAd.setAdListener(new AdListener() {
 			@Override
 			public void onAdFailedToLoad(int errorCode) {
@@ -142,12 +95,13 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 			}
 		});
 
+
+
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.i("myapp", "OnResume called()");
         if(mRecyclerView != null && rvAdapter != null) {
             rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
             rvAdapter.setClickListener(this);
@@ -158,7 +112,6 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     @Override
     public void onRestart() {
         super.onRestart();
-        Log.i("myapp", "OnRestart called()");
         if(mRecyclerView != null && rvAdapter != null) {
             rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
             rvAdapter.setClickListener(this);
@@ -218,7 +171,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     private void ShowLockedPrompt(Context c, final int lesson_index) {
         final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(c);
         dlgAlert.setMessage("You can still read this lesson after you watch an ad. \n\nYour lesson progress won't be saved.");
-        dlgAlert.setTitle("Unlock");
+        dlgAlert.setTitle(R.string.btnUnlock);
         dlgAlert.setPositiveButton("Read lesson", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
 				//TODO: This should be a REWARD AD not INTERSTITIAL
@@ -244,5 +197,57 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         });
         dlgAlert.setCancelable(true);
         dlgAlert.create().show();
+    }
+
+    private int GetBackgroundColorId() {
+        int chapterColorId;
+        if(SelectedChapter == 0) {
+            chapterColorId = R.color._chapter1color;
+        } else if(SelectedChapter == 1) {
+            chapterColorId = R.color._chapter2color;
+        } else if(SelectedChapter == 2) {
+            chapterColorId = R.color._chapter3color;
+        } else if(SelectedChapter == 3) {
+            chapterColorId = R.color._chapter4color;
+        } else if(SelectedChapter == 4) {
+            chapterColorId = R.color._chapter5color;
+        } else if(SelectedChapter == 5) {
+            chapterColorId = R.color._chapter6color;
+        } else if(SelectedChapter == 6) {
+            chapterColorId = R.color._chapter7color;
+        } else if(SelectedChapter == 7) {
+            chapterColorId = R.color._chapter8color;
+        } else if(SelectedChapter == 8) {
+            chapterColorId = R.color._chapter9color;
+        } else {
+            chapterColorId = R.color._chapter1color;
+        }
+
+        return getResources().getColor(chapterColorId);
+    }
+
+    private void SetLessonBoxList(int chapter) {
+
+        mLessonsBox = new ArrayList<>();
+
+        Integer[] lessonsCurrentChapter = Utilities.ChapterLessonList.get(chapter);
+        if(lessonsCurrentChapter == null) {
+            mLessonsBox = null;
+            return;
+        }
+
+        for(int i=lessonsCurrentChapter[0]; i<lessonsCurrentChapter.length+lessonsCurrentChapter[0]; i+=2) {
+            if(Utilities.InArray(i+1, lessonsCurrentChapter)) {
+                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
+                        new RVA_Lessons.LessonBox(LessonList.get(i), i),
+                        new RVA_Lessons.LessonBox(LessonList.get(i+1), i+1 )
+                ));
+            } else {
+                mLessonsBox.add(new RVA_Lessons.LessonBoxRow(
+                        new RVA_Lessons.LessonBox(LessonList.get(i), i),
+                        new RVA_Lessons.LessonBox() )
+                );
+            }
+        }
     }
 }

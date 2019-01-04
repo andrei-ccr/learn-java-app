@@ -1,14 +1,9 @@
 package org.softry.learnjava;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.PorterDuff;
-import android.provider.ContactsContract;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.widget.ImageView;
 
 import org.json.JSONObject;
 
@@ -24,31 +19,28 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public final class Utilities {
+final class Utilities {
 
-    public static final String SELECTED_CHAPTER = "org.softry.learnjava.TAG.SELECTED_CHAPTER";
-    public static final String SELECTED_LESSON = "org.softry.learnjava.TAG.SELECTED_LESSON";
+    static final String SELECTED_CHAPTER = "org.softry.learnjava.TAG.SELECTED_CHAPTER";
+    static final String SELECTED_LESSON = "org.softry.learnjava.TAG.SELECTED_LESSON";
 	
 	private static final String FILENAME_LOCKED_STATUS = "ls_lj.data";
 	private static final String FILENAME_PROGRESS_STATUS = "rp_lj.data";
 	
 	private static JSONObject jsonReadStatus;
 
-	public static boolean ShowComingSoonLessons = true;
-	public static boolean ShowProOnlyChapters = true;
+	static boolean ShowComingSoonLessons = true;
+	static boolean ShowProOnlyChapters = true;
 
-    public static final Integer[] ComingSoonChapters = {4,5,6,7,8,9};
-	public static final Integer[] ComingSoonLessons = {14, 18, 19, 20};
-
-    public static List<String> BookmarkList;
-    public static int RecentLesson;
+    static final Integer[] ComingSoonChapters = {4,5,6,7,8,9};
+	static final Integer[] ComingSoonLessons = {14, 18, 19, 20};
 	
-    public static List<Containers.Chapter> ChapterList; //List of chapters in order with chapter's details
-    public static List<Containers.Lesson> LessonList; //List of lessons in order with lesson's details
+    static List<Containers.Chapter> ChapterList; //List of chapters in order with chapter's details
+    static List<Containers.Lesson> LessonList; //List of lessons in order with lesson's details
 
-    public static final Map<Integer, Integer[]> ChapterLessonList; //Map of a chapter to a lesson list
+    static final Map<Integer, Integer[]> ChapterLessonList; //Map of a chapter to a lesson list
     static {
-        Map<Integer, Integer[]> aMap = new HashMap<>();
+        @SuppressLint("UseSparseArrays") Map<Integer, Integer[]> aMap = new HashMap<>();
         aMap.put(0, new Integer[]{0, 1, 2, 3, 4, 5, 6, 7}); //Chapter 1
         aMap.put(1, new Integer[]{8, 9, 10, 11 , 12, 13, 14});
         aMap.put(2, new Integer[]{15, 16, 17, 18 , 19, 20});
@@ -56,14 +48,13 @@ public final class Utilities {
     }
 
 
-    public static Map<Integer, String[]> LessonContentList; //Map of a lesson to a list of content Strings
-    public static Map<Integer, String[]> LessonTitleList; //Map of a lesson to a list of page title Strings
+    static Map<Integer, String[]> LessonContentList; //Map of a lesson to a list of content Strings
+    private static Map<Integer, String[]> LessonTitleList; //Map of a lesson to a list of page title Strings
 
     private static boolean DataLoaded = false;
-	private static Context context;
 
+    @SuppressLint("UseSparseArrays")
     private static void MapContentToLessons(Context context) {
-        //TODO: These should be immutable/constant/final for security reasons
         LessonContentList = new HashMap<>();
         LessonTitleList = new HashMap<>();
 
@@ -87,8 +78,8 @@ public final class Utilities {
 				resIds[j] = aLesson[k];
 			}
 			LessonTitleList.put(i, resIds);
-			
 		}
+		lessonList.recycle();
     }
     private static void LoadChapters(Context context) {
         ChapterList = new ArrayList<>();
@@ -101,6 +92,7 @@ public final class Utilities {
 
             ChapterList.add( new Containers.Chapter(aChapter[0], aChapter[1], aChapter[2], aChapter[3], ChapterLessonList.get(i)));
         }
+        chapterList.recycle();
     }
     private static void LoadLessons(Context context) {
         LessonList = new ArrayList<>();
@@ -168,7 +160,7 @@ public final class Utilities {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                Log.w("myapp", "Error lesson added in place of lesson " + Integer.toString(i));
+                Log.d("myapp", "Error lesson added in place of lesson " + Integer.toString(i));
                 //Add the error lesson
                 LessonList.add(
                         new Containers.Lesson(
@@ -198,33 +190,30 @@ public final class Utilities {
             }
         } catch (Exception e) {
             LessonList.get(0).UnlockLesson();
-            Log.w("myapp", "Couldn't access lock status file. Unlocked first lesson only");
+            Log.d("myapp", "Couldn't access lock status file. Unlocked first lesson only");
         }
 
+        lessonImgList.recycle();
     }
 
-    public static void LoadData(Context context) {
+    static void LoadData(Context context) {
         if(!DataLoaded) {
 			jsonReadStatus = new JSONObject();
 			
             MapContentToLessons(context);
             LoadChapters(context);
             LoadLessons(context);
-            LoadBookmarks();
-			
-            RecentLesson = -1;
-			Utilities.context = context;
+
             DataLoaded = true;
         }
     }
 
-    public static void ReloadData(Context context) {
+    static void ReloadData(Context context) {
         DataLoaded = false;
         LoadData(context);
-
     }
 
-    public static <E>boolean InArray(E element, E[] array) {
+    static <E>boolean InArray(E element, E[] array) {
         for(E arrayElem : array) {
             if(arrayElem.equals(element)) {
                 return true;
@@ -233,41 +222,24 @@ public final class Utilities {
         return false;
     }
 
-    public static void setGrayScale(ImageView v) {
+    /*public static void SetGrayScale(ImageView v) {
         ColorMatrix matrix = new ColorMatrix();
         matrix.setSaturation(0.1f);
         ColorMatrixColorFilter cf = new ColorMatrixColorFilter(matrix);
         v.setColorFilter(cf);
     }
 
-    public static void setImgTint(ImageView v, int colorId) {
+    public static void SetImgTint(ImageView v, int colorId) {
         v.setColorFilter(ContextCompat.getColor(v.getContext(), colorId ), PorterDuff.Mode.MULTIPLY);
-    }
+    }*/
 
-    private static void LoadBookmarks() {
-        BookmarkList = new ArrayList<>();
-    }
-
-    public static void AddBookmark(int lesson, int page) { //TODO
-        String bookmarkStr = lesson + "_" + page;
-        if(BookmarkList.contains(bookmarkStr)) {
-            return;
-        }
-        BookmarkList.add(bookmarkStr);
-    }
-
-    public static boolean BookmarkExists(int lesson, int page) {
-        String bookmarkStr = lesson + "_" + page;
-        return BookmarkList.contains(bookmarkStr);
-    }
-
-    public static void RestartLesson(int lesson) {
-        LessonList.get(lesson).ResetCompletedProcent();
-		SaveReadProgress(lesson, new int[LessonList.get(lesson).GetLessonContent().GetPageCount()]);
+    static void RestartLesson(int lesson, Context context) {
+        LessonList.get(lesson).ResetCompletedPercent(context);
+		SaveReadProgress(lesson, new int[LessonList.get(lesson).GetLessonContent().GetPageCount()], context);
     }
 
 
-    public static void UnlockNextLesson() {
+    static void UnlockNextLesson(Context context) {
         Containers.Lesson prevL = LessonList.get(0);
         for(Containers.Lesson l : LessonList) {
             if(l.equals(LessonList.get(0))) continue;
@@ -279,10 +251,10 @@ public final class Utilities {
         }
 		
 		//Save new lock status
-		SaveLockStatus();
+		SaveLockStatus(context);
     }
 
-    public static int GetTotalPagesRead() {
+    static int GetTotalPagesRead() {
         int total = 0;
         for(Containers.Lesson l : LessonList) {
             total += l.GetLessonContent().GetReadCount();
@@ -291,8 +263,8 @@ public final class Utilities {
         return total;
     }
 
-    public static int GetOverallProgress() {
-        double progress = 0;
+    static int GetOverallProgress(Context context) {
+        double progress;
         double lessonProgress = 0;
         int comingSoonLessons = 0;
         for(Containers.Lesson l : LessonList) {
@@ -300,7 +272,7 @@ public final class Utilities {
                 comingSoonLessons++;
                 continue;
             }
-            lessonProgress += l.GetCompletedProcent()/100f;
+            lessonProgress += l.GetCompletedPercent(context)/100f;
         }
 
         //Ignore lessons that are in Coming Soon state
@@ -310,11 +282,11 @@ public final class Utilities {
         return (int)progress;
     }
 	
-	public static void SaveReadProgress(int lesson, int[] newReadArray) {
+	static void SaveReadProgress(int lesson, int[] newReadArray, Context context) {
 		StringBuilder sb = new StringBuilder();
-		for(int i=0;i<newReadArray.length;i++) {
-			sb.append(Integer.toString(newReadArray[i]));
-		}
+		for(Integer i : newReadArray) {
+            sb.append(Integer.toString(i));
+        }
 
 		try {
             jsonReadStatus.put(Integer.toString(lesson), sb.toString());
@@ -329,7 +301,7 @@ public final class Utilities {
 
 	}
 	
-	public static void SaveLockStatus() {
+	private static void SaveLockStatus(Context context) {
 		StringBuilder sb = new StringBuilder();
 	
 		for(Containers.Lesson l : LessonList) {
@@ -351,7 +323,7 @@ public final class Utilities {
         }
 	}
 
-	public static void DeleteStorage() {
+	static void DeleteStorage(Context context) {
         File file = new File(context.getFilesDir(), FILENAME_PROGRESS_STATUS);
         File file2 = new File(context.getFilesDir(), FILENAME_LOCKED_STATUS);
         boolean delFileRes = file.delete();
@@ -362,4 +334,11 @@ public final class Utilities {
         context.deleteFile(FILENAME_PROGRESS_STATUS);
         context.deleteFile(FILENAME_LOCKED_STATUS);
     }
+
+    /*
+    public static int GetScreenWidth() {
+        int screenWidth = this.getWindowManager().getDefaultDisplay().getWidth();
+        return screenWidth;
+    }
+    */
 }

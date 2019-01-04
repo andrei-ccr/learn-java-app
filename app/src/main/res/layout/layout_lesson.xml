@@ -2,6 +2,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -34,15 +35,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-
-
         <ImageView
             android:id="@+id/ivLessonImgL"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginBottom="8dp"
-            app:srcCompat="@drawable/first_program" />
+            app:srcCompat="@drawable/first_program"
+            android:contentDescription="Lesson Image"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/tvLessonTitleL"
@@ -52,7 +53,8 @@
             android:gravity="center"
             android:text="1. Install Java"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/tvLessonDescL"
@@ -60,7 +62,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="How to install and everything you need to start programming in Java."
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            tools:ignore="HardcodedText" />
 
         <LinearLayout
             android:id="@+id/lessonStatusContainerL"
@@ -69,7 +72,8 @@
             android:layout_marginTop="12dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:visibility="visible">
+            android:visibility="visible"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/ivProgressSymbolL"
@@ -78,7 +82,9 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:tint="@color/_gray"
-                app:srcCompat="@drawable/ic_fa_progress" />
+                app:srcCompat="@drawable/ic_fa_progress"
+                android:contentDescription="Progress Symbol Left"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/tvLessonProgressL"
@@ -89,7 +95,8 @@
                 android:text="0%"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
-                android:visibility="visible" />
+                android:visibility="visible"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
         <LinearLayout
@@ -110,7 +117,8 @@
                 android:text="Coming Soon"
                 android:textAllCaps="false"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/_lighterBlack" />
+                android:textColor="@color/_lighterBlack"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
     </LinearLayout>
 
@@ -139,7 +147,9 @@
             android:layout_height="50dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginBottom="8dp"
-            app:srcCompat="@drawable/first_program" />
+            app:srcCompat="@drawable/first_program"
+            android:contentDescription="Lesson Image"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/tvLessonTitleR"
@@ -149,7 +159,8 @@
             android:gravity="center"
             android:text="2. First Program"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/tvLessonDescR"
@@ -157,7 +168,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Learn how to install Java and everything you need to start programming in Java."
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            tools:ignore="HardcodedText" />
 
         <LinearLayout
             android:id="@+id/lessonStatusContainerR"
@@ -165,7 +177,8 @@
             android:layout_height="match_parent"
             android:layout_marginTop="12dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/ivProgressSymbolR"
@@ -174,7 +187,9 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:tint="@color/_gray"
-                app:srcCompat="@drawable/ic_fa_progress" />
+                app:srcCompat="@drawable/ic_fa_progress"
+                android:contentDescription="Progress Symbol Right"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/tvLessonProgressR"
@@ -184,7 +199,8 @@
                 android:layout_marginLeft="0dp"
                 android:text="0%"
                 android:textColor="@android:color/black"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
         <LinearLayout
@@ -205,7 +221,8 @@
                 android:text="Coming Soon"
                 android:textAllCaps="false"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/_lighterBlack" />
+                android:textColor="@color/_lighterBlack"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
     </LinearLayout>
 

@@ -47,41 +47,6 @@
             app:layout_constraintTop_toBottomOf="@+id/appbar_main" />
 
         <ScrollView
-            android:id="@+id/container_interviewTab"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="56dp"
-            android:layout_marginBottom="56dp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:id="@+id/message"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/activity_horizontal_margin"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_marginTop="@dimen/activity_vertical_margin"
-                    android:text="Coming soon..."
-                    android:textSize="18sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </LinearLayout>
-        </ScrollView>
-
-        <ScrollView
             android:id="@+id/container_dashboardTab"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -110,12 +75,11 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Dashboard"
+                    android:text="@string/dashboard"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textSize="24sp" />
 
                 <LinearLayout
-                    android:id="@+id/box_actionButtons"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="16dp"
@@ -123,7 +87,7 @@
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/white_box"
-                    android:gravity="left|start"
+                    android:gravity="start"
                     android:orientation="horizontal"
                     android:visibility="gone">
 
@@ -134,13 +98,15 @@
                         android:layout_margin="8dp"
                         android:background="@drawable/button_shape"
                         android:clickable="true"
+                        android:drawableStart="@drawable/ic_fa_learn"
                         android:drawableLeft="@drawable/ic_fa_learn"
+                        android:focusable="true"
                         android:foreground="?attr/selectableItemBackgroundBorderless"
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
-                        android:text="Resume"
+                        android:text="@string/resume"
                         android:textColor="@android:color/white"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -160,62 +126,41 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Status"
+                            android:text="@string/status"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                         <TextView
-                            android:id="@+id/textView7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:layout_marginLeft="8dp"
-                            android:text="Ads Enabled"
+                            android:text="@string/ads_enabled"
                             android:textAllCaps="true"
                             android:textColor="@android:color/holo_red_dark"
-                            android:textSize="16sp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/box_currentPlan"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="16dp"
-                        android:gravity="left|start"
-                        android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/btn_unlock"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:layout_marginBottom="8dp"
-                            android:background="@drawable/blue_button"
-                            android:clickable="true"
-                            android:drawableLeft="@drawable/ic_unlocked"
-                            android:foreground="?attr/selectableItemBackgroundBorderless"
-                            android:padding="6dp"
-                            android:text="Get all lessons"
-                            android:textColor="@android:color/white"
-                            android:visibility="gone" />
-
-                        <Button
-                            android:id="@+id/btn_disableAds"
-                            android:layout_width="wrap_content"
-                            android:layout_height="39dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="4dp"
-                            android:layout_marginBottom="8dp"
-                            android:background="@drawable/blue_button"
-                            android:clickable="true"
-                            android:drawableLeft="@drawable/ic_unlocked"
-                            android:drawablePadding="5dp"
-                            android:foreground="?attr/selectableItemBackgroundBorderless"
-                            android:padding="6dp"
-                            android:text="Disable Ads"
-                            android:textColor="@android:color/white" />
-                    </LinearLayout>
+                    <Button
+                        android:id="@+id/btn_disableAds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="39dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/blue_button"
+                        android:clickable="true"
+                        android:drawableStart="@drawable/ic_unlocked"
+                        android:drawableLeft="@drawable/ic_unlocked"
+                        android:drawablePadding="5dp"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:padding="6dp"
+                        android:text="@string/disable_ads"
+                        android:textColor="@android:color/white" />
 
                 </LinearLayout>
 
@@ -230,10 +175,9 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Stats"
+                        android:text="@string/stats"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                         android:textSize="18sp" />
 
@@ -243,9 +187,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="4dp"
+                        android:drawableStart="@drawable/ic_page"
                         android:drawableLeft="@drawable/ic_page"
                         android:drawablePadding="5dp"
-                        android:text="0 Pages Read"
+                        android:text="@string/pages_read_str"
                         android:textSize="15sp" />
 
                     <TextView
@@ -253,6 +198,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
+                        android:drawableStart="@drawable/ic_page"
                         android:drawableLeft="@drawable/ic_page"
                         android:drawablePadding="5dp"
                         android:text="0 Lessons Completed"
@@ -263,6 +209,7 @@
                         android:id="@+id/tvStatsOverallProgress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_school"
                         android:drawableLeft="@drawable/ic_school"
                         android:drawablePadding="5dp"
                         android:text="Overall Progress 0%"
@@ -276,69 +223,17 @@
                         android:layout_marginBottom="5dp"
                         android:background="@drawable/button_shape"
                         android:clickable="true"
+                        android:drawableStart="@drawable/ic_clear"
                         android:drawableLeft="@drawable/ic_clear"
                         android:drawablePadding="5dp"
+                        android:focusable="true"
                         android:foreground="?attr/selectableItemBackgroundBorderless"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
-                        android:text="Clear Progress"
+                        android:text="@string/clear_progress"
                         android:textAllCaps="false"
                         android:textColor="@android:color/white"
                         android:textSize="14sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/white_box"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Recent Lesson"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="You haven't read any lesson recently." />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/white_box"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <TextView
-                        android:id="@+id/textView10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Bookmarks"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="You have no bookmarks." />
                 </LinearLayout>
 
             </LinearLayout>
@@ -394,7 +289,5 @@
         app:menu="@menu/menu_side_bar">
 
     </android.support.design.widget.NavigationView>
-
-
 
 </android.support.v4.widget.DrawerLayout>

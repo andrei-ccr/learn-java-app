@@ -23,18 +23,16 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity implements RVA_Chapters.ItemClickListener {
 
-    private ScrollView containerInterviewTab, containerDashboardTab;
+    private ScrollView containerDashboardTab;
     private LinearLayout containerLearnTab;
-    private RecyclerView mRecyclerView;
-    private DrawerLayout mDrawerLayout;
+    private RecyclerView mRecyclerView; //Chapters list
+    private DrawerLayout mDrawerLayout; //Side bar
     private Context context;
-    private AdView mAdView;
 
     private TextView tvPagesRead, tvOverallProgress, tvSideBarProgress;
 
@@ -73,17 +71,10 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_learn:
-                    containerInterviewTab.setVisibility(View.GONE);
                     containerDashboardTab.setVisibility(View.GONE);
                     containerLearnTab.setVisibility(View.VISIBLE);
                     return true;
-                /*case R.id.navigation_interview:
-                    containerInterviewTab.setVisibility(View.VISIBLE);
-                    containerDashboardTab.setVisibility(View.GONE);
-                    containerLearnTab.setVisibility(View.GONE);
-                    return true;*/
                 case R.id.navigation_dashboard:
-                    containerInterviewTab.setVisibility(View.GONE);
                     containerLearnTab.setVisibility(View.GONE);
                     containerDashboardTab.setVisibility(View.VISIBLE);
                     return true;
@@ -95,12 +86,14 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AdView mAdView;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MobileAds.initialize(this, getString(R.string.appAdsId));
         context = this;
 
-        int screenWidth =  this.getWindowManager().getDefaultDisplay().getWidth();
+        //Initialize ads SDK
+        MobileAds.initialize(context, getString(R.string.appAdsId));
 
 		//Load data
         Utilities.LoadData(context);
@@ -116,38 +109,22 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
                 Intent intent;
                 switch(menuItem.getItemId()) {
                     case R.id.side_bar_settings:
-                        Log.i("myapp", "Settings selected");
                         intent = new Intent(context, SettingsActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.side_bar_about:
                         intent = new Intent(context, AboutActivity.class);
                         startActivity(intent);
-                        Log.i("myapp", "About selected");
                         break;
                     case R.id.side_bar_report:
                         intent = new Intent(context, ReportActivity.class);
                         startActivity(intent);
                         break;
-                    /*case R.id.side_bar_bookmarks:
-                        Log.i("myapp", "Bookmarks selected");
-                        intent = new Intent(context, BookmarksActivity.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.side_bar_search:
-                        Log.i("myapp", "Search selected");
-                        break;*/
                     case R.id.side_bar_disable_ads:
-                        Log.i("myapp", "Disable ads selected");
                         intent = new Intent(context, DisableAdsActivity.class);
                         startActivity(intent);
                         break;
-                   /* case R.id.side_bar_unlock_all:
-                        Log.i("myapp", "Unlock all selected");
-                        break;*/
                 }
-
-                //mDrawerLayout.closeDrawers();
 
                 return true;
             }
@@ -155,30 +132,11 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 
         //Get the main containers
         containerLearnTab = findViewById(R.id.container_learnTab);
-        containerInterviewTab = findViewById(R.id.container_interviewTab);
         containerDashboardTab = findViewById(R.id.container_dashboardTab);
 
-        LinearLayout box_actionButtons = findViewById(R.id.box_actionButtons);
-        LinearLayout box_currentPlan = findViewById(R.id.box_currentPlan);
-
-        Button btnStart, btnClear, btnUnlock, btnDisableAds;
-        //btnStart = findViewById(R.id.btn_start);
+        Button btnClear, btnDisableAds;
         btnClear = findViewById(R.id.btn_clearProgress);
-        //btnUnlock = findViewById(R.id.btn_unlock);
         btnDisableAds = findViewById(R.id.btn_disableAds);
-
-        /*if(screenWidth < 720) {
-            box_actionButtons.setOrientation(LinearLayout.VERTICAL);
-            btnClear.setCompoundDrawables(null, getResources().getDrawable(R.drawable.ic_clear), null, null);
-        }*/
-        if(screenWidth < 768) {
-            box_currentPlan.setOrientation(LinearLayout.VERTICAL);
-
-            //Remove left margin on Disable Ads button
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(btnDisableAds.getLayoutParams());
-            lp.setMargins(0,4,0,8);
-            btnDisableAds.setLayoutParams(lp);
-        }
 
         btnDisableAds.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -191,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utilities.DeleteStorage();
+                Utilities.DeleteStorage(context);
                 Utilities.ReloadData(context);
                 UpdateStats();
                 rvAdapter.notifyDataSetChanged();
@@ -228,7 +186,6 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     @Override
     public void onResume() {
         super.onResume();
-        Log.i("myapp", "OnResume called()");
         if(rvAdapter != null)
             rvAdapter.notifyDataSetChanged();
         UpdateStats();
@@ -237,7 +194,6 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     @Override
     public void onRestart() {
         super.onRestart();
-        Log.i("myapp", "OnRestart called()");
         if(rvAdapter != null)
             rvAdapter.notifyDataSetChanged();
         UpdateStats();
@@ -249,7 +205,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         if((position>=0) && (position<4)) position-=1;
         else if(position>=4) position -=2;
 
-        Log.i("myapp_info", "Selected Chapter " + Integer.toString(position));
+        Log.d("myapp", "Selected Chapter " + Integer.toString(position));
 
         Intent lessonsActivity = new Intent(this, LessonsActivity.class);
         lessonsActivity.putExtra(Utilities.SELECTED_CHAPTER, Integer.toString(position));
@@ -259,8 +215,8 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 
     private void UpdateStats() {
         tvPagesRead.setText(Utilities.GetTotalPagesRead() + " Pages read");
-        tvOverallProgress.setText("Overall progress " + Utilities.GetOverallProgress() + "%");
-        tvSideBarProgress.setText("Overall progress: " + Utilities.GetOverallProgress() + "%");
+        tvOverallProgress.setText("Overall progress " + Utilities.GetOverallProgress(this) + "%");
+        tvSideBarProgress.setText("Overall progress: " + Utilities.GetOverallProgress(this) + "%");
     }
 
 

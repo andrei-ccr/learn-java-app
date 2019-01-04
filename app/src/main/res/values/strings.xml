@@ -3,28 +3,12 @@
     <string name="app_desc">
         Learn to code in Java with lessons that take you step by step. Suitable for beginners
         with limited or no programming knowledge.\n\nEach lesson teaches you a new concept with proper explanation and examples.
-
     </string>
-    <string name="app_ver">v1.0.1230 [Beta]</string>
+    <string name="app_ver">v1.0.0104 [Beta]</string>
     <string name="app_desc_donate">Please support this project by sharing, rating or contributing with any amount you wish on Patreon.</string>
+
     <string name="title_learn">Learn</string>
     <string name="title_dashboard">Dashboard</string>
-
-
-
-
-    <!-- Boxes -->
-    <string name="box_title_basic">Basic Learning Package</string>
-    <string name="box_subtitle_basic">FREE  ~  Estimated duration: 1h - 4h</string>
-    <string name="box_desc_basic">Learn Java from the beginning. This package contains only the basic concepts. Suitable for beginners.</string>
-
-    <string name="box_title_ad">Ad free</string>
-    <string name="box_subtitle_ad">Permanently disables ads</string>
-    <string name="box_desc_ad">Tired of ads? You can get rid of them!</string>
-
-    <string name="box_title_full">Complete Learning Package</string>
-    <string name="box_subtitle_full">PAID  ~  Estimated duration: &gt;8h</string>
-    <string name="box_desc_full">This package gives you access to all lessons and upcoming lessons. Suitable for beginners and advanced.</string>
 
     <array name="chapterList">
         <item name="chapter1">@array/chapter1</item>
@@ -188,15 +172,31 @@
     <string name="btn_start">Start</string>
     <string name="btn_activate">Activate</string>
     <string name="btn_disable_ads">Disable Ads</string>
+    <string name="btnUnlock">Unlock</string>
+    <string name="btnYes">Yes</string>
+    <string name="btnNo">No</string>
+
+    <string name="dialogLessonProgressText">Are you sure you want to reset current lesson\'s progress?</string>
+    <string name="dialogLessonProgressTitle">Reset progress</string>
+
 
 
     <!-- Other strings -->
     <string name="progress_str">Progress:</string>
     <string name="chapter_str">Chapter</string>
     <string name="fa_license">Icons by Font Awesome \nhttps://fontawesome.com/license</string>
-
-
-    <!-- ######################################## Lessons Body and Page Title ######################################## -->
+    <string name="dashboard">Dashboard</string>
+    <string name="resume">Resume</string>
+    <string name="status">Status:</string>
+    <string name="ads_enabled">Ads Enabled</string>
+    <string name="ads_disabled">Ads Disabled</string>
+    <string name="disable_ads">Disable Ads</string>
+    <string name="stats">Stats</string>
+    <string name="clear_progress">Clear Progress</string>
+    <string name="pages_read_str">%1%d Pages Read</string>
+    <string name="overall_progress_str">Overall Progress %1%d%</string>
+    <string name="lvl_beginner_str">Level - Beginner</string>
+    <string name="lvl_advanced_str">Level - Advanced</string>
 
     <array name="lessonList">
         <item>@array/lesson101</item>

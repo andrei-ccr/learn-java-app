@@ -1,9 +1,11 @@
 package org.softry.learnjava;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,7 +16,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,7 +25,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -41,55 +41,31 @@ public class InLessonActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//Get current lesson
+        //Get current lesson
         Intent parentActivity = getIntent();
         selectedLesson = Integer.parseInt(parentActivity.getStringExtra(Utilities.SELECTED_LESSON)); //Returns lesson id (eg.: 0, 1 etc)
         selectedChapter = Integer.parseInt(parentActivity.getStringExtra(Utilities.SELECTED_CHAPTER)); //Returns lesson id (eg.: 0, 1 etc)
 
         TypedArray chapterThemeList = getResources().obtainTypedArray(R.array.ChaptersColorNoToolbar);
         setTheme(chapterThemeList.getResourceId(selectedChapter, R.style.AppTheme_ChapterOne_NoToolbar));
+        chapterThemeList.recycle();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_lesson);
-
-        AdView mAdView = findViewById(R.id.adView2);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build();//.addTestDevice("80B20B041E29D3D23790297B560D858C")
-        mAdView.loadAd(adRequest);
-
+        final Context context = this;
 
         lessonContent = Utilities.LessonList.get(selectedLesson).GetLessonContent();
-
-        Utilities.RecentLesson =  selectedLesson;
 
         //Set toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if(selectedChapter == 0)
-            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter1color));
-
-        else if(selectedChapter == 1)
-            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter2color));
-        else if(selectedChapter == 2)
-            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter3color));
-        else if(selectedChapter == 3)
-            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter4color));
-        else if(selectedChapter == 4)
-            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter5color));
-        else if(selectedChapter == 5)
-            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter6color));
-        else if(selectedChapter == 6)
-            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter7color));
-        else if(selectedChapter == 7)
-            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter8color));
-        else if(selectedChapter == 8)
-            toolbar.setBackgroundColor(getResources().getColor(R.color._chapter9color));
-
+        toolbar.setBackgroundColor(GetBackgroundColorId());
 
         //Mark first page as read
         if(!Utilities.LessonList.get(selectedLesson).IsLocked()){
             lessonContent.MarkPageAsRead(0);
-            Utilities.SaveReadProgress(selectedLesson, lessonContent.GetAllReadStatus());
+            Utilities.SaveReadProgress(selectedLesson, lessonContent.GetAllReadStatus(), context);
         }
 
         SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), Utilities.LessonContentList.get(selectedLesson).length);
@@ -101,6 +77,10 @@ public class InLessonActivity extends AppCompatActivity {
         final TextView tvCurrentPage = findViewById(R.id.tvCurrentPage);
         tvCurrentPage.setText(mViewPager.getCurrentItem()+1 + "/" + Utilities.LessonContentList.get(selectedLesson).length);
 
+        AdView mAdView = findViewById(R.id.adView2);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build();//.addTestDevice("80B20B041E29D3D23790297B560D858C")
+        mAdView.loadAd(adRequest);
+
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
@@ -111,16 +91,13 @@ public class InLessonActivity extends AppCompatActivity {
             public void onPageSelected(int i) {
                 if(!Utilities.LessonList.get(selectedLesson).IsLocked()) {
                     lessonContent.MarkPageAsRead(i);
-                    Utilities.SaveReadProgress(selectedLesson, lessonContent.GetAllReadStatus());
+                    Utilities.SaveReadProgress(selectedLesson, lessonContent.GetAllReadStatus(), context);
                 }
-
-
-
             }
 
             @Override
             public void onPageScrollStateChanged(int i) {
-
+                //TODO: Mark as read when page scroll reaches bottom
             }
         });
 
@@ -129,16 +106,12 @@ public class InLessonActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_in_lesson, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         Intent intent;
         //noinspection SimplifiableIfStatement
@@ -146,42 +119,62 @@ public class InLessonActivity extends AppCompatActivity {
             intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
             return true;
-        } /*else if(id == R.id.action_bookmark) {
-            Utilities.AddBookmark(selectedLesson, mViewPager.getCurrentItem());
-            Toast.makeText(this, "Page bookmarked.", Toast.LENGTH_LONG);
-            return true;
-        }*/ else if(id == R.id.action_restart) {
-
+        } else if(id == R.id.action_restart) {
             final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
-            dlgAlert.setMessage("Are you sure you want to reset current lesson's progress?");
-            dlgAlert.setTitle("Reset progress");
-            dlgAlert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Utilities.RestartLesson(selectedLesson);
-                            finish();
+            final Context context = this;
+            dlgAlert.setMessage(R.string.dialogLessonProgressText);
+            dlgAlert.setTitle(R.string.dialogLessonProgressTitle);
+            dlgAlert.setPositiveButton(R.string.btnYes, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    Utilities.RestartLesson(selectedLesson, context);
+                    finish();
 
-                        }
-                    });
-            dlgAlert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                }
+            });
+            dlgAlert.setNegativeButton(R.string.btnNo, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
+                    dialog.dismiss();
                         }
                     });
             dlgAlert.setCancelable(true);
             dlgAlert.create().show();
 
             return true;
-        } /*else if(id == R.id.action_dashboard) {
-
-            return true;
-        }*/ else if(id == R.id.action_report) {
+        } else if(id == R.id.action_report) {
             intent = new Intent(this, ReportActivity.class);
             startActivity(intent);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private int GetBackgroundColorId() {
+        int resId;
+        if(selectedChapter == 0)
+           resId = getResources().getColor(R.color._chapter1color);
+        else if(selectedChapter == 1)
+            resId = getResources().getColor(R.color._chapter2color);
+        else if(selectedChapter == 2)
+            resId = getResources().getColor(R.color._chapter3color);
+        else if(selectedChapter == 3)
+            resId = getResources().getColor(R.color._chapter4color);
+        else if(selectedChapter == 4)
+            resId = getResources().getColor(R.color._chapter5color);
+        else if(selectedChapter == 5)
+            resId = getResources().getColor(R.color._chapter6color);
+        else if(selectedChapter == 6)
+            resId = getResources().getColor(R.color._chapter7color);
+        else if(selectedChapter == 7)
+            resId = getResources().getColor(R.color._chapter8color);
+        else if(selectedChapter == 8)
+            resId = getResources().getColor(R.color._chapter9color);
+        else
+            resId = getResources().getColor(R.color._chapter1color);
+
+        return resId;
+
     }
 
     /**
@@ -192,12 +185,12 @@ public class InLessonActivity extends AppCompatActivity {
          * The fragment arguments.
          */
         private static final String ARG_SECTION_NUMBER = "section_number"; //Current section/page number
-        private static final String ARG_LESSON_NUMBER = "lesson_number";
-        private static final String ARG_STR_PAGE_TITLE = "str_page_title";
-        private static final String ARG_STR_LESSON_BODY = "str_lesson_body";
-        private static final String ARG_MAX_PAGES = "max_pages";
-        private static final String ARG_IMG_ID = "lesson_img_id";
-        private static final String ARG_STR_LESSON_TITLE = "str_lesson_title";
+        private static final String ARG_LESSON_NUMBER = "lesson_number"; //Current lesson number
+        private static final String ARG_STR_PAGE_TITLE = "str_page_title"; //Current page title
+        private static final String ARG_STR_LESSON_BODY = "str_lesson_body"; //Current page content
+        private static final String ARG_MAX_PAGES = "max_pages"; //Number of pages of current lesson
+        private static final String ARG_IMG_ID = "lesson_img_id"; // Current lesson's image id
+        private static final String ARG_STR_LESSON_TITLE = "str_lesson_title"; //Current lesson's title
 
         public static int currentPageNum = 1;
 
@@ -215,9 +208,9 @@ public class InLessonActivity extends AppCompatActivity {
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             args.putInt(ARG_LESSON_NUMBER, currentLesson);
 
-            args.putString(ARG_STR_LESSON_BODY, Utilities.LessonContentList.get(currentLesson)[sectionNumber]);
-            args.putString(ARG_STR_PAGE_TITLE, Utilities.LessonTitleList.get(currentLesson)[sectionNumber]);
-            args.putInt(ARG_MAX_PAGES, Utilities.LessonContentList.get(currentLesson).length);
+            args.putString(ARG_STR_LESSON_BODY, Utilities.LessonList.get(currentLesson).GetLessonContent().GetContentByPage(sectionNumber));
+            args.putString(ARG_STR_PAGE_TITLE, Utilities.LessonList.get(currentLesson).GetLessonContent().GetTitleByPage(sectionNumber));
+            args.putInt(ARG_MAX_PAGES, Utilities.LessonList.get(currentLesson).GetLessonContent().GetAllContent().length);
             args.putInt(ARG_IMG_ID, Utilities.LessonList.get(currentLesson).GetImageRID());
             args.putString(ARG_STR_LESSON_TITLE, Utilities.LessonList.get(currentLesson).GetTitle());
 
@@ -229,12 +222,10 @@ public class InLessonActivity extends AppCompatActivity {
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
             final View rootView = inflater.inflate(R.layout.fragment_in_lesson, container, false);
-
             final int currentPage = getArguments().getInt(ARG_SECTION_NUMBER);
-            int currentLesson = getArguments().getInt(ARG_LESSON_NUMBER);
 
             String lessonBodyStringId = getArguments().getString(ARG_STR_LESSON_BODY);
             String pageTitleStringId = getArguments().getString(ARG_STR_PAGE_TITLE);
@@ -252,12 +243,12 @@ public class InLessonActivity extends AppCompatActivity {
             nextBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(currentPage+1 == maxPages) {
-                        ((Activity)v.getContext()).finish();
-                    } else {
-                        ViewPager thisVp = (ViewPager) rootView.getParent();
-                        thisVp.setCurrentItem(currentPage + 1, true);
-                    }
+                if(currentPage+1 == maxPages) {
+                    ((Activity)v.getContext()).finish();
+                } else {
+                    ViewPager thisVp = (ViewPager) rootView.getParent();
+                    thisVp.setCurrentItem(currentPage + 1, true);
+                }
                 }
             });
 
@@ -273,7 +264,6 @@ public class InLessonActivity extends AppCompatActivity {
         }
 
     }
-
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to one of the sections/tabs/pages.
