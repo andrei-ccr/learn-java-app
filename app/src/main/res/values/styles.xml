@@ -7,6 +7,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>-->
 
+    <style name="SideBarStyle" parent="Base.TextAppearance.AppCompat">
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="AppTheme_Main" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

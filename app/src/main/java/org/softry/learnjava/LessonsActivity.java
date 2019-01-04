@@ -77,7 +77,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         setContentView(R.layout.activity_lessons);
 		
 		mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId(getString(R.string.testInterstitial));
         mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build());
 
         TextView tvComingSoon = findViewById(R.id.tvLessonComingSoon);

@@ -6,6 +6,7 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/_progressOrange"
     android:fitsSystemWindows="true"
     tools:context=".InLessonActivity">
 
@@ -38,7 +39,6 @@
         </android.support.v7.widget.Toolbar>
 
 
-
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
@@ -46,7 +46,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="56dp"
-        android:layout_marginBottom="51dp">
+        android:layout_marginBottom="60dp"
+        android:background="#fff">
 
     </android.support.v4.view.ViewPager>
 
@@ -55,9 +56,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/_white"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+        ads:adUnitId="@string/testBanner" />
 
 
 </android.support.design.widget.CoordinatorLayout>

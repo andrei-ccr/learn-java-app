@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MobileAds.initialize(this, "ca-app-pub-9490509780764092~4738195324");
+        MobileAds.initialize(this, getString(R.string.appAdsId));
         context = this;
 
         int screenWidth =  this.getWindowManager().getDefaultDisplay().getWidth();

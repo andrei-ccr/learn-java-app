@@ -11,7 +11,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#eee">
+        android:background="@color/_progressOrange">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar_main"
@@ -39,9 +39,9 @@
             android:id="@+id/adView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/_white"
+            android:layout_marginTop="4dp"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            ads:adUnitId="@string/testBanner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appbar_main" />
@@ -85,8 +85,9 @@
             android:id="@+id/container_dashboardTab"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="108dp"
+            android:layout_marginTop="122dp"
             android:layout_marginBottom="56dp"
+            android:background="#eee"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -347,10 +348,9 @@
             android:id="@+id/container_learnTab"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="108dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
+            android:layout_marginTop="122dp"
             android:layout_marginBottom="56dp"
+            android:background="#eee"
             android:orientation="vertical"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -364,7 +364,6 @@
                 android:id="@+id/rvChapters"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 app:layout_constraintBottom_toBottomOf="parent" />
         </LinearLayout>
 
@@ -372,7 +371,6 @@
             android:id="@+id/navigation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="3dp"
             android:background="@android:color/background_light"
             app:itemIconTint="@color/bnv_tab_item_foreground"
             app:itemTextColor="@color/bnv_tab_item_foreground"
@@ -392,6 +390,7 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/layout_sidebar_header"
         app:itemBackground="?attr/selectableItemBackgroundBorderless"
+        app:itemTextAppearance="@style/SideBarStyle"
         app:menu="@menu/menu_side_bar">
 
     </android.support.design.widget.NavigationView>

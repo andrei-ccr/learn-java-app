@@ -4,241 +4,241 @@
     <string-array name="lesson101">
         <item>Getting Started</item>
         <item><![CDATA["
-			<p>To start learning, you'll first have to install Java. For beginners, an IDE is also recommended. This is what you'll do in this lesson: </p><p><a href="101_2">1. Download and Install Java</a></p><p><a href="101_4">2. Get an IDE (Eclipse)</a></p><p><a href="101_5">3. Learn how to create a new Project in Eclipse</a></p><p>In the following sections, you will be guided step by step on how to do these. Tap <font color="#123456">next</font> to get started!</p>
-		"]]></item>
+            <p>To start learning, you'll first have to install Java. For beginners, an IDE is also recommended. This is what you'll do in this lesson: </p><p><a href="101_2">1. Download and Install Java</a></p><p><a href="101_4">2. Get an IDE (Eclipse)</a></p><p><a href="101_5">3. Learn how to create a new Project in Eclipse</a></p><p>In the following sections, you will be guided step by step on how to do these. Tap <font color="#123456">next</font> to get started!</p>
+        "]]></item>
 
         <item>Downloading and Installing Java</item>
         <item><![CDATA["
-			<p>We'll start by downloading and installing Java. This tutorial applies for computers running <font color="#009900">Windows x64</font>. You'll download <font color="orange"><b>Java SE Development Kit 8</b></font>. </p><p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">1. Go to the Java download web page</a><br>2. Select <i>Accept License Agreement</i><br>3. Click on the filename <font color="#009900">jdk-8u191-windows-x64.exe</font> (click the red down arrow)<br>4. Run the downloaded executable and follow the onscreen instructions.</p><p>Java will now be installed on your computer.</p><p>In the next section, you'll also learn how to download and install an IDE. An <b><font color="#123456">Integrated Development Environment</font></b> is recommended for beginners. </p>
-		"]]>
-		</item>
+            <p>We'll start by downloading and installing Java. This tutorial applies for computers running <font color="#009900">Windows x64</font>. You'll download <font color="orange"><b>Java SE Development Kit 8</b></font>. </p><p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">1. Go to the Java download web page</a><br>2. Select <i>Accept License Agreement</i><br>3. Click on the filename <font color="#009900">jdk-8u191-windows-x64.exe</font> (click the red down arrow)<br>4. Run the downloaded executable and follow the onscreen instructions.</p><p>Java will now be installed on your computer.</p><p>In the next section, you'll also learn how to download and install an IDE. An <b><font color="#123456">Integrated Development Environment</font></b> is recommended for beginners. </p>
+        "]]>
+        </item>
 
         <item>Integrated Development Environment IDE</item>
         <item><![CDATA["
-			<p>An <i>Integrated Development Environment</i> (IDE) is a software that makes writing programs easier. You get syntax highlighting, code suggestions, your code is validated as you type and building and running your program is faster and easier. For beginners, these features are very helpful in the learning process.</p><p>For <i>Java</i> development we are going to use <font color="orange"><b>Eclipse</b></font>. Eclipse is currently one of the most popular IDEs and possibly the most used one at the time of writing this.</p><p>So let's download and install it. Remember, we are downloading the version for <font color="#009900">Windows x64</font>. Tap next to continue.</p>
-		"]]>
-		</item>
+            <p>An <i>Integrated Development Environment</i> (IDE) is a software that makes writing programs easier. You get syntax highlighting, code suggestions, your code is validated as you type and building and running your program is faster and easier. For beginners, these features are very helpful in the learning process.</p><p>For <i>Java</i> development we are going to use <font color="orange"><b>Eclipse</b></font>. Eclipse is currently one of the most popular IDEs and possibly the most used one at the time of writing this.</p><p>So let's download and install it. Remember, we are downloading the version for <font color="#009900">Windows x64</font>. Tap next to continue.</p>
+        "]]>
+        </item>
 
         <item>Getting Eclipse</item>
         <item><![CDATA["
-			<p>First, go to the <a href="https://eclipse.org/downloads/">Eclipse download page</a>. You can easily access the download page by typing <font color="#123456"><i>eclipse.org/downloads</i></font> in your browser's bar.</p><p>Click the orange <font color="#830"><i>Download</i></font> button. Another page might open and you might have to click the <i>Download</i> button once again. After the setup file has finished downloading, run it.</p><p>Once the EclipseInstaller window appears, choose the <font color="purple"><b>Eclipse IDE for Java Developers</b></font> option. Afterwards, you can click the <b>INSTALL</b> button. During installation you might have to click <i>Accept</i> a couple of times.</p>
-		"]]>
-		</item>
+            <p>First, go to the <a href="https://eclipse.org/downloads/">Eclipse download page</a>. You can easily access the download page by typing <font color="#123456"><i>eclipse.org/downloads</i></font> in your browser's bar.</p><p>Click the orange <font color="#830"><i>Download</i></font> button. Another page might open and you might have to click the <i>Download</i> button once again. After the setup file has finished downloading, run it.</p><p>Once the EclipseInstaller window appears, choose the <font color="purple"><b>Eclipse IDE for Java Developers</b></font> option. Afterwards, you can click the <b>INSTALL</b> button. During installation you might have to click <i>Accept</i> a couple of times.</p>
+        "]]>
+        </item>
 
         <item>Using Eclipse</item>
         <item><![CDATA["
-			<p>Everything is now set! You are ready to start programming in Java. In the next lesson you are going to write your first Java program.</p><p>Before doing that, let's learn how to use Eclipse. Go ahead and run Eclipse. You will be asked about providing a <i>workspace</i> directory. You can leave that as it is and click the <b>Launch</b> button.</p><p>Once the Eclipse IDE opens, go to <b>File &gt; New &gt; Java Project</b>. In the window that opens, you have to write a <i>Project Name</i> (eg.: MyProject) and click the <b>Finish</b> button.</p><p>Now that you created a <font color="#990000">Project</font>, you need to create a <font color="#990000"><i>Class</i></font>.</p>
-		"]]>
-		</item>
+            <p>Everything is now set! You are ready to start programming in Java. In the next lesson you are going to write your first Java program.</p><p>Before doing that, let's learn how to use Eclipse. Go ahead and run Eclipse. You will be asked about providing a <i>workspace</i> directory. You can leave that as it is and click the <b>Launch</b> button.</p><p>Once the Eclipse IDE opens, go to <b>File &gt; New &gt; Java Project</b>. In the window that opens, you have to write a <i>Project Name</i> (eg.: MyProject) and click the <b>Finish</b> button.</p><p>Now that you created a <font color="#990000">Project</font>, you need to create a <font color="#990000"><i>Class</i></font>.</p>
+        "]]>
+        </item>
 
         <item>Creating a class</item>
         <item><![CDATA["
-			<p>Every project must contain at least one class. For now, your projects will contain only one class. In this class you will write your program code. This might be confusing for now. That's OK.</p><p>To create a class for your project go to <br><b>File &gt; New &gt; Class</b><br>. In the window that opens, enter the <i>Name</i> of the class(eg.: MyFirstProgram) and the <i>Source folder</i> which is going to be <font color="#990000"><i>MyProject/src</i></font> and leave everything else as it is. Click <b>Finish</b>.</p><p>You have now created a class in which you can write code. In the next lesson, we will write a simple Java program. See you there!</p>
-		"]]>
-		</item>
+            <p>Every project must contain at least one class. For now, your projects will contain only one class. In this class you will write your program code. This might be confusing for now. That's OK.</p><p>To create a class for your project go to <br><b>File &gt; New &gt; Class</b><br>. In the window that opens, enter the <i>Name</i> of the class(eg.: MyFirstProgram) and the <i>Source folder</i> which is going to be <font color="#990000"><i>MyProject/src</i></font> and leave everything else as it is. Click <b>Finish</b>.</p><p>You have now created a class in which you can write code. In the next lesson, we will write a simple Java program. See you there!</p>
+        "]]>
+        </item>
     </string-array>
 
     <string-array name="lesson102">
         <item>Time to code</item>
         <item><![CDATA["
-			<p>Let's start with the most basic program you can write: the <font bgcolor="green">Hello World</font> program. Create a new project with one class named <font color="#987654"><i>MyFirstApp</i></font>. Don't know how to do that? Check <a href="101_5">lesson 1 on how to create a project</a></p>
-			<p>You should now be able to write code inside the <font color="#987654"><em>MyFirstApp</em></font> class. Write the following code:</p>
-			<p>
-			<font color="#008000">public class</font> <font color="#1aa3ff"><em>MyFirstApp</em></font> { <br>
-			&nbsp;&nbsp;&nbsp;<font color="#008000">public static</font> <font color="#B00040">void</font> <font color="#1aa3ff"><em>main</em></font>(<font color="black">String</font>[] <font color="#a300cc">args</font>) { <br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println( <font color="#a300cc">\"Hello World!\"</font> ); <br>
-			&nbsp;&nbsp;&nbsp;}<br>
-			}
-			</p>
-			<p>In the next sections we will run the program and then explain what every line does.</p>
-		"]]></item>
+            <p>Let's start with the most basic program you can write: the <font bgcolor="green">Hello World</font> program. Create a new project with one class named <font color="#987654"><i>MyFirstApp</i></font>. Don't know how to do that? Check <a href="101_5">lesson 1 on how to create a project</a></p>
+            <p>You should now be able to write code inside the <font color="#987654"><em>MyFirstApp</em></font> class. Write the following code:</p>
+            <p>
+            <font color="#008000">public class</font> <font color="#1aa3ff"><em>MyFirstApp</em></font> { <br>
+            &nbsp;&nbsp;&nbsp;<font color="#008000">public static</font> <font color="#B00040">void</font> <font color="#1aa3ff"><em>main</em></font>(<font color="black">String</font>[] <font color="#a300cc">args</font>) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println( <font color="#a300cc">\"Hello World!\"</font> ); <br>
+            &nbsp;&nbsp;&nbsp;}<br>
+            }
+            </p>
+            <p>In the next sections we will run the program and then explain what every line does.</p>
+        "]]></item>
 
         <item>Run your program</item>
         <item><![CDATA["
-			<p>In order to run this program just click the green button at the top. Alternatively, you can use the menu at top. Click <b>Run &gt; Run</b> (or press CTRL+F11)</p>
+            <p>In order to run this program just click the green button at the top. Alternatively, you can use the menu at top. Click <b>Run &gt; Run</b> (or press CTRL+F11)</p>
 
-			<p>If a dialog appears asking you to save, click <b>OK</b>. The program will now execute. You should see the words <font color="#555">"Hello World!"</font> around the bottom area of Eclipse</p>
+            <p>If a dialog appears asking you to save, click <b>OK</b>. The program will now execute. You should see the words <font color="#555">"Hello World!"</font> around the bottom area of Eclipse</p>
 
-			<p>If there were <font color="red"><em>errors</em></font> in your code, a dialog will show up, warning you about them. Go <a href="102_1">back</a> and check that you didn't misspell anything in your code.</p>
-		"]]></item>
+            <p>If there were <font color="red"><em>errors</em></font> in your code, a dialog will show up, warning you about them. Go <a href="102_1">back</a> and check that you didn't misspell anything in your code.</p>
+        "]]></item>
 
         <item>What does it do?</item>
         <item><![CDATA["
-			<p>Let's see what every line of code does:</p>
-			<p>The first line of code: <br><font color="#008000">public class</font> <font color="#1aa3ff"><em>MyFirstApp</em></font></p>
-			<p>This line declares a <font color="#008000">class</font> named <font color="#1aa3ff"><em>MyFirstApp</em></font> and makes it <font color="#008000">public</font>.</p>
-			<p>
-			What is a class and a public class? For now, that is not important. All programs in Java run inside a class so we'll have write them like this. You'll learn about what classes are in <a href="301">Chapter III</a>.</p>
-		"]]></item>
+            <p>Let's see what every line of code does:</p>
+            <p>The first line of code: <br><font color="#008000">public class</font> <font color="#1aa3ff"><em>MyFirstApp</em></font></p>
+            <p>This line declares a <font color="#008000">class</font> named <font color="#1aa3ff"><em>MyFirstApp</em></font> and makes it <font color="#008000">public</font>.</p>
+            <p>
+            What is a class and a public class? For now, that is not important. All programs in Java run inside a class so we'll have write them like this. You'll learn about what classes are in <a href="301">Chapter III</a>.</p>
+        "]]></item>
 
         <item>The main function</item>
         <item ><![CDATA["
-			<p>The second line of code was:<br>
-			<font color="#008000">public static</font> <font color="#B00040">void</font> <font color="#1aa3ff"><em>main</em></font>(<font color="black">String</font>[] <font color="#a300cc">args</font>)</p>
+            <p>The second line of code was:<br>
+            <font color="#008000">public static</font> <font color="#B00040">void</font> <font color="#1aa3ff"><em>main</em></font>(<font color="black">String</font>[] <font color="#a300cc">args</font>)</p>
 
-			<p>This line declares a function named <font color="#1aa3ff">main</font>. It also declares this function as <font color="#008000">public</font>, <font color="#008000">static</font>, and <font color="#B00040">void</font>. Inside the parentheses, there's the function's parameter <font color="black">String</font>[] <font color="#a300cc">args</font>. You'll learn about the meaning of all these in <a href="108_1">Lesson 8</a>.</p>
+            <p>This line declares a function named <font color="#1aa3ff">main</font>. It also declares this function as <font color="#008000">public</font>, <font color="#008000">static</font>, and <font color="#B00040">void</font>. Inside the parentheses, there's the function's parameter <font color="black">String</font>[] <font color="#a300cc">args</font>. You'll learn about the meaning of all these in <a href="108_1">Lesson 8</a>.</p>
 
-			<p>However, it's important to understand that every program starts inside this function. The function name is always <font color="#1aa3ff"><em>main</em></font> and has to be declared exactly like we did above. There can be ONLY ONE <font color="#1aa3ff"><em>main</em></font> function in every program and it is ALWAYS inside a class. When you execute the program, the code inside the <font color="#1aa3ff"><em>main</em></font> function will be executed.</p>
+            <p>However, it's important to understand that every program starts inside this function. The function name is always <font color="#1aa3ff"><em>main</em></font> and has to be declared exactly like we did above. There can be ONLY ONE <font color="#1aa3ff"><em>main</em></font> function in every program and it is ALWAYS inside a class. When you execute the program, the code inside the <font color="#1aa3ff"><em>main</em></font> function will be executed.</p>
 
-			<p>If we don't write anything inside, nothing will happen.</p>
-		"]]></item>
+            <p>If we don't write anything inside, nothing will happen.</p>
+        "]]></item>
 
         <item>Saying hello</item>
         <item><![CDATA["
-			<p>The last line of code that needs explaining is this:<br>
-			System.out.println( <font color=\"#a300cc\">\"Hello World!\"</font> ); <br>
-			</p>
+            <p>The last line of code that needs explaining is this:<br>
+            System.out.println( <font color=\"#a300cc\">\"Hello World!\"</font> ); <br>
+            </p>
 
-			<p>This line will output/print to the screen the words \"Hello World!\" (without the quote marks \").</p>
+            <p>This line will output/print to the screen the words \"Hello World!\" (without the quote marks \").</p>
 
-			<p>We can print anything to screen using the command function:<br> System.out.println( <font color=\"#a300cc\">\"Your message here\"</font> );</p>
+            <p>We can print anything to screen using the command function:<br> System.out.println( <font color=\"#a300cc\">\"Your message here\"</font> );</p>
 
-			<p><b>Note</b> the <b>;</b> at the end. Every instruction should be followed by ; (the semicolon). There are some exceptions which we'll cover in future lessons. </p>
+            <p><b>Note</b> the <b>;</b> at the end. Every instruction should be followed by ; (the semicolon). There are some exceptions which we'll cover in future lessons. </p>
 
-			<p>You can print your own message to screen, or even print more messages by calling the printing function multiple times:<br>
-			System.out.println( <font color=\"#a300cc\">\"This is a message\"</font> );<br>
-			System.out.println( <font color=\"#a300cc\">\"And this is another message\"</font> );</p>
+            <p>You can print your own message to screen, or even print more messages by calling the printing function multiple times:<br>
+            System.out.println( <font color=\"#a300cc\">\"This is a message\"</font> );<br>
+            System.out.println( <font color=\"#a300cc\">\"And this is another message\"</font> );</p>
 
-			<p>Try printing your own messages to the screen. Remember that the print instruction must be written inside the <font color=\"#1aa3ff\">main</font> function.</p>
-		"]]></item>
+            <p>Try printing your own messages to the screen. Remember that the print instruction must be written inside the <font color=\"#1aa3ff\">main</font> function.</p>
+        "]]></item>
 
         <item>Comments</item>
         <item><![CDATA["
-			<p>In Java we have the ability to write text that is ignored by the program. This can be used, for example, to explain a piece of code. This is known as a comment. </p>
+            <p>In Java we have the ability to write text that is ignored by the program. This can be used, for example, to explain a piece of code. This is known as a comment. </p>
 
-			<p>To write a comment we use // (double forward slash) followed by text.<br>
-			//This is a comment</p>
+            <p>To write a comment we use // (double forward slash) followed by text.<br>
+            //This is a comment</p>
 
-			<p>You can write anything you want in a comment and leave as many comments as you want, they won't affect the program execution in any way. You don't need to write a ; (semicolon) after a comment.</p>
+            <p>You can write anything you want in a comment and leave as many comments as you want, they won't affect the program execution in any way. You don't need to write a ; (semicolon) after a comment.</p>
 
-			<p>The above example can only be used to write a comment on a single line. If we want to write a comment on multiple lines we could start every line with the // (double forward slash) symbol or we can use the multiple line comment symbol: <br>
-			/* This is a <br>
-			&nbsp; comment written on<br>
-			&nbsp; multiple lines.<br>
-			 */
-			 </p>
+            <p>The above example can only be used to write a comment on a single line. If we want to write a comment on multiple lines we could start every line with the // (double forward slash) symbol or we can use the multiple line comment symbol: <br>
+            /* This is a <br>
+            &nbsp; comment written on<br>
+            &nbsp; multiple lines.<br>
+             */
+             </p>
 
-			<p>We use the /* symbol to start the comment and */ to end it. Between these two symbols, we can write anything and have as many new lines as we want.</p>
-		"]]></item>
+            <p>We use the /* symbol to start the comment and */ to end it. Between these two symbols, we can write anything and have as many new lines as we want.</p>
+        "]]></item>
 
         <item>There\'s more to it</item>
         <item><![CDATA["
-			<p>Java is a powerful language. In the next lesson, you are going to learn a very important concept: <font color="blue">variables</font>.</p>
+            <p>Java is a powerful language. In the next lesson, you are going to learn a very important concept: <font color="blue">variables</font>.</p>
 
-			<p>Remember: if there is something unclear, you can always go back and reread any part of any lesson. When your ready, proceed to the next lesson: Variables</p>
-		"]]></item>
+            <p>Remember: if there is something unclear, you can always go back and reread any part of any lesson. When your ready, proceed to the next lesson: Variables</p>
+        "]]></item>
     </string-array>
 
     <string-array name="lesson103">
         <item>Introduction to variables</item>
         <item><![CDATA["
-			<p>Variables are places where we can store data. You can think of them like buckets. Except you have to define what kind of data you can store in a variable.</p>
+            <p>Variables are places where we can store data. You can think of them like buckets. Except you have to define what kind of data you can store in a variable.</p>
 
-			<p>In Java, there are 8 Primitive Data Types. Other than these, there are the Object Data Types, which are a bit harder to understand for now, since they deal with classes. We will however, use some of them as they are build into Java's standard library.</p>
+            <p>In Java, there are 8 Primitive Data Types. Other than these, there are the Object Data Types, which are a bit harder to understand for now, since they deal with classes. We will however, use some of them as they are build into Java's standard library.</p>
 
-			<p>Let's start with the Primitive Data Types. Tap next to continue.</p>
-		"]]></item>
+            <p>Let's start with the Primitive Data Types. Tap next to continue.</p>
+        "]]></item>
         <item>Primitive types</item>
         <item><![CDATA["
-			<p>We will start with the Primitive Data Types as they are going to be used for basic operation. They can store data such as numbers, characters and true/false values.</p>
-			<p>
-			1. byte (integer ~ 1 byte)<br>
-			2. short (integer ~ 2 bytes)<br>
-			3. int  (integer ~ 4 bytes)<br>
-			4. long (integer ~ 8 bytes)<br>
-			5. float (float number ~ 4 bytes)<br>
-			6. double (float number ~ 8 bytes)<br>
-			7. char (character ~ 2 bytes)<br>
-			8. boolean (true or false)
-			</p>
+            <p>We will start with the Primitive Data Types as they are going to be used for basic operation. They can store data such as numbers, characters and true/false values.</p>
+            <p>
+            1. byte (integer ~ 1 byte)<br>
+            2. short (integer ~ 2 bytes)<br>
+            3. int  (integer ~ 4 bytes)<br>
+            4. long (integer ~ 8 bytes)<br>
+            5. float (float number ~ 4 bytes)<br>
+            6. double (float number ~ 8 bytes)<br>
+            7. char (character ~ 2 bytes)<br>
+            8. boolean (true or false)
+            </p>
 
-			<p>You can click on a type for more information about it. Seem like too many? Don't worry, you're not going to use all of them all the time. Next, let's see how you can declare a variable and print it to the screen.</p>
+            <p>You can click on a type for more information about it. Seem like too many? Don't worry, you're not going to use all of them all the time. Next, let's see how you can declare a variable and print it to the screen.</p>
 
-		"]]></item>
+        "]]></item>
         <item>Using a variable</item>
         <item><![CDATA["
-			<p>To declare a variable, all you have to do is write the variable type followed by a variable name, like this:<br>
-			int myVariable;</p>
+            <p>To declare a variable, all you have to do is write the variable type followed by a variable name, like this:<br>
+            int myVariable;</p>
 
-			<p>Things to remember about variables:<br>
-			&nbsp;&nbsp;- both the variable type and the name are case-sensitive<br>
-			&nbsp;&nbsp;- you can't declare two variables with the same name in the same program<br>
-			&nbsp;&nbsp;- the variable name cannot start with a number and cannot contain spaces. <br>
-			</p>
-			<p>
-			Once a variable is declared you can assign values to that variable like this:<br>
-			myVariable = 12;</p>
+            <p>Things to remember about variables:<br>
+            &nbsp;&nbsp;- both the variable type and the name are case-sensitive<br>
+            &nbsp;&nbsp;- you can't declare two variables with the same name in the same program<br>
+            &nbsp;&nbsp;- the variable name cannot start with a number and cannot contain spaces. <br>
+            </p>
+            <p>
+            Once a variable is declared you can assign values to that variable like this:<br>
+            myVariable = 12;</p>
 
-			<p>Finally, you can print the data inside the variable using the function from the previous lesson, like this:<br>
-			System.out.println(myVariable);</p>
+            <p>Finally, you can print the data inside the variable using the function from the previous lesson, like this:<br>
+            System.out.println(myVariable);</p>
 
-			<p>Note that we wrote the variable name with no quotes. We only use quotes when we want to print a text message. When we want to print what is inside a variable, we only write the variable name with no quotes.</p>
-		"]]></item>
+            <p>Note that we wrote the variable name with no quotes. We only use quotes when we want to print a text message. When we want to print what is inside a variable, we only write the variable name with no quotes.</p>
+        "]]></item>
         <item>Full program</item>
         <item><![CDATA["
-			<p>You code should look like this:</p>
+            <p>You code should look like this:</p>
 
-			<p>public class MyProgram { <br>
-				&nbsp;&nbsp;public static void main(String[] args) { <br>
-					&nbsp;&nbsp;&nbsp;&nbsp;int myVariable;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;myVariable = 12;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(myVariable);<br>
-				&nbsp;&nbsp;}<br>
-			}</p>
+            <p>public class MyProgram { <br>
+                &nbsp;&nbsp;public static void main(String[] args) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;int myVariable;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;myVariable = 12;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(myVariable);<br>
+                &nbsp;&nbsp;}<br>
+            }</p>
 
-			<p>Running the code above will output the number 12 on the screen.</p>
-		"]]></item>
+            <p>Running the code above will output the number 12 on the screen.</p>
+        "]]></item>
         <item>Numbers, Integers</item>
         <item><![CDATA["
-			<p>Integer (int) variables will be especially useful when we're going to use loop statements in lesson 7. Let's play with them for a bit more. The following code will give myVariable the value of 4:<br>
+            <p>Integer (int) variables will be especially useful when we're going to use loop statements in lesson 7. Let's play with them for a bit more. The following code will give myVariable the value of 4:<br>
 
-			myVariable = 2+2;</p>
+            myVariable = 2+2;</p>
 
-			<p>As you can see, Java will perform the operation on the right side of the = (equal sign) and the result will be stored in our variable. We can also do this:<br>
+            <p>As you can see, Java will perform the operation on the right side of the = (equal sign) and the result will be stored in our variable. We can also do this:<br>
 
-			myVariable = 2;<br>
-			myVariable = 3 + myVariable;</p>
+            myVariable = 2;<br>
+            myVariable = 3 + myVariable;</p>
 
-			<p>The first line of code will assign the value of 2 to myVariable. The second line will assign to myVariable the result of the operation 3+myVariable. Since myVariable had a value of 2, the operation performed will be 3+2. Therefore, the value assigned to myVariable will now be 5. As you can see, when attempting to solve these operation, you should just replace the variable with the value it has.</p>
+            <p>The first line of code will assign the value of 2 to myVariable. The second line will assign to myVariable the result of the operation 3+myVariable. Since myVariable had a value of 2, the operation performed will be 3+2. Therefore, the value assigned to myVariable will now be 5. As you can see, when attempting to solve these operations, you should just replace the variable with the value it has.</p>
 
-			<p>You can also try the operators: - (substitution), * (multiplication) and / (division). </p>
-		"]]></item>
+            <p>You can also try the operators: - (substitution), * (multiplication) and / (division). </p>
+        "]]></item>
         <item>Other primitives</item>
         <item><![CDATA["
-			<p>We'll ignore the byte, short and long data types for now as the only difference between them and the int type is the highest number they can store. The int data type can store numbers between -2,147,483,648 to 2,147,483,647. The range of byte and short types are smaller than int while the long type has an bigger range than int.</p>
+            <p>We'll ignore the byte, short and long data types for now as the only difference between them and the int type is the highest number they can store. The int data type can store numbers between -2,147,483,648 to 2,147,483,647. The range of byte and short types are smaller than int while the long type has an bigger range than int.</p>
 
-			<p>To store decimal numbers we will use the double data type. Try to create a double variable in your program. For example:<br>
-			double aNumber;<br>
-			aNumber = 4.57;</p>
+            <p>To store decimal numbers we will use the double data type. Try to create a double variable in your program. For example:<br>
+            double aNumber;<br>
+            aNumber = 4.57;</p>
 
-			<p>Note that you can also directly define a variable like this:<br>
-			double aNumber = 4.57;</p>
+            <p>Note that you can also directly define a variable like this:<br>
+            double aNumber = 4.57;</p>
 
-			<p>This is called initialization. You can do this with any primitive data type.</p>
+            <p>This is called initialization. You can do this with any primitive data type.</p>
 
-			<p>A float variable works the same as a double except you have to add an f at the end of the number:<br>
-			float aFloatVar = 4.57f;</p>
+            <p>A float variable works the same as a double except you have to add an f at the end of the number:<br>
+            float aFloatVar = 4.57f;</p>
 
-			<p>They have less precision than a double (you can write less numbers after the decimal point). It's recommended to NOT use float unless you have to.</p>
+            <p>They have less precision than a double (you can write less numbers after the decimal point). It's recommended to NOT use float unless you have to.</p>
 
-			<p>A boolean can store only 2 values: true or false. Your going to learn the purpose of this in lesson 5.</p>
-		"]]></item>
+            <p>A boolean can store only 2 values: true or false. Your going to learn the purpose of this in lesson 5.</p>
+        "]]></item>
         <item>Characters, Strings, Objects</item>
         <item><![CDATA["
-			<p>The last primitive type is char. You can store a single character inside a char:<br>
-			char myVar = 'b';</p>
+            <p>The last primitive type is char. You can store a single character inside a char:<br>
+            char myVar = 'b';</p>
 
-			<p>It is very important that the character is surrounded by single quotation marks.</p>
+            <p>It is very important that the character is surrounded by single quotation marks.</p>
 
-			<p>What if you want to store a sentence inside a variable? Well, to do that we are going to use one important Object Data Type: the String. This is a very special and very useful data type. Unlike other Object data types, Java allows using String almost like a primitive type. Therefore, to declare a String you can write:<br>
-			String myStrVar = \"This is a sentence\";</p>
+            <p>What if you want to store a sentence inside a variable? Well, to do that we are going to use one important Object Data Type: the String. This is a very special and very useful data type. Unlike other Object data types, Java allows using String almost like a primitive type. Therefore, to declare a String you can write:<br>
+            String myStrVar = \"This is a sentence\";</p>
 
-			<p>Make sure you write String with a capital S. As you learned earlier, these are case-sensitive. </p>
+            <p>Make sure you write String with a capital S. As you learned earlier, these are case-sensitive. </p>
 
-			<p>Go ahead and try playing with these primitive data types for a bit. Declare them, give them values and print them to screen.</p>
+            <p>Go ahead and try playing with these primitive data types for a bit. Declare them, give them values and print them to screen.</p>
 
-			In the next lesson, we are going to store values inside variables based on user input.
-		"]]></item>
+            In the next lesson, we are going to store values inside variables based on user input.
+        "]]></item>
     </string-array>
 
     <string-array name="lesson104">
@@ -289,13 +289,13 @@ System.out.println(number);</p>
 
 <p>public class MyFirstApp { <br>
    &nbsp;&nbsp;public static void main(String[] args) { <br>
-	   &nbsp;&nbsp;&nbsp;&nbsp;Scanner reader = new Scanner(System.in);<br>
-	   &nbsp;&nbsp;&nbsp;&nbsp;int number;<br>
-	   <br>
-	   &nbsp;&nbsp;&nbsp;&nbsp;number = reader.nextInt();<br>
-	   <br>
-	   &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"The number is:\");<br>
-	   &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(number);<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;Scanner reader = new Scanner(System.in);<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;int number;<br>
+       <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;number = reader.nextInt();<br>
+       <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"The number is:\");<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(number);<br>
 
    &nbsp;&nbsp;}<br>
 }</p>
@@ -355,7 +355,7 @@ str = reader.nextLine();</p>
 <p>The condition is an expression that can evaluate to true or false. If the condition is true, the code between brackets is executed. Otherwise it's ignored. For example:</p>
 
 <p>if(6&gt;4) {<br>
-	&nbsp; &nbsp;System.out.println(\"This is inside if\");<br>
+    &nbsp; &nbsp;System.out.println(\"This is inside if\");<br>
 }<br>
 System.out.println(\"This is outside if and it will execute every time\");</p>
 
@@ -378,10 +378,10 @@ else {<br>
 int b=9;<br>
 <br>
 if(a&gt;b) {<br>
-	&nbsp;&nbsp;System.out.println(\"a is greater than b\");<br>
+    &nbsp;&nbsp;System.out.println(\"a is greater than b\");<br>
 }<br>
 else {<br>
-	&nbsp;&nbsp;System.out.println(\"b is greater than a\");<br>
+    &nbsp;&nbsp;System.out.println(\"b is greater than a\");<br>
 }</p>
 
 <p>Running the above program will output "b is greater than a". You can play with the values of a and b, change them and see how the result changes.</p>
@@ -486,57 +486,57 @@ if(payedTheBills) {</p>
 
         <item>Logical Operators</item>
         <item> <![CDATA["
-		<p>
-		Using logical operators we can create complex conditions. To write complex conditions we're going to use three logical operators: && (logical AND), the ! (logical NOT) and the || (logical OR) sign.</p>
+        <p>
+        Using logical operators we can create complex conditions. To write complex conditions we're going to use three logical operators: && (logical AND), the ! (logical NOT) and the || (logical OR) sign.</p>
 
-		<p>These logical operators are used to test boolean expressions (true or false) and come back with a new boolean value. The simplest operator is the ! (logical NOT) which negates the value. It is placed in front of expression:<br>
-		!true evaluates to false<br>
-		!false evaluates to true</p>
+        <p>These logical operators are used to test boolean expressions (true or false) and come back with a new boolean value. The simplest operator is the ! (logical NOT) which negates the value. It is placed in front of expression:<br>
+        !true evaluates to false<br>
+        !false evaluates to true</p>
 
-		<p>The other two operators have to be placed between two boolean expressions. The && (logical AND) operator evaluates to true only if both the expression are true, otherwise it evaluates to false. The || (logical OR) operator evaluates to false only if both expressions are false, otherwise it evaluates to true.</p>
+        <p>The other two operators have to be placed between two boolean expressions. The && (logical AND) operator evaluates to true only if both the expression are true, otherwise it evaluates to false. The || (logical OR) operator evaluates to false only if both expressions are false, otherwise it evaluates to true.</p>
 
-		<p>
-		<b>AND</b><br>
-		false && false -&gt; false<br>
-		true && false -&gt; false<br>
-		false && true -&gt; false<br>
-		true && true -&gt; true </p>
+        <p>
+        <b>AND</b><br>
+        false && false -&gt; false<br>
+        true && false -&gt; false<br>
+        false && true -&gt; false<br>
+        true && true -&gt; true </p>
 
-		<p>
-		<b>OR</b><br>
-		false || false -&gt; false<br>
-		true || false -&gt; true<br>
-		false || true -&gt; true<br>
-		true || true -&gt; true</p>
+        <p>
+        <b>OR</b><br>
+        false || false -&gt; false<br>
+        true || false -&gt; true<br>
+        false || true -&gt; true<br>
+        true || true -&gt; true</p>
 
-	"]]></item>
+    "]]></item>
 
         <item>Complex conditions</item>
         <item><![CDATA["
-		<p>Let's test if a number is between two other numbers:</p>
-		<p>
-		int x = 5;<br>
-		if((x >= 2) && (x <= 15)) {<br>
-		  &nbsp;&nbsp;System.out.println("x is between 2 and 15");<br>
-		}
-		</p>
+        <p>Let's test if a number is between two other numbers:</p>
+        <p>
+        int x = 5;<br>
+        if((x >= 2) && (x <= 15)) {<br>
+          &nbsp;&nbsp;System.out.println("x is between 2 and 15");<br>
+        }
+        </p>
 
-		<p>
+        <p>
 
-		Remember that the AND operator evaluates to true only if both expressions are true. Both x>=2 and x<=15 must be true, therefore we used the AND operator. The two expressions must be surrounded by round brackets.
-		</p>
+        Remember that the AND operator evaluates to true only if both expressions are true. Both x>=2 and x<=15 must be true, therefore we used the AND operator. The two expressions must be surrounded by round brackets.
+        </p>
 
-		<p>
-		If only one expression needs to be true, we can use the OR operator. Let's take a very simple example. If a number is 0 or 1 we print "OK":</p>
-		<p>
-		if((x == 0) || (x == 1)) {<br>
-		  &nbsp;&nbsp;System.out.println("OK");<br>
-		}
-		</p>
+        <p>
+        If only one expression needs to be true, we can use the OR operator. Let's take a very simple example. If a number is 0 or 1 we print "OK":</p>
+        <p>
+        if((x == 0) || (x == 1)) {<br>
+          &nbsp;&nbsp;System.out.println("OK");<br>
+        }
+        </p>
 
 
 
-	"]]></item>
+    "]]></item>
 
 
 
@@ -591,7 +591,7 @@ number[0], number[1], number[2], number[3], number[4].</p>
 
         <item>Initializing arrays</item>
         <item><![CDATA["
-	<p>We can also initialize an array with values. Previously, we declared our array with 5 elements like this:<br>
+    <p>We can also initialize an array with values. Previously, we declared our array with 5 elements like this:<br>
 int[] number = new int[5];</p>
 
 <p>This declares an array with five int elements. By default, all of the elements will have the value of 0. We can then assign a value to an index, like explained before.</p>
@@ -650,8 +650,8 @@ Let's write a counting program. Our program will count from 1 to 10 and then wil
 
 <p>int i=1;<br>
 while(i&lt;=10) {<br>
-	&nbsp;&nbsp;System.out.println(i);<br>
-	&nbsp;&nbsp;i++;<br>
+    &nbsp;&nbsp;System.out.println(i);<br>
+    &nbsp;&nbsp;i++;<br>
 }<br>
 System.out.println(\"Done counting.\");</p>
 
@@ -682,14 +682,14 @@ i = i+1</p>
 <p>Next, let's discuss the for loop statement. This one is a bit trickier. The general form looks like this:</p>
 
 <p>for(initialization; condition; update) {<br>
-	<br>//Code here will execute while condition is true<br>
+    <br>//Code here will execute while condition is true<br>
 }</p>
 
 <p>Besides the condition, the for loop allows us to write an instruction that will execute only the first time, as well as an instruction that will execute every time the loop repeats. This means that we can write our previous counting program like this:
 </p>
 
 <p>for(int i=1; i&lt;=10; i++) {<br>
-	&nbsp;&nbsp;System.out.println(i);<br>
+    &nbsp;&nbsp;System.out.println(i);<br>
 }<br>
 System.out.println(\"Done counting.\");</p>
 
@@ -782,24 +782,24 @@ while(condition) {<br>
 
         <item>Do-While</item>
         <item><![CDATA["
-	<p>The while loop (just like the for loop) checks the condition at the beginning of each loop (each iteration). This means that if the condition is false from the start, the code inside the loop never executes.</p>
+    <p>The while loop (just like the for loop) checks the condition at the beginning of each loop (each iteration). This means that if the condition is false from the start, the code inside the loop never executes.</p>
 
-	<p>If we want to make sure that the code inside the loop executes at least once, even if the condition is false, we can use the do-while loop.</p>
+    <p>If we want to make sure that the code inside the loop executes at least once, even if the condition is false, we can use the do-while loop.</p>
 
-	<p>do {<br>
-	  &nbsp;//code here<br>
-	} while(condition);</p>
+    <p>do {<br>
+      &nbsp;//code here<br>
+    } while(condition);</p>
 
-	<p>As you can see in this structure, the condition is at the end of the structure. If we enter this loop with the condition evaluating to false, the code will still execute once.</p>
-	"]]></item>
+    <p>As you can see in this structure, the condition is at the end of the structure. If we enter this loop with the condition evaluating to false, the code will still execute once.</p>
+    "]]></item>
 
 
         <item>More loop control</item>
         <item><![CDATA["
-	<p>In the next chapter, we will come back to the break instruction to learn more about it. You'll also learn about the continue keyword.</p>
+    <p>In the next chapter, we will come back to the break instruction to learn more about it. You'll also learn about the continue keyword.</p>
 
-	<p>There is also another way to use the for loop, known as for-each.</p>
-	"]]></item>
+    <p>There is also another way to use the for loop, known as for-each.</p>
+    "]]></item>
 
 
     </string-array>
@@ -808,189 +808,189 @@ while(condition) {<br>
 
         <item>Group of instructions</item>
         <item><![CDATA["
-			<p>Methods (also known as functions) are useful when you need to group a series of instructions. Just like variables, you can name methods any way you want. Defining methods is recommended for easier code readability.</p>
+            <p>Methods (also known as functions) are useful when you need to group a series of instructions. Just like variables, you can name methods any way you want. Defining methods is recommended for easier code readability.</p>
 
-			<p>We already know several methods. For example the System.out.println() method which prints something to console. It's defined inside the System.out class.</p>
+            <p>We already know several methods. For example the System.out.println() method which prints something to console. It's defined inside the System.out class.</p>
 
-			<p>Another important method is the main() method which we must define in our program. It is called automatically when the program starts.</p>
+            <p>Another important method is the main() method which we must define in our program. It is called automatically when the program starts.</p>
 
-		    <p>Every method must be declared inside a class. Until chapter III, we will use only one class in our project. Therefore, we are going to declare all methods inside this class.</p>
+            <p>Every method must be declared inside a class. Until chapter III, we will use only one class in our project. Therefore, we are going to declare all methods inside this class.</p>
 
-			<p>We cannot define a method inside another method.</p>
-		"]]></item>
+            <p>We cannot define a method inside another method.</p>
+        "]]></item>
 
         <item>A simple method</item>
         <item><![CDATA["
-			<p>Let's define a simple method. The method will be called SayHello.</p>
-			<p>
-			static void SayHello() {<br>
-			  &nbsp;&nbsp;System.out.println(\"Hello\");<br>
-			}
-			</p>
+            <p>Let's define a simple method. The method will be called SayHello.</p>
+            <p>
+            static void SayHello() {<br>
+              &nbsp;&nbsp;System.out.println(\"Hello\");<br>
+            }
+            </p>
 
-			<p>Between the brackets are the instructions that will be executed when we call the method. In this case, we only have one instruction: we call the System.out.println method which is going to print "Hello" to screen.</p>
+            <p>Between the brackets are the instructions that will be executed when we call the method. In this case, we only have one instruction: we call the System.out.println method which is going to print "Hello" to screen.</p>
 
-			<p>Inside the two round brackets () we can define parameters. We will discuss parameters later. This method doesn't get any parameters, so we don't write anything inside the round brackets (but we have to write them).</p>
+            <p>Inside the two round brackets () we can define parameters. We will discuss parameters later. This method doesn't get any parameters, so we don't write anything inside the round brackets (but we have to write them).</p>
 
-			<p>We'll use the static keyword in order to be able to call this method directly. This will be better explained in Chapter III when you'll learn about classes and objects.</p>
+            <p>We'll use the static keyword in order to be able to call this method directly. This will be better explained in Chapter III when you'll learn about classes and objects.</p>
 
-			<p>Finally the void keyword means that the method won't return any value. methods can have the type void or any of the primitive or object data types.</p>
-		"]]></item>
+            <p>Finally the void keyword means that the method won't return any value. methods can have the type void or any of the primitive or object data types.</p>
+        "]]></item>
 
         <item>Calling</item>
         <item><![CDATA["
-			<p>
-			To call our method, we just use:<br>
-			SayHello();
-			</p>
+            <p>
+            To call our method, we just use:<br>
+            SayHello();
+            </p>
 
-			<p>
-			Remember to call the method inside the main method<br>
-			public static void main(String[] args) {<br>
-			  &nbsp;&nbsp;SayHello();<br>
-			}
-			</p>
+            <p>
+            Remember to call the method inside the main method<br>
+            public static void main(String[] args) {<br>
+              &nbsp;&nbsp;SayHello();<br>
+            }
+            </p>
 
-			<p>Running this program will output "Hello".</p>
+            <p>Running this program will output "Hello".</p>
 
-			<p>After calling the method and the method finishes its execution, the instructions below the calling instruction will continue executing normally.</p>
-			<p>
-			public static void main(String[] args) {<br>
-			  &nbsp;&nbsp;SayHello();<br>
-			  &nbsp;&nbsp;//if there's any more code here<br>
-			  &nbsp;&nbsp;//it will execute after the method finishes<br>
-			}
-			</p>
-		"]]></item>
+            <p>After calling the method and the method finishes its execution, the instructions below the calling instruction will continue executing normally.</p>
+            <p>
+            public static void main(String[] args) {<br>
+              &nbsp;&nbsp;SayHello();<br>
+              &nbsp;&nbsp;//if there's any more code here<br>
+              &nbsp;&nbsp;//it will execute after the method finishes<br>
+            }
+            </p>
+        "]]></item>
 
         <item>Parameters</item>
         <item><![CDATA["
-			<p>To send data inside a method when we call it, the method must accept parameters. For example, let's say we want to add two numbers and output the result (the sum).</p>
+            <p>To send data inside a method when we call it, the method must accept parameters. For example, let's say we want to add two numbers and output the result (the sum).</p>
 
-			<p>static void AddNumbers(int a, int b) {<br>
-			  &nbsp;&nbsp;int result = a + b;<br>
-			  &nbsp;&nbsp;System.out.println(result);<br>
-			}
-			</p>
-			<p>This method takes two parameters, a and b, both of int type. This means that they can only be integers. Inside the brackets we add the value of the two parameters and store the result inside the result variable.</p>
+            <p>static void AddNumbers(int a, int b) {<br>
+              &nbsp;&nbsp;int result = a + b;<br>
+              &nbsp;&nbsp;System.out.println(result);<br>
+            }
+            </p>
+            <p>This method takes two parameters, a and b, both of int type. This means that they can only be integers. Inside the brackets we add the value of the two parameters and store the result inside the result variable.</p>
 
-			<p>Then we output the result variable which contains the sum. </p>
-		"]]></item>
+            <p>Then we output the result variable which contains the sum. </p>
+        "]]></item>
 
         <item>Function to add</item>
         <item><![CDATA["
-			<p>To call this method we use:<br>
-			AddNumbers(2,2);
-			</p>
-			<p>The above will output 4 (the sum of 2+2 is 4). Try calling the method with any other two numbers. Notice that you must provide both parameters (not more or less) and they both must be numbers (because they are defined as int).</p>
-			<p>
-			The result variable inside the method can only be used in this method. It is called a local variable and it stops existing once the method ends. Therefore, we cannot directly access result from main.</p>
-		"]]></item>
+            <p>To call this method we use:<br>
+            AddNumbers(2,2);
+            </p>
+            <p>The above will output 4 (the sum of 2+2 is 4). Try calling the method with any other two numbers. Notice that you must provide both parameters (not more or less) and they both must be numbers (because they are defined as int).</p>
+            <p>
+            The result variable inside the method can only be used in this method. It is called a local variable and it stops existing once the method ends. Therefore, we cannot directly access result from main.</p>
+        "]]></item>
 
         <item>Returning values</item>
         <item><![CDATA["
-			<p>
-			To overcome this, methods can return a value. The returned value can be stored inside another variable for future use. Let's define another method that adds two numbers. This one will return the sum instead of printing it to screen.</p>
-			<p>
-			static int Sum(int a, int b) {<br>
-			  &nbsp;&nbsp;int result = a + b;<br>
-			  &nbsp;&nbsp;return result;<br>
-			}
-			</p>
+            <p>
+            To overcome this, methods can return a value. The returned value can be stored inside another variable for future use. Let's define another method that adds two numbers. This one will return the sum instead of printing it to screen.</p>
+            <p>
+            static int Sum(int a, int b) {<br>
+              &nbsp;&nbsp;int result = a + b;<br>
+              &nbsp;&nbsp;return result;<br>
+            }
+            </p>
 
-			<p>We use the keyword return to return a value. The method type must match the type of value we return. In this case, the method type is int and the result variable is also int, so they match.</p>
+            <p>We use the keyword return to return a value. The method type must match the type of value we return. In this case, the method type is int and the result variable is also int, so they match.</p>
 
-			<p>If the method type is not void, you MUST return a value. Otherwise, your program won't compile.</p>
-		"]]></item>
+            <p>If the method type is not void, you MUST return a value. Otherwise, your program won't compile.</p>
+        "]]></item>
 
         <item>Somebody get that value</item>
         <item><![CDATA["
-			<p>
-			We can call this method just like the other one:<br>
-			Sum(2,2);
-			</p>
-			<p>
-			This time, you may notice that nothing happens if you run the program. That's because the method computes the sum of 2+2 and returns the result; but we don't do anything with it.</p>
+            <p>
+            We can call this method just like the other one:<br>
+            Sum(2,2);
+            </p>
+            <p>
+            This time, you may notice that nothing happens if you run the program. That's because the method computes the sum of 2+2 and returns the result; but we don't do anything with it.</p>
 
-			<p>We should store the returned result in a variable. And we should also print it to confirm it's there.</p>
-		"]]></item>
+            <p>We should store the returned result in a variable. And we should also print it to confirm it's there.</p>
+        "]]></item>
 
         <item>Handle returns</item>
         <item><![CDATA["
-			<p>
-			First, define a variable to store the result. We'll call it theSum.<br>
-			int theSum;
-			</p>
+            <p>
+            First, define a variable to store the result. We'll call it theSum.<br>
+            int theSum;
+            </p>
 
-			<p>Next, we have to call the method and store the returned value inside that variable. To do that we will write:<br>
-			theSum = Sum(2,2);
-			</p>
-			<p>
-			We can imagine that Sum(2,2) is replaced with 4, since that is exactly what happens. Therefore, the above statement is the equivalent of theSum = 4;
-			</p>
-			<p>
-			Finally, we can print the variable theSum just to test if it contains the correct value:<br>
-			System.out.println(theSum);
-			</p>
-		"]]></item>
+            <p>Next, we have to call the method and store the returned value inside that variable. To do that we will write:<br>
+            theSum = Sum(2,2);
+            </p>
+            <p>
+            We can imagine that Sum(2,2) is replaced with 4, since that is exactly what happens. Therefore, the above statement is the equivalent of theSum = 4;
+            </p>
+            <p>
+            Finally, we can print the variable theSum just to test if it contains the correct value:<br>
+            System.out.println(theSum);
+            </p>
+        "]]></item>
 
         <item>Return and stop</item>
         <item><![CDATA["
-			<p>
-			When the return instruction is executed, the method stops, the value of the specified local variable is returned and the execution of code continues with the instruction below the calling. Therefore, anything written below return will NOT execute. For example:
-			</p>
-			<p>
-			static int ExampleFunc() {<br>
-			  &nbsp;&nbsp;int a = 1+1;<br>
-			  &nbsp;&nbsp;return a;<br>
-			  &nbsp;&nbsp;//Below this point, the code won't execute<br>
-			  &nbsp;&nbsp;int b = 4+5;<br>
+            <p>
+            When the return instruction is executed, the method stops, the value of the specified local variable is returned and the execution of code continues with the instruction below the calling. Therefore, anything written below return will NOT execute. For example:
+            </p>
+            <p>
+            static int ExampleFunc() {<br>
+              &nbsp;&nbsp;int a = 1+1;<br>
+              &nbsp;&nbsp;return a;<br>
+              &nbsp;&nbsp;//Below this point, the code won't execute<br>
+              &nbsp;&nbsp;int b = 4+5;<br>
               &nbsp;&nbsp;b = b + a;<br>
-			}<br><br>
+            }<br><br>
 
-			public static void main(String[] args) {<br>
-			  &nbsp;&nbsp;int x = ExampleFunc();<br>
-			  &nbsp;&nbsp;//once the ExampleFunc() returns,<br>
-			  &nbsp;&nbsp;//the code here continues its execution<br>
-			}
-			</p>
-		"]]></item>
+            public static void main(String[] args) {<br>
+              &nbsp;&nbsp;int x = ExampleFunc();<br>
+              &nbsp;&nbsp;//once the ExampleFunc() returns,<br>
+              &nbsp;&nbsp;//the code here continues its execution<br>
+            }
+            </p>
+        "]]></item>
 
         <item>Stacking methods</item>
         <item><![CDATA["
-			<p>
-			Keep in mind that you don't have to call a method inside main, you can call any method inside any other method. For example:
-			</p>
-			<p>
-			static void foo() {<br>
-			  &nbsp;&nbsp;//code…<br>
-			}<br><br>
+            <p>
+            Keep in mind that you don't have to call a method inside main, you can call any method inside any other method. For example:
+            </p>
+            <p>
+            static void foo() {<br>
+              &nbsp;&nbsp;//code…<br>
+            }<br><br>
 
-			static void bar() {<br>
-			 &nbsp;&nbsp; //code…<br>
-			  &nbsp;&nbsp;foo();<br>
-			}
-			</p>
-			<p>
-			In this example, bar() calls foo(). If we call bar() from another method (like main), bar() will call foo(). We can also call main from another method.
-			</p>
-		"]]></item>
+            static void bar() {<br>
+             &nbsp;&nbsp; //code…<br>
+              &nbsp;&nbsp;foo();<br>
+            }
+            </p>
+            <p>
+            In this example, bar() calls foo(). If we call bar() from another method (like main), bar() will call foo(). We can also call main from another method.
+            </p>
+        "]]></item>
 
         <item>Inception</item>
         <item><![CDATA["
-			<p>
-			Calling the same method inside itself is called recursion.<br>
-			static void foo() {<br>
-			  &nbsp;&nbsp;foo();<br>
-			}
-			</p>
-			<p>
-			In the above case, calling foo() once (from main for example), will make foo() get called endlessly. When this happens, the program will quickly ran out of memory and it will "throw" a StackOverFlowError. This error is irrecoverable. In other words the program will crash and there's nothing you can. We will learn more about error throwing in the next chapter.</p>
+            <p>
+            Calling the same method inside itself is called recursion.<br>
+            static void foo() {<br>
+              &nbsp;&nbsp;foo();<br>
+            }
+            </p>
+            <p>
+            In the above case, calling foo() once (from main for example), will make foo() get called endlessly. When this happens, the program will quickly ran out of memory and it will "throw" a StackOverFlowError. This error is irrecoverable. In other words the program will crash and there's nothing you can. We will learn more about error throwing in the next chapter.</p>
 
-			<p>To avoid this, recursive calls are usually surrounded by an if condition.</p>
+            <p>To avoid this, recursive calls are usually surrounded by an if condition.</p>
 
-			<p>Recursive methods are used in algorithms such as computing the fibonacci sequence.</p>
-		"]]></item>
+            <p>Recursive methods are used in algorithms such as computing the fibonacci sequence.</p>
+        "]]></item>
 
     </string-array>
 </resources>

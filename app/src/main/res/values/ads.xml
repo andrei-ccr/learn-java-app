@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="appAdsId">ca-app-pub-9490509780764092~4738195324</string>
+
+    <string name="testBanner">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="testInterstitial">ca-app-pub-3940256099942544/1033173712</string>
+
+    <string name="menuBannerAd">ca-app-pub-9490509780764092/1026993097</string>
+    <string name="inLessonBannerAd">ca-app-pub-9490509780764092/6281467002</string>
+    <string name="lessonSelectAd">ca-app-pub-9490509780764092/1575935235</string>
+</resources>
