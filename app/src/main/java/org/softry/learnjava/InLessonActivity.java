@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.support.annotation.NonNull;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -78,8 +79,13 @@ public class InLessonActivity extends AppCompatActivity {
         tvCurrentPage.setText(mViewPager.getCurrentItem()+1 + "/" + Utilities.LessonContentList.get(selectedLesson).length);
 
         AdView mAdView = findViewById(R.id.adView2);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build();//.addTestDevice("80B20B041E29D3D23790297B560D858C")
-        mAdView.loadAd(adRequest);
+        if(Utilities.ShowAds) {
+            AdRequest adRequest = new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build();//.addTestDevice("80B20B041E29D3D23790297B560D858C")
+            mAdView.loadAd(adRequest);
+        } else {
+            CoordinatorLayout clMain = findViewById(R.id.main_content);
+            clMain.removeView(mAdView);
+        }
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

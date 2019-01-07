@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="org.softry.learnjava">
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher_v6"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_v6"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme_Main">
+        android:theme="@style/AppTheme_Main"
+        tools:ignore="GoogleAppIndexingWarning">
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-9490509780764092~4738195324"
-            ></meta-data>
+            android:value="ca-app-pub-9490509780764092~4738195324" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".LessonsActivity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            tools:targetApi="jelly_bean" />
         <activity
             android:name=".InLessonActivity"
             android:label=" "
             android:parentActivityName=".LessonsActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.softry.learnjava.LessonsActivity" />
@@ -42,18 +45,21 @@
             android:label="About"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_Main_Toolbar" />
+            android:theme="@style/AppTheme_Main_Toolbar"
+            tools:targetApi="jelly_bean" />
         <activity
             android:name=".BookmarksActivity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_Main_Toolbar" />
+            android:theme="@style/AppTheme_Main_Toolbar"
+            tools:targetApi="jelly_bean" />
         <activity
             android:name=".SettingsActivity"
             android:label="Settings"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_Main_Toolbar" />
+            android:theme="@style/AppTheme_Main_Toolbar"
+            tools:targetApi="jelly_bean" />
         <activity
             android:name=".ReportActivity"
             android:label="Report a problem"
@@ -63,7 +69,8 @@
             android:label="Disable Ads"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_Main_Toolbar" />
+            android:theme="@style/AppTheme_Main_Toolbar"
+            tools:targetApi="jelly_bean" />
     </application>
 
 </manifest>

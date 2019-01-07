@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             ads:adSize="BANNER"
-            ads:adUnitId="@string/testBanner"
+            ads:adUnitId="@string/menuBannerAd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appbar_main" />
@@ -138,7 +138,7 @@
                             android:layout_marginLeft="8dp"
                             android:text="@string/ads_enabled"
                             android:textAllCaps="true"
-                            android:textColor="@android:color/holo_red_dark"
+                            android:textColor="@color/_progressRed"
                             android:textSize="14sp" />
                     </LinearLayout>
 

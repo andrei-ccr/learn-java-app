@@ -31,6 +31,7 @@ final class Utilities {
 
 	static boolean ShowComingSoonLessons = true;
 	static boolean ShowProOnlyChapters = true;
+	static boolean ShowAds = true;
 
     static final Integer[] ComingSoonChapters = {4,5,6,7,8,9};
 	static final Integer[] ComingSoonLessons = {14, 18, 19, 20};

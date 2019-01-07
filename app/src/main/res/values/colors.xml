@@ -13,7 +13,7 @@
     <color name="_gold">#cfb221</color>
 
     <!-- Progress Colors -->
-    <color name="_progressRed">#b00</color>
+    <color name="_progressRed">#bb0000</color>
     <color name="_progressOrange">#bb7a00</color>
     <color name="_progressYellow">#afbb00</color>
     <color name="_progressGreen">#169316</color>

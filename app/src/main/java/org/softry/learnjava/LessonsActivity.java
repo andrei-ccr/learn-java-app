@@ -79,22 +79,22 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
                 mRecyclerView.setAdapter(rvAdapter);
             }
         }
+        if(Utilities.ShowAds) {
+            mInterstitialAd = new InterstitialAd(this);
+            mInterstitialAd.setAdUnitId(getString(R.string.lessonSelectAd));
+            mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build());
+            mInterstitialAd.setAdListener(new AdListener() {
+                @Override
+                public void onAdFailedToLoad(int errorCode) {
+                    adError = errorCode;
+                }
 
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.testInterstitial));
-        mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build());
-		mInterstitialAd.setAdListener(new AdListener() {
-			@Override
-			public void onAdFailedToLoad(int errorCode) {
-				adError = errorCode;
-			}
-
-			@Override
-			public void onAdClosed() {
-                mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build());
-			}
-		});
-
+                @Override
+                public void onAdClosed() {
+                    mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build());
+                }
+            });
+        }
 
 
     }
@@ -154,6 +154,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
 
     private void OpenLesson(int lesson_index, boolean withInterstitial) {
 		//TODO add 50% random chance that an interstitial shows
+        if(!Utilities.ShowAds) withInterstitial = false;
 		if(withInterstitial) {
 			if (mInterstitialAd.isLoaded())
 				mInterstitialAd.show();
