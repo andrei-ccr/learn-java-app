@@ -136,8 +136,8 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                     }
                 }
 
-                viewHolder0.chapterNumber.setText(itemElem.GetNumber());
-                viewHolder0.chapterName.setText(itemElem.GetName());
+                //viewHolder0.chapterNumber.setText(itemElem.GetNumber());
+                viewHolder0.chapterName.setText(itemElem.GetNumber() + " " + itemElem.GetName());
                 viewHolder0.chapterDesc.setText(itemElem.GetLongDesc());
 
 

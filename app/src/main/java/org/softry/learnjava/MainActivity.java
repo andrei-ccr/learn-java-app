@@ -1,6 +1,7 @@
 package org.softry.learnjava;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
     private RecyclerView mRecyclerView; //Chapters list
     private DrawerLayout mDrawerLayout; //Side bar
     private Context context;
+    private boolean inDashboard;
 
     private TextView tvPagesRead, tvOverallProgress, tvSideBarProgress;
 
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         mRecyclerView.setAdapter(rvAdapter);
     }
 
-	private void FixBottomNavigationText() {
+	/*private void FixBottomNavigationText() {
 		BottomNavigationView mBottomNavigationView = findViewById(R.id.navigation);
 		BottomNavigationMenuView menuView = (BottomNavigationMenuView) mBottomNavigationView.getChildAt(0);
 		for (int i = 0; i < menuView.getChildCount(); i++) {
@@ -65,9 +68,9 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 				activeLabel.setPadding(0, 0, 0, 0);
 			}
 		}
-	}
+	}*/
 	
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    /*private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -83,8 +86,18 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
             }
             return false;
         }
-    };
+    };*/
 
+    @Override
+    public void onBackPressed() {
+        if(inDashboard) {
+            containerDashboardTab.setVisibility(View.GONE);
+            containerLearnTab.setVisibility(View.VISIBLE);
+            inDashboard = false;
+        } else {
+            moveTaskToBack(true);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
+        inDashboard = false;
 
         //Initialize ads SDK
         MobileAds.initialize(context, getString(R.string.appAdsId));
@@ -110,6 +124,13 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
 
                 Intent intent;
                 switch(menuItem.getItemId()) {
+                    case R.id.side_bar_dashboard:
+                        containerLearnTab.setVisibility(View.GONE);
+                        containerDashboardTab.setVisibility(View.VISIBLE);
+                        inDashboard = true;
+                        mDrawerLayout.closeDrawers();
+                        break;
+
                     case R.id.side_bar_settings:
                         intent = new Intent(context, SettingsActivity.class);
                         startActivity(intent);
@@ -151,10 +172,28 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utilities.DeleteStorage(context);
-                Utilities.ReloadData(context);
-                UpdateStats();
-                rvAdapter.notifyDataSetChanged();
+                final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(context);
+                dlgAlert.setMessage("Your entire progress will be erased. Are you sure you want to do this?");
+                dlgAlert.setTitle("Start over");
+                dlgAlert.setPositiveButton("Yes, erase", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Utilities.DeleteStorage(context);
+                        Utilities.ReloadData(context);
+                        UpdateStats();
+                        rvAdapter.notifyDataSetChanged();
+                        dialog.dismiss();
+                    }
+                });
+                dlgAlert.setNegativeButton("No, go back", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                dlgAlert.setCancelable(true);
+                dlgAlert.create().show();
+
+
             }
         });
 
@@ -163,9 +202,9 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         InitRV_Chapters();
 
         //Set bottom navigation
-        BottomNavigationView navigation = findViewById(R.id.navigation);
+        /*BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        FixBottomNavigationText();
+        FixBottomNavigationText();*/
 
         //Set toolbar
         Toolbar toolbar = findViewById(R.id.toolbar_main);

@@ -4,7 +4,7 @@
         Learn to code in Java with lessons that take you step by step. Suitable for beginners
         with limited or no programming knowledge.\n\nEach lesson teaches you a new concept with proper explanation and examples.
     </string>
-    <string name="app_ver">v1.0.0104 [Beta]</string>
+    <string name="app_ver">v1.0.0701 [Beta]</string>
     <string name="app_desc_donate">Please support this project by sharing, rating or contributing with any amount you wish on Patreon.</string>
 
     <string name="title_learn">Learn</string>
@@ -32,63 +32,63 @@
     </string-array>
 
     <string-array name="chapter1">
-        <item name="title">Chapter I</item>
+        <item name="title">I</item>
         <item name="name">Basics</item>
         <item name="shortDesc">Install Java and everything you need. Learn about variables, basic control structures, user input and more.</item>
         <item name="description">Learn about variables, basic control structures, user input and more. Build simple Java apps.</item>
     </string-array>
 
     <string-array name="chapter2">
-        <item name="title">Chapter II</item>
+        <item name="title">II</item>
         <item name="name">Basics Plus</item>
         <item name="shortDesc">Expand your knowledge with more useful concepts. Learn more about functions, loops and arrays.</item>
         <item name="description">Learn more about functions, loops, array as well as working with strings, time, and files.</item>
     </string-array>
 
     <string-array name="chapter3">
-        <item name="title">Chapter III</item>
+        <item name="title">III</item>
         <item name="name">Object Oriented Programming (OOP)</item>
         <item name="shortDesc">Introduction to OOP (Object Oriented Programming). Learn to work with classes and objects.</item>
         <item name="description">Introduction to the world of Object Oriented Programming. Learn to work with classes and objects.</item>
     </string-array>
 
     <string-array name="chapter4">
-        <item name="title">Chapter IV</item>
+        <item name="title">IV</item>
         <item name="name">Data Structures</item>
         <item name="shortDesc">Organise data with data structures. Learn to use the wide range of data structures available in Java.</item>
         <item name="description">Learn to use data structures in Java. Properly organising data is especially important in large projects.</item>
     </string-array>
 
     <string-array name="chapter5">
-        <item name="title">Chapter V</item>
+        <item name="title">V</item>
         <item name="name">Advanced OOP</item>
         <item name="shortDesc">Continue learning OOP with concepts such as virtual functions, abstract classes and more.</item>
         <item name="description">Continue learning OOP with concepts such as virtual functions, abstract classes and more.</item>
     </string-array>
 
     <string-array name="chapter6">
-        <item name="title">Chapter VI</item>
+        <item name="title">VI</item>
         <item name="name">Threading</item>
         <item name="shortDesc">Perform additional operations at the same time by running multiple threads.</item>
         <item name="description">Perform additional operations at the same time by running multiple threads.</item>
     </string-array>
 
     <string-array name="chapter7">
-        <item name="title">Chapter VII</item>
+        <item name="title">VII</item>
         <item name="name">Generics</item>
         <item name="shortDesc">Define functions and classes that accept any data types.</item>
         <item name="description">Define functions and classes that accept any data types.</item>
     </string-array>
 
     <string-array name="chapter8">
-        <item name="title">Chapter VIII</item>
+        <item name="title">VIII</item>
         <item name="name">Web Related</item>
         <item name="shortDesc">Learn about applets, email and networking using Java.</item>
         <item name="description">Learn about applets, email and networking using Java.</item>
     </string-array>
 
     <string-array name="chapter9">
-        <item name="title">Chapter IX</item>
+        <item name="title">IX</item>
         <item name="name">Files</item>
         <item name="shortDesc">Work with files and folders.</item>
         <item name="description">Work with files and folders. Read, write and manipulate.</item>

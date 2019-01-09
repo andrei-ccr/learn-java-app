@@ -17,7 +17,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:padding="16dp"
-        android:text="Are you tired of ads?\n\nWe are working on a way to provide an ad free experience. Please stay tuned!"
+        android:text="Are you tired of ads?\n\nWe don't like ads either. Unfortunately, they support our work and without them we would have to discontinue working on this app. \n\nRest assured, we are working on a way to provide an ad free experience. Please stay tuned!"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

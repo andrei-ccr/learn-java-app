@@ -88,7 +88,7 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:background="@android:color/holo_blue_dark"
+                android:background="@drawable/blue_button"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
