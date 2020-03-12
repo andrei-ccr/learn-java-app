@@ -30,10 +30,13 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+import org.softry.learnjava.org.softry.learnjava.content.LessonContent;
+import org.softry.learnjava.org.softry.learnjava.content.Utilities;
+
 public class InLessonActivity extends AppCompatActivity {
 
     private int selectedLesson, selectedChapter;
-    private Containers.LessonContent lessonContent;
+    private LessonContent lessonContent;
 
     /**
      * The {@link ViewPager} that will host the section contents.

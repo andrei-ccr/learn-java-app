@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.softry.learnjava.org.softry.learnjava.content.Utilities;
+
 public class DashboardActivity extends AppCompatActivity {
 
     Context context;

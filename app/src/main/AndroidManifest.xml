@@ -50,12 +50,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_Main_Toolbar"
             tools:targetApi="jelly_bean" />
-        <activity
-            android:name=".BookmarksActivity"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_Main_Toolbar"
-            tools:targetApi="jelly_bean" />
+
         <activity
             android:name=".SettingsActivity"
             android:label="Settings"

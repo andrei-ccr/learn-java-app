@@ -20,10 +20,14 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.AdRequest;
 
 
+import org.softry.learnjava.org.softry.learnjava.adapters.RVA_Lessons;
+import org.softry.learnjava.org.softry.learnjava.content.Chapter;
+import org.softry.learnjava.org.softry.learnjava.content.Utilities;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.softry.learnjava.Utilities.LessonList;
+import static org.softry.learnjava.org.softry.learnjava.content.Utilities.LessonList;
 
 public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.ItemClickListener {
 
@@ -67,7 +71,7 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
         cLayout.setBackgroundColor(GetBackgroundColorId());
 
 
-        Containers.Chapter thisChapter = Utilities.ChapterList.get(SelectedChapter);
+        Chapter thisChapter = Utilities.ChapterList.get(SelectedChapter);
         setTitle(thisChapter.GetName() + " - " + getString(R.string.app_name));
         tvChapterDesc.setText(thisChapter.GetShortDesc());
 

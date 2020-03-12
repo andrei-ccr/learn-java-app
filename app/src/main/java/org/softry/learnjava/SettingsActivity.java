@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
+import org.softry.learnjava.org.softry.learnjava.content.Utilities;
+
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
