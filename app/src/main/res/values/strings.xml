@@ -186,9 +186,9 @@
     <string name="fa_license">Icons by Font Awesome \nhttps://fontawesome.com/license</string>
     <string name="dashboard">Dashboard</string>
     <string name="resume">Resume</string>
-    <string name="status">Status:</string>
-    <string name="ads_enabled">Ads Enabled</string>
-    <string name="ads_disabled">Ads Disabled</string>
+    <string name="status">Ad Status:</string>
+    <string name="ads_enabled">Enabled</string>
+    <string name="ads_disabled">Disabled</string>
     <string name="disable_ads">Disable Ads</string>
     <string name="stats">Stats</string>
     <string name="clear_progress">Clear Progress</string>
