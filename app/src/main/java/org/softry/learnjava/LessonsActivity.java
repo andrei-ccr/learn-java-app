@@ -47,6 +47,11 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
             e.printStackTrace();
         }
 
+        if(!((SelectedChapter >= 0) && (SelectedChapter <9))) {
+            SelectedChapter = 0;
+            finish();
+        }
+
         //Set theme (must set before super.onCreate())
         TypedArray chapterThemeList = getResources().obtainTypedArray(R.array.ChaptersColor);
         setTheme(chapterThemeList.getResourceId(SelectedChapter, R.style.AppTheme_ChapterOne));
@@ -102,6 +107,10 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     @Override
     public void onResume() {
         super.onResume();
+        if(!((SelectedChapter >= 0) && (SelectedChapter <9))) {
+            SelectedChapter = 0;
+            finish();
+        }
         if(mRecyclerView != null && rvAdapter != null) {
             rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
             rvAdapter.setClickListener(this);
@@ -112,6 +121,10 @@ public class LessonsActivity extends AppCompatActivity implements RVA_Lessons.It
     @Override
     public void onRestart() {
         super.onRestart();
+        if(!((SelectedChapter >= 0) && (SelectedChapter <9))) {
+            SelectedChapter = 0;
+            finish();
+        }
         if(mRecyclerView != null && rvAdapter != null) {
             rvAdapter = new RVA_Lessons(this, this.mLessonsBox);
             rvAdapter.setClickListener(this);

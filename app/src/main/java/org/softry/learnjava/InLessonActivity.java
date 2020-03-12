@@ -85,6 +85,10 @@ public class InLessonActivity extends AppCompatActivity {
         } else {
             CoordinatorLayout clMain = findViewById(R.id.main_content);
             clMain.removeView(mAdView);
+			
+			CoordinatorLayout.LayoutParams params = new CoordinatorLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+			params.setMargins(0, 56, 0, 0);
+			mViewPager.setLayoutParams(params);
         }
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

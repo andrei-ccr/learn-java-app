@@ -11,7 +11,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/_progressOrange">
+        android:background="#eee">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar_main"
@@ -20,7 +20,10 @@
             android:background="@color/design_default_color_primary_dark"
             android:paddingTop="0dp"
             android:theme="@style/AppTheme.AppBarOverlay"
-            android:visibility="visible">
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar_main"
@@ -34,215 +37,12 @@
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
 
-
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/menuBannerAd"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appbar_main" />
-
-        <ScrollView
-            android:id="@+id/container_dashboardTab"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="122dp"
-            android:background="#eee"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/dashboard"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textSize="24sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/white_box"
-                    android:gravity="start"
-                    android:orientation="horizontal"
-                    android:visibility="gone">
-
-                    <Button
-                        android:id="@+id/btn_start"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:background="@drawable/button_shape"
-                        android:clickable="true"
-                        android:drawableStart="@drawable/ic_fa_learn"
-                        android:drawableLeft="@drawable/ic_fa_learn"
-                        android:focusable="true"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:text="@string/resume"
-                        android:textColor="@android:color/white"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/white_box"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/status"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:text="@string/ads_enabled"
-                            android:textAllCaps="true"
-                            android:textColor="@color/_progressRed"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-
-                    <Button
-                        android:id="@+id/btn_disableAds"
-                        android:layout_width="wrap_content"
-                        android:layout_height="39dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="@drawable/blue_button"
-                        android:clickable="true"
-                        android:drawableStart="@drawable/ic_unlocked"
-                        android:drawableLeft="@drawable/ic_unlocked"
-                        android:drawablePadding="5dp"
-                        android:focusable="true"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"
-                        android:padding="6dp"
-                        android:text="@string/disable_ads"
-                        android:textColor="@android:color/white" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/white_box"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/stats"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/tvStatsPagesRead"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="4dp"
-                        android:drawableStart="@drawable/ic_page"
-                        android:drawableLeft="@drawable/ic_page"
-                        android:drawablePadding="5dp"
-                        android:text="@string/pages_read_str"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/tvStatsLessonsCompleted"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:drawableStart="@drawable/ic_page"
-                        android:drawableLeft="@drawable/ic_page"
-                        android:drawablePadding="5dp"
-                        android:text="0 Lessons Completed"
-                        android:textSize="15sp"
-                        android:visibility="gone" />
-
-                    <TextView
-                        android:id="@+id/tvStatsOverallProgress"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_school"
-                        android:drawableLeft="@drawable/ic_school"
-                        android:drawablePadding="5dp"
-                        android:text="Overall Progress 0%"
-                        android:textSize="15sp" />
-
-                    <Button
-                        android:id="@+id/btn_clearProgress"
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@drawable/button_shape"
-                        android:clickable="true"
-                        android:drawableStart="@drawable/ic_clear"
-                        android:drawableLeft="@drawable/ic_clear"
-                        android:drawablePadding="5dp"
-                        android:focusable="true"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:text="@string/clear_progress"
-                        android:textAllCaps="false"
-                        android:textColor="@android:color/white"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-            </LinearLayout>
-        </ScrollView>
-
         <LinearLayout
             android:id="@+id/container_learnTab"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="122dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="56dp"
             android:background="#eee"
             android:orientation="vertical"
             android:visibility="visible"
@@ -260,20 +60,16 @@
                 app:layout_constraintBottom_toBottomOf="parent" />
         </LinearLayout>
 
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/navigation"
-            android:layout_width="0dp"
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:visibility="gone"
-            app:itemIconTint="@color/bnv_tab_item_foreground"
-            app:itemTextColor="@color/bnv_tab_item_foreground"
+            android:layout_marginBottom="2dp"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/menuBannerAd"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/navigation">
-
-        </android.support.design.widget.BottomNavigationView>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 

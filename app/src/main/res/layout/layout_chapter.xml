@@ -12,7 +12,6 @@
     android:layout_marginEnd="32dp"
     android:layout_marginRight="32dp"
     android:layout_marginBottom="10dp"
-    android:background="@drawable/chapter1_box"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackgroundBorderless"
@@ -21,16 +20,16 @@
 
     <LinearLayout
         android:id="@+id/viewChapterColorLayout"
-        android:layout_width="60dp"
+        android:layout_width="33dp"
         android:layout_height="match_parent"
-        android:background="@drawable/chapter1_box"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/ivChapterImage"
-            android:layout_width="match_parent"
+            android:layout_width="33dp"
             android:layout_height="match_parent"
             android:contentDescription="Chapter Image"
+            android:padding="5dp"
             app:srcCompat="@drawable/ic_fa_clone"
             tools:ignore="HardcodedText" />
     </LinearLayout>
@@ -53,7 +52,7 @@
             android:gravity="start"
             android:text="Basics"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
 
@@ -87,8 +86,8 @@
             android:gravity="start"
             android:maxLines="3"
             android:text="Start with the basics. Install Java and everything you need. Learn about variables, conditionals, user input and more. At the end of this chapter, you should be capable of building simple apps."
-            android:textColor="@color/_white"
-            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
             tools:ignore="HardcodedText" />
 
         <RelativeLayout
@@ -109,7 +108,7 @@
                 android:layout_toStartOf="@+id/tvChapterProgress"
                 android:layout_toLeftOf="@+id/tvChapterProgress"
                 android:contentDescription="Chapter Progress Symbol"
-                android:tint="@color/_white"
+                android:tint="#DB000000"
                 app:srcCompat="@drawable/ic_fa_progress"
                 tools:ignore="HardcodedText" />
 
@@ -125,7 +124,7 @@
                 android:layout_marginRight="0dp"
                 android:gravity="center"
                 android:text="0%"
-                android:textColor="@color/_white"
+                android:textColor="@android:color/black"
                 tools:ignore="HardcodedText" />
         </RelativeLayout>
 

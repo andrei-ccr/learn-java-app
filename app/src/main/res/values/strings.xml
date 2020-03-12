@@ -2,10 +2,10 @@
     <string name="app_name">Learn Java</string>
     <string name="app_desc">
         Learn to code in Java with lessons that take you step by step. Suitable for beginners
-        with limited or no programming knowledge.\n\nEach lesson teaches you a new concept with proper explanation and examples.
+        with limited or no programming knowledge.\n\nEach lesson teaches you a new concept with proper explanation and examples. Over 250+ pages of lessons.
     </string>
-    <string name="app_ver">v1.0.0701 [Beta]</string>
-    <string name="app_desc_donate">Please support this project by sharing, rating or contributing with any amount you wish on Patreon.</string>
+    <string name="app_ver">v1.0.1901 [Beta]</string>
+    <string name="app_desc_donate">Please support this learning project by sharing it. Rate it 5 stars if you enjoyed it.</string>
 
     <string name="title_learn">Learn</string>
     <string name="title_dashboard">Dashboard</string>
@@ -178,7 +178,6 @@
 
     <string name="dialogLessonProgressText">Are you sure you want to reset current lesson\'s progress?</string>
     <string name="dialogLessonProgressTitle">Reset progress</string>
-
 
 
     <!-- Other strings -->

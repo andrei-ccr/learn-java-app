@@ -6,9 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.internal.BottomNavigationItemView;
-import android.support.design.internal.BottomNavigationMenuView;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -32,14 +29,11 @@ import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity implements RVA_Chapters.ItemClickListener {
 
-    private ScrollView containerDashboardTab;
-    private LinearLayout containerLearnTab;
     private RecyclerView mRecyclerView; //Chapters list
     private DrawerLayout mDrawerLayout; //Side bar
     private Context context;
-    private boolean inDashboard;
 
-    private TextView tvPagesRead, tvOverallProgress, tvSideBarProgress;
+    TextView tvSideBarProgress;
 
     private RVA_Chapters rvAdapter;
 
@@ -58,47 +52,6 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         mRecyclerView.setAdapter(rvAdapter);
     }
 
-	/*private void FixBottomNavigationText() {
-		BottomNavigationView mBottomNavigationView = findViewById(R.id.navigation);
-		BottomNavigationMenuView menuView = (BottomNavigationMenuView) mBottomNavigationView.getChildAt(0);
-		for (int i = 0; i < menuView.getChildCount(); i++) {
-			BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
-			View activeLabel = item.findViewById(R.id.largeLabel);
-			if (activeLabel instanceof TextView) {
-				activeLabel.setPadding(0, 0, 0, 0);
-			}
-		}
-	}*/
-	
-    /*private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_learn:
-                    containerDashboardTab.setVisibility(View.GONE);
-                    containerLearnTab.setVisibility(View.VISIBLE);
-                    return true;
-                case R.id.navigation_dashboard:
-                    containerLearnTab.setVisibility(View.GONE);
-                    containerDashboardTab.setVisibility(View.VISIBLE);
-                    return true;
-            }
-            return false;
-        }
-    };*/
-
-    @Override
-    public void onBackPressed() {
-        if(inDashboard) {
-            containerDashboardTab.setVisibility(View.GONE);
-            containerLearnTab.setVisibility(View.VISIBLE);
-            inDashboard = false;
-        } else {
-            moveTaskToBack(true);
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AdView mAdView;
@@ -106,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
-        inDashboard = false;
 
         //Initialize ads SDK
         MobileAds.initialize(context, getString(R.string.appAdsId));
@@ -125,12 +77,9 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
                 Intent intent;
                 switch(menuItem.getItemId()) {
                     case R.id.side_bar_dashboard:
-                        containerLearnTab.setVisibility(View.GONE);
-                        containerDashboardTab.setVisibility(View.VISIBLE);
-                        inDashboard = true;
-                        mDrawerLayout.closeDrawers();
+                        intent = new Intent(context, DashboardActivity.class);
+                        startActivity(intent);
                         break;
-
                     case R.id.side_bar_settings:
                         intent = new Intent(context, SettingsActivity.class);
                         startActivity(intent);
@@ -153,58 +102,11 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
             }
         });
 
-        //Get the main containers
-        containerLearnTab = findViewById(R.id.container_learnTab);
-        containerDashboardTab = findViewById(R.id.container_dashboardTab);
-
-        Button btnClear, btnDisableAds;
-        btnClear = findViewById(R.id.btn_clearProgress);
-        btnDisableAds = findViewById(R.id.btn_disableAds);
-
-        btnDisableAds.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, DisableAdsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        btnClear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(context);
-                dlgAlert.setMessage("Your entire progress will be erased. Are you sure you want to do this?");
-                dlgAlert.setTitle("Start over");
-                dlgAlert.setPositiveButton("Yes, erase", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        Utilities.DeleteStorage(context);
-                        Utilities.ReloadData(context);
-                        UpdateStats();
-                        rvAdapter.notifyDataSetChanged();
-                        dialog.dismiss();
-                    }
-                });
-                dlgAlert.setNegativeButton("No, go back", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-                dlgAlert.setCancelable(true);
-                dlgAlert.create().show();
-
-
-            }
-        });
+        tvSideBarProgress = navigationView.getHeaderView(0).findViewById(R.id.tv_sidebar_progress);
 
         //Set the recycler view used to list chapters
         mRecyclerView = findViewById(R.id.rvChapters);
         InitRV_Chapters();
-
-        //Set bottom navigation
-        /*BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        FixBottomNavigationText();*/
 
         //Set toolbar
         Toolbar toolbar = findViewById(R.id.toolbar_main);
@@ -212,20 +114,19 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
 
-        tvPagesRead = findViewById(R.id.tvStatsPagesRead);
-        tvOverallProgress = findViewById(R.id.tvStatsOverallProgress);
-        tvSideBarProgress = navigationView.getHeaderView(0).findViewById(R.id.tv_sidebar_progress);
-
-        UpdateStats();
+        tvSideBarProgress.setText("Overall progress: " + Utilities.GetOverallProgress(this) + "%");
         mAdView = findViewById(R.id.adView);
         if(Utilities.ShowAds) {
-            AdRequest adRequest = new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build();//.addTestDevice("80B20B041E29D3D23790297B560D858C")
+            AdRequest adRequest = new AdRequest.Builder().addTestDevice("80B20B041E29D3D23790297B560D858C").build();
             mAdView.loadAd(adRequest);
         } else {
             mDrawerLayout.removeView(mAdView);
-
+			
+			/*ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+			params.setMargins(0, 56, 0, 0);
+			containerLearnTab.setLayoutParams(params);
+			*/
         }
-
     }
 
     @Override
@@ -233,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         super.onResume();
         if(rvAdapter != null)
             rvAdapter.notifyDataSetChanged();
-        UpdateStats();
+        tvSideBarProgress.setText("Overall progress: " + Utilities.GetOverallProgress(this) + "%");
     }
 
     @Override
@@ -241,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         super.onRestart();
         if(rvAdapter != null)
             rvAdapter.notifyDataSetChanged();
-        UpdateStats();
+        tvSideBarProgress.setText("Overall progress: " + Utilities.GetOverallProgress(this) + "%");
     }
 
     @Override
@@ -257,13 +158,6 @@ public class MainActivity extends AppCompatActivity implements RVA_Chapters.Item
         startActivity(lessonsActivity);
 
     }
-
-    private void UpdateStats() {
-        tvPagesRead.setText(Utilities.GetTotalPagesRead() + " Pages read");
-        tvOverallProgress.setText("Overall progress " + Utilities.GetOverallProgress(this) + "%");
-        tvSideBarProgress.setText("Overall progress: " + Utilities.GetOverallProgress(this) + "%");
-    }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

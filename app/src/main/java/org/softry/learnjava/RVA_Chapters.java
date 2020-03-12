@@ -1,7 +1,6 @@
 package org.softry.learnjava;
 
 import android.content.Context;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -91,31 +90,6 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                 chapterBoxViewHolder viewHolder0 = (chapterBoxViewHolder)holder;
                 Containers.Chapter itemElem = mChapters.get(position);
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    int cBoxColor;
-                    if(position == 0)
-                        cBoxColor = R.drawable.chapter1_box;
-                    else if(position == 1)
-                        cBoxColor = R.drawable.chapter2_box;
-                    else if(position == 2)
-                        cBoxColor = R.drawable.chapter3_box;
-                    else if(position == 3)
-                        cBoxColor = R.drawable.chapter4_box;
-                    else if(position == 4)
-                        cBoxColor = R.drawable.chapter5_box;
-                    else if(position == 5)
-                        cBoxColor = R.drawable.chapter6_box;
-                    else if(position == 6)
-                        cBoxColor = R.drawable.chapter7_box;
-                    else if(position == 7)
-                        cBoxColor = R.drawable.chapter8_box;
-                    else
-                        cBoxColor = R.drawable.chapter1_box;
-
-                    viewHolder0.container_chapter_color.setBackground(this.context.getResources().getDrawable(cBoxColor));
-                    viewHolder0.chapterBoxContainer.setBackground(this.context.getResources().getDrawable(cBoxColor));
-
-                }
 
                 viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_clone));
                 if(position == 2) viewHolder0.chapterImage.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_fa_boxes));
@@ -148,7 +122,6 @@ public class RVA_Chapters extends RecyclerView.Adapter  {
                 else if(position==4) viewHolder1.categoryName.setText(context.getString(R.string.lvl_advanced_str));
                 break;
         }
-
     }
 
     @Override

@@ -7,8 +7,8 @@ android {
         applicationId "org.softry.learnjava"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 2
-        versionName '1.0.0701'
+        versionCode 4
+        versionName '1.0.1901'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = "true"
     }
